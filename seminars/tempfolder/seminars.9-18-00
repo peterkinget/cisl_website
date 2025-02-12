@@ -1,0 +1,313 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="keywords" content="cisl seminars">
+   <meta name="description" content="cisl seminars">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>cisl seminars</title>
+<style TYPE="text/css">
+
+   <!--
+
+A { font-family: Times New Roman, Times; font-size: 12pt; font-weight: bold; text-decoration: none; }
+
+SMALL { font-family: Times New Roman, Times; font-size: 10pt;}
+
+   -->
+
+  </style>
+
+<script language="JavaScript">
+
+if(document.images){
+
+but1 = new Image();
+but1.src = "images/people1.gif";
+
+but2 = new Image();
+but2.src = "images/people2.gif";
+
+but3 = new Image();
+but3.src = "images/research1.gif";
+
+but4 = new Image();
+but4.src = "images/research2.gif";
+
+but5 = new Image();
+but5.src = "images/publications1.gif";
+
+but6 = new Image();
+but6.src = "images/publications2.gif";
+
+but7 = new Image();
+but7.src = "images/courses1.gif";
+
+but8 = new Image();
+but8.src = "images/courses2.gif";
+
+but9 = new Image();
+but9.src = "images/sponsors1.gif";
+
+but10 = new Image();
+but10.src = "images/sponsors2.gif";
+
+}
+
+function peopleOn(imgName) {
+        if(document.images) {
+           document["people"].src = eval(imgName + ".src");
+                }
+}
+
+function researchOn(imgName) {
+        if(document.images) {
+           document["research"].src = eval(imgName + ".src");
+                }
+}
+
+function pubOn(imgName) {
+        if(document.images) {
+           document["publications"].src = eval(imgName + ".src");
+                }
+}
+
+function coursesOn(imgName) {
+        if(document.images) {
+           document["courses"].src = eval(imgName + ".src");
+                        }
+}
+
+function sponsorsOn(imgName) {
+        if(document.images) {
+           document["sponsors"].src = eval(imgName + ".src");
+                        }
+}
+
+
+</script>
+</head>
+
+
+<body bgcolor="#FFFFFF" link="#3366FF" vlink="#3366FF">
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+<caption><!-- nav buttons --></caption>
+
+<tr>
+<td>
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+<tr>
+<td WIDTH="400"><a href="index.html" onMouseOver="window.status=''; return " true"><img SRC="images/subtitle.gif" ALT="CISL" BORDER=0 height=40 width=400></a></td>
+
+<td ALIGN=LEFT WIDTH="115">&nbsp;</td>
+
+<td WIDTH="65"><a href="index.html" onMouseOver="window.status=''; return true"><img SRC="images/subcisl.gif" NAME="cisl" ALT="cisl" BORDER=0 height=40 width=65 align=BOTTOM></a></td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td><font size=-2>&nbsp;</font></td>
+</tr>
+
+<tr>
+<td>
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+
+    <tr>
+    <td ><a HREF="people.html"^
+        onMouseOver="peopleOn('but1')" onMouseOut="peopleOn('but2')"><img
+        SRC="images/people2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="people" NAME="people" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="research.html"
+        onMouseOut="researchOn('but4')" onMouseOver="researchOn('but3')"><img
+        SRC="images/research2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="research" NAME="research" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="publications.html"
+        onMouseOut="pubOn('but6')" onMouseOver="pubOn('but5')"><img
+        SRC="images/publications2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="publications" NAME="publications" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="courses.html"
+        onMouseOut="coursesOn('but8')" onMouseOver="coursesOn('but7')">
+        <img SRC="images/courses2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="courses" NAME="courses" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="sponsors.html"
+        onMouseOut="sponsorsOn('but10')"  onMouseOver="sponsorsOn('but9')">
+        <img SRC="images/sponsors2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="sponsors" NAME="sponsors" WIDTH="110" HEIGHT="25"></a></td>
+  </tr></table> 
+</td>
+</tr>
+</table>
+
+<!--page content--><!C- footer ->
+<br>&nbsp;
+<table BORDER=0 CELLSPACING=0 CELLPADDING=10 COLS=1 WIDTH="560" >
+<tr>
+<td>
+<center><font color="#FF0000">Seminars Spring 2000</font></center>
+</td>
+</tr>
+
+<tr>
+<td>
+<hr WIDTH="540"></td>
+</tr>
+
+<tr>
+<td><font color="#000000" >Dr. Gangadhar Burra</font>
+<br><font color="#000000" >Research Scientist</font>
+<br><font color="#000000" >Analog Baseband Design Branch, Texas Instruments, Dallas</font>
+<p><font color="#000000" >Friday, April 28, 2000</font>
+<br><font color="#000000" >Time: 2:00 PM, Room 415 Schapiro Building</font>
+<p><font color="#FF0000" >Analog Cell Development for Low Power Wireless Applications </font>
+
+<p><font color="#000000" >Abstract:</font>
+<p>Mixed-Signal Analog integrated circuits for portable wireless applications are constantly increasing in complexity. Handset manufacturers hope to reduce battery cell usage in order to reduce weight, cost and size. Lower supply voltage requirement becomes a major driver for creative analog designers. Besides reduced voltage supply, power consumption is the other paradigm. Internet wireless services, video and other fast transmission rates call for pipelined and higher speed/resolution converters without the luxury of adding extra power. Also, audio Codecs become more sophisticated with 16 bit true resolution, stereo drivers and 4 ohm loads to support MPEG3 and Hi-Fi performance.
+<p>In addition to the complexity increase mentioned above, another facet of portable wireless applications is the so-called "system on a chip". It is becoming more evident that a single-chip phone is not only feasible but essential for the same kind of reasons viz. weight, cost, size and power.  However, analog integration on a digital CMOS process comes with its own problems and challenges ^ especially at supply voltages approaching 1.1 volts in processes that have Leff of around 0.1 microns.
+
+</tr>
+
+
+<tr>
+<td>
+<hr WIDTH="540"></td>
+</tr>
+
+
+<tr>
+<td><font color="#000000" >Dr. Andrea Pacelli</font>
+<br><font color="#000000" >Research Scientist</font>
+<br><font color="#000000" >Bell Laboratories, Lucent Technologies</font>
+<p><font color="#000000" >Friday, April 21, 2000</font>
+<br><font color="#000000" >Time: 2:00 PM, Room 415 Schapiro Building</font>
+<p><font color="#FF0000" >Generation of Equivalent Circuits from Physics-Based Device Simulation </font>
+
+<p><font color="#000000" >Abstract:</font>
+<p>Device modeling faces conflicting requirements of accuracy, efficiency and development time.  We will present a new technique to directly generate equivalent-circuit models from device simulation.  A circuit block is generated for each region of the device (e.g., neutral and depletion regions).  All the circuit elements have a clear physical interpretation.  The method promises model generation times comparable with those of black-box and physics-based device models.  New device structures and physical phenomena (e.g., optoelectronic effects) are easily included.  Applications to one-dimensional pn junctions and bipolar transistors will be presented.
+</tr>
+
+
+<tr>
+<td>
+<hr WIDTH="540"></td>
+</tr>
+
+
+<tr>
+<td><font color="#000000" >Dr. Stan Schuster</font>
+<br><font color="#000000" >Research Staff Member</font>
+<br><font color="#000000" >IBM Research Center, Yorktown Heights, NY</font>
+<p><font color="#000000" >Friday, April 14, 2000</font>
+<br><font color="#000000" >Time: 2:00 PM, Room 415 Schapiro Building</font>
+<p><font color="#FF0000" >Asynchronous Interlocked Pipelined CMOS Circuits Operating at 3.3 - 4.5 GHz </font>
+
+<p><font color="#000000" >Abstract:</font>
+<p>An asynchronous circuit technique suitable for multi - GHz operation using interlocked local clocks will be described. These circuits drive a path through a typical 64b multiplier stage at 3.3 - 4.5 GHz in 0.18um 1.5V CMOS technology.
+</tr>
+
+
+<tr>
+<td>
+<hr WIDTH="540"></td>
+</tr>
+
+
+
+<tr>
+<td><font color="#000000" >Dr. Mihai Banu</font>
+<br><font color="#000000" >Head of Silicon Circuits Research Department</font>
+<br><font color="#000000" >Bell Labs, Lucent Technologies</font>
+<p><font color="#000000" >Friday, March 24, 2000</font>
+<br><font color="#000000" >Time: 2:00 PM, Room 415 Schapiro Building</font>
+<p><font color="#FF0000" >IF Sampling in Wireless Transceivers </font>
+
+<p><font color="#000000" >Abstract:</font>
+<p>The main motivation for digitizing the IF signals in wireless transceivers is the promise for increased robustness, added system flexibility, and better overall reliability.
+<p>However, a careful analysis shows that the actual incorporation of IF sampling into an efficient and inexpensive transceiver architecture is not straightforward, as serious practical difficulties need to be overcome.
+<p>The most critical issue is the design of the analog front end. In addition to performing conventional functions, this circuit is required to suppress the aliasing of blockers. A new undersampling approach will be discussed. The presentation will include a short tutorial review of wireless transceivers.
+
+</tr>
+
+<tr>
+<td>
+<hr WIDTH="540"></td>
+</tr>
+
+<tr>
+<td><font color="#000000" >Dr. Ash Swaminathan</font>
+<br><font color="#000000" >IC Design Engineer</font>
+<br><font color="#000000" >Philsar Semiconductors</font>
+<p><font color="#000000" >Friday, March 10, 2000</font>
+<br><font color="#000000" >Time: 2:00 PM, Room 415 Schapiro Building</font>
+<p><font color="#FF0000" >A Single IF Receiver Architecture using a Complex Sigma-Delta Modulator</font>
+
+<p><font color="#000000" >Abstract:</font>
+<p>In the growing market for portable communications, it is becoming more important to design high performance transceivers which consume little power. Currently, many architectures are exploited to give the maximum dynamic range while running off a 1V battery.  This makes it challenging to design components such as A/D converters which may be required to have 12-bit resolution.
+<p>This talk discusses a new A/D converter called a Complex Bandpass SD Modulator, suitable for a Single-IF receiver architecture.  This modulator is based on existing bandpass SD Modulator structures, and was designed to give roughly double the bandwidth performance of existing state of the art.  Two versions of this modulator were designed and fabricated as switched-C circuits in a 0.8um BiCMOS technology, and the results are presented.  The maximum SNDR of these modulators was 48dB with a bandwidth of 10kHz and a sampling rate of 4MHz wth a power dissipation of 160mW.  The maximum operating frequency was found to be approximately 45MHz.
+<p>This modulator was also tested with a suitable analog front-end operating at an RF of 1.9GHz and an IF of 60MHz.  Results are presented for demodulated GMSK data (similar to GSM) for this receiver.  This is meant to show the feasibility of using this type of SD modulator in a radio receiver.
+</tr>
+
+
+
+<tr>
+<td>
+<hr WIDTH="540"></td>
+</tr>
+
+<tr>
+<td><font color="#000000">Dr. Ali M. Niknejad</font></font>
+<br><font color="#000000">University of California, Berkeley</font></font>
+<p><font color="#000000">Tuesday, January 25, 2000</font></font>
+<br><font color="#000000">Time: 11:00 AM, Room 415 Schapiro
+Building</font></font><font color="#000000"></font></font>
+<p><font color="#FF0000">Analysis, Simulation and Applications
+of Passive Devices over the Si Substrate&nbsp;</font></font>
+
+<p><font color="#000000">Abstract:</font></font>
+<p>On-chip passive devices, such as spiral inductors and
+transformers, have the potential to improve the performance of key RF building
+blocks.&nbsp; However, their use not only necessitates proper modeling
+of magnetic effects, but also parasitic substrate impedance and coupling.&nbsp;
+An accurate and efficient technique to model the device over a wide frequency
+range will be presented.&nbsp; To aid the designer in using the technique,
+a custom CAD tool ASITIC (Analysis and Simulation of Inductors and Transformers
+for ICs) will be presented.&nbsp; This tool provides the RF designer a
+user friendly graphical environment where the key geometric parameters
+of inductors or transformers can be optimized.&nbsp; By working with the
+entire RF chip layout, the tool also allows the user to investigate the
+effects of magnetic and substrate coupling across the entire chip.&nbsp;</font>
+<p>These general techniques can also be applied to other
+VLSI circuits.&nbsp; The design of high speed analog and digital circuits
+requires careful modeling of on-chip interconnect parasitics.&nbsp; At
+lower frequencies, only the effects of capacitance is important whereas
+at higher frequencies the effects of both capacitive and inductive coupling
+must be considered.&nbsp; This is also of paramount importance in mixed
+signal circuits where substrate coupling from noisy digital circuits into
+sensitive analog circuits can greatly impact performance.&nbsp; Two example applications of on-chip
+passive devices, a voltage controlled oscillator (VCO) and a power amplifier (PA)
+will be presented.&nbsp; In these applications the performance of the passive
+devices plays a critical role in the overall system performance.&nbsp;</font></td>
+</tr>
+
+<tr>
+<td>
+<hr WIDTH="540"></td>
+</tr>
+</table>
+
+<p>
+<hr ALIGN="left" WIDTH="580">
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+<tr>
+<td ALIGN=LEFT WIDTH="180"><small>Page under construction</small></td>
+
+<td ALIGN=LEFT WIDTH="58"><img SRC="images/construction4.gif" ALT="" height=34 width=58></td>
+
+<td ALIGN=RIGHT WIDTH="342"><a href="mailto:webmaster@cisl.columbia.edu"><small>webmaster</small></a></td>
+</tr>
+</table>
+
+</body>
+</html>
