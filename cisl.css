@@ -83,11 +83,11 @@ li.circle { list-style: circle inside }
     
   }
   td.content_left {
-    background-image: url('Images/chip_medley_left.jpg');
+    background-image: url('images/chip_medley_left.jpg');
     width: 150px;	    
   }
   td.content_right {
-    background-image: url('Images/chip_medley_right.jpg');
+    background-image: url('images/chip_medley_right.jpg');
     width: 150px;
   }
 
