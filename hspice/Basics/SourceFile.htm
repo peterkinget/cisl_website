@@ -1,0 +1,419 @@
+<html>
+
+
+
+<head>
+
+<title>Notation</title>
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+	<h2><center>HSPICE <a name="not">Source File</a></center></h2>
+
+<p align="center">
+
+<nobr>[&nbsp;<a href="Introduction.htm">Introduction</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="Files/files.htm">Files</a>&nbsp;]</nobr> <nobr>[&nbsp;Source&nbsp;File&nbsp;]</nobr> <nobr>[&nbsp;<a href="Devices/Devices.htm">Devices</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="Commands.htm">Commands</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="Notes.htm">Notes</a>&nbsp;]</nobr>
+
+
+
+<p>
+
+The HSPICE source file consists of five parts.
+
+<ol>
+
+  <li><i><u>Title statement</u></i>: the first line is the circuit's title; it
+
+    may be anything, but not neglected.</li>
+
+  <li><i><u>Data statements</u></i>: description of the components and the
+
+    interconnections.</li>
+
+  <li><i><u>Control statements</u></i>: tells SPICE what type of analysis to
+
+    perform on the circuit.
+
+  <li><i><u>Output statements</u></i>: specifies what outputs are to be printed
+
+    or plotted.</li>
+
+  <li><i><u>End statement</u></i>: on the very last line: .END followed by a
+
+    carriage return.</li>
+
+</ol>
+
+Although statements 2,3, and 4 may appear in any order, it is recommended that
+
+they be given in the above sequence.&nbsp;
+
+<dl>
+
+  <dt>&nbsp;
+
+  <dt><tt>TITLE STATEMENT</tt></dt>
+
+  <dt><tt>ELEMENT STATEMENTS</tt>
+
+  <dt><tt>.</tt>
+
+  <dt><tt>.</tt>
+
+  <dt><tt>COMMAND (CONTROL) STATEMENTS</tt>
+
+  <dt><tt>OUTPUT STATEMENTS</tt>
+
+  <dt><tt>.END &lt;CR&gt;</tt><br>
+
+    &nbsp;
+
+</dl>
+
+<p>You can insert <u><i>comment statements</i></u> anywhere in the source file:</p>
+
+<ul>
+
+<li>
+
+"*" - indicates a full line comment
+
+<li>
+
+"$" - indicates an end-of-line comment
+
+</ul>
+
+<p>Furthermore, it is useful to know that:</p>
+
+<ul>
+
+<li>	
+
+"+" - indicates a continuation of the previous line.
+
+</ul>
+
+
+
+<p>An example of these statements can be found in the BJT amplifier example <a href="../ExampleFiles/bjtamp.sp"><i>bjtamp.sp</i></a>.
+
+Here the .OPTION command is extended for four lines and the end of line comment
+
+is used after the .MEASURE commands. Notice that by using tabs for the elements
+
+and their nodes, it makes the netlist much easier to read. It is not required
+
+that tabs be used, but it is very helpful.</p>
+
+<h3><u>NOTATION</u></h3>
+
+<p>HSPICE notation is relatively simple. Both upper and lower case letters are
+
+allowed, but no distinction is made (HSPICE converts everything to upper-case
+
+characters before any interpretation is attempted). The statements have a
+
+free format and consist of fields separated by a blank. Each line is
+
+interpreted as a separate statement, i.e., unless "+" is the first
+
+character (see above).</p>
+
+<ol>
+
+  <li>All statements beginning with a "." are commands (e.g. .OPTION,
+
+   .PRINT, .AC, etc.) Commands are used to change the behavior of
+
+   HSPICE:
+
+   <ul>
+
+   <li>	   
+
+   Request that a specific type of simulation be performed (.AC, .DC,
+
+   .TRAN, .FOUR, etc.)
+
+   <li>
+
+   Set various parameters, such as voltage or charge accuracy (.OPTION)
+
+   <li>
+
+   Specify what circuit nodes that are of interest (.PRINT, .PLOT, etc.)
+
+   </ul>
+
+  <li>Statements that begin with an alphabetic character are treated as elements
+
+    (e.g. r51, cc, load, etc).&nbsp; The first character determines the type of
+
+    element:
+
+    <ul>
+
+    <li>
+
+    R for resistors: (R1, Rload, Rin, Rcapacitor, Rdummy, Rain, etc.)
+
+    <li>
+
+    C for capacitors: (C1, Cload, Cin, Csomename, Cinductor, Cello, etc.)
+
+    <li>
+
+    L for inductors: (L1, Lload, Lin, Lmutual, Ldummy, Larry, etc.)
+
+    <li>
+
+    D for diodes: (D1, Dummy, Dsubstrate, etc.)
+
+    <li>
+
+    Q for bipolar junction transistors (Q1, Q32apq, Qdiff1, Question,
+
+    etc.)
+
+    <li>
+
+    M for MOS transistors (M1, M12, Mary, Mozart, etc.)
+
+    <li>
+
+    V for voltage sources
+
+    <li>
+
+    I for current sources
+
+    <li>
+
+    G for voltage-controlled current sources (transconductance amplifiers)
+
+    <li>
+
+    F for current-controlled current sources (current amplifiers)
+
+    <li>
+
+    E for voltage-controlled voltage sources (voltage amplifiers)
+
+    <li>
+
+    H for current-controlled voltage sources (transresistance amplifiers)
+
+    <li>
+
+    X for subcircuits (hierarchical circuit structure)
+
+    </ul>
+
+</ol>
+
+<p>Each element is subject to a specific notation.&nbsp; See [<a href="Commands.htm">Commands</a>]
+
+and [<a href="Devices/Devices.htm">Devices</a>] for details.</p>
+
+<h3><a name="top">Topology Rules:</a></h3>
+
+HSPICE will (fortunately) only run if the circuit topology fulfill certain
+
+criteria. Mostly, these criteria are the same as those known from basic
+
+circuit analysis:
+
+<ul>
+
+<li>	
+
+Every node must have a DC path to ground.
+
+<li>
+
+No dangling nodes (i.e. all nodes must have at least two connections).
+
+<li>
+
+No loops of only ideal voltage sources and capacitors.
+
+<li>
+
+No nodes connected to only ideal current sources and inductors.
+
+</ul>
+
+
+
+<h3><a name="name">Naming conventions:</a></h3>
+
+</font>Every node and element within the HSPICE netlist must have its own unique
+
+name. You are advised to use the following rules (although they are not strictly
+
+necessary):
+
+<ul>
+
+<li>	
+
+Node Identification:
+
+<ul>
+
+	<li>
+
+	0 is ALWAYS ground
+
+	<li>
+
+	To avoid an old bug, it is best to start all node names (besides
+
+	ground) with an alphabetic character (in1, in2, out1, out2, 
+
+	n1, n2, n3,
+
+	n4, etc.)
+
+</ul>
+
+<li>
+
+Allowable Characters and Conventions:
+
+<ul>
+
+	<li>
+
+	Max of 16 characters (warning: the rest are silently ignored)
+
+	<li>
+
+	May contain: +-*/:;$#.[]!&lt;&gt;_%&nbsp; 
+
+	(but it is better not to use them)
+
+	<li>
+
+	May not contain: (),=&lt;space&gt;
+
+</ul>
+
+</ul> 
+
+    
+
+<h3><a name="units">HSPICE units:</a></h3>
+
+HSPICE will automatically assign ohms to resistors, Farads to capacitors, and
+
+Henries to inductors. Hence, you need only provide the numeric value.
+
+<p>The scaling for the all units in HSPICE is done by:
+
+<ul>
+
+	<li>F=1e-15
+
+	<li>P=1e-12
+
+	<li>N=1e-9
+
+	<li>U=1e-6
+
+	<li>M=1e-3 ***************
+
+	<li>K=1e3
+
+	<li>MEG=X=1e6 **************
+
+	<li>G=1e9
+
+	<li>T=1e12
+
+</ul>
+
+
+
+Note: Capitals do not matter (e.g. F=f and M=m), therefore many people have
+
+problems with M and MEG. Please be careful with these two units!&nbsp; Of this
+
+reason, I personally never use any of these abbreviations; I prefer the
+
+floating-point notation: 1.234e5=0.1234e6.
+
+
+
+<h3><a name="glob">Global Variables (advanced subject):</a></h3>
+
+<ul>
+
+	<li>Syntax
+
+	<ul>
+
+		<li>.GLOBAL node1 node2 node3 .........Globally defined nodes
+
+		<li>.GLOBAL VBIAS VCC .................Globally defined sources
+
+	</ul>
+
+	<li>Usage
+
+	<ul>
+
+		<li>When subcircuits are included in the data file.
+
+		<li>Assigns common node name to subcircuit nodes
+
+		<li>Power supply connection of all subcirsuits is often
+
+		done this way:
+
+		<ul>
+
+			<li>.GLOBAL VCC:
+
+			Connects all nodes named VCC 
+
+			(all circuits have a common node)
+
+		</ul>
+
+	</ul>
+
+
+
+</ul>
+
+Essentially globals are used most often for subcircuits, though they are great
+
+for sources. This way all power sources do not have to be separately defined.
+
+Notice that ground (node 0) always is a global node.
+
+
+
+<p align="center"><img src="../images/atecrule.gif" width="600" height="10"></p>
+
+<p><font size="2">
+The material in this website is an expanded version
+of material presented by Dr. J. Steensgaard.
+This website is  maintained by <a
+
+		href="http://www.cisl.columbia.edu/grads/tuku/">Shouri
+
+Chatterjee</a>.&nbsp; This page was last updated on
+
+02/11/2003
+
+</body>
+
+</html>
+

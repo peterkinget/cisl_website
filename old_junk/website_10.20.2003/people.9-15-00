@@ -1,0 +1,977 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="keywords" content="cisl people">
+   <meta name="description" content="cisl people">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>cisl people</title>
+<style TYPE="text/css">
+
+   <!--
+
+A { color: blue; font-family: Times New Roman, Times; ; text-decoration: none; }
+
+SMALL { font-family: Times New Roman, Times; font-size: 10pt;}
+
+p { font-family: Times New Roman, Times; ; }
+   -->
+
+  </style>
+
+<script language="JavaScript">
+
+if(document.images){
+
+but1 = new Image();
+but1.src = "images/people1.gif";
+
+but2 = new Image();
+but2.src = "images/people2.gif";
+
+but3 = new Image();
+but3.src = "images/research1.gif";
+
+but4 = new Image();
+but4.src = "images/research2.gif";
+
+but5 = new Image();
+but5.src = "images/publications1.gif";
+
+but6 = new Image();
+but6.src = "images/publications2.gif";
+
+but7 = new Image();
+but7.src = "images/courses1.gif";
+
+but8 = new Image();
+but8.src = "images/courses2.gif";
+
+but9 = new Image();
+but9.src = "images/sponsors1.gif";
+
+but10 = new Image();
+but10.src = "images/sponsors2.gif";
+
+}
+
+function peopleOn(imgName) {
+        if(document.images) {
+           document["people"].src = eval(imgName + ".src");
+                }
+}
+
+function researchOn(imgName) {
+        if(document.images) {
+           document["research"].src = eval(imgName + ".src");
+                }
+}
+
+function pubOn(imgName) {
+        if(document.images) {
+           document["publications"].src = eval(imgName + ".src");
+                }
+}
+
+function coursesOn(imgName) {
+        if(document.images) {
+           document["courses"].src = eval(imgName + ".src");
+                        }
+}
+
+function sponsorsOn(imgName) {
+        if(document.images) {
+           document["sponsors"].src = eval(imgName + ".src");
+                        }
+}
+
+
+</script>
+</head>
+
+
+<body bgcolor="#FFFFFF" >
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+<caption><!-- nav buttons --></caption>
+
+<tr>
+<td>
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+<tr>
+<td WIDTH="400"><a href="index.html" onMouseOver="window.status=''; return " true"><img SRC="images/subtitle.gif" ALT="CISL" BORDER=0 height=40 width=400></a></td>
+
+<td ALIGN=LEFT WIDTH="115">&nbsp;</td>
+
+<td WIDTH="65"><a href="index.html" onMouseOver="window.status=''; return true"><img SRC="images/subcisl.gif" NAME="cisl" ALT="cisl" BORDER=0 height=40 width=65 align=BOTTOM></a></td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td><font size=-2>&nbsp;</font></td>
+</tr>
+
+<tr>
+<td>
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+
+    <tr>
+    <td ><a HREF="people.html"^
+        onMouseOver="peopleOn('but1')" onMouseOut="peopleOn('but2')"><img
+        SRC="images/people2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="people" NAME="people" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="research.html"
+        onMouseOut="researchOn('but4')" onMouseOver="researchOn('but3')"><img
+        SRC="images/research2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="research" NAME="research" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="publications.html"
+        onMouseOut="pubOn('but6')" onMouseOver="pubOn('but5')"><img
+        SRC="images/publications2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="publications" NAME="publications" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="courses.html"
+        onMouseOut="coursesOn('but8')" onMouseOver="coursesOn('but7')">
+        <img SRC="images/courses2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="courses" NAME="courses" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="sponsors.html"
+        onMouseOut="sponsorsOn('but10')"  onMouseOver="sponsorsOn('but9')">
+        <img SRC="images/sponsors2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="sponsors" NAME="sponsors" WIDTH="110" HEIGHT="25"></a></td>
+  </tr></table> 
+</td>
+</tr>
+</table>
+
+<p><!--page content-->
+<table BORDER=0 CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="580" BGCOLOR="#FFFFFF" >
+<tr>
+<td>
+<center>[ <a href="#faculty">Faculty</a> | <a href="#research staff">Research
+Staff</a> | <a href="#graduates">Ph. D. Students </a>| <a href="#alumni">Alumni</a>
+]</center>
+</td>
+</tr>
+</table>
+
+<br>&nbsp;
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" BGCOLOR="#FFFFFF" >
+<tr>
+<td VALIGN=TOP>
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=3 WIDTH="290" BGCOLOR="#FFFFFF" >
+<tr ALIGN=CENTER>
+<td HEIGHT="11" WIDTH="25" BGCOLOR="#FFCCCC">&nbsp;</td>
+
+<td HEIGHT="11" WIDTH="240" BGCOLOR="#FF0000"><a NAME="faculty"></a>
+<center><font color="#FFFFFF"><b><p>Faculty</p></b></font></center>
+</td>
+
+<td HEIGHT="11" WIDTH="25" BGCOLOR="#FFFFFF">&nbsp;</td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td WIDTH="20"></td>
+
+<td VALIGN=TOP WIDTH="180"><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/faculty/shepard/index.html" onMouseOver="self.status='Ken Shepard'; return true">Kenneth
+Shepard</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.ee.columbia.edu/~jesper">Jesper
+Steensgaard</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="">Laszlo Toth</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.ee.columbia.edu/Peo/T/tsividis.html" onMouseOver="self.status='Yannis P. Tsividis'; return true">Yannis P. Tsividis</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.ee.columbia.edu/Peo/Z/zukowski.html" onMouseOver="self.status='Charles A. Zukowski'; return true">Charles
+A. Zukowski</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td HEIGHT="11" BGCOLOR="#FFCCCC">&nbsp;</td>
+
+<td HEIGHT="11" BGCOLOR="#FF0000"><a NAME="research staff"></a>
+<center><font color="#FFFFFF"><b><p>Research Staff</p></b></font></center>
+</td>
+
+<td HEIGHT="11" ></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td VALIGN=TOP><a href="">Atsushi Yoshizawa</a></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr BGCOLOR="#FFFFFF">
+<td HEIGHT="11" BGCOLOR="#FFCCCC">&nbsp;</td>
+
+<td HEIGHT="11" BGCOLOR="#FF0000"><a NAME="graduates"></a>
+<center><font color="#FFFFFF"><b><p>Ph. D. Students</p></b></font></center>
+</td>
+
+<td HEIGHT="11" BGCOLOR="#FFFFFF"></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/gidney/index.html" target="_top">Naeem
+Abbasi</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times">Shouri
+Chatterjee</font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times">Sumit
+Chopra</font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times">Lin
+Cong</font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/gcowan/index.html" target="_top">Glenn
+Cowan</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/ionis/index.html" target="_top">Gregory
+Ionis</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/dkim/index.html" target="_top">Dae-Jin
+Kim</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/nagi/index.html" target="_top">Nagendra
+Krishnapura</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/daisy/index.html" target="_top">Dandan
+Li</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times">Shaorui
+Li</font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/wyli/index.html" target="_top">Yee
+Li</font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times">Yushan
+Li</font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times">Mehmet
+Ozgun</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/georgep/index.html" target="_top">George
+Palaskas</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times">George
+Patounakis</font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td VALIGN=TOP><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/presi/index.html" target="_top">Sanjeev
+Ranganathan</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"><font face="Times New Roman,Times">Dipak
+Sitaram</font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td><font face="Times New Roman,Times"><a href="">Maurice
+J. Tarsia</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/shaoyi/index.html" target="_top">Shao-Yi
+Wang</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/yijt/index.html" target="_top">Jiang-tao
+Yi</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td HEIGHT="11"></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+
+<td><font face="Times New Roman,Times"><a href="http://www.cisl.columbia.edu/grads/yu/index.html" target="_top">Yu
+Zheng</a></font></td>
+
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td HEIGHT="11"></td>
+<td></td>
+</tr>
+
+<tr>
+<td bgcolor="ffcccc"><p>&nbsp;</p></td>
+<td HEIGHT="11" bgcolor="ff0000">&nbsp;</td>
+<td></td>
+</tr>
+
+</table>
+</td>
+
+<td VALIGN=TOP>
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=3 WIDTH="290" BGCOLOR="#FFFFFF" >
+<tr >
+<td HEIGHT="11" WIDTH="25" BGCOLOR="#FFFFFF">&nbsp;</td>
+<td HEIGHT="11" WIDTH="25" BGCOLOR="#FFCCCC">&nbsp;</td>
+<td HEIGHT="11" WIDTH="240" BGCOLOR="#FF0000"><a NAME="alumni"></a>
+<center><font color="#FFFFFF"><b><p>Alumni</p></b></font></center>
+</td>
+</tr>
+
+<tr>
+<td height="11" ></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Mehran Bagheri</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Mihai Banu</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Caroline Beveniste</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Steven Daubert</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Aleksander M. Dec</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>San-Chin Fang</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Venu Gopinathan</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Ruben D. Herrera</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Peicheng Ju</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>John Khoury</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Paul Landsberg</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><a href="http://www.geocities.com/yeshpa">Shanthi Y. Pavan</a></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Lih Jiuan Pu</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Srinagesh Satyanarayana</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Andrew Stevens</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Ken Suyama</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Hai Tao</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Christophe Tretz</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>David Vallancourt</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Hongmo Wang</p></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"></td>
+</tr>
+
+<tr>
+<td HEIGHT="11"></td>
+<td></td>
+<td HEIGHT="11"><p>Ilya Yusim</p></td>
+</tr>
+
+<tr>
+<td></td>
+<td HEIGHT="11"></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td bgcolor="ffcccc"><p>&nbsp;</p></td>
+<td HEIGHT="11" bgcolor="ff0000">&nbsp;</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+
+
+
+<p><!-- footer -->
+<p>
+<hr ALIGN="left" WIDTH="580">
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+<tr>
+<td ALIGN=LEFT WIDTH="180"><small>Page under construction</small></td>
+
+<td ALIGN=LEFT WIDTH="58"><img SRC="images/construction4.gif" ALT="" height=34 width=58></td>
+
+<td ALIGN=RIGHT WIDTH="342"><a href="mailto:webmaster@cisl.columbia.edu"><small>webmaster</small></a></td>
+</tr>
+</table>
+
+</body>
+</html>

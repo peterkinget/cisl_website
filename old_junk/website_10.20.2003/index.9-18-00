@@ -1,0 +1,244 @@
+<html>  
+<head>
+  <title>Columbia Integrated Systems Laboratory</title>
+
+  <meta NAME="keywords" CONTENT="cisl">
+
+  <meta NAME="description" CONTENT="cisl">
+
+  <style TYPE="text/css">
+   <!--
+A { font-family: Arial, sans-serif;font-size:12pt;font-weight: bold; text-decoration: none; }
+SMALL { font-family: Times New Roman, Times; font-size: 10pt;}
+   -->
+  </style>
+
+<script language="JavaScript">
+
+if(document.images){
+
+but1 = new Image();
+but1.src = "images/people1.gif";
+
+but2 = new Image();
+but2.src = "images/people2.gif";
+
+but3 = new Image();
+but3.src = "images/research1.gif";
+
+but4 = new Image();
+but4.src = "images/research2.gif";
+
+but5 = new Image();
+but5.src = "images/publications1.gif";
+
+but6 = new Image();
+but6.src = "images/publications2.gif";
+
+but7 = new Image();
+but7.src = "images/courses1.gif";
+
+but8 = new Image();
+but8.src = "images/courses2.gif";
+
+but9 = new Image();
+but9.src = "images/sponsors1.gif";
+
+but10 = new Image();
+but10.src = "images/sponsors2.gif";
+
+}
+
+function peopleOn(imgName) {
+        if(document.images) {
+           document["people"].src = eval(imgName + ".src");
+                }
+}
+
+function researchOn(imgName) {
+        if(document.images) {
+           document["research"].src = eval(imgName + ".src"); 
+                }
+}
+
+function pubOn(imgName) {
+        if(document.images) {
+           document["publications"].src = eval(imgName + ".src");
+                }
+}
+
+function coursesOn(imgName) {
+        if(document.images) {
+           document["courses"].src = eval(imgName + ".src");
+                        }
+}
+
+function sponsorsOn(imgName) {
+        if(document.images) {
+           document["sponsors"].src = eval(imgName + ".src");
+                        }
+}
+
+
+</script>
+</head>
+
+
+<body bgcolor="#ffffff" link="#3366ff" vlink="#3366ff">
+
+<table WIDTH="580" BORDER="0" CELLSPACING="0" CELLPADDING="0" >
+  <tr><td>
+    <table WIDTH="580" BORDER="0" CELLSPACING="0" CELLPADDING="0" >
+    <td ALIGN="left" width="340"><img SRC="images/title9.gif" WIDTH="340" HEIGHT="95"
+        BORDER="0" ALT="CISL"></td>
+    <td ALIGN=" " width="240"><img SRC="images/cisl24.jpg" WIDTH="240" HEIGHT="95"
+        BORDER="0" ALT="CISL"></td>
+    </table> </td>
+  </tr>
+  <tr><td><font size=1>&nbsp;</td></tr>
+
+<!-- nav buttons -->
+
+  <tr><td>
+   <table WIDTH="580" BORDER="0" CELLSPACING="0" CELLPADDING="0" >
+    <tr>
+    <td ><a HREF="people.html"
+        onMouseOver="peopleOn('but1')" onMouseOut="peopleOn('but2')"><img
+        SRC="images/people2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="people" NAME="people" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="research.html"
+        onMouseOut="researchOn('but4')" onMouseOver="researchOn('but3')"><img
+        SRC="images/research2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="research" NAME="research" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="publications.html"
+        onMouseOut="pubOn('but6')" onMouseOver="pubOn('but5')"><img
+        SRC="images/publications2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="publications" NAME="publications" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="courses.html"
+        onMouseOut="coursesOn('but8')" onMouseOver="coursesOn('but7')">
+        <img SRC="images/courses2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="courses" NAME="courses" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="sponsors.html"
+        onMouseOut="sponsorsOn('but10')"  onMouseOver="sponsorsOn('but9')">
+        <img SRC="images/sponsors2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="sponsors" NAME="sponsors" WIDTH="110" HEIGHT="25"></a></td>
+  </tr></table> </td>
+</tr>
+</table> 
+
+<!--page content-->
+
+<p><table BORDER="0" CELLPADDING="10" CELLSPACING="0" WIDTH="580">
+
+<!--sidebar-->
+  <tr> 
+    <td VALIGN="TOP" BGCOLOR="#FFCCCC">
+
+      <table BORDER="0" WIDTH="150" CELLPADDING="0" CELLSPACING="0">
+        <tr><td><b STYLE="font-family:Times New Roman, Times;font-size:12pt;colors:#000000"><small>CISL News</small></b><br>
+          <small>September 18, 2000</small><br>
+	  <br></td></tr>
+
+        <tr><td><small>
+          <b>Happenings</b>
+             </small><br> 
+	     <small> Congratulations to <br>Dandan Li and <br>
+         Nagendra Krishnapura <br>on successful thesis <br>defenses.
+ </small><br><br> 
+	     <small> CISL welcomes <a HREF="people.html">new</a><br>members.
+ </small><br> 
+          <br></td></tr>
+      
+        <tr><td><a style="font-size:12pt;font-family:Times New Roman;"
+             HREF="conferences.html"><small>Conferences</small></a><br></td></tr>
+        <tr><td><small>Links to upcoming <br>conferences.</small>
+        </small><br><br></td></tr>
+
+       <tr><td><!-- Search Google -->
+       <FORM method=GET action="http://www.google.com/search">
+       <TABLE bgcolor="#ffcccc" cellpadding="0" cellspacing="0">
+       <tr><td align="left"><a href="http://www.google.com">
+       <IMG SRC="images/google.gif" border="0" ALT="Google" align=""></a>
+       </td></tr><tr><td align="center">
+       <INPUT TYPE=text name=q size=12 maxlength=255 value="">
+       </td></tr></TABLE>
+       </FORM>
+       <!-- Search Google -->
+       </td></tr>
+
+      </table>
+    </td>
+
+<!-- end sidebar -->
+<!-- links menu -->
+
+    <td VALIGN="TOP" width="420">
+      <table BORDER="0" CELLSPACING="0" CELLPADDING="6" WIDTH="410">
+        <tr>
+          <td ALIGN="RIGHT" VALIGN="TOP" width="138"><b><a
+ HREF="aboutcisl.html">About CISL</a></b></td> 
+          <td VALIGN="TOP" rowspan="6" width="260"><img src="images/school2.jpg" align="top" border="0" width="260" height="234"> </td></tr>
+
+        <tr>
+          <td ALIGN="RIGHT" VALIGN="TOP" width="138"><b><a
+ HREF="research.html">Research</a></b></td></tr>
+ 
+        <tr>
+          <td ALIGN="RIGHT" VALIGN="TOP" width="138"><b>
+           <a HREF="resources.html">Resources</a></b></td></tr> 
+
+        <tr>
+          <td ALIGN="RIGHT" VALIGN="TOP" width="138"><b><a
+ HREF="admissions.html">Admissions</a></b></td></tr>
+
+        <tr>
+           <td ALIGN="RIGHT" VALIGN="TOP" width="138"><b><a
+ HREF="sponsors.html">Sponsors</a></b></td></tr> 
+
+       <tr>
+       <td ALIGN="RIGHT" VALIGN="TOP" width="138"><b><a
+ HREF="seminars.html">Seminars</a></b></td></tr> 
+
+    </table>
+
+<hr ALIGN="center" WIDTH="340">
+
+    <table BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="410">
+      <tr>
+        <td ALIGN="right" VALIGN="TOP" width="132"><small>Walk
+ Address</small></td> 
+        <td width="12">&nbsp;</td>
+        <td align="left" VALIGN="TOP" width="266"><small>422 Schapiro
+ CEPSR</small></td></tr>
+       <tr>
+          <td ALIGN="RIGHT" VALIGN="TOP" width="132"><small>Mail Address</small></td>
+       <td width="12">&nbsp;</td>
+        <td VALIGN="TOP" width="266"><a href="http://www.ee.columbia.edu"><small>Department of Electrical Engineering</small></a><small><br> 500 W. 120th Street<br>New York, NY 10027</small></td></tr>
+
+       <tr>
+          <td ALIGN="RIGHT" width="132"><p>&nbsp;</p></td>
+       <td width="12">&nbsp;</td>
+        <td VALIGN="TOP" width="266"></td></tr>
+
+       <tr>
+          <td ALIGN="RIGHT" width="132"><a href="http://www.cisl.columbia.edu/internal-docs/"><small>CISL Internal</small></a></td>
+       <td width="12">&nbsp;</td>
+        <td width="266"><small>Authentication required</small></td></tr>
+
+     </table>
+</td>
+  </tr>
+</table>
+
+<!-- footer -->
+
+<p><hr ALIGN="left" WIDTH="580">
+<table WIDTH="580" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+  <tr>
+    <td align="center"><small>Copyright &copy; 2000 The Trustees of </small><a href="http://www.columbia.edu"><small>Columbia University</small></a><small> in the City of New York</small></td>
+</tr>
+</table></p>
+
+</body>
+</html>
+

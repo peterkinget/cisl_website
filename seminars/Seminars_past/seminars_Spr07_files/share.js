@@ -1,0 +1,158 @@
+var imagebase = "";
+var linkbase = "";
+
+var bannerfilename = "images/CISL_white.gif";
+var bannerwidth = 408;
+var bannerheight = 127;
+var bannerlink = "index.html";
+var banneralt = "Columbia Integrated System Lab";
+
+// var bannerfilename = "images/banner/CISL_white_408_127.gif";
+// var bannerfilename = "images/banner/CISL_white.gif";
+// var bannerfilename = "images/peoplephoto/kinget.gif";
+// var bannerwidth = 484*.75
+// var bannerwidth = 363
+// var bannerheight = 150*.75
+// var bannerheight = 112
+
+/* define the number of the links in menu */
+var button_num = 7;
+
+var menulinkbase = "";
+
+var linkedURL = new Array;
+var linkName = new Array;
+
+linkName[0] = "Home";
+linkName[1] = "People";
+linkName[2] = "Research";
+linkName[3] = "Publications";
+linkName[4] = "Seminars";
+linkName[5] = "Courses";
+linkName[6] = "Sponsors";
+
+linkedURL[0] = menulinkbase + "index.html";
+linkedURL[1] = menulinkbase + "people.html";
+linkedURL[2] = menulinkbase + "research.html";
+linkedURL[3] = menulinkbase + "publications.html";
+linkedURL[4] = menulinkbase + "seminars/seminars.html";
+linkedURL[5] = menulinkbase + "courses.html";
+linkedURL[6] = menulinkbase + "sponsors.html";
+
+var border_width = 10;
+var border_color = "blue";
+var bg_color = "white";
+
+// var total_width = button_width * button_num;
+// var middle_width = total_width - 2 * border_width;
+
+var total_width = 700;
+
+function writehead(selected)
+{
+  document.writeln("<center><table bgcolor=\"white\" width=\"" + total_width + "\">");
+  document.writeln("<tr><td align=\"center\">");
+//  document.writeln("<a href=\"" + bannerlink + "\">");
+//  document.write("<img src=\"" + bannerfilename + "\" border=\"0\" alt=\"Columbia Integrated Systems Lab\"");
+//  document.writeln("width=\""+bannerwidth+"\" height=\"" + bannerheight + "\"></a>");
+//  document.writeln("<img src=\"images/button/publications1.gif\" alt=\"Columbia Integrated Systems Lab\">");
+  writebanner();
+  document.writeln("</td></tr>");
+  document.writeln("<tr><td>");
+  writemenu(selected);
+  document.writeln("</td></tr>");
+  document.writeln("<tr><td>");
+  writetablehead();
+}
+
+function writefoot()
+{
+  writetablefoot();
+ document.write("</td></tr></table></center>");
+}
+
+function writebanner()
+{
+
+ document.write("<center><a href=\"" + linkbase + bannerlink + "\">");
+ document.write("<img src=\"" + imagebase + bannerfilename + "\"");
+ document.write(" border=\"0\" width =\"" + bannerwidth + "\" height=\"" + bannerheight + "\"");
+ document.write(" alt=\"" + banneralt + "\">");
+ document.write(" </a></center>\n");
+}
+
+function writetablehead()
+{
+
+  document.write("<center><table width=\"" + total_width + "\"\n");
+  document.write(" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">\n");
+
+  document.write(" <tr>\n<td>\n");
+
+}
+
+function writetablefoot()
+{
+  document.write(" </td>\n");
+  document.write(" </tr>\n");
+  document.write("</table></center>");
+  writecopyright();
+}
+
+function writecopyright()
+{
+  document.write("<p><hr align=center width=580>\n");
+  document.write("<center><table WIDTH=580 BORDER=0 CELLSPACING=0 CELLPADDING=0>\n");
+  document.write(" <tr> <td align=center><font size=\"-1\">Copyright
+&copy; 2006 The \n");
+  document.write("Trustees of ");
+  document.write(" Columbia University\n");
+  document.write(" in the City of New York</font></td> </tr> </table></center></p>\n");
+}
+
+function writecell(width_para, height_para)
+{
+  document.write("  <td width=\"" + width_para + "\"");
+  if (height_para != 0)
+   {
+     document.write(" height=\"" + border_width + "\"");
+   }
+  document.write(" bgcolor=\"" + border_color + "\">\n");
+  document.write(" <font size=\"1\">\n<p>&nbsp;</p></font></td>\n");
+}
+
+
+function writemenu(selected)
+{
+
+ var i;
+
+ document.write("<center> | ");
+
+ for (i=0;i<button_num;i++)
+  {
+    writeonelink(i,selected);
+  }
+
+ document.write("</center>");
+}
+
+function writeonelink(i,selected) 
+{
+    document.write("<a href=\""+linkedURL[i]+"\">"+linkName[i]+"</a> | ");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

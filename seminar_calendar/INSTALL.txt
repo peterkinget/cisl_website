@@ -1,0 +1,23 @@
+-- INSTALL notes for awkiawki
+
+0.) install HTTP-Server with CGI support (e.g. apache, thttpd)
+
+1.) copy awki.cgi and parse.awk to your cgi-bin/
+    make sure both are executable for your Webserver (chmod ugo+x)
+
+2.) check the shebang in the fist line of both scripts (#!/usr/bin/awk)
+    and change to you local settings 
+	(HINT: use mawk if available, it is faster)
+	
+3.) create ./data/ directory in your cgi-bin/
+    make sure it is read- and writeable for awki.cgi
+	
+4.) copy awki.png to the root directory of your Webserver
+
+5.) call http://localhost/cgi-bin/awki.cgi and edit your fist page to
+    see if setup was successful
+
+6.) have fun with awkiawki :)
+
+For customization you can change the localconf variables in awki.cgi.
+If you do so, pay attention to point 3 and 4.

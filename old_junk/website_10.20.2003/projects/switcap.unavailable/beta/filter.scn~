@@ -1,0 +1,140 @@
+Title: Nagi's filter;
+
+GLOBAL; 
+	R; sx; sxt; al; g;
+END;
+
+Timing;
+
+  Period 5u;
+
+  Clock phi1 1 (0 1/2);
+  Clock phi2 1 (1/2 1);
+end;
+
+Parameters;
+  sx =1.656e-20;
+  sxt=3.44448e-20;  
+* noise factor = 2.08 
+
+  G=1.0;
+  R=1.0;
+  al = 0.0;
+end;
+
+*----------------------------------------------------------------------
+* Balanced opamp subcircuit
+* cm -  common mode
+* op -  positive output
+* on -  negative output
+* ip -  positive input
+* in -- negative input
+
+SUBCKT (cm op on ip in) balanced_amp ();
+
+* Method 1: using VCVS with finite gain
+*  e1p (op cm ip in) 1000;
+*  em1 (on cm op cm) -1;
+
+* Method 2: Using ideal op-amp
+  am1 (op cm ip in) g=G s=sxt alpha=al; 
+  em1 (on cm op cm) -1;
+
+END;
+*----------------------------------------------------------------------
+
+*----------------------------------------------------------------------
+* biquad subcircuit
+* cm -  common mode
+* ip -  positive input
+* in -- negative input
+* op -  positive output
+* on -  negative output
+*
+* clk1 - clock1
+* clk2 - clock2
+
+SUBCKT (cm ip in op on) biquad (clk1 clk2 A B C D F H);
+  s1 (ip n1) clk1 r=R s=sx;
+  s2 (cm n1) clk2 r=R s=sx;
+  s3 (n2 n3) clk2 r=R s=sx;
+  s4 (n2 cm) clk1 r=R s=sx;
+  s5 (n4 n5) clk1 r=R s=sx;
+  s6 (n5 cm) clk2 r=R s=sx;
+  s7 (n6 n7) clk1 r=R s=sx;
+  s8 (n6 cm) clk2 r=R s=sx;
+  s9 (op n9) clk1 r=R s=sx;
+ s10 (n9 cm) clk2 r=R s=sx;
+
+  s1b (in n1b) clk1 r=R s=sx;
+  s2b (cm n1b) clk2 r=R s=sx;
+  s3b (n2b n3b) clk2 r=R s=sx;
+  s4b (n2b cm) clk1 r=R s=sx;
+  s5b (n4b n5b) clk1 r=R s=sx;
+  s6b (n5b cm) clk2 r=R s=sx;
+  s7b (n6b n7b) clk1 r=R s=sx;
+  s8b (n6b cm) clk2 r=R s=sx;
+  s9b (on n9b) clk1 r=R s=sx;
+ s10b (n9b cm) clk2 r=R s=sx;
+
+  cH (n1 n2) H ;
+  cD (n3 n4) D ;
+  cA (n5 n6) A ; 
+  cB (n7 op) B ;
+  cF (n6 n9) F ;
+  cC (n2 n9) C ;
+
+  cHb (n1b n2b) H ;
+  cDb (n3b n4b) D ;
+  cAb (n5b n6b) A ; 
+  cBb (n7b on)  B ;
+  cFb (n6b n9b) F ;
+  cCb (n2b n9b) C ;
+
+
+xa1 ( cm n4 n4b n3b n3 ) balanced_amp () ;
+xa2 ( cm op on  n7b n7 ) balanced_amp () ;
+
+END;
+*----------------------------------------------------------------------
+
+
+
+*----------------------------------------------------------------------
+* filter circuit
+* vp - positive input source
+* vn - negative input source
+* vcm - common mode voltage source
+* nout - single-ended output
+
+CIRCUIT;
+
+vcm (cm gnd);
+vp (in_p cm);
+vn (in_n cm);
+
+xb1 (cm in_p in_n op1   on1  ) biquad (phi1 phi2 3.59p 7.736p
+						 3.831p 24.092p 3.59p 30.64p);
+
+xb2 (cm op1  on1  op2   on2  ) biquad (phi2 phi1 3.376p 9.536p 7.012p 9.505p
+						 3.057p 7.012p );
+
+xb3 (cm op2  on2  out_p out_n) biquad (phi1 phi2 4.975p 7.492p 6.63p 10.693p
+						 0.794p 6.63p );
+
+* output subtraction 
+esub ( nout gnd out_p out_n) 1;
+
+END;
+
+
+ANALYZE NOISE;
+
+  outfreq 0.01  40k lin 200;
+  set vcm DC 0;
+  set vp DC 1;
+  set vn DC 0;
+
+  print v(nout);
+
+END;

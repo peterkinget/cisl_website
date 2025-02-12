@@ -1,0 +1,11 @@
+SCRIPT = /ufs2/m/moon/ece323
+
+bjtamp.lis:	bjtamp.sp 
+	hspice bjtamp.sp > bjtamp.lis
+	${SCRIPT}/GetAc bjtamp.lis > bjtamp.ac
+	${SCRIPT}/GetTran bjtamp.lis > bjtamp.tran
+	rm bjtamp.st0
+
+smallsig.lis:	smallsig.sp 
+	hspice smallsig.sp > smallsig.lis
+	rm smallsig.st0

@@ -1,0 +1,207 @@
+<html>
+
+
+
+<head>
+
+<title>Notes</title>
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+<h2 align="center"><center><a name="hint">HSPICE Hints</a></center></h2>
+
+<p align="center">
+
+<nobr>[&nbsp;<a href="Introduction.htm">Introduction</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="Files/files.htm">Files</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="SourceFile.htm">Source&nbsp;File</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="Devices/Devices.htm">Devices</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="Commands.htm">Commands</a>&nbsp;]</nobr> <nobr>[&nbsp;Notes&nbsp;]</nobr>
+
+
+
+<p>
+
+There are two main hints to keep in mind when using HSPICE, they are:
+
+<ol>
+
+  <li>Know what to expect from the simulation BEFORE running it!!!
+
+  <li>Simulation is NO substitute for <b>THINKING</b>.</li>
+
+</ol>
+
+Even though these hints are not always followed, they are good guidlines to use.
+
+For instance, if you run a simulation on a circuit that you know has a gain of
+
+around 100db and get 1db, it is easily to assume that an error exists in the
+
+netlist of the circuit. On the other hand, if a result of 1db is returned and
+
+the actual is not known, it can easily be assumed to be correct when an error
+
+actually exits in the netlist!!
+
+<p>
+
+<h3>Basic Strategy:</h3>
+
+
+
+<p>
+
+Even if you don't go through the entire help website, make sure you get
+
+an understanding of how to write basic netlists. Here is a guideline
+
+that you could follow:
+
+<ul>
+
+	<li>
+
+	First line has to be the title.
+
+	<li>
+
+	The second line could be:<br>
+
+	.OPTIONS post<br>
+
+	This will make sure that you get the plots in awaves.
+
+	<li>
+
+	Draw the circuit on a piece of paper. Name the nodes. The ground
+
+	terminal has to be named "0". Write down
+
+	the netlist in any order in the following manner:<br>
+
+	<ul>
+
+		<li>
+
+		For resistors:<br>
+
+		Rname terminal1 terminal2 Rvalue
+
+		<li>
+
+		For capacitors:<br>
+
+		Cname terminal1 terminal2 Cvalue
+
+		<li>
+
+		For inductors:<br>
+
+		Lname terminal1 terminal2 Lvalue
+
+		<li>
+
+		For MOSFETS:<br>
+
+		Mname drain gate source body Modelname L=length W=width
+
+		<li>
+
+		For voltage/current sources:<br>
+
+		Study the section on 
+
+		<a href="Devices/Devices.htm#sou">voltage and current
+
+			sources</a>. 
+
+	</ul>
+
+	<li>
+
+	Typically you will be doing DC or transient or AC simulations.
+
+	Study the <a href="Commands.htm#DC Statement">.DC</a>,
+
+	<a href="Commands.htm#Transient">.TRAN</a> and 
+
+	<a href="Commands.htm#AC Statement">.AC</a> statements.
+
+	<li>
+
+	If you had a MOSFET, put the model statement. PMOS and NMOS
+
+	transistors have separate models. The course TA will provide you
+
+	with the model, if you should require one.
+
+	<li>
+
+	Write <a href="Commands#Output">.PLOT and/or .PRINT</a> statements here.
+
+	<li>
+
+	The last line should be .END. Add a linefeed (enter) after that.
+
+</ul>
+
+	
+
+
+
+<p>
+
+<h3>Other helpful hints:</h3>
+
+<ol>
+
+  <li>
+
+  You can measure the voltage at any node, or the voltage between any
+
+  two nodes. However, you can only measure the current passing through a
+
+  voltage source. To measure a current through a branch, insert a dummy
+
+  voltage source of value 0 in that branch (like an ammeter) and measure the current
+
+  through this dummy voltage source.
+
+  <li>It is not required to use one of HSPICE's graphing programs. One of the
+
+    most common ways is to extract the graphing data from the <i>.lis</i> file
+
+    using scripts and then use <b>Matlab</b> to graph the data. To
+
+    extract the data from the <i>.lis</i> file, have .PRINT statements.
+
+    Use ".OPTIONS ingold" so that the data is in the exponent notation.
+
+    Just edit the <i>.lis</i> file that you get to have the data
+
+    suitable for <b>Matlab</b>.</li>
+
+  <li>
+
+</ol>
+
+
+
+<p align="center"><img src="../images/atecrule.gif" width="600" height="10"></p>
+
+<p><font size="2">
+The material in this website is an expanded version
+of material presented by Dr. J. Steensgaard.
+This website is  maintained by <a
+
+		href="http://www.cisl.columbia.edu/grads/tuku/">Shouri
+
+Chatterjee</a>.&nbsp; This page was last updated on
+
+02/11/2003
+
+</body>
+
+</html>
+

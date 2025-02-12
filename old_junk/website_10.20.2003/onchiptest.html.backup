@@ -1,0 +1,48 @@
+<HTML>
+<HEAD><TITLE>References for On-Chip Measurement Circuits SRC Proposal</TITLE></HEAD>
+<body>
+<h1>References for On-Chip Measurement Circuits SRC Proposal </h1>
+<hr>
+
+<ol>
+<li><p> K. L. Shepard, S. Carey, E. Cho, B. Curran, R. Hatch, D. Hoffman, S. McCabe,
+G. Northroop, and R. Seigler, "Design Methodology for the G4 S/390 Microprocessors,"
+IBM Journal of Research and Development, Volume 21, pages 515-548, 1997.
+</p>
+<li><p> K. L. Shepard, V. Narayanan, P. C. Elmendorf, and G. Zheng,
+``Global Harmony:  Coupled noise analysis for full-chip RC interconnect networks,"
+Proceedings of the Internation Conference on Computer-Aided Design, 1997.
+</p>
+<li><p>  A. Deutsch, G. V. Kopcsay, C. W. Surovic, B. J. Rubin, L. M. Terman, Jr., R. P. Dunne,
+T. A. Gallo, and R. H. Dennard, "Modelling and characterization of long on-chip interconnections
+for high-performance microprocessors," IBM Journal of Research and Development, Volume 39,
+pages 547-567, 1995.
+</p>
+<li><p>  H. H. Chen, ``Minimizing chip-level simultaneous switching noise for high-performance 
+microprocessor design," Proceedings of the IEEE International Symposium on Circuits and Systems,
+Volume 4, pages 544-547. 
+</p>
+<li><p> K. Shepard and V. Narayanan, "Noise in deep submicron digital design," Proceedings of 
+the International Conference on Computer-Aided Design, 1996, pages 524-531
+</p>
+<li><p> K. Shepard, V. Narayanan, and R. Rose, "Harmony: Static Noise Analysis for Deep Submicron
+Digital Integrated Circuits," IEEE Transaction on Computer-Aided Design, August, 1999, pages 1132-1150.
+</p>
+<li><p> J. C. Chen, B. McGaughy, D. Sylvester, and C. Hu, ``An on-chip AttoFarad interconnect 
+charge-based capacitance measurement technique," Proceedings of the IEDM, 1996, pages 69-72.
+</p>
+<li><p> J. G. Maneatis and M. A. Horowitz, ``Precise delay generation using coupled oscillators,"
+IEEE Journal of Solid-State Circuits, December, 1993, pages 1273-1282.
+</p>
+<li><p> C.-K. K. Yang and M. A. Horowitz, ``A 0.8-um CMOS 2.5 Gb/s oversampling receiving and 
+transmitter for serial links," December, 1996, pages 2015-2023.
+</p>
+<li><p> A. Yukawa, ``A CMOS 8-bit high-speed A/D converter IC," IEEE Journal of Solid-State Circuits,
+June, 1985, pages 775 - 779.
+</p>
+<li><p> K. Shepard and Zhong Tian, "Return-Limited Inductances:  A Practical Approach to On-Chip
+Inductance Extraction," Proceedings of the Custom Integrated Circuits Conference, 1999.
+</p>
+</ol>
+</body>
+</html>

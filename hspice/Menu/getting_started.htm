@@ -1,0 +1,369 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Getting Started</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="Microsoft Theme" content="e3301b 011, default">
+<meta name="Microsoft Border" content="none, default">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#800000" vlink="#800000" alink="#CCCC99"><!--mstheme--><font face="Arial, Arial, Helvetica">
+<p>This page provides a small tutorial/overview of how to use HSPICE</p>
+<p>(This page is an edited version of <a href="http://www.ece.orst.edu/comp/doc/tools/avanti/hspice_help/gstart.html">material
+published</a> by the ECE department at Oregon State University)</p>
+<h3><!--mstheme--><font color="#003333"><a name="index">Index:</a><!--mstheme--></font></h3>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#geninfo">General Info</a>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#files">Files</a>
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#suf">Suffixes</a>
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#des">Descriptions</a>
+        <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#net">input netlist</a>
+          <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#con">design configuration</a>
+          <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#ini">initialization</a>
+          <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#run">run status</a>
+          <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#out">output listing</a>
+          <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#ana">graph data</a>
+          <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#mea">measure output</a><!--mstheme--></font><!--msthemelist--></td></tr>
+        <!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+      <!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#not">Netlist Notation</a>
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#name">Naming conventions</a>
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#units">Units</a>
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#glob">Global variables</a>
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#sin">Misc. syntax</a>
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#alg">Algebraic syntax</a>
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#top">Topology Rules</a><!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#hint">HSPICE Hints</a>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#hrun">Running HSPICE</a>
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#text">Text interface</a>
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="#graph">Graphical interface</a><!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h2><!--mstheme--><font color="#003333"><center><a name="geninfo">General Info</a><!--mstheme--></font></h2>
+</center>SPICE was orginally christened CANCER and was developed by Larry Nagel
+in the late 1960's. The program was able to simulate only resistors, capacitors,
+inductors, diodes, and transistors. Since then, SPICE has been expanded to
+handle MOS, JFET's, transmission lines subcircuits and still other devices.
+<p>The history of HSPICE includes:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">1981 - HSPICE introduced
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">1984 - HSPICE capable of 50,000 node analysis
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">1985 - Meta-Labs established
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">1987 - Optimization added to HSPICE
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">1988 - Speed of HSPICE increased by 10-100X; 100,000 transistors
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">1989 - Mixed signal analysis integrated into HSPICE; P.C. version marketed
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">1990 - Lossy transmission line analysis incorporated into HSPICE
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">1991 - GSI added for x-windows
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">1992 - Major improvements in speed, accuracy, and convergence
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">1993 - Automatice memory allocation added
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">1995 - Improvements in speed and versatilty<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h2><!--mstheme--><font color="#003333"><center><a name="files">HSPICE Files</a><!--mstheme--></font></h2>
+</center>
+<h3><!--mstheme--><font color="#003333"><a name="suf">Suffixes:</a><!--mstheme--></font></h3>
+HSPICE can input and produce many files. These files must contain these
+suffixes:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><b>HSPICE Input</b>
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><i>input netlist: .sp</i>
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">design configuration: .cfg
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">initialization: hspice.ini<!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+    Note: The italicized files are those you must have.
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><b>HSPICE Output</b>
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><i>run status: .st0</i>
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><i>output listing: .lis</i>
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">graph data, transient: .tr# (e.g. .tr0)
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">graph data, dc: .sw# (e.g. .sw2)
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">graph data, ac: .ac# (e.g. .ac1)
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">measure output: .m*# (e.g. .mt0)<!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+    Note: The italicized files are those that you will always have.<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<p>&nbsp;
+<h3><!--mstheme--><font color="#003333"><a name="des">File Descriptions:</a><!--mstheme--></font></h3>
+<dl>
+  <dt><a name="net"><b>Netlist file (.sp)</b></a>
+  <dd>The netlist file is your input file. This file contains your circuit
+    description and all options and analysis you wish HSPICE deal with. The
+    structure of the file looks like this:
+    <p>&nbsp;<!--mstheme--></font><pre>	title			-Implicit first line; becomes netlist file title
+	.options		-set conditions for simulation
+	ANALYSIS and TEMP	-statements to sweep vaiables
+	.print/.plot/Analysis	-set print, plot, and analysis variables
+	.initial conditions	-input state of system
+	sources			-stimulus
+	netlist			-circuit descriptions
+	.model libraries	-.lib and .inc
+	.end			-terminates the simutlation
+</pre><!--mstheme--><font face="Arial, Arial, Helvetica">
+    Note: This is just a suggested structure. Though the title always comes
+    first and .end always comes last, the rest can come in any order in between.
+    Another popular structure that is more implicit is to put the analysis
+    statements after the circuit descriptions.
+    <p><b>An example Netlist structure:</b>
+    <!--mstheme--></font><pre>This is a netlist		$must have a title line
+.options post acct opts node	$HPSICE options
+
+l6	6	16	.05	$indcutor 
+c6	16	0	.05	$capacitor
+r16	16	0	40	$resistor
+c4	4	14	.1	$another capacitor
+l5	data	15	1	$another inductor
+c5	15	0	.2	$another capacitor
+
+v4	4	0	dc 0 ac 0 0 pulse 0 1 0 .15 .15 .4 2	$voltage source
+vdata	data	0	sin(1.0 1.0 1.0 0.0 1.0)		$voltage source
+v6	6	0	exp(1 0.1 .02 .6 .2)			$voltage source
+
+.model ...			$models and subckts
+
+.tran	.1 5			$transient analysis
+.print	v(6) i(r16)		$print statement
+.plot	v(4) v(14) v(data)	$plot statement
+
+.end				$Must have an end
+
+</pre><!--mstheme--><font face="Arial, Arial, Helvetica">
+    Another example of a bjt amplifier bias by a voltage divider is given in <a href="../ExampleFiles/bjtamp.sp"><i>bjtamp.sp</i></a>.
+    <p>&nbsp;</p>
+  <dt><a name="con"><b>Design configuration (.cfg)</b></a>
+  <dd>Configuration files are used by HSPICE, AWAVES and HSPLOT to describe the
+    available terminals and hardcopy devices. There is already a default .cfg
+    file (meta.cfg) that already has all the printer and terminal types used at
+    the ECE labs so it is unlikely that this file will need to be created.
+    <p>&nbsp;</p>
+  <dt><a name="ini"><b>Initialization (hspice.ini)</b></a>
+  <dd>The initialization file deals primarily with setting up HSPICE itself and
+    has no need to be modified by users.
+    <p>&nbsp;</p>
+  <dt><a name="run"><b>Run status (.st0)</b></a>
+  <dd>The run statuts file is a transcript of what operations HSPICE preforms on
+    a netlist file. The file sometimes offers help when debugging as shows steps
+    not preformed by HSPICE.
+    <p>A run status file from the bjt example is listed in <a href="../ExampleFiles/bjtamp.st0"><i>bjtamp.st0</i></a>.
+    <p>&nbsp;</p>
+  <dt><a name="out"><b>Output listing (.lis)</b></a>
+  <dd>This is one of the most important files in HSPICE as this file lists all
+    results obtained from the simulation. This file contains (in order of
+    listing in the file):
+    <ol>
+      <li>HSPICE licensing information
+      <li>Listing of the circuit
+      <li>Results form the analysis of the circuit (.op, .print, .plot,
+        .measure, .ac, and .tran in order of their appearance in the netlist
+        file)</li>
+    </ol>
+    <p>The .lis file for the bjt ampliphier netlist above is shown in <a href="../ExampleFiles/bjtamp.lis"><i>bjtamp.lis</i></a>.
+    <p>&nbsp;</p>
+  <dt><a name="ana"><b>Graph data files (.tr#, .sw#, .ac#)</b></a>
+  <dd>Graph data files are created by .OPTION POST command and contain the data
+    to graphed by HSPLOT, AWAVES, or HSPICE. Basically these files retain the
+    data to be graphed from the .lis file in a different graphing format.
+    <p>&nbsp;</p>
+  <dt><a name="mea"><b>Measure output (.m*#)</b></a>
+  <dd>The measure output file hold the result from .MEASURE commands. These
+    files arn't very useful either as the data is hard to read and already exits
+    in a nicely formated way in the .lis file.
+    <p>An example .m*# file from the bjt ampliphier example of above is
+    displayed in <a href="../ExampleFiles/bjtamp.ma0"><i>bjtamp.ma0</i></a>.
+    <p>&nbsp;</p>
+  </dd>
+</dl>
+<h2><!--mstheme--><font color="#003333"><center><a name="not">Netlist Notation:</a></center><!--mstheme--></font></h2>
+<h3><!--mstheme--><font color="#003333"><a name="name">Naming conventions:</a><!--mstheme--></font></h3>
+Every node and element within the HSPICE netlist must have its own unique name.
+These names can exist of the following:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Node and Element Identification
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Either Names or Numbers (e.g. n1,33,in1,100)
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Numbers: 1 to 99999999 (99 million)
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Nodes with number followed by letter are all the same (e.g. 1a=1b)
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">0 is <b><i>ALWAYS</i></b> ground
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Capitals do not matter (e.g. node1=NODE1=Node1=nOdE1)<!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Allowable Characters and Conventions (if nodes have names and not just
+    numbers)
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Begin with letter or /
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Max of 16 characters (after 16 ignored)
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">May <i>contain</i>: +-*/:;$#.[]!&lt;&gt;_%
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">May <i>not contain</i>: (),=&lt;space&gt;
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Ground may be either 0, gnd, or !gnd<!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Every node must have at least 2 connections.<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<p>&nbsp;
+<h3><!--mstheme--><font color="#003333"><a name="units">HSPICE units:</a><!--mstheme--></font></h3>
+HSPICE is a smart program and will automatically assign ohms to resistors,
+Farads to capacitors, and Henries to inductors. However, it is not written that
+you must trust HSPICE and so the units can be manually assigned by:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">R - ohm
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">C - Farad
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">L - Henry<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+The scaling for the all units in HSPICE is done by:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">F=1e-15
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">P=1e-12
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">N=1e-9
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">U=1e-6
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">M=1e-3 ***************
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">K=1e3
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">MEG=X=1e6 **************
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">G=1e9
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">T=1e12<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+Note: Capitals do not matter (e.g. F=f and M=m), therefore many people have
+problems with M and MEG. Please be careful with these two units!
+<p>&nbsp;
+<h3><!--mstheme--><font color="#003333"><a name="glob">Global Variables:</a><!--mstheme--></font></h3>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Syntax
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">.GLOBAL node1 node2 node3 .........Globally defined nodes
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">.GLOBAL VBIAS VCC .................Globally defined sources<!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Usage
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">When subcircuits are included in the data file.
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Assigns common node name to subcircuit nodes
+      <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul2.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Power supply connection of all subcirsuits often done this way
+        <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">.GLOBAL VCC
+          <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Connects all nodes named VCC (all circuits have a common node)<!--mstheme--></font><!--msthemelist--></td></tr>
+        <!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+      <!--mstheme--></font><!--msthemelist--></td></tr>
+    <!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+Essentially globals are used most often for subcircuits, though they are great
+for sources. This way all power sources do not have to be separately defined.
+<p>&nbsp;
+<h3><!--mstheme--><font color="#003333"><a name="sin">Misc. Syntax:</a><!--mstheme--></font></h3>
+In general , HSPICE notation is very simple. All statements beginning with a
+&lt;.&gt; are commands (e.g. .OPTION, .PRINT, .AC, etc.) while those that don't
+are treated as elements (e.g. r51, cc, lload, etc). There are, however, a few
+special commands:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">&lt;*&gt; - indicates a full line comment
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">&lt;$&gt; - indicates a end of line comment
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">&lt;+&gt; - indicates a coninuation of the previous line<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+Examples of these can be found in the BJT ampliphier example <a href="../ExampleFiles/bjtamp.sp"><i>bjtamp.sp</i></a>.
+Here the .OPTION command is extended for four lines and the end of line comment
+is used after the .MEASURE commands. Notice too that by using tabs for the
+elements and their nodes, it makes the netlist much easier to read. It is not
+required that tabs be used, but it is very helpful.
+<p>&nbsp;
+<h3><!--mstheme--><font color="#003333"><a name="alg">Algebraic Syntax:</a><!--mstheme--></font></h3>
+HSPICE also has the added benefit of being able to do some algebriac
+manipulation of some variables. The variables can be user defined or just the
+volatages and currents at nodes (e.g. v(1), I(q2), etc.). Also the algebra must
+be enclosed within single quotes (see examples below). The algebraic functions
+used by HSPICE in addition to (+,-,*,/) are as follows:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">sin(x)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">cos(x)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">tan(x)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">atan(x)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">exp(x)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">log(x) - this function will use the abs value of x and then apply the sign
+    of x to the results.
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">pwr(x,y) - x to power y, see also log.
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">sinh(x)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">cosh(x)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">tanh(x)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">sqrt(x) - see also log
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">db(x)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">log10(x) - see also log
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">abs(x)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">min(x,x)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">max(x,x)<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<p>Some examples of using algebaic functions in HSPICE are:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Parameterization (variable declaration)<br>
+    <!--mstheme--></font><pre>	.PARAM x='y+3'</pre><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">In elements<br>
+    <!--mstheme--></font><pre>	r1	1	0	r='abs(v(1)/i(m1))+10'</pre><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">In .MEASURE statements<br>
+    <!--mstheme--></font><pre>	.MEAS vmax MAX V(1)
+	.MEAS imax MAX I(q2)
+	.MEAS ivmax PARAM='vmax*imax'</pre><!--mstheme--><font face="Arial, Arial, Helvetica"><!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<p>&nbsp;
+<h3><!--mstheme--><font color="#003333"><a name="top">Topology Rules:</a><!--mstheme--></font></h3>
+It is important to know when constructing the circuit description that HSPICE
+will not allow certain topologies.
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Every node must have a DC path to ground (i.e. all circuits must a have at
+    least one ground not in series with a capacitor).
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">No dangling nodes (i.e. all nodes must have at least two connections).
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">No voltage loops (i.e. no voltage sources in parallel with no other
+    elements).
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">No ideal voltage source in closed inductor loop.
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">No stacked current sources (i.e. no current sources in series).
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">No ideal current source in closed capacitor loop.<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist msthemelist msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<p>&nbsp;</p>
+<h2><!--mstheme--><font color="#003333"><center><a name="hint">HSPICE Hints:</a></center><!--mstheme--></font></h2>
+There are two main hints to keep in mind when using HSPICE, they are:
+<ol>
+  <li>Know what to expect from the simulation BEFORE running it!!!
+  <li>Simulation is NO substitute for <b>THINKING</b>.</li>
+</ol>
+Even though these hints are not always followed, they are good guidlines to use.
+For instance, if you run a simulation on a circuit that you know has a gain of
+around 100db and get 1db, it is easily to assume that an error exists in the
+netlist of the circuit. On the other hand, if a result of 1db is returned and
+the actual is not known, it can easily be assumed to be correct when an error
+actually exits in the netlist!!
+<p>Other helpful hints are these:
+<ol>
+  <li>It is not required to use one of HSPICE's graphing programs. One of the
+    most common ways is to extract the graphing data from the <i>.lis</i> file
+    using scripts and then use <b>Matlab</b> to graph the data.
+  <li>It is not required to use the HSPICE graphical interface. Though the
+    HSPICE text interface is not as pretty as the graphical interface, it is
+    much faster and does not pull very hard on system resources. To find out how
+    to run HSPICE using just the text interface check out <a href="#hrun">Running
+    HSPICE</a>.
+  <li>It is helpful to use a makefile to run HSPICE. A makefile keeps the
+    directories clean of useless files and can automatically graph the results.
+    Check out the <a href="../ExampleFiles/Makefile.txt"><i>Makefile</i></a>
+    that I use (Note GetTran and GetAc are scripts that remove AC and Transient
+    analysis data from the <i>.lis</i> file to graph in Matlab).</li>
+</ol>
+<p>&nbsp;</p>
+<h2><!--mstheme--><font color="#003333"><center><a name="hrun">Running HSPICE:</a></center><!--mstheme--></font></h2>
+<h3><!--mstheme--><font color="#003333"><a name="text">Text Interface:</a><!--mstheme--></font></h3>
+To run HSPICE in text interface nothing could be simpler, just follow these
+steps:
+<ol>
+  <li>Create the nestlist (<i>.sp</i>) file using any available text editor (vi,
+    emacs, etc.).
+  <li>To run the HSPICE simulation type:<br>
+    <!--mstheme--></font><pre>	hspice filename.sp filename.lis</pre><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <li>View the results (<i>.lis</i> file)</li>
+</ol>
+<h3><!--mstheme--><font color="#003333"><a name="graph">Graphical Interface:</a><!--mstheme--></font></h3>
+To use the graphical interface, type:<!--mstheme--></font><pre> awaves </pre><!--mstheme--><font face="Arial, Arial, Helvetica">
+The graphical interface to Hspice invokes.
+<p><b><i>Important Note: please when running long HSPICE jobs, please be
+courteous and renice the process.</i></b><!--mstheme--></font></body>
+
+</html>

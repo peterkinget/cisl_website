@@ -1,0 +1,94 @@
+.mstheme
+{
+	separator-image: url(tecrule.gif);
+	list-image-1: url(tecbull1.gif);
+	list-image-2: url(tecbull2.gif);
+	list-image-3: url(tecbull3.gif);
+	nav-banner-image: url(tecbnr.gif);
+	navbutton-horiz-normal: url(tecphb.gif);
+	navbutton-horiz-hovered: url(tecphb.gif);
+	navbutton-horiz-pushed: url(tecphp.gif);
+	navbutton-vert-normal: url(tecpvb.gif);
+	navbutton-vert-hovered: url(tecpvb.gif);
+	navbutton-vert-pushed: url(tecpvp.gif);
+	navbutton-home-normal: url(techome.gif);
+	navbutton-home-hovered: url(techome.gif);
+	navbutton-home-pushed: url(techome.gif);
+	navbutton-next-normal: url(tecnext.gif);
+	navbutton-next-hovered: url(tecnext.gif);
+	navbutton-next-pushed: url(tecnext.gif);
+	navbutton-prev-normal: url(tecprev.gif);
+	navbutton-prev-hovered: url(tecprev.gif);
+	navbutton-prev-pushed: url(tecprev.gif);
+	navbutton-up-normal: url(tecup.gif);
+	navbutton-up-hovered: url(tecup.gif);
+	navbutton-up-pushed: url(tecup.gif);
+}
+.mstheme-bannertxt
+{
+	font-family: Impact, Arial, Helvetica;
+	color: rgb(0, 0, 0);
+	font-size: 6;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-horiz-navtxt
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(204, 204, 153);
+	font-size: 2;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-vert-navtxt
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(255, 255, 255);
+	font-size: 2;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-navtxthome
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(0, 51, 51);
+	font-size: 1;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-navtxtnext
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(0, 51, 51);
+	font-size: 1;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-navtxtprev
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(0, 51, 51);
+	font-size: 1;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-navtxtup
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(0, 51, 51);
+	font-size: 1;
+	font-style: normal;
+	font-weight: normal;
+}
+ul
+{
+	list-style-image: url(tecbull1.gif);
+}
+ul ul
+{
+	list-style-image: url(tecbull2.gif);
+}
+ul ul ul
+{
+	list-style-image: url(tecbull3.gif);
+}

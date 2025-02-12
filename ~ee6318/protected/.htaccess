@@ -1,0 +1,8 @@
+AuthUserFile /home/ee6318/public_html/protected/.htpasswd
+AuthGroupFile /dev/null
+AuthName "EE6318 Protected area"
+AuthType Basic
+
+<Limit GET POST>
+require valid-user
+</Limit>

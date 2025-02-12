@@ -1,0 +1,109 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Yves Baeyens">
+   <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+   <title>Coursenumber Homepage</title>
+</head>
+<body>
+
+<center><p><font size="4"><b>E6318 - Design
+Project - Spring Semester 2006&nbsp;</b></font></center>
+<p><br>
+Welcome to the design project webpage.!
+<p><b>What do I expect to find in the project report:</b>
+<ul>
+  <li>How you determined which transistor and if&nbsp; applicable which bias to take for your
+    application?</li>
+  <li>How you stabilized transistor (if necessary)</li>
+  <li>The design of matching networks (please include Smith Chart) <b>matching
+    networks are implemented using DUROID board</b></li>
+  <li>Which bias networks you took (explain maybe why)</li>
+  <li>Full implementation in ADS (schematic)</li>
+  <li>Final results in ADS:</li>
+  <li>for LNA: S-parameters, K-factor, noise figure,&nbsp; power dissipation, P1dB
+    and IIP3 of final design&nbsp;</li>
+</ul>
+<p style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">&nbsp;
+<p style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">In
+the course of the design we will:
+<ul>
+  <li>
+    <p style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">first,
+    check the device performance of the available technologies: what is
+    available gain, minimum achievable noise (if designing LNA), etc....</li>
+  <li>
+    <p style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">then
+    implement a circuit topology, design appropriate matching networks (first
+    using Smith Chart, please...!), design biasing networks to bias the device
+    and guarantee out of band stability, finally trying to achieve circuit
+    performance as close as possible to the ideal performance metrics</li>
+  <li>
+    <p style="line-height: 100%; word-spacing: 0; margin-top: 0; margin-bottom: 0">implement
+    the layout of matching, biasing and if applicable combining networks on a
+    high-frequency board (Duroid 5880) this involves calculating the dimensions
+    of lines, couplers etc... and making a schematic drawing on how the layout
+    will look like</li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0">
+Our design project will be performed in <a href="http://eesof.tm.agilent.com/products/ads2004a.html">Agilent's
+ADS Advanced Design System.</a>
+<p><b>Device Technologies</b></p>
+<ul>
+  <li>
+    <p style="line-height: 100%; margin-top: 0; margin-bottom: 0"><b><a href="http://www.fcsi.fujitsu.com/products/MW.htm">Fujitsu</a> FHX04X
+ultra-low-noise HEMT (LNA –smallband applications)</b><br>
+NFmin=1.0 dB, Ga=9 dB at 12 GHz (Vds=2V, Ids=10mA)<br>
+    Models for the Fujitsu devices can be found in the ADS Microwave Transistor
+    Library&nbsp;</li>
+</ul>
+<blockquote>
+<p style="line-height: 100%; margin-top: 0; margin-bottom: 0">Large signal model ADS: ch_fuj_FHX04X_19930913<br>
+Small-signal-model ADS: sp_fuj_FHX04X_19920501 </p>
+  <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">This device is available in <a href="FHX04X_FHX05X_FHX06X.pdf">die-form</a>
+or in <a href="FHX04LG0506.pdf">SMT package</a>. More information on this device
+can be found in the datasheets.</p>
+</blockquote>
+<p><b>Integration Technology</b></p>
+
+<p style="line-height: 100%; margin-top: 0; margin-bottom: 0">All designs will be using a common high-frequency board material to
+implement matching, biasing, combining networks etc... </p>
+<p style="line-height: 100%; margin-top: 0; margin-bottom: 0">As board material
+we will use: <a href="http://www.rogerscorporation.com/mwu/pdf/5000data.pdf">Rogers
+Duroid 5880</a>, with a thickness of 20 mil (0.508mm) and an electroplated
+copper thickness of 1 oz. (37µm)</p>
+<p style="line-height: 100%; margin-top: 0; margin-bottom: 0">The dielectric
+constant of&nbsp; <a href="http://www.rogerscorporation.com/mwu/pdf/5000data.pdf">Rogers
+Duroid 5880</a>, is 2.20, relatively constant as a function of frequency, tan(<font face="Symbol">d</font>)
+varies slightly with frequency, take value at 10 GHz: 0.0009</p>
+<p style="line-height: 100%; margin-top: 0; margin-bottom: 0">As transmission
+lines you have the choice between either microstrip or stripline (using second
+substrate on top, which in practice might cause issue with active device,
+suppose you have cut-out there)</p>
+<p style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="line-height: 100%; margin-top: 0; margin-bottom: 0">To calculate the
+characteristics of transmission lines on this substrate you can use ADS and
+optionally verify the obtained characteristics with&nbsp; <a href="http://www.rogerscorporation.com/mwu/mwi_java/Mwij_vp.html">Rogers
+Corporation's Java-script program </a></p>
+<p style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;(http://www.rogerscorporation.com/mwu/mwi_java/Mwij_vp.html)</p>
+
+<p style="line-height: 100%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+
+<p style="line-height: 100%; margin-top: 0; margin-bottom: 0"><b>Usefull links</b></p>
+<ul>
+  <li>
+    <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">Some
+    pretty good <a href="http://pesona.mmu.edu.my/~wlkung/ADS/ads.htm">Notes on
+    how to design microwave circuits in ADS</a> can be found on Fabian Kung's
+    website</li>
+  <li>
+    <p style="line-height: 100%; margin-top: 0; margin-bottom: 0">Some very good
+    tutorials on RF, RFIC, Microwave and Systems can be found on the <a href="http://www.odyseus.nildram.co.uk/">RFIC.CO.UK
+    website</a>, take look at biasing etc...
+<br>
+  </li>
+</ul>
+
+</body>
+</html>

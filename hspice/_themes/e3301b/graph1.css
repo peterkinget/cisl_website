@@ -1,0 +1,94 @@
+.mstheme
+{
+	separator-image: url(atecrule.gif);
+	list-image-1: url(atecbul1.gif);
+	list-image-2: url(atecbul2.gif);
+	list-image-3: url(atecbul3.gif);
+	nav-banner-image: url(atecbnr.gif);
+	navbutton-horiz-normal: url(techbs.gif);
+	navbutton-horiz-hovered: url(techbh.gif);
+	navbutton-horiz-pushed: url(techbp.gif);
+	navbutton-vert-normal: url(tecvbs.gif);
+	navbutton-vert-hovered: url(tecvbh.gif);
+	navbutton-vert-pushed: url(tecvbp.gif);
+	navbutton-home-normal: url(techomes.gif);
+	navbutton-home-hovered: url(techomeh.gif);
+	navbutton-home-pushed: url(techomes.gif);
+	navbutton-next-normal: url(tecnexts.gif);
+	navbutton-next-hovered: url(tecnexth.gif);
+	navbutton-next-pushed: url(tecnexts.gif);
+	navbutton-prev-normal: url(tecprevs.gif);
+	navbutton-prev-hovered: url(tecprevh.gif);
+	navbutton-prev-pushed: url(tecprevs.gif);
+	navbutton-up-normal: url(tecups.gif);
+	navbutton-up-hovered: url(tecuph.gif);
+	navbutton-up-pushed: url(tecups.gif);
+}
+.mstheme-bannertxt
+{
+	font-family: Impact, Arial, Helvetica;
+	color: rgb(204, 204, 153);
+	font-size: 6;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-horiz-navtxt
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(255, 255, 255);
+	font-size: 2;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-vert-navtxt
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(255, 255, 255);
+	font-size: 2;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-navtxthome
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(0, 51, 51);
+	font-size: 1;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-navtxtnext
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(0, 51, 51);
+	font-size: 1;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-navtxtprev
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(0, 51, 51);
+	font-size: 1;
+	font-style: normal;
+	font-weight: normal;
+}
+.mstheme-navtxtup
+{
+	font-family: Verdana, Arial, Helvetica;
+	color: rgb(0, 51, 51);
+	font-size: 1;
+	font-style: normal;
+	font-weight: normal;
+}
+ul
+{
+	list-style-image: url(atecbul1.gif);
+}
+ul ul
+{
+	list-style-image: url(atecbul2.gif);
+}
+ul ul ul
+{
+	list-style-image: url(atecbul3.gif);
+}

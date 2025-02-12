@@ -1,0 +1,94 @@
+/* -- everything goes in these two elements ----------------------- */
+
+body
+{
+    font-family: "Georgia","Times",serif;
+    font-size: medium;
+    background: #f7f7f7;
+    color: black;
+    margin: 0pt;
+    padding: 0pt;
+}
+
+div.main
+{
+    margin: 1em 4em;
+    padding: 0pt;
+    border-left: 1px solid #406040;
+    border-right: 1px solid #406040;
+    border-bottom: 1px solid #406040;
+    background: #efefe7;
+    color: inherit;
+    line-height: 140%;
+    text-align: left;
+}
+
+/* -- block level stuff ------------------------------------------- */
+
+pre
+{
+    font: 10pt fixed;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    background: #a9badb;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+    border-top: 1px solid #406040;
+    border-bottom: 1px solid #406040;
+    margin: 0pt 0pt 5pt 0pt;
+    padding: 5pt;
+}
+
+p, ol, ul, dl, pre, table
+{
+    margin: 0pt 5pt 5pt 5pt;
+    padding: 5pt;
+}
+
+td, th
+{
+    background: #dfdfd7;
+    color: inherit;
+}
+
+li, dd
+{
+    margin: 5pt 5pt 5pt 10pt;
+    padding: 0pt;
+}
+
+li > *
+{
+    margin: 0pt;
+    padding: 0pt;
+}
+
+/* -- misc -------------------------------------------------------- */
+
+img
+{
+    border: 1px solid black;
+}
+
+/* -- links ------------------------------------------------------- */
+
+a:link
+{
+    color: #005080;
+    background: transparent;
+}
+
+a:visited
+{
+    color: #404040;
+    background: transparent;
+}
+
+a:hover
+{
+    color: #005080;
+    background: #dfdfd7;
+}

@@ -1,0 +1,130 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Ilya Yusim">
+   <meta name="GENERATOR" content="Mozilla/4.6 [en] (Win95; I) [Netscape]">
+   <title>Switcap3 User Guide</title>
+</head>
+<body>
+
+<h1>
+Switcap3 User Guide.</h1>
+
+<blockquote>
+<h2>
+<u><font color="#006600">Installing Switcap3:</font></u></h2>
+
+<dl>
+<dl><font color="#000000">Download the following binaries:</font></dl>
+
+<center><table BORDER WIDTH="72%" >
+<tr>
+<td WIDTH="30%"><font color="#CC33CC">sw3</font>
+<p><a href="sw3.Z">SUN version</a>
+<br><a href="hp/sw3.Z">HP version</a></td>
+
+<td>This is the binary that contains the noise analysis. For other types
+of analyses use Switcap2.
+<br>*Note*: The binary will only work on machines whose hostid was given
+to us.</td>
+</tr>
+
+<tr>
+<td><font color="#CC33CC">psw3</font>
+<p><a href="psw3.Z">SUN version</a>
+<br><a href="hp/psw3.Z">HP version</a></td>
+
+<td>This is a post processor that is used to format the data produced by
+sw3.</td>
+</tr>
+</table></center>
+
+<h2>
+<u><font color="#006600">Noise analysis theory</font></u></h2>
+The noise analysis in Switcap3 is based on the theory described in Cahpter
+5 of the folowing reference:
+<br>&nbsp;
+<dl><a href="thesis.ps">I. Yusim, <i>Simulation of Switched-Capacitor and
+Switched-Current Networks Under Instant Settling Approximation</i>, PhD
+Thesis, Columbia University, New York, 1999.</a></dl>
+</dl>
+</blockquote>
+
+<blockquote>
+<h2>
+<u><font color="#006600">Netlist Syntax</font></u></h2>
+&nbsp;&nbsp;&nbsp; The syntax is backward compatible with Switcap2. See
+the Switcap2 manual (<a href="../sw2.ps">postscript version</a>). The new
+features are:
+<ul>
+<li>
+<a href="switch.htm">Noisy switch</a></li>
+
+<li>
+<a href="vcvs.htm">Noisy VCVS</a></li>
+
+<li>
+<a href="amp.htm">Ideal op-amp</a> (noisy and noiseless)</li>
+
+<li>
+<a href="analysis.htm">Noise analysis block</a></li>
+</ul>
+See the file <a href="filter.scn">filter.scn</a> for an example of the
+new Switcap3 syntax.
+<br>&nbsp;
+<h2>
+<u><font color="#006600">Running Switcap3</font></u></h2>
+
+<blockquote>To run Switcap3 use the command:
+<blockquote><font face="Courier New,Courier">sw3 &lt; netlist.scn</font></blockquote>
+Switcap3 will produce the file "sw3.noise". This file contains simulation
+results in binary form. (In the future release we will allow the user to
+select the name for the output file.) To extract the data from "sw3.noise"
+use the post processor <font face="Courier New,Courier">psw3.</font>
+<p>The output file "sw3.noise" will contain the following data.
+<ul>
+<li>
+Noise PSD for each selected output with respect to <b><i>each</i></b> noisy
+element -- white and 1/f contribution separately.</li>
+
+<br>&nbsp;
+<li>
+The total noise PSD for each selected output due to all noisy elements
+-- white and 1/f contributions combined.</li>
+</ul>
+</blockquote>
+
+<h2>
+<u><font color="#006600">Using the post processor (psw3)</font></u></h2>
+
+<blockquote>To see the names of the wave forms that are in the output file
+"sw3.noise", use the command:
+<blockquote><font face="Courier New,Courier">psw3 -l &lt; sw3.noise</font></blockquote>
+To print the data in a table format use the command:
+<blockquote><font face="Courier New,Courier">psw3 waveform_names &lt; sw3.noise</font></blockquote>
+Note, multiple wave form names can be specified in the above command. To
+print the wave forms in xgraph format use the <font face="Courier New,Courier">-x</font>
+option. For complete help on using psw3 see
+<blockquote><font face="Courier New,Courier"><a href="psw3help">psw3 -h</a></font></blockquote>
+<u>Example:</u>&nbsp; The output file for the netlist <a href="filter.scn">filter.scn</a>
+includes the wave form "nout-xb2.xa1.am1:w" (the noise PSD at node "nout",
+due to the <i>white</i> noise contribution from the op-amp "xb2.xa1.am1")
+and the wave form "nout" (the total noise PSD at node "nout" due to <i>white
+and 1/f </i>contribution of <i>all </i>noisy elements.
+<p>To print these two wave forms in table format use:
+<p><font size=-1><font face="Courier New,Courier">psw3 frequency nout-xb2.xa1.am1:w</font><font face="ROL-K8-Courier">
+nout &lt; sw3.noise</font></font>
+<p>Note, that "frequency" is also a name of the wave form containing the
+frequency data.
+<p>To print the two wave forms in xgraph format use:
+<p><font size=-1><font face="Courier New,Courier">psw3 -x nout-xb2.xa1.am1:w</font><font face="ROL-K8-Courier">
+nout &lt; sw3.noise</font></font>
+<p>Note, that for xgraph (two column) format, the "frequency" wave form
+is automatically selected as the sweep wave form, i.e. each specified wave
+form will be plotted with respect to frequency.
+<br>&nbsp;</blockquote>
+</blockquote>
+
+</body>
+</html>

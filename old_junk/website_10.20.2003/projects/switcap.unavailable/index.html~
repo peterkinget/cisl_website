@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<TITLE>SWITCAP Homepage</TITLE>
+<META NAME="keywords" CONTENT="switcap">
+<!--SCN, switch-capacitor simulator, switched current, x-cap, xcap, switchcap-->
+</HEAD>
+
+<CENTER><H1>SWITCAP</H1></CENTER>
+<CENTER><H2><I>Simulator for Ideal Switched Capacitor Networks</I></H2></CENTER>
+<H3>Current Version: SWITCAP2 v1.1</H3>
+<UL>
+<LI><A HREF="http://www.elab.columbia.edu/research/switcap/descript.html">Technical Overview</A>
+<LI><A HREF="http://www.elab.columbia.edu/research/switcap/sw2.ps">Manual (Postscript)</A>
+<LI><A HREF="http://www.elab.columbia.edu/research/switcap/SHPINST.WPD">SWITCAP2 installation for HP machines (WordPerfect format)</A>
+<LI><A HREF="http://www.elab.columbia.edu/research/switcap/SSUNINST.WPD">SWITCAP2 installation for SUN machines (WordPerfect format)</A>
+<LI><A HREF="http://www.elab.columbia.edu/research/switcap/XCAPINS2.WPD">X-CAP installation for SUN and HP machines (WordPerfect format)</A>
+</UL>
+
+<H3>Authors:</H3>
+<UL>
+<LI>S. C. Fang<BR>
+<LI><A HREF="http://www.elab.columbia.edu/faculty/suyama/suyama.html">K. Suyama</A><BR>
+</UL>
+
+<H3>Technical Support:</H3>
+<UL>
+<LI>Send e-mail to <A HREF="mailto:switcap@elab.columbia.edu">switcap@elab.columbia.edu</A>
+</UL>
+
+<B><FONT SIZE=5>New Features in SWITCAP3</FONT></B> (Currently in development by <A HREF="http://www.elab.columbia.edu/grads/yusim/yusim.html">Ilya Yusim</A>)
+<UL>
+<LI> <A HREF="http://www.elab.columbia.edu/research/switcap/switcap3.htm">Noise Analysis of Ideal Switched Capacitor Networks</A>
+<LI>Switched Current Simulation (Frequency and Time Domain)
+<BR>
+<BR>
+	Switcap3, in addition to Switcap2 features, will have noise
+analyses for ideal switched-capacitor circuits. It will also provide
+frequency and time domain simulations for switched circuits that
+contain MOSFETS but still completely settle within each switching
+interval.  This includes switched-current circuits and switched
+capacitor circuits containing non-ideal op-amps or capacitors. (Noise
+analyses for such circuits will not be available.) We plan to provide
+the SPICE Level 3 and BSIM3v3 MOSFET models.
+</UL>
+
+<HR>
+<H3>To obtain the current version, please contact:</H3>
+Arthur T. Brody, Ph.D.<BR>
+Columbia Innovation Enterprise<BR>
+Columbia University<BR>
+500 West 120th Street<BR>
+Mail Code 2206<BR>
+New York, New York 10027<BR>
+USA
+<BR><BR>
+Phone: (212) 854-4640<BR>
+Fax: (212) 854-8463<BR>
+WWW: <A HREF="http://www.cc.columbia.edu/cu/cie">http://www.cc.columbia.edu/cu/cie</A><BR>
+Email: <A HREF="mailto:ab245@columbia.edu">ab245@columbia.edu</A><BR><BR>
+<HR>
+<IMG src="http://www.fxweb.holowww.com/v2-trackrun.cgi?userid=D55650" height="31" width="88"> <BR>
+<I>Sat Feb 21 18:41:55 EST 1998</I>
+</HTML>
+
+
+
+
+
+
+
+
+
+

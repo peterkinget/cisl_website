@@ -1,0 +1,416 @@
+<html>
+
+
+
+<head>
+
+<title>Commands</title>
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+<h2><center><a name="hint">HSPICE Commands</a></center></h2>
+
+<p align=center><nobr>[&nbsp;<a href="Introduction.htm">Introduction</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="Files/files.htm">Files</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="SourceFile.htm">Source&nbsp;File</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="Devices/Devices.htm">Devices</a>&nbsp;]</nobr> <nobr>[&nbsp;Commands&nbsp;]</nobr> <nobr>[&nbsp;<a href="Notes.htm">Notes</a>&nbsp;]</nobr>
+
+</p>
+
+
+
+<p>
+
+This page is a slightly edited version of <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.overview.html">material
+
+published</a> by the EE department at University of Pennsylvania.
+&nbsp; 
+
+<ul>
+
+<li>	
+
+<a href="#Control">Control Statements</a>
+
+<ul>
+
+<li>	
+
+<a href="#Operating">Operating Point (.OP)</a>
+
+<li>
+
+<a href="#DC Statement">DC Statement (.DC)</a>
+
+<li>
+
+<a href="#Transfer">Transfer Function (.TF)</a>
+
+<li>
+
+<a href="#Sensitivity">Sensitivity (.SENS)</a>
+
+<li>
+
+<a href="#Transient">Transient (.TRAN)</a>
+
+<li>
+
+<a href="#Initial">Initial Conditions (.IC)</a>
+
+<li>
+
+<a href="#AC Statement">AC Analysis (.AC)</a>
+
+</ul>
+
+<li>
+
+<a href="#Output">Output Statements</a>
+
+</ul>
+
+
+
+<h3><a name="Control"></a>Commands or Control Statements to Specify the
+
+Type of Analysis</h3>
+
+<h4>a) <a name="Operating"></a>.OP Statement</h4>
+
+This statement instructs Spice to compute the DC operating points:<br>
+
+<ul>
+
+  <li>	
+
+  voltage at the nodes
+
+  <li>
+
+  current in each voltage source
+
+  <li>
+
+  operating point for each element
+
+</ul>  
+
+In HSpice it is usually not necessary to specify .OP as it gives you
+
+automatically the DC node voltages. However, HSpice does not give the DC
+
+voltages unless you have specified a certain analysis type, such as for instance
+
+.TRAN, or .AC analysis (Spice automatically does a DC analysis before doing a
+
+transient or AC analysis). Thus, if you are only interested in the DC voltages
+
+in HSpice, you should specify the .OP option, or the .DC option (see further).
+
+<h4>b)&nbsp;<a name="DC Statement"></a>.DC Statement</h4>
+
+This statement allows you to increment (sweep) an independent source over a
+
+certain range with a specified step. The format is as follows:<br>
+
+&nbsp;<br>
+
+  <tt>.DC SRCname START STOP STEP</tt>
+
+in which SRC name is the name of the source you want to vary; START and STOP are
+
+the starting and ending value, respectively; and STEP is the size of the
+
+increment.<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+  Example: <tt>.DC V1 0 20 2</tt>
+
+When the Start and Stop values are identical (and the Step is non-zero), the .DC
+
+command produces only one value. This may be useful in HSpice when you do not
+
+want all the DC voltages and currents to be printed (with the .OP option), but
+
+are interested in a limited number of DC voltages and currents. In the <a href="#Output">.PRINT
+
+statement</a> (see further) you would then also specify the node voltages you
+
+like to know (ex. <tt>.DC Vs 3 3 1 </tt>and <tt>.PRINT DC V(2), V(3), I(Vmeas) </tt>).
+
+<p>You can nest the DC sweep command which is often used to plot transistor
+
+characteristics, such as the Drain current ids versus the Drain-source voltage
+
+Vds for different gate voltages Vgs. This can be done as follows:<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+  <tt>.DC SRCname1 START STOP STEP SRCname2 START STOP STEP</tt>
+
+  <p>Example:<tt> .DC Vds 0 5 0.5 Vgs 0 5 1</tt></p>
+
+In the example above, the voltage Vds will be swept from 0 to 5V in steps of 1V
+
+for every value of Vgs.
+
+<h4>c)&nbsp;<a name="Transfer"></a>.TF Statement</h4>
+
+The .TF statement instructs HSpice to calculate the following <i>small signal</i>
+
+characteristics:<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+<ol>
+
+  <li>the ratio of output variable to input variable (gain or tranfer gain)
+
+  <li>the resistance with respect to the input source
+
+  <li>the resistance with respect to the output terminals</li>
+
+</ol>
+
+  <tt>.TF OUTVAR INSRC</tt>
+
+in which OUTVAR is the name of the output variable and INSRC is the input
+
+source.<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+  Example: <tt>.TF V(3,0) VIN</tt>
+
+The .TF statement can be used to find the <i>Thevenin small signal equivalent
+
+resistance</i>. (The Thevenin voltage is given by the node voltage at the open
+
+circuit terminal, as a result of the .OP statement). See also <a href="#Output">Output
+
+Statements</a> later on.<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+<h4>d)&nbsp;<a name="Sensitivity"></a>.SENS Statement</h4>
+
+This instructs HSpice to calculate the DC small-signal sensitivities of each
+
+specified output variable with respect to <u>every</u> circuit parameter.<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+  <tt>.SENS VARIABLE</tt>
+
+  <p><tt>Example: .SENS V(3,0)</tt></p>
+
+<h4>e)&nbsp;<a name="Transient"></a>.TRAN Statement</h4>
+
+This statement specifies the time interval over which the transient analysis
+
+takes place, and the time increments. The format is as follows:<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+  <tt>.TRAN TSTEP TSTOP &lt;TSTART &lt;TMAX&gt;&gt; &lt;UIC&gt;</tt><br>
+
+  &nbsp;<br>
+
+  &nbsp;
+
+  <dl>
+
+    <dt>TSTEP is the printing increment.
+
+    <dt>TSTOP is the final time
+
+    <dt>TSTART is the starting time (if omitted, TSTART is assumed to be zero)
+
+    <dt>TMAX is the maximum step size.
+
+    <dt>UIC stands for Use Initial Condition and instructs HSpice not to do the
+
+      quiescent operating point before beginning the transient analysis. If UIC
+
+      is specified, HSpice will use the initial conditions specified in the
+
+      element statements (see data statement) IC = value.</dt>
+
+  </dl>
+
+See also <a href="#Output">Output Statements</a> later on.
+
+<h4>f)&nbsp;<a name="Initial"></a>.IC Statement</h4>
+
+This statement provides an alternative way to specify initial conditions of
+
+nodes (and thus over capacitors).<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+  <tt>.IC Vnode1 = value Vnode2 = value etc.</tt>
+
+<h4>g)&nbsp;<a name="AC Statement"></a>.AC Statement</h4>
+
+This statement is used to specify the frequency (AC) analysis. The format is as
+
+follows:<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+  <dl>
+
+    <dt><tt>.AC LIN NP FSTART FSTOP</tt>
+
+    <dt><tt>.AC DEC ND FSTART FSTOP</tt>
+
+    <dt><tt>.AC OCT NO FSTART FSTOP</tt>
+
+  </dl>
+
+in which LIN stands for a linear frequency variation, DEC and OCT for a decade
+
+and octave variation respectively. NP stands for the number of points and ND and
+
+NO for the number of frequency points per decade and octave. FSTART and FSTOP
+
+are the start and stopping frequencies in Herz<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+  Example: <tt>.AC DEC 10 1000 1E6</tt>
+
+See also <a href="#Output">Output Statements</a> later on. For an example
+
+circuit see under the section <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.filter.html">Examples.</a><br>
+
+&nbsp;<br>
+
+&nbsp;
+
+<h4>h)&nbsp;<a name="Others"></a>For .NOISE, .DISTO, and .FOUR statements</h4>
+
+Please consult the manual.<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+<h3><a name="Output"></a>Output Statements</h3>
+
+These statements will instruct HSpice what output to generate. If you do not
+
+specify an output statement, HSpice will always calculate the DC operating
+
+points. The two types of outputs are the prints and plots. A print is a table of
+
+data points and a plot is a graphical representation. The format is as follows:<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+  <tt>.PRINT TYPE OV1 OV2 OV3 ...</tt>
+
+  <p><tt>.PLOT TYPE OV1 OV2 OV3 ...</tt></p>
+
+in which TYPE specifies the type of analysis to be printed or plotted and can
+
+be:<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+<ul>
+
+	<li>DC
+
+	<li>TRAN
+
+	<li>AC
+
+</ul>
+
+The output variables are OV1, OV2 and can be voltage or currents in voltage
+
+sources. Node voltages and device currents can be specified as magnitude (M),
+
+phase (P), real (R) or imaginary (I) parts by adding the suffix to V or I as
+
+follows:<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+<ul>
+
+	<li>M: Magnitude
+
+	<li>DB: Magnitude in dB (deciBells)
+
+	<li>P: Phase
+
+	<li>R: Real part
+
+	<li>I: Imaginary part
+
+</ul>
+
+Examples:<br>
+
+&nbsp;<br>
+
+&nbsp;
+
+  <tt>.PLOT DC V(1,2) V(3) I(Vmeas)</tt>
+
+  <p><tt>.PRINT TRAN V(3,1) I(Vmeas)</tt>
+
+  <p><tt>.PLOT AC VM(3,0) VDB(4,2) VM(2,1) VP(3,1) IR(V2)</tt></p>
+
+  
+
+<p align="center"><img src="../images/atecrule.gif" width="600" height="10"></p>
+
+<p><font size="2">
+The material in this website is an expanded version
+of material presented by Dr. J. Steensgaard.
+This website is  maintained by <a
+
+		href="http://www.cisl.columbia.edu/grads/tuku/">Shouri
+
+Chatterjee</a>.&nbsp; This page was last updated on
+
+02/11/2003
+
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,33 @@
+Redirect http://www.ee.columbia.edu/~kinget/awkiawki/index.html http://www.ee.columbia.edu/~kinget/awkiawki/awki.cgi
+Redirect http://www.ee.columbia.edu/~kinget/awkiawki/index.htm http://www.ee.columbia.edu/~kinget/awkiawki/awki.cgi
+
+AuthUserFile /homes/kinget/awkiawki/.htpasswd
+AuthName ByPassword
+AuthType Basic
+
+SetHandler cgi-script
+
+ErrorDocument 401 awki.cgi/OopsRegistration
+
+<Files ~ "[^/]*\.html$">
+       SetHandler blabla
+       allow from all
+</Files>
+
+<Files "awki_edit.cgi">
+       require valid-user
+</Files>
+
+<Files "*">
+       allow from all
+</Files>
+
+
+
+
+
+
+
+
+
+

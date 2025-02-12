@@ -1,0 +1,72 @@
+<HTML>
+<HEAD><TITLE> Ken Shepard</TITLE></HEAD>
+<BODY text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000" background="images/main.jpg">
+<center>
+<H1>High-frequency interconnect analysis</h1>
+</center>
+
+<h2>
+Description:
+</h2>
+<p>
+The interconnect of integrated circuits has traditionally been modelled 
+as a distributed RC network (most recently with explicit consideration of 
+coupling capacitance to other signal lines).  As technology continues to 
+scale and on-chip frequency content increases, the inductance of
+the interconnect becomes more and more import for both high-speed digital and RF 
+design.&nbsp;
+</p>
+<p>
+In our research, we are investigating and driving to commercial implementation
+techniques for extracting inductance on-chip, which are capable of full-chip
+extraction, combined with existing resistance and capacitance extraction
+capability.  
+</p>
+<p>
+Our work is being commercialized in Assura RCLX from <a href="http://www.cadence.com">Cadence Design Systems</a>
+and this have been discussed in recent articles in <a href = "http://www.eetimes.com/story/OEG20010928S0146">EE Times</a>.
+</p>
+
+<h2>
+Selected publications:
+</h2>
+<li><a href="..publications/iccad00.ps">K. L. Shepard, D. Sitaram, and Yu Zheng,
+"Full-chip, three-dimensional, shapes-based RLC extraction,"
+Proceedings of the International Conference on Computer-Aided Design, 2000,
+pages 142-149.</a>
+<p>
+In this paper, we report the development of the first commercial full-chip,
+three-dimensional, shapes-based RLCK extraction tool, developed as part of a 
+university-industry collaboration.
+This technique of return-limited inductances is used to provide a spart,
+frequency-independent inductance and resistance network with self-inductances
+that represent sensible "nominal" vlaues in the absence of mutual coupling.
+Mutual inductanes are extracted for accurate noise analysis.
+The tool, Assura RLCX, exploits high-capacity, scan-band techniques and disk
+caching for inductance extraction as an extension to Cadence's existing Assura RCX
+extractor.
+</p>
+<p>
+&nbsp;</p>
+<li><a href="..publications/00838992.pdf">K. L. Shepard and Z. Tian, ``Return-limited inductance:  A practical approach to on-chip
+inductance extraction," IEEE Transactions on CAD, April, 2000, pages 425-436.</a>
+<p>
+Decreasing slew rates and efforts to reduce the RC delays of on-chip interconnect
+through design and technology have resulted in the growing importance of inductance in 
+analyzing inteconnect response for timing and noise analysis.
+In this paper, we consider a practical approach for extracting approximate
+inductances of on-chip interconnect.
+This approach, which we call the method of return-limited inductances,
+is based on performing the inductance modelling of signal lines and power-group lines
+independently and on taking advantage of the power and groudn distribution of the chip to localize
+inductive coupling.
+A set of simple geometry-based matrix decomposition rules guide sparsificaiton in 
+these extractions.
+</p>
+<li><p>
+K. L. Shepard and Z. Tian, "Return-limited inductances:  A Practical Approach to On-Chip
+Inductance Extraction", Proceedings of the 1999 Custom Integrated Circuits Conference.
+</p>
+
+</body>
+</html>

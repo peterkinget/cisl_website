@@ -1,0 +1,19 @@
+Usage:
+	./psw3 [options] [-f input_file] [-o output_file] [waveform_names]
+
+If input_file/output_file are not given, then standard input/output is used.
+
+options:
+	-h	print this help information
+	-x	print output in Xgraph format.
+	-t	print output in plain table format.(default)
+	-l	list the names of waveforms in the input_file
+	-a	print data for all waveforms in the input_file
+
+options for `complex' data type:
+
+	-m	print magnitude
+	-p	print phase
+	-r	print real part
+	-i	print imaginary part
+

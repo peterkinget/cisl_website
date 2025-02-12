@@ -1,0 +1,64 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Tutorial</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="Microsoft Theme" content="e3301b 011, default">
+<meta name="Microsoft Border" content="none, default">
+</head>
+
+<body bgcolor="#77AAAA" text="#000000" link="#800000" vlink="#800000" alink="#CCCC99"><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h3 align="center"><!--mstheme--><font color="#003333">Tutorial on how to use HSPICE<!--mstheme--></font></h3>
+<ol>
+  <li>First you must obtain access to a computer that has the HSPICE software
+    installed.&nbsp; Follow the steps described <a href="../Access/access.htm">here</a>.
+    <p>&nbsp;</p>
+  </li>
+  <li>Now you should be able to use the remote computer almost as if you were
+    sitting in front of it.&nbsp; Preferably you should
+    create an ordered file structure for your simulations.&nbsp; You may do this by
+    issuing the following commands: 
+    <p><font face="Courier New">cd</font></p>
+    <p><font face="Courier New">mkdir E3301</font></p>
+    <p><font face="Courier New">cd E3301</font></p>
+    <p><font face="Courier New">mkdir Example1</font></p>
+    <p><font face="Courier New">cd Example1</font></p>
+    <p>which will create and put you in the work directory <font face="Courier New">~/E3301/Example1</font></p>
+    <p>&nbsp;</li>
+  <li>Now download &quot;this file&quot; to the newly created work directory and
+    have a look at it using your favorite editor.&nbsp; I prefer the emacs editor
+    (another piece of software that you are not likely to outgrow anytime soon),
+    so I would issue the command: 
+    <p><font face="Courier New">emacs example1.sp &amp;</font></p>
+    <p>which shortly thereafter should display a window on your local computer
+    screen.&nbsp; If this does not work, please consult one of the TAs during
+    their office hours.&nbsp; If you forget to append the &quot;&amp;&quot;
+    symbol at the end of the command, your
+    xterm will be unavailable until emacs is terminated.&nbsp; If that
+    happens, you should close emacs and try again.</p>
+    <p>&nbsp;</li>
+  <li>The circuit description file, <font face="Courier New">example1.sp</font>,
+    does not require any editing.&nbsp; You may thus fire up HSPICE by issuing
+    the following command:
+    <p><font face="Courier New">hspice example1.sp &gt; example1.out</font></p>
+    <p>Three output files should thereby be generated: <font face="Courier New">example1.out,
+    example1.tr0, example1.sw0. </font>Each file corresponds to separate types
+    of simulations.&nbsp; The *.out file comprises diagnostic information for the
+    simulation itself (<i>always</i> check this file first if you get unexpected
+    results) as well as the result of the operating point simulation, i.e., if
+    it is requested.</p>
+    <p>&nbsp;</li>
+  <li>Here is a &quot;schematic&quot; of the circuit you just simulated.&nbsp;
+    The input voltage source </li>
+</ol>
+<p>&nbsp; </p>
+<!--msthemeseparator--><p align="center"><img src="../_themes/e3301b/atecrule.gif" width="600" height="10"></p>
+<p><font size="2">This website is designed and maintained by <a href="http://www.ee.columbia.edu/~jesper" target="_top">Jesper
+Steensgaard</a>.&nbsp; This page was last updated on <!--webbot bot="Timestamp"
+S-Type="EDITED" S-Format="%m/%d/%Y" startspan -->02/12/2001<!--webbot bot="Timestamp" endspan i-checksum="12522" -->
+ </font></p>
+<!--mstheme--></font></body>
+
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <style TYPE="text/css">
+   <!--
+   A { font-family: Arial, sans-serif;font-size:10pt;font-weight: bold; text-decoration: none; }
+   SMALL { font-family: Arial, sans-serif; font-size: 10pt;}
+   P { font-family: Arial, sans-serif; font-size: 10pt;}   
+   -->
+   </style>
+
+   <script language="JavaScript" src="jsp/menu_new.js"></script>
+   <script language="JavaScript" src="jsp/share_new.js"></script>
+</head>
+
+<body bgcolor="#777777" link="#3366ff" vlink="#3366ff">
+<!-- <body bgcolor="#777777white" link="#3366ff" vlink="#3366ff"> --> 
+
+<script language="JavaScript">
+    writehead("publications");
+</script>
+
+<!--page content-->
+<br>
+<center><h2>Recent Ph.D. Theses</h2></center>
+<ul>
+<li>B. Soltanian, "Design Techniques for Low-Noise LC Voltage-Controlled Oscillators", 2006.
+</ul>
+<ul>
+<li>A. P. Jose, "Circuit Techniques for Low-Latency, Low-Energy Intrachip Communications", 2006.
+</ul>
+<ul>
+<li>S. Chatterjee, "Analog Circuit Design Techniques at 0.5 V", 2005.
+</ul>
+<ul>
+<li>S. Chan, "Design of multi-GHz resonant global clock distributions," 2005.
+</ul>
+<ul>
+<li>M. Ozgun, "Power management of integrated analog filters," 2005.
+</ul>
+<ul>
+<li>Y. W. Li, "Self-Timed Techniques for Digital Signal Processing," 2005.
+</ul>
+<ul>
+<li>S. Li, "Integrated Q-enhanced LC filters with automatic tuning," 2005.
+</ul>
+<ul>
+<li>G. Cowan, "A VLSI analog computer/math co-processor for a digital computer," 2005.
+</ul>
+<ul>
+<li>S. Ranganathan, "Discrete-time parametric amplification using
+MOSFETs," 2004.
+</ul>
+<ul>
+<a href="PHDtheses.html">Full list</a> 
+</ul>
+<center><h2>Recent Papers</h2></center>
+
+<center><h3>2006</h3></center>
+<ul>
+<li> Frank Zhang and P. Kinget, "Design of Components and Circuits Underneath Integrated
+Inductors," IEEE Journal of Solid-State Circuits (JSSC), Oct. 2006, pp. 2265-2271.
+</ul>
+<ul>
+<li> S. C. Chan, K. L. Shepard, and P. J. Restle, "Distributed differential oscillators for global clock networks," IEEE Journal of Solid-State Circuits, Sept., 2006, pp. 2083-2094.
+</ul>
+<ul>
+<li> B. Soltanian and P. Kinget, "A Low Phase Noise Quadrature LC VCO
+using Capacitive Common-Source coupling," IEEE European Solid-State Circuits 
+Conference (ESSCIRC), Sept. 2006.
+</ul>
+<ul>
+<li> B. Soltanian, H. Ainspan, W. Rhee, D. Friedman and P. Kinget, "An
+Ultra Compact Differentially Tuned
+6 GHz CMOS LC VCO with Dynamic Common-Mode Feedback," IEEE Custom Integrated Circuits Conference (CICC), Sept.
+2006.
+</ul>
+<ul>
+<li>N. Stanic, P. Kinget and Y. Tsividis, "A 0.5 V 900 MHz CMOS Receiver
+Front End," Symposium on VLSI Circuits, Honolulu, Hawaii, June 2006. 
+</ul>
+<ul>
+<li> B. Soltanian and P. Kinget, "AM-FM Conversion by the Active Devices 
+in MOS LC-VCOs and its Effect on the Optimal Amplitude," IEEE Radio
+Frequency IC Symposium (RFIC), June 2006.
+</ul>
+<ul>
+<li> S. Rajapandian, K. L. Shepard, P. Hazucha, and T. Karnik, "High-voltage
+power delivery through charge recycling," IEEE Journal of Solid-State
+Circuits, Vol. 41, June 2006.
+</ul>
+<ul>
+<li> F. Zhang and P. Kinget, "Low-Power Programmable Gain CMOS
+Distributed LNA", IEEE Journal of Solid-State Circuits, Vol. 41, June,
+2006.
+</ul>
+<ul>
+<li> M. T. Ozgun, Y. Tsividis and G. Burra, "Dynamic Power Optimization of
+Active Filters with Application to Zero-IF Receivers", IEEE Journal of
+Solid-State Circuits, Vol. 41, June,
+2006.
+</ul>
+<ul> 
+<li> A. Jha, R. Gharpurey, and P. Kinget, "Quadrature-DAC based pulse
+generation for UWB pulse radio transceivers", Proceedings of the
+IEEE International Symposium on Circuits and Systems, Kos, Greece, May
+2006. 
+</ul> 
+<ul> 
+<li> M. Abdulai and P. Kinget, "A 0.5 V Fully Differential
+Gate-Input Operational Transconductance Amplifier with Intrinsic
+Common-Mode Rejection", Proceedings of the IEEE International Symposium on
+Circuits and Systems, Kos, Greece, May 2006. 
+</ul> 
+<ul> 
+<li> G. R. Gangasani and P. Kinget, "Injection-Lock Dynamics in
+Non-Harmonic Oscillators", Proceedings of the IEEE International Symposium
+on Circuits and Systems, Kos, Greece, May 2006. 
+</ul> 
+<ul> 
+<li> P. Kinget, "Amplitude detection inside CMOS LC Oscillators",
+Proceedings of the IEEE International Symposium on Circuits and Systems,
+Kos, Greece, May 2006. 
+</ul> 
+<ul>
+<li> A. P. Jose, G. Patounakis, and K. L. Shepard, "Pulse current-mode
+signalling for nearly speed-of-light intrachip communcations,"
+IEEE Journal of Solid-State Circuits, Vol. 41, April, 2006, pp. 772-780.
+</ul>
+<ul>
+<li>K. P. Pun, S. Chatterjee, and P. Kinget, "A 0.5 V 74 dB SNDR 25kHz CT
+Delta-Sigma Modulator with Return-to-Open DAC," Digest of Technical Papers
+IEEE International Solid-State Circuits Conference (ISSCC), Feb. 2006. 
+</ul>
+<ul>
+<li> A. P. Jose and K. L. Shepard, "Distributed loss compensation for 
+low-latency on-chip interconnect," Digest of Technical Papers
+IEEE International Solid-State Circuits Conference (ISSCC), Feb. 2006.
+</ul> 
+
+<center><h3>2005</h3></center>
+<ul>
+<li>P. Kinget, S. Chatterjee, and Y. Tsividis, "Ultra low voltage analog
+design techniques for nanoscale CMOS technologies," plenary talk at the
+2005 IEEE International Conference on Electronic Devices and Solid-State
+Circuits (EDSSC 2005), Hong Kong, December 2005.
+</ul>
+<ul>
+<li>S. Chatterjee, Y. Tsividis and P. Kinget, "0.5 V Analog Circuit
+Techniques and Their Application in OTA and Filter Design," IEEE Journal
+of Solid-State Circuits, vol. 40, no 12, pp.2373-2387, December 2005. 
+</ul> 
+<ul>
+<li>B. Soltanian and P. Kinget, "A Tail Current Shaping Technique to
+Reduce Phase Noise in LC VCOs," Proceedings of IEEE Custom Integrated
+Circuits Conference Oct. 2005, pp.579-582.
+</ul>
+<ul>
+<li>F. Zhang, Chen-Feng Chu and P. Kinget, "Voltage-controlled oscillator
+in the coil," Proceedings of IEEE Custom Integrated Circuits Conference
+(CICC), Oct. 2005, pp.587-590.
+</ul>
+<ul>
+<li>Y. P. Tsividis, G. Cowan, Y. W. Li, K. Shepard, "Continuous-Time DSP,
+Analog/Digital Computers and Other Mixed-Domain Circuits," Proceeding of
+European Solid-State Circuits Conference, September 2005.
+</ul>
+<ul>
+<li>Y. W. Li, K. L. Shepard, Y. P. Tsividis, "A Continuous-Time Programmable
+Digital FIR Filter," Proceedings of IEEE Custom Integrated Circuits
+Conference, September 2005.
+</ul>
+<ul>
+<li>P. Kinget, "Device mismatch and Tradeoffs in the Design of Analog
+Circuits," IEEE Journal of Solid-State Circuits, vol. 40, no 6, June 2005,
+pp.1212-1224. 
+</ul>
+<ul>
+<li>F. Zhang and P. Kinget, "Low power progammable-gain CMOS distributed
+LNA for ultra-wideband applications," Symposium on VLSI Circuits, 2005. 
+</ul>
+<ul>
+<li>S. Chatterjee, T. Musah, Y. Tsividis, and P. Kinget, "Weak inversion
+MOS varactors for 0.5 V analog integrated filters," Symposium on VLSI
+Circuits, 2005. 
+</ul>
+<ul>
+<li>G. Patounakis, K. L. Shepard, and R. Levicky, "Active CMOS Biochip
+for Time-Resolved Fluorescence Detection," Symposium on VLSI Circuits, 2005.
+</ul>
+<ul>
+<li>A. P. Jose, G. Patounakis, and K.L. Shepard, "Near speed-of-light
+on-chip interconnects using pulsed current-mode signalling," Symposium on
+VLSI Circuits, 2005.
+</ul>
+<ul>
+<li>P. Kinget, A. Lazar and L. Toth, "On the robustness of an analog VLSI
+implementation of a Time Encoding Machine," Digest of Technical Papers
+IEEE Symposium on Circuits and Systems, May 2005, pp. 4221-4224.
+</ul>
+<ul>
+<li>P. Kinget, S. Chatterjee and Y. Tsividis, "0.5 V Analog Integrated
+Circuits," in Advances in Analog Circuit Design (AACD) workshop, April 
+2005. 
+</ul>
+<ul>
+<li>G. Cowan, R. Melville, and Y. Tsividis, "A VLSI analog computer/math
+co-processor for a digital computer,"  Digest of Technical Papers,
+International Solid-State Circuits Conference (ISSCC), 2005.
+</ul>
+<ul>
+<li>M. Ozgun, Y. Tsividis, and G. Burra, "Dynamically power-optimized
+channel-select filter for zero-IF GSM," Digest of Technical Papers,
+International Solid-State Circuits Conference (ISSCC), 2005.
+</ul>
+<ul>
+<li>S. Chatterjee, Y. Tsividis, and P. Kinget, "A 0.5 V filter with
+PLL-based tuning in 0.18 um CMOS," Digest of Technical Papers, International
+Solid-State Circuits Conference (ISSCC), 2005.
+</ul>
+<ul>
+<li>S. Rajapandian, K. Shepard, "High-tension power delivery: operating 0.18um CMOS digital logic at 5.4V," Digest of Technical Papers, International Solid-State Circuits Conference (ISSCC), 2005.
+</ul>  
+<ul>
+<li>S. Chan, K. Shepard, and P. Restle, "1.1 to 1.6 GHz distributed differential oscillator global clock network," Digest of Technical Papers, International Solid-State Circuits Conference (ISSCC), 2005.
+</ul>  
+<ul>
+<li>Y. W. Li, K. L. Shepard, Y. P. Tsividis, " Continuous-time digital
+signal processors," Proceedings of the International Symposium on
+Asynchronous Circuits and Systems, 2005.
+</ul>
+<ul>
+<li>S. Li, N. Stanic, K. Soumyanath, and Y. Tsividis, "An integrated 1.5
+V 6 GHz Q-enhanced LC CMOS filter with automatic quality factor tuning
+using conductance reference," IEEE Radio Frequency IC Symposium (RFIC),
+2005. 
+</ul>
+
+<center><h3>2004</h3></center>
+<ul>
+<li>S. Chatterjee, Y. Tsividis, and P. Kinget, "A 0.5 V bulk input fully
+differential operational transconductance amplifier," Proceedings of 
+European Solid-State Circuits Conference (ESSCIRC), pp.147-150,
+September 2004.  
+</ul>
+<ul>
+<li>S. Rajapandian, Z. Xu, and K. L. Shepard, "Energy-efficient, low-voltage operation of digital CMOS circuits through charge-recycling," Symposium on VLSI Circuits, 2004.
+</ul>
+<ul>
+<li>S. Li and Y. Tsividis, "Analysis of oscillator amplitude control, and its application to automatic tuning of quality factor for active LC filters," Proceedings of the International Symposium on Circuits and Systems (ISCAS), vol. 4, pp. 141-144, May 2004.
+</ul>
+<ul>
+<li>D. Sitaram, Y. Zheng, and K. L. Shepard, ``Full-chip, three-dimensional, shapes-based RLC extraction, IEEE Transactions on CAD, May 2004.
+</ul>
+<ul>
+<li>Y. W. Li, G. Patounakis, K. L. Shepard, and S. M. Nowick, "Design of an
+asynchronous micropipelined datapath with heterogeneous, dynamic voltage
+scaling," IEEE Journal of Solid-State Circuits, April 2004.
+</ul>
+<ul>
+<li>Y. W. Li, G. Patounakis, K. L. Shepard, "High-throughput Asynchronous
+Datapath with Software-Controlled Voltage Scaling," (invited paper) IEEE
+Journal of Solid-State Circuits, pp. 704-708, April 2004.
+</ul>
+<ul>
+<li>G. Patounakis, Y. W. Li, K. L.  Shepard, "A fully integrated on-chip
+DC-DC conversion and power management system," IEEE Journal of Solid-State
+Circuits, pp. 443-451, March 2004.
+</ul>
+<ul>
+<li>S. C. Chan, P. J. Restle, K. L. Shepard, N. James, and R. Franch, "A 4.8 GHz Resonant Global Clock Distribution," Digest of Technical Papers, International Solid-State Circuits Conference (ISSCC), 2004.
+</ul>
+<ul>
+<li>Y. Palaskas, Y. Tsividis, V. Prodanov, and V, Boccuzzi, "A `divide and
+conquer' technique for implementing wide dynamic range continuous-time filters," IEEE Journal of Solid-State Circuits, pp. 297-307, Feb. 2004.
+</ul>
+
+
+<center><h3>2003</h3></center>
+<ul>
+<li>S. Ranganathan and Y. Tsividis, "Discrete-time parametric amplification based on a three-terminal MOS varactor: analysis and experimental results," IEEE Journal of Solid-State Circuits, pp. 2087-2093, Dec. 2003. 
+</ul>
+<ul>
+<li>L. Toth and Y. Tsividis, "Generalization of the principle of chopper stabilization," IEEE Transactions on Circuits and Systems I, pp. 975-983, Aug. 2003. 
+</ul>
+<ul>
+<li>N. Krishnapura and Y. Tsividis, "Micropower low-voltage analog filter in a digital CMOS process," IEEE Journal of Solid-State Circuits, pp. 1063-1067, June 2003. 
+</ul>
+<ul>
+<li>Yu Zheng and K. L. Shepard, "On-chip oscilloscopes for
+noninvasive time-domain measurement of waveforms in digital integrated
+circuits," IEEE Transactions on VLSI, pp.336-344, June 2003. 
+</ul>
+<ul>
+<li>Y. W. Li, G. Patounakis, K. L. Shepard, "Asynchronous Datapath with
+Software-Controlled Adaptive Voltage Scaling," International Symposium on Low Power
+Electronic and Design, 2003 (Design contest winner).
+</ul>
+<ul>
+<li>Y. W. Li, G. Patounakis, K. L. Shepard, "High-throughput asynchronous
+datapath with software-controlled voltage scaling,"  VLSI Circuits
+Symposium, pp. 49-52, 2003 .
+</ul>
+<ul>
+<li>Y. W. Li, G. Patounakis, A. Jose, K. L. Shepard and S. M. Nowick,
+"Asynchronous datapath with software-controlled on-chip adaptive voltage
+scaling for multirate signal processing applications," Proceedings of the
+International Symposium on Asynchronous Circuits and Systems, pp. 216-226,
+2003 (Best Paper Runner-up).
+</ul>
+<ul>
+<li>Y. Palaskas and Y. Tsividis, "Power - area - DR - frequency -
+selectivity tradeoffs in weakly nonlinear active filters," Proceedings of the International Symposium on Circuits and Systems, vol. 1, pp. 453-456, 2003.
+</ul>
+<ul>
+<li>S. Ranganathan and Y. Tsividis, "A MOS capacitor-based discrete-time parametric amplifier with 1.2 V output swing and 3 uW power dissipation," Digest of IEEE International Solid-State Circuits Conference, pp. 406-407 and 502, Feb. 2003.
+</ul>
+<ul>
+<li>Y. Tsividis, N. Krishnapura, Y. Palaskas, and L. toth, "Internally varying analog circuits minimize power dissipation," IEEE Circuits and
+Devices Magazine, pp. 63-72, Jan. 2003.
+</ul>
+
+
+<center><h3>2002</h3></center>
+<ul>
+<li> Dipak Sitaram, Yu Zheng, and K. L. Shepard, "Implicit treatment of
+substrate and power-ground losses in return-limited inductance
+extraction," Proceedings of the International Conference on
+Computer-Aided Design, pp. 16-22, 2002.
+</ul>
+<ul>
+<li> Steven C. Chan, K. L. Shepard, and Dae-Jin Kim, "Static noise analysis for digital integrated circuits in partially depleted silicon-on-insulator technology," IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, pp. 916-927, Aug. 2002.
+</ul>
+<ul>
+<li> D. Li and Y. Tsividis, "Design techniques for automatically tuned integrated gigahertz-range active LC filters," IEEE Journal of Solid-State Circuits, pp. 967-977, Aug. 2002.
+</ul>
+<ul>
+<li> P. Sotiriadis and Y. Tsividis, "Integrator using a single distributed RC element," Proceedings of the International Symposium on Circuits and Systems, vol. 2, pp. 21-24, May 2002. 
+</ul>
+<ul>
+<li> G. Palaskas and Y. Tsividis, "Design considerations and experimental evaluation of a syllabic companding audio frequency filter," Proceedings of the International Symposium on Circuits and Systems, vol. 3, pp. 305-308, May 2002. 
+</ul>
+<ul>
+<li>A. Yoshizawa and Y. Tsividis, "Anti-blocker design techniques for MOSFET-C filters for direct conversion receivers," IEEE Journal of Solid-State Circuits, pp. 357-364, March 2002.
+</ul>
+
+<center><h3>2001</h3></center>
+<ul>
+<li>L. Toth, G. Palaskas, and Y. Tsividis, "Two 'non-invasive'
+techniques for syllabic companding in signal processors," IEEE Transactions on Circuits and Systems II, pp. 1085-1098, Dec. 2001.
+</ul>
+<ul>
+<li> N. Krishnapura and Y. Tsividis, "Noise and power reduction in
+filters through the use of adjustable bias," IEEE Journal of Solid-State Circuits, pp. 1912-1920, Dec. 2001.
+</ul>
+<ul>
+<li> K. L. Shepard and Yu Zheng, "On-chip oscilloscopes for
+noninvasive time-domain measurement of waveforms," Proceedings of the
+International Conference on Computer Design, pp. 221-226, Sep. 2001 (Best Paper Award winner).
+</ul>
+<ul>
+<li>K. L. Shepard and D.-J. Kim, "Body-voltage estimation in digital PD-SOI circuits and its application to static timing analysis," IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, pp. 888-901, July 2001.
+</ul>
+<ul>
+<li>G. Efthivoulidis, L. Toth, and Y. Tsividis, "Noise in externally linear
+filters," Analog Integrated Circuits and Signal Processing, pp. 63-72, July 2001.
+</ul>
+<ul>
+<li>N. Krishnapura and Y. Tsividis, "A micropower log-domain filter using enhanced lateral PNPs in a 0.25 um process," Digest of the Symposium on VLSI Circuits, pp. 179-182, June 2001.
+</ul>
+<ul>
+<li>L. Toth, G. Palaskas, and Y. Tsividis, " 'Noninvasive' techniques for syllabic companding in signal processors," Proceedings of the IEEE International
+Symposium on Circuits and Systems, vol. 1, pp. 683-686, May 2001.
+</ul>
+<ul>
+<li>L. Toth and Y. Tsividis, "General chopper stabilization," Proceedings of the IEEE International Symposium on Circuits and Systems, vol. 1, pp. 540-543, May 2001.
+</ul>
+<ul>
+<li>G. Palaskas and Y. Tsividis, "A 'Divide and Conquer' technique for the design of wide dynamic range continuous-time filters," Proceedings of the IEEE International Symposium on Circuits and Systems, vol. 1, pp. 252-255, May 2001.
+</ul>
+<ul>
+<li>A. Yoshizawa and Y. Tsividis, "An anti-blocker structure MOSFET-C filter for a direct conversion receiver," Digest of the IEEE Custom Integrated Circuits Conference, pp. 5-8, May 2001.
+</ul>
+<ul>
+<li>D. Frey, Y. Tsividis, G. Efthivoulidis, and N. Krishnapura, "Syllabic companding log-domain filters," IEEE Transactions on Circuits and Systems II, pp. 329-339, April 2001.
+</ul>
+<ul>
+<li>K. L. Shepard, "CAD Issues for CMOS VLSI Design in SOI," Proceedings of the International Symposium on Quality in Electronic Design, pp. 105-110, March 2001 (invited).
+</ul>
+<ul>
+<li>S. Chan and K. L. Shepard, "Practical considerations in RLCK crosstalk analysis for digital integrated circuits," Proceedings of the International Conference on Computer-Aided Design, pp. 598-604, 2001.
+</ul>
+<ul>
+<li>N. Krishnapura and Y. Tsividis, "Dynamically biased 1 MHz low-pass filter with 61 dB peak SNR and 112 dB input range," Digest of IEEE International Solid-State Circuits Conference, pp. 360-361 and 465, Feb. 2001.
+</ul>
+<ul>
+<li>D. Li and Y. Tsividis, "A 1.9 GHz active LC filter with on-chip automatic tuning," Digest of IEEE International Solid-State Circuits Conference, pp. 368-369 and 466, Feb. 2001.
+</ul>
+<br>
+
+<!-- <br>&nbsp;
+<ul>
+<li><a href="#ac">Analog Computing</a>
+<li><a href="#companding">Companding</a>
+<li><a href="#lp">Low Power Analog Filters</a>
+<li><a href="#inductors">Integrated Inductors</a>
+<li><a href="#interconnect">Interconnect Analysis</a>
+<li><a href="#Mems">MEMs</a>
+<li><a href="#pd-soi">PD-SOI</a>
+<li><a href="#switch">Switched-capacitors</a>
+<li><a href="#phd">Ph.D Theses</a>
+<li><a href="#mis">Miscellany</a>
+</ul>
+<hr>
+<p>
+<a name="companding">
+<h4>Companding</h4></a>
+<ul>
+<li><a href="http://www.cisl.columbia.edu/grads/palaskas/publications.html">Publications of Yorgos
+Palaskas</a>
+<li><a href="http://www.cisl.columbia.edu/grads/nagi/publications.html">Publications of Nagendra
+Krishnapura</a>
+<li><a href="http://www.cisl.columbia.edu/grads/yu/publications/publications.html">Publications of Yu Zheng 
+</a>
+</ul>
+
+-->
+
+
+
+
+<script language="JavaScript">
+    writefoot();
+</script>
+</body>
+</html>

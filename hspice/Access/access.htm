@@ -1,0 +1,139 @@
+<html>
+
+
+
+<head>
+
+<title>Access</title>
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+<h3 align="center">Getting Access to Computers Running HSPICE</h3>
+
+<p>To run HSPICE, you will need an account on the SUN workstations that are located in
+
+S.W. Mudd 12xx.&nbsp; 
+
+<p>Of logistic reasons, you will not have physical access to the SUN
+
+workstations.&nbsp; Hence, to use HSPICE, you must have physical access to another
+
+networked computer with an X interface.&nbsp; You may, e.g., use your CUNIX
+
+account (<a href="http://www.columbia.edu/acis/accounts/create/" target="_top">obtain
+
+one here</a>) and the facilities provided in the computer lab located in S.W.
+
+Mudd room 251.&nbsp; Alternatively, you may use the ILAB computers located on
+
+the 12th floor in S.W. Mudd, but for those you will need a separate account.</p>
+
+<p>To use HSPICE through an X interface, you must complete the
+
+following steps:</p>
+
+<ol>
+
+  <li>Log in on your local (physical access) computer and start a regular X
+
+    terminal (xterm). </li>
+
+  <li>Choose from <a href="names.htm"> this list</a> a remote computer that has HSPICE installed.&nbsp;
+
+    In the following we will assume that the computer's name is <font face="Courier New">name.cisl.columbia.edu</font> </li>
+
+  <li>Allow the remote computer to display windows on the local computer's
+
+    terminal:&nbsp; This
+
+    is done by issuing in the xterm on the local computer the following command:
+
+    <p><font face="Courier New">xhost +name.cisl.columbia.edu</font> </p>
+
+    <p>&nbsp;</li>
+
+  <li>Start a ssh session to the remote computer.&nbsp; This is done by
+
+    issuing in the xterm the following command:
+
+    <p><font face="Courier New">ssh login@name.cisl.columbia.edu</font> </p>
+
+    <p>and when prompted providing your password for the remote
+
+    computer.</p>
+
+    <p>&nbsp;</li>
+
+  <li>If this is the first time you log in on any of the SUN workstations, you
+
+    should change your initial password.&nbsp; This is done by issuing the
+
+    following command:
+
+    <p><font face="Courier New">passwd</font></p>
+
+    <p>and answering the questions when prompted .</p>
+
+    <p>&nbsp;</li>
+
+  <li>Now you need to inform the remote computer where it should dispIay any
+
+  windows through the X interface. 
+
+  Let <font face="Courier New">local.computer.name</font> be the
+
+  computer at which you are sitting.
+
+  You need to set the environment variable $DISPLAY
+
+    to <font face="Courier New">local.computer.name:0. </font>How to
+
+    do this depends on which shell you are running on the remote computer.&nbsp; If you have a
+
+    preference for not running the so-called &quot;tcsh&quot; shell, you
+
+    probably already know how to do this in your preferred shell.&nbsp;
+
+    Otherwise I suggest that you use tsch.&nbsp; This is done by issuing the
+
+    following two commands:
+
+    <p><font face="Courier New">/usr/bin/tcsh</font></p>
+
+    <p><font face="Courier New">setenv DISPLAY local.computer.name:0</font></p>
+
+    <p>&nbsp;</li>
+
+</ol>
+
+Now you should be able to use the remote computer almost as if you were
+
+    sitting in front of it.&nbsp; Continue by completing the <a href="../Tutorial/tutorial.htm">tutorial</a>.
+
+    <p>&nbsp; </p>
+
+
+
+
+
+<p align="center"><img src="../images/atecrule.gif" width="600" height="10"></p>
+
+<p><font size="2">
+The material in this website is an expanded version
+of material presented by Dr. J. Steensgaard.
+This website is designed and maintained by <a
+
+		href="http://www.cisl.columbia.edu/grads/tuku/">Shouri
+
+Chatterjee</a>.&nbsp; This page was last updated on
+
+02/11/2003
+
+</body>
+
+</html>
+

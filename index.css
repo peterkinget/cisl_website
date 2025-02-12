@@ -1,0 +1,233 @@
+body{
+    background-color: #A2CEF3; <!--#6AA8D8;   #F6D46E;-->
+	font-color: green;
+	font-family:Times New Roman, serif;
+	margin-top:0px;
+
+  }
+
+li.circle { list-style: circle inside }
+
+
+  a.nav{text-decoration:none}
+  	a.nav:link {
+  	  color: white;
+  	 
+  	}
+  	a.nav:visited {
+  	  color: white;
+  	 
+  	}
+  a.news{text-decoration:none}
+  	a.news:link {
+  	  color: #1C5569;
+  	}
+  	a.news:visited {
+  	  color: #1C5569;
+  	}
+
+  a.people{text-decoration:underline}
+  	a:link {
+  	  color: #376193;
+  	}
+  	a:visited {
+  	  color: #376193;
+  	}
+
+  a{text-decoration:none}
+  	a:link {
+  	  color: #376193;
+  	}
+  	a:visited {
+  	  color: #376193;
+  	}
+
+
+
+
+
+
+
+
+
+  td.hdr {
+    background-color: #A2CEF3;   /*<!--#6AA8D8; #A8C2EE; #F6D46E;-->*/
+    text-align: center;
+    vertical-align: middle;
+    font-size: big;
+    font-weight: bold;
+    color: #253247;
+  }
+
+
+  td.nav{
+      background-color: #253247;
+      color: white;
+      
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  td.nav_cur {
+	background-color: #5E6C7D;<!--#5581A5-->;
+	color: white;
+      	text-align: center;
+      	font-size: 14px;
+      	font-weight: bold;
+    }	
+
+  td.content {
+    background-color: #FEFEDA;
+    vertical-align: top;
+    width: *;
+    
+  }
+  td.content_left {
+    background-image: url('Images/chip_medley_left.jpg');
+    width: 150px;	    
+  }
+  td.content_right {
+    background-image: url('Images/chip_medley_right.jpg');
+    width: 150px;
+  }
+
+
+table.home, tr.home{
+  width:100%;
+  padding:10px;
+  background-color: #FEFEDA;
+  border: 0px solid black;
+  text-align: left;
+  font-size:18px;
+  color: black;
+  vertical-align:top;
+  }
+
+  td.home_left{
+  width: 55%;
+  border: 0px solid black;
+  }
+
+  td.home_mid{
+  width: 5%;
+  border: 0px solid black;
+  }
+
+  td.home_right{
+  width: 40%;
+  border: 5px solid #6AA8D8;
+  font-size:16px;
+  }
+	
+  img.home {
+  	  border-width: 10px;
+	  border-color:#F6D46E;;
+  	  border-style: solid;
+      	}
+
+
+
+
+  table.seminar, td.seminar,tr.seminar{
+      padding:10px;
+      background-color: #FEFEDA;
+  	  border: 0px solid black;
+  	  text-align: left;
+  	  font-size:16px;
+  	  color: black;
+  	  vertical-align:top;
+  }
+
+  td.seminar_photo{
+      width: 160px;
+      padding:10px;
+      background-color: #FEFEDA;
+      border: 0px solid black;
+      text-align: center;
+      font-size:16px;
+      color: black;
+      vertical-align:top;
+  }
+  img.seminar {
+  	  width: 130px;
+  	  border-width: 10px;
+  	  border-color: #FAE6A7;
+  	  border-style: solid;
+      	}
+
+
+
+  table.people,tr.people{
+      padding:10px;
+      background-color: #FEFEDA;
+  	  border: 0px solid black;
+  	  text-align: left;
+  	  color: black;
+  	  vertical-align:top;
+  	  padding: 2;
+  }
+ td.people{
+      padding:1px;
+      background-color: #FEFEDA;
+  	  border: 0px solid black;
+  	  text-align: left;
+  	  color: black;
+  	  vertical-align:top;
+  	  padding: 2;
+  }
+
+
+  td.people_photo{
+      padding:3px;
+      background-color: #FEFEDA;
+      border: 0px solid green;
+      text-align: left;
+      color: black;
+      vertical-align:top;
+  }
+
+
+
+
+
+
+  img.people {
+  	  border-width: 10px;
+	  border-color:#FAE6A7;
+  	  border-style: solid;
+      	}
+
+table.news, tr.news{
+  width:100%;
+  padding:10px;
+  background-color: #FEFEDA;
+  border: 0px solid black;
+  text-align: left;
+  font-size:18px;
+  color: black;
+  vertical-align:top;
+  }
+
+  td.news_left{
+  width: 10%;
+  border: 0px solid black;
+  }
+
+  td.news_mid{
+  width: 80%;
+  border: 0px solid black;
+  }
+
+  td.news_right{
+  width: 10%;
+  border: 0px solid black;
+  }
+
+  img.news {
+  	  border-width: 10px;
+	  border-color:#F6D46E;;
+  	  border-style: solid;
+      	}
+
+
+  div{margin-left:10px;}

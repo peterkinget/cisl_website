@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <style TYPE="text/css">
+   <!--
+   A { font-family: Arial, sans-serif;font-size:10pt;font-weight: bold; text-decoration: none; }
+   A.big {font-family: Arial, sans-serif;font-size:14pt;font-weight: bold; text-decoration: none; }
+   SMALL { font-family: Arial, sans-serif; font-size: 10pt;}
+   P { font-family: Arial, sans-serif; font-size: 10pt;}   
+-->
+   </style>
+
+   <script language="JavaScript" src="jsp/menu_new.js"></script>
+   <script language="JavaScript" src="jsp/share_new.js"></script>
+</head>
+
+<body bgcolor="#777777" link="#3366ff" vlink="#3366ff">
+<!-- <body bgcolor="#777777white" link="#3366ff" vlink="#3366ff"> --> 
+
+<script language="JavaScript">
+    writehead("");
+</script>
+
+<!-- page content-->
+
+<p><table BORDER="0" CELLPADDING="10" CELLSPACING="0" WIDTH="650">
+<tr> 
+
+
+<!-- sidebar -->
+<!-- end sidebar -->
+<!-- links menu -->
+<tr>
+<td>
+
+<p>Welcome to the Columbia Integrated Systems Lab (CISL). 
+<p>Our lab is part of the <a href="http://www.ee.columbia.edu">Electrical Engineering Department</a> at
+<a href="http://www.columbia.edu/">Columbia University</a> in the City of New York. The faculty and graduate students conduct
+research in the area of integrated circuit design ranging from analog and digital to mixed signal and radio-frequency circuits.
+
+</td>
+</tr>
+    <td VALIGN="TOP" width="620">
+      <table BORDER="0"  width="580">
+<tr>
+          
+<td> 
+<table BORDER="0">
+<tr>
+<td ALIGN="right" VALIGN="TOP" width="150">&nbsp;</td>
+<td><img width="80" height="80" src="images/chipplot/Tuku2r.jpg" align="top" border="0"></td>
+<td><img width="200" height="80" src="images/chipplot/Iliasr.JPG" align="top" border="0"></td></tr>
+<tr>
+<td ALIGN="right" VALIGN="TOP" width="150">&nbsp;</td>
+<td><img width="80" height="80" src="images/chipplot/Tuku1r.jpg" align="top" border="0"></td>
+<td><img width="200" height="80" src="images/chipplot/Boo1.jpg" align="top" border="0">
+</td></tr>
+</table>
+
+</tr>
+    </table>
+<hr ALIGN="center" WIDTH="340">
+
+    <table BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="610">
+      <tr>
+
+        <td ALIGN="right" VALIGN="TOP" width="110"><a class="big" href="http://www.cisl.columbia.edu/news.html">News</a></td> 
+        <td width="500">&nbsp;</td></tr>
+<tr>
+        <td ALIGN="right" VALIGN="TOP" width="110">&nbsp;</td>
+        <td width="500"> 
+<p>Our students will present their latest research in 4 presentations at the
+upcoming Symposium on VLSI Circuits in June, 2005. Congratulations to Frank, Shouri, Anup and George!
+<p>The submission deadline for the Design Contest "Self-Powered Radio" has been extended to February 11, 2005. See the <a href="news/DesignContest.htm">poster</a> for the contest details and prizes. 
+<p>Our students will present their latest research in 5 presentations at the
+upcoming International Solid State Circuits Conferenc (ISSCC) in February
+2005. Congratulations to Glenn, Mehmet, Sara, Shouri, and Steven!
+<p>Prof. Yannis Tsividis is recognized with the IEEE Undergraduate Teaching Award: http://www.ieee.org/organizations/pubs/newsletters/sscs/oct04/tsividis.html
+
+<p><a href="http://www.cisl.columbia.edu/news.html">More...</a>
+
+</td></tr>
+</table>
+
+<hr ALIGN="center" WIDTH="340">
+
+    <table BORDER="0" CELLSPACING="0" CELLPADDING="0" WIDTH="410">
+      <tr>
+        <td ALIGN="right" VALIGN="TOP" width="132"><small>Walk
+ Address</small></td> 
+        <td width="12">&nbsp;</td>
+        <td align="left" VALIGN="TOP" width="266"><small>422 Schapiro
+ CEPSR</small></td></tr>
+       <tr>
+          <td ALIGN="RIGHT" VALIGN="TOP" width="132"><small>Mail Address</small></td>
+       <td width="12">&nbsp;</td>
+        <td VALIGN="TOP" width="266"><a href="http://www.ee.columbia.edu"><small>Department of Electrical Engineering</small></a><small><br> 1312 S.W.Mudd <br>500 West 120th Street<br>New York, NY 10027</small></td></tr>
+<tr>
+<td ALIGN="RIGHT" VALIGN="TOP" width="132"><small>Telephone</small></td>
+<td width="12">&nbsp;</td>
+<td ALIGN="LEFT" VALIGN="TOP" width="266"><small>212-854-4685 (analog group)</small></td>
+</tr>
+<tr>
+<td ALIGN="RIGHT" VALIGN="TOP" width="132"><small>&nbsp;</small></td>
+<td width="12">&nbsp;</td>
+<td ALIGN="LEFT" VALIGN="TOP" width="266"><small>212-854-0398 (digital group)</small></td>
+</tr>
+<tr>
+<td ALIGN="RIGHT" VALIGN="TOP" width="132"><small>Fax</small></td>
+<td width="12">&nbsp;</td>
+<td ALIGN="LEFT" VALIGN="TOP" width="266"><small>212-932-9421</small></td>
+</tr>
+
+<tr>
+<td ALIGN="RIGHT" width="132"><p>&nbsp;</p></td>
+<td width="12">&nbsp;</td>
+<td VALIGN="TOP" width="266"></td></tr>
+
+<tr>
+<td ALIGN="RIGHT" VALIGN="TOP" width="132">&nbsp</td>
+<td width="12">&nbsp;</td>
+<td VALIGN="TOP" width="350"><a href="http://www.columbia.edu/cu/aboutcolumbia/maps.html">
+<small>Directions</small></a> | <a
+href="http://www.columbia.edu/cu/aboutcolumbia/maps/index.html">
+<small>Campus Map</small></a> | <a
+href="http://www.columbia.edu/cu/aboutcolumbia/maps/sectionD.html">
+<small>Building Map</small></a></td></tr>
+
+
+<!--       <tr>
+          <td ALIGN="RIGHT" width="132"><a href="http://www.cisl.columbia.edu/internal-docs/"><small>CISL Internal</small></a></td>
+       <td width="12">&nbsp;</td>
+        <td width="266"><small>Authentication required</small></td></tr>
+--> 
+     </table>
+</td>
+  </tr>
+</table>
+
+<!-- Search Google -->
+<center>
+<FORM method=GET action=http://www.google.com/custom>
+<TABLE bgcolor=#FFFFFF cellspacing=0 border=0>
+<tr valign=top><td>
+<A HREF=http://www.google.com/search>
+<IMG SRC=http://www.google.com/logos/Logo_40wht.gif border=0 ALT=Google
+align=middle></A>
+</td>
+</tr>
+<tr>
+<td>
+<INPUT TYPE=text name=q size=23 maxlength=255 value="">
+<INPUT type=submit name=sa VALUE="Google Search">
+<INPUT type=hidden name=cof
+VALUE="T:Black;LW:65;ALC:Red;L:http://www.cisl.columbia.edu/images/subcisl.gif;LC:Blue;LH:40;BGC:#FFCCCC;AH:left;VLC:Brown;GL:1;AWFID:7080ec9da021b0af;">
+<font face=arial,sans-serif size=-1><input type=hidden name=domains value="www.cisl.columbia.edu"><br>
+<input type=radio name=sitesearch value="www.cisl.columbia.edu" checked>
+Search CISL
+<input type=radio name=sitesearch value=""> Search WWW 
+</font><br>
+</td></tr></TABLE>
+</FORM>
+</center>
+<!-- Search Google -->
+
+
+
+
+
+<script language="JavaScript">
+    writefoot();
+</script>
+</body>
+</html>

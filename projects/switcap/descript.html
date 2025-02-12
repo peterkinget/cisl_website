@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds -->
+<HTML>
+<HEAD>
+<TITLE>INTRODUCTION</TITLE>
+<META NAME="description" CONTENT="INTRODUCTION">
+<META NAME="keywords" CONTENT="sw2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+</HEAD>
+<BODY LANG="EN">
+ <A NAME="chapintro">&#160;</A> 
+SWITCAP2 is a general simulation program for analyzing linear
+switched-capacitor networks (SCN's) and mixed switched-capacitor/digital
+(SC/D) networks.  The major features of the program are as follows:
+<OL><LI> SWITCHING INTERVALS
+<DL COMPACT><DT><STRONG> </STRONG>
+<DD> An arbitrary number of switching intervals per switching period
+is allowed.  The durations of the switching intervals may be unequal and
+arbitrary.
+<P>
+ </DL><LI> NETWORK ELEMENTS
+<DL COMPACT><DT><STRONG> </STRONG>
+<DD> The program can simulate linear SCN's containing the following
+types of ideal analog components: <font size=-1><small>ON</small></font>-<font size=-1><small>OFF</small></font> switches, linear
+capacitors, linear voltage-controlled voltage sources (VCVS's), and
+independent voltage sources.  The waveforms of the independent sources
+may be continuous or piecewise-constant.  The switches in linear SCN's
+are controlled by periodic clock waveforms only.
+<P>
+In addition to the above elements mentioned, a mixed SC/D
+network may contain comparators and logic gates such as <font size=-1><small>AND</small></font>, <font size=-1><small>OR</small></font>, <font size=-1><small>NOT</small></font>, <font size=-1><small>NAND</small></font>, <font size=-1><small>NOR</small></font>, <font size=-1><small>XOR</small></font>, and <font size=-1><small>XNOR</small></font>.  The <font size=-1><small>ON</small></font>-<font size=-1><small>OFF</small></font> switches in a mixed SC/D
+network may be controlled not only by periodic waveforms but also by
+nonperiodic waveforms from the output of comparators and logic gates.
+<P>
+ </DL><LI> TIME-DOMAIN ANALYSES OF LINEAR SCN'S AND MIXED SC/D NETWORKS 
+<DL COMPACT><DT><STRONG> </STRONG>
+<DD> The program provides two kinds of time-domain analyses.  One is
+only applicable for linear SCN's and it computes the transient response
+of linear SCN's to any prescribed input waveform for  after
+computing the steady-state values for a set of dc inputs for <I>t</I> ;<I>SPMlt</I>; 0.
+<P>
+The other time-domain analysis applies to mixed SC/D
+networks as well as linear SCN's.  It computes the transient response of
+networks <EM>without</EM> computing the steady-state values as initial
+conditions.  A set of the initial condition of analog and digital nodes at
+ may be specified by user.
+<P>
+ </DL><LI> VARIOUS WAVEFORMS FOR TIME DOMAIN ANALYSES
+<DL COMPACT><DT><STRONG> </STRONG>
+<DD> Various time-domain waveforms such as pulse, pulse train, cosine,
+exponential, exponential cosine, piecewise linear, and dc sources are
+available as the input for transient analysis.
+<P>
+ </DL><LI> FREQUENCY DOMAIN ANALYSES OF LINEAR SCN'S
+<DL COMPACT><DT><STRONG> </STRONG>
+<DD> Since SCN's are time-varying networks, a single-frequency
+sinusoidal input can produce a steady-state output containing many
+frequency components.  The program can determine all of these output
+frequency components for both continuous and piecewise-constant input
+waveforms.  Z-domain quantities can also be computed.
+<P>
+Frequency-domain group delay and sensitivity analyses are
+also provided.
+<P>
+ </DL><LI> BUILT-IN SAMPLING FUNCTIONS
+<DL COMPACT><DT><STRONG> </STRONG>
+<DD> Both the input and output waveforms may be sampled and held at
+arbitrary instants to produce the desired waveforms for time- and
+frequency-domain analyses of linear SCN's except for sensitivity
+analysis.  The output waveforms may also be sampled with a train of
+impulse functions for z-domain analyses.
+<P>
+ </DL><LI> SUBCIRCUIT FACILITY
+<DL COMPACT><DT><STRONG> </STRONG>
+<DD>
+Subcircuits, including analog and/or digital elements, may be defined with
+symbolic values for capacitances, VCVS gains, clocks, and other
+parameters.  The symbolic values may then be replaced with actual values
+during each reference to a subcircuit.  This facility provides a
+convenient means for building a library of often-used building-block
+circuits from which more complicated circuits may be pieced together.  It
+also facilitates a hierarchical design approach.
+<P>
+ </DL><LI> FINITE RESISTANCES, OPERATIONAL AMPLIFIER POLES, AND SWITCH
+PARASITICS
+<DL COMPACT><DT><STRONG> </STRONG>
+<DD>
+Finite resistances (say associated with nonideal switches or anti-aliasing
+filters) may be simulated by equivalent SC networks.  To obtain good
+accuracy, the switches associated with the finite-resistor equivalent SC
+networks may be switched at a frequency much higher than both the input
+signal frequency and the switching frequency of the actual switches of the
+circuit.  The time-constants introduced by the resistors may be longer
+than the length of an actual switching interval (i.e., the network need
+not be equilibrated).
+<P>
+Operational amplifiers with limited frequency response
+may also be simulated.  The frequency response may be modeled with an RC
+network and then simulated with the R's replaced by equivalent SC networks.
+<P>
+Clock feedthrough from switch parasitics may be simulated
+in both the time and the frequency domains.  The frequency-domain
+simulation of this effect is particularly efficient using the dc
+steady-state analysis capability of the program which does not require the
+direct computation of the Fourier components of any clock waveform.
+<P>
+To incorporate these higher order effects in a
+simulation, the subcircuit facility of the program may be used to
+advantage.  A circuit can be simulated with, say, ideal elements at a high
+level of abstraction, or complex subcircuits including parasitics and
+nonidealities can be substituted for ideal elements to carry the simulation
+to a lower level.  However, it must be warned that the simulation of these
+nonideal effects is computationally time consuming due to the need for
+higher switching rate to model the nonideal effects.
+<P>
+ </DL><LI> INPUT FILE COMPATIBILITY WITH SWITCAP
+<DL COMPACT><DT><STRONG> </STRONG>
+<DD> The input parser in SWITCAP is completely rewritten to allow the
+flexibility necessary to add new features.  However, the new parser in
+SWITCAP2 is designed such that any old SWITCAP input files can be used in
+SWITCAP2 without any modifications.  Should any incompatibilities come up,
+please contact SWITCAP Distribution Center immediately.
+<P>
+ </DL></OL>
+<P>
+Internally, SWITCAP2 consists of several different algorithms depending
+on the type of desired analysis.  For time- and frequency-domain analyses
+(excluding group delay and sensitivity analyses) of linear SCN's,
+SWITCAP2 uses an algorithm based on the formulation published in
+[<A HREF="ref.html#yt1">1</A>, <A HREF="ref.html#scf1">2</A>, <A HREF="ref.html#scf2">3</A>, <A HREF="ref.html#scf3">4</A>, <A HREF="ref.html#scf4">5</A>, <A HREF="ref.html#scf5">6</A>, <A HREF="ref.html#scf6">7</A>, <A HREF="ref.html#scf7">8</A>, <A HREF="ref.html#scf8">9</A>].  This formulation,
+which was incorporated in the original SWITCAP [<A HREF="ref.html#scf5">6</A>, <A HREF="ref.html#scf6">7</A>], uses a
+set of charge variables as the network variables for computation.  The
+number of charge variables is typically very small.  For example, an <I>nth</I>
+order filter implemented in a leap-frog configuration wherein the number
+of integrators is the same as the order would have <I>n</I> charge variables per
+switching interval.  As a result of the small number of network
+variables, the iterative steps in the computation are very efficient.
+The most memory-intensive portion of the computation is in the
+preprocessing stage during which the network matrices to be used in the
+subsequent iterations are computed and stored.  Because of this memory
+requirement, a dynamic memory allocation scheme has been implemented.
+With this allocation scheme, the maximum complexity (number of elements
+times the number of unique switching intervals) of an SCN that can be
+simulated is limited solely by the user's computer memory size.
+<P>
+The analytical expressions that allow exact analyses of group delay and
+sensitivity for many-phase linear SCN's are derived from the above
+mentioned state charge variable formulation [<A HREF="ref.html#ks1">10</A>, <A HREF="ref.html#ks2">11</A>].  The
+analytical expressions not only lead to efficient algorithms for computing
+the group delay and sensitivity but also retain efficiencies similar to
+those that were realized for simple time- and frequency-domain analyses
+using the state charge formulation.
+<P>
+The transient analysis of mixed SC/D networks is formulated in such a way
+that separate algorithms are used for analog, digital, and interface
+subgroups to take full advantage of their own properties.  Detailed
+technical discussions of the algorithms and their applications can be
+found in [<A HREF="ref.html#ks2">11</A>, <A HREF="ref.html#ks3">12</A>, <A HREF="ref.html#ks4">13</A>].
+<P>
+<HR>
+<P><ADDRESS>
+<I>Araik Grigoryan <BR>
+Tue Apr  8 11:21:37 EDT 1997</I>
+</ADDRESS>
+</BODY>
+</HTML>

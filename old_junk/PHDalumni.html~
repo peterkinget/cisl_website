@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <style TYPE="text/css">
+   <!--
+   A { font-family: Arial, sans-serif;font-size:10pt;font-weight: bold; text-decoration: none; }
+   SMALL { font-family: Arial, sans-serif; font-size: 10pt;}
+   P { font-family: Arial, sans-serif; font-size: 10pt;}   
+   -->
+   </style>
+
+   <script language="JavaScript" src="jsp/menu_new.js"></script>
+   <script language="JavaScript" src="jsp/share_new.js"></script>
+</head>
+
+<body bgcolor="#777777" link="#3366ff" vlink="#3366ff">
+<!-- <body bgcolor="#777777white" link="#3366ff" vlink="#3366ff"> --> 
+
+<script language="JavaScript">
+    writehead("people");
+</script>
+
+<!--page content-->
+
+<table align="center" border="0" cols="4" width="700">
+
+<tr>
+<td align="center" colspan="4">
+<br><h3>Ph.D. Alumni</h3>
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<table>
+<tr><td align="center">Mehran Bagheri</td></tr>
+<tr><td align="center">Mihai Banu</td></tr>
+<tr><td align="center">Caroline Beveniste</td></tr>
+<tr><td align="center">Steven Daubert</td></tr>
+<tr><td align="center">Aleksander M. Dec</td></tr>
+<tr><td align="center">San-Chin Fang</td></tr>
+<tr><td align="center">Venu Gopinathan</td></tr>
+<tr><td align="center">Ruben D. Herrera</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/ionis/index.html" target="_blank">Gregory Ionis</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/gcowan/">Glenn Cowan</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/sara/">Saravanan Rajapandian</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/schan/index.html" target="_blank">Steven Chan</a></td></tr>
+<tr><td align="center"><a href="http://www.ee.columbia.edu/~babak"
+target="_blank"> Babak Soltanian</td></tr>
+</table>
+</td>
+<td align="center">
+<table>
+<tr><td align="center">Peicheng Ju</td></tr>
+<tr><td align="center">John Khoury</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/nagi/index.html" target="_blank">Nagendra Krishnapura</td></tr>
+<tr><td align="center">Paul Landsberg</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/daisy/index.html" target="_blank">Dandan Li</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/sherry/index.html" target="_blank">Shaorui Li</a></td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/ozgun/index.html" target="_blank">Mehmet Ozgun</a></td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/palaskas/index.html" target="_blank">Yorgos Palaskas</td></tr>
+<tr><td align="center"><a href="http://www.ee.iitm.ernet.in/~shanthi/index.html" target="_blank">Shanthi Y. Pavan</td></tr>
+<tr><td align="center">Lih Jiuan Pu</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/presi/index.html" target="_blank">Sanjeev Ranganathan</td></tr>
+<tr><td align="center">Srinagesh Satyanarayana</td></tr>
+<tr><td align="center"><a href="http://www.bioee.ee.columbia.edu/~anup/">Anup Jose</td></tr>
+</table>
+</td>
+<td align="center">
+<table>
+<tr><td align="center">Andrew Stevens</td></tr>
+<tr><td align="center">Ken Suyama</td></tr>
+<tr><td align="center">Hai Tao</td></tr>
+<tr><td align="center">Christophe Tretz</td></tr>
+<tr><td align="center">David Vallancourt</td></tr>
+<tr><td align="center">Hongmo Wang</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/shaoyi/index.html" target="_blank">Shao-Yi Wang</td></tr>
+<tr><td align="center">Ilya Yusim</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/yu/" target="_blank">Yu Zheng</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/gpat/">George Patounakis</td></tr>
+<tr><td align="center"><a
+href="http://www.cisl.columbia.edu/grads/ywli/">Yee William Li</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/tuku/">Shouribrata Chatterjee</td></tr>
+<tr><td align="center"><a href="http://www.cisl.columbia.edu/grads/atsushi/index.html" target="_blank">Atsushi Yoshizawa</td></tr>
+</table>
+</td>
+</tr>
+
+</table>
+
+<script language="JavaScript">
+    writefoot();
+</script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<html>
+
+
+
+<head>
+
+<title>Files</title>
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+<h2><center><a name="files">HSPICE Files</a></center></h2>
+
+<p align="center">
+
+<nobr>[&nbsp;<a href="../Introduction.htm">Introduction</a>&nbsp;]</nobr> <nobr>[&nbsp;Files&nbsp;]</nobr> <nobr>[&nbsp;<a href="../SourceFile.htm">Source&nbsp;File</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="../Devices/Devices.htm">Devices</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="../Commands.htm">Commands</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="../Notes.htm">Notes</a>&nbsp;]</nobr>
+
+</p>
+
+<b>HSPICE Input Files</b>
+
+<ul>
+
+<li>
+
+<i>source (netlist): filename.sp</i>
+
+<li>
+
+design configuration: filename.cfg
+
+<li>
+
+initialization: hspice.ini
+
+</ul>
+
+Note: The italicized files are those you must have.
+
+<p><b>HSPICE Output Files</b>
+
+<ul>
+
+<li>
+
+<i>run status: filename.st0</i>
+
+<li>
+
+<i>output listing: filename.lis</i>
+
+<li>
+
+graph data, transient: filename.tr# (e.g. .tr0)
+
+<li>
+
+graph data, dc: filename.sw# (e.g. .sw2)
+
+<li>
+
+graph data, ac: filename .ac# (e.g. .ac1)
+
+<li>
+
+measure output: filename .m*# (e.g. .mt0)
+
+</ul>
+
+Note: The italicized files are those that you will always have.
+
+<p>In general, you will only need to know about some of these files: <a href="#net">source
+
+file</a>, <a href="#out">output listing</a>, and <a href="#ana">graph data</a>.</p>
+
+<p>&nbsp;</p>
+
+<p><a name="net"><b><span style="background-color: #FFFF00">Source file (.sp)</span></b></a></p>
+
+The source file is your input file. This file contains your circuit description
+
+and all options and analysis you wish HSPICE to deal with. The structure of the
+
+file looks like this:<pre>title			-Implicit first line, must be there
+
+.options		-set conditions for simulation
+
+ANALYSIS and TEMP	-statements to sweep vaiables
+
+.print/.plot/Analysis	-set print, plot, and analysis variables
+
+.initial conditions	-input state of system
+
+netlist			-circuit descriptions (components, input sources)
+
+.model libraries	-.lib and .inc
+
+.end			-terminates the simulation (always add a newline character)
+
+
+
+</pre><!--mstheme-->
+
+Note: This is just a suggested structure. Though the title always comes first
+
+and .end always comes last, the rest can come in any order in between. Another
+
+popular structure that is more implicit is to put the analysis statements after
+
+the circuit descriptions.
+
+<p><b>An example Netlist structure:</b>
+
+<!--mstheme--></font><pre>This is a source file		$must have a title line
+
+.options post acct opts node	$HPSICE options
+
+
+
+l6	6	16	.05	$indcutor 
+
+c6	16	0	.05	$capacitor
+
+r16	16	0	40	$resistor
+
+c4	4	14	.1	$another capacitor
+
+l5	data	15	1	$another inductor
+
+c5	15	0	.2	$another capacitor
+
+
+
+v4	4	0	dc 0 ac 0 0 pulse 0 1 0 .15 .15 .4 2	$voltage source
+
+vdata	data	0	sin(1.0 1.0 1.0 0.0 1.0)		$voltage source
+
+v6	6	0	exp(1 0.1 .02 .6 .2)			$voltage source
+
+
+
+.model ...			$models and subckts
+
+
+
+.tran	.1 5			$transient analysis
+
+.print	v(6) i(r16)		$print statement
+
+.plot	v(4) v(14) v(data)	$plot statement
+
+
+
+.end				$Must have an end
+
+
+
+</pre>
+
+<p>&nbsp;</p>
+
+<p><a name="con"><b>Design configuration (.cfg)</b></a></p>
+
+Configuration files are used by HSPICE, AWAVES and HSPLOT to describe the
+
+available terminals and hardcopy devices.&nbsp;
+
+<p>&nbsp;</p>
+
+<p><a name="ini"><b>Initialization (hspice.ini)</b></a></p>
+
+The initialization file deals primarily with setting up HSPICE itself and has no
+
+need to be modified by users.
+
+<p>&nbsp;</p>
+
+<p><a name="run"><b>Run status (.st0)</b></a></p>
+
+The run status file is a transcript of what operations HSPICE performs on a
+
+source file. The file sometimes offers help when debugging as shows steps not
+
+preformed by HSPICE.
+
+<p>&nbsp;</p>
+
+<p><a name="out"><b><span style="background-color: #FFFF00">Output listing
+
+				(.lis)</span></b></a></p>
+
+This is one of the most important files in HSPICE as this file lists all results
+
+obtained from the simulation. This file contains (in order of listing in the
+
+file):
+
+<ol>
+
+  <li>HSPICE licensing information
+
+  <li>Listing of the circuit
+
+  <li>Results form the analysis of the circuit (.op, .print, .plot, .measure,
+
+    .ac, and .tran in order of their appearance in the source file)</li>
+
+</ol>
+
+<p>&nbsp;</p>
+
+<p><a name="ana"><b>Graph data files (.tr#,
+
+.sw#, .ac#)</b></a></p>
+
+Graph data files are created by .OPTION POST command and contain the data to
+
+graphed by HSPLOT, AWAVES, or HSPICE. Basically these files retain the data to
+
+be graphed from the .lis file in a different graphing format.
+
+<p>&nbsp;</p>
+
+<p><a name="mea"><b>Measure output (.m*#)</b></a></p>
+
+The measure output file hold the result from .MEASURE commands. These files are
+
+not very useful because the data is hard to read and already exits in a
+
+nicely formatted way in the .lis file.
+
+
+
+<p align="center"><img src="../../images/atecrule.gif" width="600" height="10"></p>
+
+<p><font size="2">
+The material in this website is an expanded version
+of material presented by Dr. J. Steensgaard.
+This website is  maintained by <a
+
+		href="http://www.cisl.columbia.edu/grads/tuku/">Shouri
+
+Chatterjee</a>.&nbsp; This page was last updated on
+
+02/11/2003
+
+
+
+</body>
+
+
+
+</html>
+

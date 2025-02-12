@@ -1,0 +1,951 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Overview</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="Microsoft Theme" content="e3301b 011, default">
+<meta name="Microsoft Border" content="none, default">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#800000" vlink="#800000" alink="#CCCC99"><!--mstheme--><font face="Arial, Arial, Helvetica"><center><b><i>COLUMBIA UNIVERSITY</i></b>
+<p><b>DEPARTMENT OF ELECTRICAL ENGINEERING</b><br>
+&nbsp;<br>
+&nbsp;<p><b>SPICE - A Brief Overview</b><br>
+(URL: http://www.ee.columbia.edu/~jesper/spice/spice.overview.html)</center>
+<p>This document gives a brief overview of SPICE. The description is far from
+complete, as SPICE is a powerful circuit simulator with many capabilities.
+However, this document will serve as a start for students in introductory
+classes. For more information, please refer to the SPICE user's manual or <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#REFERENCES">books</a>
+listed at the end of the document.<br>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/e3301b/atecrule.gif" width="600" height="10"></p>
+<center>Do not print this document on the CETS printers.</center>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/e3301b/atecrule.gif" width="600" height="10"></p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <h2><!--mstheme--><font color="#003333"><a name="table of contents"></a>Table of Contents<!--mstheme--></font></h2>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<ol>
+  <li><a href="../upenn/upenn.htm#INTRODUCTION">INTRODUCTION</a><br>
+    &nbsp;
+    <p>&nbsp;</p>
+  <li><a href="../upenn/upenn.htm#HOW TO">HOW TO SPECIFY CIRCUIT TOPOLOGY AND ANALYSIS?</a><br>
+    &nbsp;
+    <p>&nbsp;
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      2.1 Data Statements
+      <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Independent DC Sources">Independent DC Sources</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Dependent Sources">Dependent Sources</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Resistors">Resistors</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Capacitors">Capacitors and Inductors</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Mutual">Mutual Inductors</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Ideal">Ideal Transformers</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Sinusoidal">Sinusoidal Sources</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Piecewise">Piecewise Linear Source</a> (PWL)
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Pulse">Pulse</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Switches">Voltage and Current Controlled Switches</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Operational">Operational Amplifiers (incl. model for 741)</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Subcircuits">Subcircuits</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Semiconductor">Semiconductor Devices</a>
+          <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Diode">Diode</a>
+            <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Bipolar">Bipolar Transistor</a>
+            <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#MOSFETS">MOSFET</a>
+            <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#JFETS">JFET</a><br>
+              &nbsp;
+              <p>&nbsp;</p>
+            <!--mstheme--></font><!--msthemelist--></td></tr>
+          <!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+        <!--mstheme--></font><!--msthemelist--></td></tr>
+      <!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+      <a href="../upenn/upenn.htm#Control">2.2 Control Statements</a>
+      <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Operating">Operating Point (.OP)</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#DC Statement">DC Statement (.DC)</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Transfer">Transfer Function (.TF)</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Sensitivity">Sensitivity (.SENS)</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Transient">Transient (.TRAN)</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Initial">Initial Condictions (.IC)</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#AC Statement">AC Analysis (.AC)</a>
+        <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul3.gif" width="12" height="12" hspace="15"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica"><a href="../upenn/upenn.htm#Others">Others</a><!--mstheme--></font><!--msthemelist--></td></tr>
+      <!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+      <a href="../upenn/upenn.htm#Output">2.3 Output Statements</a>
+    <!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <li><a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#PSPICE">PSPICE
+    - Getting started</a>
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#Creating an Input">3.1
+      Creating an Input File</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#editor">3.2
+      Schematic Editor</a>
+    <!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <li><a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#hspice">HSPICE</a><br>
+    &nbsp;
+    <p>&nbsp;
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#running hspice">4.1
+      Running HSpice</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#features">4.2
+      Mathematical Expressions in HSpice</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#gsi">4.3
+      Graphical Interface (GSI)</a>
+    <!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <li>EXAMPLES
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.exspice.html">5.1
+      Thevenin Equiv. Circuit (.TF analysis and .DC Sweep)</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.exHspice.html">5.2
+      HSpice example (.TF analysis and .DC Sweep)</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.mutualInductor.html">5.3
+      Mutual Inductor (Transformer;Transient analysis)</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.transformer.html">5.3
+      Ideal Transformer</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.filter.html">5.4
+      Filter Circuit (.AC Analysis)</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.diodes.html">5.5
+      Rectifier Circuit (with diodes)</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.transistor.html">5.6
+      Transistor Circuit (NPN)</a>
+    <!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <li>MODELS of Selected Devices and Components
+    <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.models.html#opamp741">6.1
+      Macromodel for the 741</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.models.html#D4148">6.2
+      Diode 1N4148</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.models.html#1n2222">6.3
+      NPN Transistors: 1N2222A and 2N696</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.models.html#mosis1.2um">6.4
+      MOSIS models: 1.2 um CMOS</a><br>
+      <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.models.html#JFETS">6.5
+      JFET model: 2N5459</a>
+    <!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+  <li><a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#mistakes">MOST
+    COMMON MISTAKES</a><br>
+    &nbsp;
+    <p>&nbsp;</p>
+  <li><a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#does not run">WHEN
+    SPICE DOES NOT RUN</a><br>
+    &nbsp;
+    <p>&nbsp;</p>
+  <li><a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#REFERENCES">REFERENCES</a></li>
+</ol>
+<!--msthemeseparator--><p align="center"><img src="../../_themes/e3301b/atecrule.gif" width="600" height="10"></p>
+<h3><!--mstheme--><font color="#003333">1.&nbsp;<a name="INTRODUCTION"></a>INTRODUCTION<!--mstheme--></font></h3>
+SPICE is a powerful general purpose analog circuit simulator that is used to
+verify circuit designs and to predict the circuit behavior. This is of
+particular importance for <u>integrated circuits</u>. It was for this reason
+that SPICE was originally developed at the Electronics Research Laboratory of
+the University of California, Berkeley (1975), as its name implies:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <b><u>S</u></b>imulation <b><u>P</u></b>rogram for <b><u>I</u></b>ntegrated <b><u>C</u></b>ircuits
+  <b><u>E</u></b>mphasis.
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+PSpice is a PC version of SPICE (MicroSim Corp.) and HSpice is a version (Avant!.)
+that runs on workstations and larger computers. <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#PSPICE">PSpice</a>
+is available on the PCs in the SEAS PC computing Labs and <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.guide.html#hspice">HSPICE</a>
+is available on ENIAC or PENDER. A complete manual of the <a href="http://www.ece.orst.edu/~moon/hspice98/">Avant!
+Star- HSPICE</a> (pdf document) is available as well.
+<p>SPICE can do several <i>types of circuit analyses</i>. Here are the most
+important ones:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Non-linear DC analysis: calculates the DC transfer curve.
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Non-linear transient analysis: calculates the voltage and current as a
+    function of time when a large signal is applied.
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Linear AC Analysis: calculates the output as a function of frequency. A
+    bode plot is generated.
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Noise analysis
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Sensitivity analysis
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Distortion analysis
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Fourier analysis: calculates and plots the frequency spectrum.
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Monte Carlo Analysis<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+In addition, PSpice has analog and digital libraries of standard components
+(such as NAND, NOR, flip-flops, and other digital gates, op amps, etc). This
+makes it a useful tool for a wide range of analog and digital applications.
+<p>All analyses can be done at different temperatures. The default temperature
+is 300K.
+<p>The circuit can contain the <i>following components</i>:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Independent and dependent voltage and current sources
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Resistors
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Capacitors
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Inductors
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Mutual inductors
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Transmission lines
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Operational amplifiers
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Switches
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Diodes
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Bipolar transistors
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">MOS transistors
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">JFET
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">MESFET
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">Digital gates (PSpice, version 5.4 and up)<br>
+    &nbsp;
+    <p>&nbsp;</p>
+  <!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<!--msthemeseparator--><p align="center"><img src="../../_themes/e3301b/atecrule.gif" width="600" height="10"></p>
+<h3><!--mstheme--><font color="#003333">2.&nbsp;<a name="HOW TO"></a>HOW TO SPECIFY THE CIRCUIT TOPOLOGY AND
+ANALYSIS?<!--mstheme--></font></h3>
+A SPICE input file, called source file, consists of three parts.<br>
+&nbsp;<br>
+&nbsp;
+<ol>
+  <li><i><u>Data statements</u></i>: description of the components and the
+    interconnections.
+  <li><i><u>Control statements</u></i>: tells SPICE what type of analysis to
+    perform on the circuit.
+  <li><i><u>Output statements</u></i>: specifies what outputs are to be printed
+    or plotted.</li>
+</ol>
+Although these statements may appear in any order, it is recommended that they
+be given in the above sequence. Two other statements are required: the <i><u>title
+statement</u></i> and the <i><u>end statement</u></i>. The title statement is
+the first line and can contain any information, while the end statement is
+always .END. This statement must be a line be itself, followed by a carriage
+return! In addition, you can insert <i><u>comment statements</u></i>, which must
+begin with an asterisk (*) and are ignored by SPICE.<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <dl>
+    <dt><tt>TITLE STATEMENT</tt>
+    <dt><tt>ELEMENT STATEMENTS</tt>
+    <dt><tt>.</tt>
+    <dt><tt>.</tt>
+    <dt><tt>COMMAND (CONTROL) STATEMENTS</tt>
+    <dt><tt>OUTPUT STATEMENTS</tt>
+    <dt><tt>.END &lt;CR&gt;</tt><br>
+      &nbsp;
+    <p>&nbsp;</p>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<i>Format: </i>The statements have a free format and consist of fields separated
+by a blank. If one wants to continue a statement to the next line, one uses a
+&quot;+&quot; sign (continuation sign) at the beginning of the next line.
+Numbers can be integers, or floating points. For example,<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>RES1 1 0 3500 or RES1 1 0 3.5E3</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+One can also use the following scale factors:<br>
+&nbsp;<br>
+&nbsp;
+<p>T(= 1E12 or 10<sup>+12</sup>); G(= E9); MEG(= E6); K(= E3); M(= E-3); U(=
+E-6); N(= E-9); P(= E-12), and F(= E-15)<br>
+&nbsp;<br>
+&nbsp;
+<p>Both upper and lower case letters are allowed in PSpice and Hspice (SPICE
+uses only uppercase characters). As an example, one can specify a capacitor of
+225 picofarad in the following ways:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>225P, 225p, 225pF; 225pFarad; 225E-12; 0.225N, etc.</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h3><!--mstheme--><font color="#003333">2.1 Data Statements to Specify the Circuit Components and Topology<!--mstheme--></font></h3>
+<h4><!--mstheme--><font color="#003333">a.&nbsp;<a name="Independent DC Sources"></a>Independent DC Sources<!--mstheme--></font></h4>
+Voltage source: <tt>Vname N1 N2 Type Value</tt>
+<p>&nbsp;Current source: <tt>Iname N1 N2 Type Value</tt><br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <dl>
+    <dt>N1 is the positive terminal node
+    <dt>N2 is the negative terminal node
+    <dt>Type can be DC, AC or TRAN, depending on the type of analysis (see <a href="../upenn/upenn.htm#Control">Control
+      Statements</a>)
+    <dt>Value gives the value of the source
+    <dt>The name of a voltage and current source must start with V and I,
+      respectively.</dt>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+Examples:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Vin 2 0 DC 10</tt>
+  <p><tt>Is 3 4 DC 1.5</tt></p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+The positive current direction through the <i>current or voltage source</i> is
+from the positive (N1) node to the negative (N2) node:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<i>Voltage and Current Conventions:</i>
+<ol>
+  <li>Spice always assigns a positive reference mark to the 1st node and uses
+    the passive sign convention to assign the current reference.
+  <li>Spice uses the node-voltage analysis. It solves for the unknown node
+    voltages and also the unknown <i>currents through independent voltage
+    sources</i>. This gives us a way to find currents flowing in elements: one
+    has to ask for the current through a voltage source. Thus one can insert an
+    independent voltage source of zero value in series with the element in which
+    one wants to know the current, as shown in the example below:<br>
+    &nbsp;
+    <p>&nbsp;</p>
+  </li>
+</ol>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <br>
+  &nbsp;<br>
+  &nbsp;
+  <p>The value of the current will be positive if it flows from the positive to
+  the negative terminal through the source, as in the above example. Some
+  versions of PSpice allow you to ask for a current through a resistor without
+  using a voltage source (EX: I(R1) gives the current in the resistor R1).</p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">b.&nbsp;<a name="Dependent Sources"></a>Dependent Sources<!--mstheme--></font></h4>
+Voltage controlled voltage source:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Ename N1 N2 NC1 NC2 Value</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+Voltage controlled current source:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Gname N1 N2 NC1 NC2 Value</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+Current controlled voltage source:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Hname N1 N2 Vcontrol Value</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+Current controlled current source:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Fname N1 N2 Vcontrol Value</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <dl>
+    <dt>N1 and N2 are the positive and negative terminals of the dependent
+      source, respectively.
+    <dt>NC1 and NC2 are the positive and negative terminals of the controlling
+      voltage source, respectively.
+    <dt>Vcontrol is the zero value voltage source used to measure the
+      controlling current (the positive current flows into the positive terminal
+      of the controlling voltage source!).</dt>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  Examples:
+  <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tt>F1 0 3 Vmeas 0.5</tt>
+    <p><tt>Vmeas 4 0 DC 0</tt></p>
+  <!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">c.&nbsp;<a name="Resistors"></a>Resistors<!--mstheme--></font></h4>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Rname N1 N2 Value</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">d.<a name="Capacitors"></a>Capacitors (C) and Inductors (L)<!--mstheme--></font></h4>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Cname N1 N2 Value &lt;IC&gt;</tt>
+  <p><tt>Lname N1 N2 Value &lt;IC&gt;</tt></p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <dl>
+    <dt>N1 is the positive node.
+    <dt>N2 is the negative node.
+    <dt>IC is the initial condition (DC voltage or current).
+    <dt>The symbol &lt; &gt; means that the field is optional. If not specified,
+      it is assumed to be zero. In case of an inductor, the current flows from
+      N1 to N2.</dt>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<img align="right" src="../upenn/spice.overview5.gif" width="86" height="50">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  Example:
+  <!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tt>Cap5 3 4 35E-12 5</tt>
+    <p><tt>L12 7 3 6.25E-3 1m</tt></p>
+  <!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">e.&nbsp;<a name="Mutual"></a>Mutual Inductors<!--mstheme--></font></h4>
+A mutual inductance in SPICE is defined by specifying the coupling coefficient <i>K
+</i>between the two inductors. The syntax is as follows:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Kname Inductor1 Inductor2 value_of_K</tt><br>
+  &nbsp;<br>
+  &nbsp;
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+The value of <i>K</i> must be larger than 0 but smaller than 1. Spice does not
+support perfect coupling (k=1). The above statement must always be together with
+the statements for the two inductors. An example is given in the figure below.
+The coupling coefficient K can be calculated as K=M/sqrt(L1xL2)=0.81.<br>
+&nbsp;<br>
+&nbsp;
+<p>The SPICE statements to define the above coupled coils are as follows.<br>
+&nbsp;<br>
+&nbsp;
+<p><img align="right" src="../upenn/spice.overview6.gif" width="190" height="80">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <dl>
+    <dt><tt>L1 3 5 10M</tt>
+    <dt><tt>L2 4 7 3M</tt>
+    <dt><tt>K L1 L2 0.81</tt></dt>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+The DOTS are always associated with the first node of the inductances (i.e. node
+no. 3 of L1 and no. 4 of L2). Also SPICE will assign the positive node voltage
+to the first node of the inductance (i.e. the DOT) and use the passive sign
+convention for the current direction as indicated in the figure above. For an
+example circuit see under the section <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.mutualInductor.html">Examples.</a><br>
+&nbsp;<br>
+&nbsp;
+<h4><!--mstheme--><font color="#003333">f.&nbsp;<a name="Ideal"></a>Ideal Transformer<!--mstheme--></font></h4>
+SPICE has no model for an ideal transformer. An ideal tranformer is simulated
+using mutual inductances such that the transformer ratio N1/N2 = sqrt(L1/L2).
+Make the coupling factor K close to one (ex. K=0.99999) and choose L such that
+wL &gt;&gt; the resistance seen be the inductor. The secondary circuit needs a
+DC connection to ground. This can be accomplished by adding a large resistor to
+ground or giving the primary and secondary circuits a common node. For an
+example circuit see under the section <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.transformer.html">Examples</a>
+<p><img src="../upenn/spice.overview7.gif" width="210" height="105"><img src="../upenn/spice.overview8.gif" width="200" height="91">
+<h4><!--mstheme--><font color="#003333">g.&nbsp;<a name="Sinusoidal"></a>Sinusoidal sources<!--mstheme--></font></h4>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Vname N1 N2 SIN(VO VA FREQ TD THETA PHASE)</tt>
+  <p>&nbsp;which is a damped sinusoidal voltage source:
+  <p>&nbsp;Vname = VO + VA exp[-THETA.(t - TD)] sin[2pi.f (t - TD) +
+  (Phase/360)]
+  <dl>
+    <dt>VO - offset voltage in volt.
+    <dt>VA - amplitude in volt.
+    <dt>f = FREQ - the frequency in herz.
+    <dt>TD - delay in seconds
+    <dt>THETA - damping factor per second
+    <dt>Phase - phase in degrees<br>
+      &nbsp;
+    <p>&nbsp;</p>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+If TD, THETA and PHASE are not specified, it is assumed to be zero.<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Example: VG 1 2 SIN(5 10 50 0.2 0.1)</tt>
+  <p><tt>VG2 3 4 SIN(0 10 50)</tt></p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+The last example is an undamped, undelayed sinusoid with an amplitude of 10V and
+frequency of 50 Hz.<br>
+&nbsp;<br>
+&nbsp;
+<p>To generate a cosine function, you can make use of the phase relationship
+between the sinusoid and cosine. Here is an example of an undelayed cosine with
+an amplitude of 5V and frequency of 50 Hz.<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Vcos 1 2 SIN(0 5 50 0 0 90)</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">h.&nbsp;<a name="Piecewise"></a>Piecewise linear source (PWL)<!--mstheme--></font></h4>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Vname N1 N2 PWL(T1 V1 T2 V2 T3 V3 ...)</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+in which (Ti Vi) specifies the value Vi of the source at time Ti
+<p>&nbsp;Example:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Vgpwl 1 2 PWL(0 0 10U 5 100U 5 110U 0)</tt>
+  <p><img src="../upenn/spice.overview9.gif" width="244" height="104"></p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">i.&nbsp;<a name="Pulse"></a>Pulse<!--mstheme--></font></h4>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Vname N1 N2 PULSE(V1 V2 TD Tr Tf PW Period)</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+V1 - initial voltage; V2 - peak voltage; TD - initial delay time; Tr - rise
+time; Tf - fall time; pwf - pulse-wise; and Period - period.<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+Other sources such as polynominal controlled source, exponential source,
+FM-modulated source, etc. can be specified. For information on these components,
+check the SPICE manual.<br>
+&nbsp;<br>
+&nbsp;
+<h4><!--mstheme--><font color="#003333">j.&nbsp;<a name="Switches"></a>Voltage- and Current-controlled Switches<!--mstheme--></font></h4>
+Voltage Controlled:&nbsp;&nbsp;
+<p><tt>Sname N1 N2 C1 C2 Mname</tt>
+</p>
+Current Controlled:&nbsp;&nbsp;
+<p><tt>Wname N1 N2 Vname Mname</tt>
+</p>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <dl>
+    <dt>N1 and N2 are the terminals of the switch.
+    <dt>C1 and C2 are the controlling terminals.
+    <dt>Vname is the zero-value voltage source whose current controls the
+      switch.
+    <dt>Mname refers to the switch model that is defined in another statement
+      (see Model Statement below).</dt>
+    <dd>&nbsp;</dd>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+The .MODEL statement allows you to specify the parameters of a variety of
+devices used in SPICE, such as switches, diodes, transistors. In case of a
+switch, we have:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt><b>.</b>MODEL Mname Dname(Pvalues)</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <dl>
+    <dt>Mname refers to the Mname in the data statement of the switch.
+    <dt>Dname is the device name: Vswitch or Iswitch.
+    <dt>Pvalues are the values of the switch parameters, such as RON (on -
+      resistance), ROFF (off-resistance), VON (the control voltage for ON;
+      default = 1V), VOFF (control voltage for OFF; default = 0V), etc.</dt>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+Example:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>S15 3 5 8 9 SMOD</tt>
+  <p><tt><b>.</b>MODEL SMOD VSWITCH(RON = 10, VON = 0, ROFF = 100MEG)</tt></p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">k.&nbsp;<a name="Operational"></a>Operational Amplifiers, and other elements<!--mstheme--></font></h4>
+An operational amplifier can be simulated in different ways. The first method is
+to model the amplifier by resistors, capacitors and dependent sources. As an
+example an ideal opamp is easily simulated using a voltage dependent voltage
+source. The second option uses actual transistors to model the opamp. The device
+library contains nonlinear models of the most common op amps. The student
+version of PSpice has macromodels for the linear amplifiers LM324 and uA741
+which are included in the EVAL.LIB file. The professional version comes with
+library files of many commercial amplifiers and devices.
+<p>An example of the first approach (linear AC model) is given below for the
+uA741 opamp. We defined a <a href="../upenn/upenn.htm#Subcircuits">subcircuit</a> for the opamp.
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <i>SPICE code for the 741 opamp</i> (ref: Macromodeling with Spice, by J.A.
+  Connelly/P. Choi)<br>
+  &nbsp;<br>
+  &nbsp;
+  <dl>
+    <dt><tt>* Subcircuit for 741 opamp</tt>
+    <dt><tt>.subckt opamp741 1 2 3</tt>
+    <dt><tt>* +in (=1) -in (=2) out (=3)</tt>
+    <dt><tt>rin 1 2 2meg</tt>
+    <dt><tt>rout 6 3 75</tt>
+    <dt><tt>e 4 0 1 2 100k</tt>
+    <dt><tt>rbw 4 5 0.5meg</tt>
+    <dt><tt>cbw 5 0 31.85nf</tt>
+    <dt><tt>eout 6 0 5 0 1</tt>
+    <dt><tt>.ends opamp741</tt></dt>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">l.&nbsp;<a name="Subcircuits"></a>Subcircuits<!--mstheme--></font></h4>
+A subcircuit allows you to define a collection of elements as a subcircuit (e.g.
+an operational amplifier) and to insert this description into the overall circui
+(as you would do for any other element).
+<p><b>Defining a subcircuit</b>
+<p>&nbsp;A subcircuit is defined bu a .SUBCKT control statement, followed by the
+circuit description as follows:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <dl>
+    <dt><tt>.SUBCKT SUBNAME N1 N2 N3 ...</tt>
+    <dt><tt>Element statements</tt>
+    <dt><tt>.</tt>
+    <dt><tt>.</tt>
+    <dt><tt>.</tt>
+    <dt><tt>.ENDS SUBNAME</tt></dt>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+in which SUBNAME is the subcircuit name and N1, N2, N3 are the <i>external nodes</i>
+of the subcircuit. The external nodes cannot be 0. The node numbers used inside
+the subcircuit are stricktly local, except for node 0 which is always global.
+For an example, see Operational Amplifier above.
+<p><b>Using a subcircuit</b>
+<p>&nbsp;The element statement for a subcircuit is similar to any other element.
+The format is as follows:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Xname N1 N2 N3 ... SUBNAME</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+in which Xname refers to the element (subcircuit) being used; N1, N2, N3 are the
+nodes to which the external nodes of the subcircuit are being connected, and
+SUBNAME is the name of the subcircuit being used.
+<p>&nbsp;An example of an inverting opamp circuit using the subcircuit of the <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.models.html#opamp741">the
+uA741</a> (see operational amplifiers above) is given below. The subcircuit is
+called x1.<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <dl>
+    <dt><tt>vs 1 0 dc 5</tt>
+    <dt><tt>r1 1 2 200</tt>
+    <dt><tt>rf 2 3 1k</tt>
+    <dt><tt>x1 0 2 3 opamp741</tt>
+    <dt><tt>.dc vs 0 10 1</tt>
+    <dt><tt>.plot dc v(3)</tt>
+    <dt><tt>.end</tt></dt>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">m.&nbsp;<a name="Semiconductor"></a>Semiconductor Devices<!--mstheme--></font></h4>
+Most of the elements that have been described above require only a few
+parameters to specify its electrical characteristics. However, the models for
+semiconductor devices require many parameter values. A set of device model
+parameters is defined in a separate .MODEL statement and assigned a unique name.
+This method alliaviates the need to specify all of the model parameters on each
+device element card. Thus a semiconductor device is specified by two command
+lines: an <i>element</i> and <i>model</i> statement.
+<p>The syntax for the model statement is:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.MODEL MODName Type (parameter values)</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+MODName is the name of the model for the device. The Type refers to the type of
+device and can be any of the following:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <dl>
+    <dt>D: Diode
+    <dt>NPN: npn bipolar transistor
+    <dt>PNP: pnp bipolar transistor
+    <dt>NMOS: nmos transistor
+    <dt>PMOS: pmos transistor
+    <dt>NJF: N-channel JFET model
+    <dt>PJF: P-channel JFET model</dt>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+The parameter values specify the device characteristics as explained below.
+<h4><!--mstheme--><font color="#003333">m1.&nbsp;<a name="Diode"></a>Diode<!--mstheme--></font></h4>
+<i>Element</i> line: <tt>Dname N+ N- MODName</tt><br>
+&nbsp;<br>
+&nbsp;
+<p><i>Model</i> statement:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.MODEL MODName D (IS= N= Rs= CJO= Tt= BV= IBV=)</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+The element name starts with D to indicate that the element is a diode, N+ and
+N- are the two node numbers and MODName is the name of the model of the diode
+which is specified in the model line. The values one can specify include: the
+saturation current, IS (default=1E-14A), the emission coefficient, N (=1), the
+series resistance, RS (=0 ohm), junction capacitance, CJO (=0F), transit time,
+TT (=0sec), reverse bias breakdown voltage, BV (=infinite) and the reverse bias
+breakdown current, IBV (=1xE-10A). If a parameter is not specified the default
+value (given in parenthesis) is assumed.
+<p>&nbsp;As an example, the model parameters for a 1N4148 commercial diode are
+as follows:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.model D1N4148 D (IS=0.1PA, RS=16 CJO=2PF TT=12N BV=100 IBV=0.1PA)</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">m2.&nbsp;<a name="Bipolar"></a>Bipolar transistors<!--mstheme--></font></h4>
+<i>Element:</i> <tt>Qname C B E BJT_modelName</tt><br>
+&nbsp;<br>
+&nbsp;
+<p><i>Model</i> statement:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.MODEL BJT_modName NPN (BF=val IS=val VAF=val)</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+in which BF is the common emitter current gain ß, IS is the saturation current
+and VAF is the Early voltage. If no values are specified, the default values are
+assumed (ß=100; IS=1E-16A, and VAF=[infinite]). Other parameters can be
+specified including the junction capacitances CJE (0pF) and CJC (0pF), the
+transit times TT (0sec) and TR (0sec), the base RB (0 Ohm), emitter RE (0 Ohm)
+and collector resistances RC (0 Ohm). For a complete list of the parameters
+please refer to one of the references. As an example, the model parameters for
+the 2N2222A NPN transistor is given below:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.model Q2N2222A NPN (IS=14.34F XTI=3 EG=1.11 VAF= 74.03 BF=255.9 NE=1.307
+  ISE=14.34F IKF=.2847 XTB=1.5 BR=6.092 NC=2 ISC=0 IKR=0 RC=1 CJC=7.306P MJC=.3416
+  VJC=.75 FC=.5 CJE=22.01P MJE=.377 VJE=.75 TR=46.91N TF=411.1P ITF=.6 VTF=1.7
+  XTF=3 RB=10)</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+Notice that the continuation sign + should be added at the beginning of a new
+line. A circuit example with a npn transistor can be found under the section <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.transistor.html">Examples</a><br>
+&nbsp;<br>
+&nbsp;
+<h4><!--mstheme--><font color="#003333">m3.&nbsp;<a name="MOSFETS"></a>MOSFETS<!--mstheme--></font></h4>
+<b><i>Element</i>:</b> <tt>Mname ND NG NS &amp;ltNB&gt; ModName L= W=</tt><br>
+&nbsp;<br>
+&nbsp;
+<p>The MOS transistor name (Mname) has to start with a M; ND, NG, NS and NB are
+the node numbers of the Drain, Gate, Source and Bulk terminals, respectively.
+ModName is the name of the transistor model (see further). L and W is the length
+and width of the gate (in m).
+<p>&nbsp;The above paramters are usually sufficient when specifying discrete
+transistors. However, for integrated circuit simulations one need to specify
+several other parameter values related to the transistor geomtry. These are
+optional.<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>Mname ND NG NS NB ModName &amp;ltL=VAL&gt; &amp;ltW=VAL&gt; &amp;ltAD=VAL&gt;
+  &amp;ltAS=VAL&gt; &amp;ltPD=VAL&gt; &amp;ltPS=VAL&gt; &amp;ltNRD=VAL&gt; &amp;ltOFF&gt;
+  &amp;ltIC=VDS.VGS.VBS&gt;</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+in which
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  AD and AS are the area of source and drain diffusion (in sq. m).<br>
+  PD and PS are the value (in m) of the perimeter of the source and drain.<br>
+  NRD is the number of squares of the drain diffusion for resistance
+  calculations.<br>
+  OFF sets the starting condition to OFF.<br>
+  The initial condition specification using IC=VDS, VGS, VBS is intended for use
+  with the UIC option on the .TRAN card, when a transient analysis is desired
+  starting from other than the quiescent operating point. See the .IC card for a
+  better and more convenient way to specify transient initial conditions.
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<b><i>Model</i> statement:</b>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.MODEL ModName NMOS (KP= VT0= lambda= gamma=)</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+in which KP=uCox and VTO is the threshold voltage. The default values are KP=20uA/V<sup>2</sup>;
+and the rest is equal to 0. There are several other transistor parameters that
+can be specified, in particular when doing simulations of integrated circuits.
+The general form of the .MODEL statement is as follows:
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.MODEL ModName NMOS (&amp;ltLEVEL=val&gt; &amp;ltkeyname=val&gt; ... )</tt>
+  <p><tt>&nbsp;.MODEL ModName PMOS (&amp;ltLEVEL=val&gt; &amp;ltkeyname=val&gt;
+  ... )</tt></p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+LEVEL refers to the MOSFET model that describes the terminal I-V characteristics
+of the transistors. LEVEL 1 is the simplest Mosfet model and is in general
+sufficient for describing discrete transistors as is done in the EE216 and EE319
+courses. However to simulate integrated circuit transistors, one need to use a
+more sophisticated models. LEVEL 2 includes extensive second-order models, while
+LEVEL 3 is a semi-empirical model that is better suited for short-channel
+transistors. Another model that is especially suited to model short-channel
+effects is called the BSIM model (LEVEL 13 in HSpice).
+<p>&nbsp;For partial listing of the <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.MOSparamlist.html">MOSFET
+MODEL parameters click here</a>. Refer to the references for a complete list of
+parameters.
+<p>An example of the model parameters of the <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.models.html#mosis1.2um">1.2um
+CMOS MOSIS</a> transistors can be found in section on Models of Selected Devices
+and Components later on.
+<h4><!--mstheme--><font color="#003333">m4.&nbsp;<a name="JFETS"></a>JFETS<!--mstheme--></font></h4>
+<b><i>Element</i>:</b> <tt>Jname ND NG NS ModName</tt>
+<p>ND, NG, and NS are the node numbers of the Drain, Gate, and Source terminals,
+respectively. ModName is the name of the transistor model<br>
+&nbsp;<br>
+&nbsp;
+<p><b><i>Model</i> statement:</b>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.MODEL ModName NJF (parameter= )</tt>
+  <p><tt>&nbsp;.MODEL ModName PJF (parameter= )</tt></p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+for the N-JFET and P-JFET respectively. A partial list of the parameters that
+can be specified is: VT0 (threshold voltage, -2V default for N_JFET), BETA (transconductance
+coefficient, 1E-4 A/V2), LAMBDA (channel length modulation, 0 /V), IS (gate p-n
+saturation current, 1E-14A), CGD and CGS (drain and source zero-bias junction
+capacitances, 0pf), RD and RS (drain and source ohmic resistances, 0 Ohm).
+<p>For an example of the model parameters of <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.models.html#JFETS">the
+2N5459 N-JFET </a>see section on Models of Selected Devices and Components later
+on.
+<h3><!--mstheme--><font color="#003333">2.2&nbsp;<a name="Control"></a>Commands or Control Statements to Specify the
+Type of Analysis<!--mstheme--></font></h3>
+<h4><!--mstheme--><font color="#003333">a.&nbsp;<a name="Operating"></a>.OP Statement<!--mstheme--></font></h4>
+This statement instructs Spice to compute the DC operating points:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">voltage at the nodes
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">current in each voltage source
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">operating point for each element<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+In PSpice it is usually not necessary to specify .OP as it gives you
+automatically the DC node voltages. However, HSpice does not give the DC
+voltages unless you have specified a certain analysis type, such as for instance
+.TRAN, or .AC analysis (Spice automatically does a DC analysis before doing a
+transient or AC analysis). Thus, if you are only interested in the DC voltages
+in HSpice, you should specify the .OP option, or the .DC option (see further).
+<h4><!--mstheme--><font color="#003333">b.&nbsp;<a name="DC Statement"></a>.DC Statement<!--mstheme--></font></h4>
+This statement allows you to increment (sweep) an independent source over a
+certain range with a specified step. The format is as follows:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.DC SRCname START STOP STEP</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+in which SRC name is the name of the source you want to vary; START and STOP are
+the starting and ending value, respectively; and STEP is the size of the
+increment.<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  Example: <tt>.DC V1 0 20 2</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+When the Start and Stop values are identical (and the Step is non-zero), the .DC
+command produces only one value. This may be usefull in HSpice when you do not
+want all the DC voltages and currents to be printed (with the .OP option), but
+are interested in a limited number of DC voltages and currents. In the <a href="../upenn/upenn.htm#Output">.PRINT
+statement</a> (see further) you would then also specify the node voltages you
+like to know (ex. <tt>.DC Vs 3 3 1 </tt>and <tt>.PRINT DC V(2), V(3), I(Vmeas) </tt>).
+<p>You can nest the DC sweep command which is often used to plot transistor
+characteristics, such as the Drain current ids versus the Drain-source voltage
+Vds for different gate voltages Vgs. This can be done as follows:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.DC SRCname1 START STOP STEP SRCname2 START STOP STEP</tt>
+  <p>Example:<tt> .DC Vds 0 5 0.5 Vgs 0 5 1</tt></p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+In the example above, the voltage Vds will be swept from 0 to 5V in steps of 1V
+for every value of Vgs.
+<h4><!--mstheme--><font color="#003333">c.&nbsp;<a name="Transfer"></a>.TF Statement<!--mstheme--></font></h4>
+The .TF statement instructs PSpice to calculate the following <i>small signal</i>
+characteristics:<br>
+&nbsp;<br>
+&nbsp;
+<ol>
+  <li>the ratio of output variable to input variable (gain or tranfer gain)
+  <li>the resistance with respect to the input source
+  <li>the resistance with respect to the output terminals</li>
+</ol>
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.TF OUTVAR INSRC</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+in which OUTVAR is the name of the output variable and INSRC is the input
+source.<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  Example: <tt>.TF V(3,0) VIN</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+The .TF statement can be used to find the <i>Thevenin small signal equivalent
+resistance</i>. (The Thevenin voltage is given by the node voltage at the open
+circuit terminal, as a result of the .OP statement). See also <a href="../upenn/upenn.htm#Output">Output
+Statements</a> later on.<br>
+&nbsp;<br>
+&nbsp;
+<h4><!--mstheme--><font color="#003333">d.&nbsp;<a name="Sensitivity"></a>.SENS Statement<!--mstheme--></font></h4>
+This instructs PSpice to calculate the DC small-signal sensitivities of each
+specified output variable with respect to <u>every</u> circuit parameter.<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.SENS VARIABLE</tt>
+  <p><tt>Example: .SENS V(3,0)</tt></p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">e.&nbsp;<a name="Transient"></a>.TRAN Statement<!--mstheme--></font></h4>
+This statement specifies the time interval over which the transient analysis
+takes place, and the time increments. The format is as follows:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.TRAN TSTEP TSTOP &lt;TSTART &lt;TMAX&gt;&gt; &lt;UIC&gt;</tt><br>
+  &nbsp;<br>
+  &nbsp;
+  <dl>
+    <dt>TSTEP is the printing increment.
+    <dt>TSTOP is the final time
+    <dt>TSTART is the starting time (if omitted, TSTART is assumed to be zero)
+    <dt>TMAX is the maximum step size.
+    <dt>UIC stands for Use Initial Condition and instructs PSpice not to do the
+      quiescent operating point before beginning the transient analysis. If UIC
+      is specified, PSpice will use the initial conditions specified in the
+      element statements (see data statement) IC = value.</dt>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+See also <a href="../upenn/upenn.htm#Output">Output Statements</a> later on.
+<h4><!--mstheme--><font color="#003333">f.&nbsp;<a name="Initial"></a>.IC Statement<!--mstheme--></font></h4>
+This statement provides an alternative way to specify initial conditions of
+nodes (and thus over capacitors).<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.IC Vnode1 = value Vnode2 = value etc.</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<h4><!--mstheme--><font color="#003333">g.&nbsp;<a name="AC Statement"></a>.AC Statement<!--mstheme--></font></h4>
+This statement is used to specify the frequency (AC) analysis. The format is as
+follows:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <dl>
+    <dt><tt>.AC LIN NP FSTART FSTOP</tt><br>
+      &nbsp;
+    <p>&nbsp;</p>
+    <dt><tt>.AC DEC ND FSTART FSTOP</tt><br>
+      &nbsp;
+    <p>&nbsp;</p>
+    <dt><tt>.AC OCT NO FSTART FSTOP</tt><br>
+      &nbsp;
+    <p>&nbsp;</p>
+  </dl>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+in which LIN stands for a linear frequency variation, DEC and OCT for a decade
+and octave variation respectively. NP stands for the number of points and ND and
+NO for the number of frequency points per decade and octave. FSTART and FSTOP
+are the start and stopping frequencies in Herz<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  Example: <tt>.AC DEC 10 1000 1E6</tt>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+See also <a href="../upenn/upenn.htm#Output">Output Statements</a> later on. For an example
+circuit see under the section <a href="http://www.seas.upenn.edu:8080/~jan/spice/spice.filter.html">Examples.</a><br>
+&nbsp;<br>
+&nbsp;
+<h4><!--mstheme--><font color="#003333">h.&nbsp;<a name="Others"></a>For .NOISE, .DISTO, and .FOUR statements<!--mstheme--></font></h4>
+Please consult the manual.<br>
+&nbsp;<br>
+&nbsp;
+<h3><!--mstheme--><font color="#003333">2.3&nbsp;<a name="Output"></a>Output Statements<!--mstheme--></font></h3>
+These statements will instruct PSpice what output to generate. If you do not
+specify an output statement, PSpice will always calculate the DC operating
+points. The two types of outputs are the prints and plots. A print is a table of
+data points and a plot is a graphical representation. The format is as follows:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.PRINT TYPE OV1 OV2 OV3 ...</tt>
+  <p><tt>.PLOT TYPE OV1 OV2 OV3 ...</tt></p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+in which TYPE specifies the type of analysis to be printed or plotted and can
+be:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">DC
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">TRAN
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">AC<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+The output variables are OV1, OV2 and can be voltage or currents in voltage
+sources. Node voltages and device currents can be specified as magnitude (M),
+phase (P), real (R) or imaginary (I) parts by adding the suffix to V or I as
+follows:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">M: Magnitude
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">DB: Magnitude in dB (deciBells)
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">P: Phase
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">R: Real part
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="../../_themes/e3301b/atecbul1.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Arial, Arial, Helvetica">I: Imaginary part<!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+Examples:<br>
+&nbsp;<br>
+&nbsp;
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tt>.PLOT DC V(1,2) V(3) I(Vmeas)</tt>
+  <p><tt>.PRINT TRAN V(3,1) I(Vmeas)</tt>
+  <p><tt>.PLOT AC VM(3,0) VDB(4,2) VM(2,1) VP(3,1) IR(V2)</tt></p>
+<!--msthemelist--></table msthemelist><!--mstheme--><font face="Arial, Arial, Helvetica">
+<!--msthemeseparator--><p align="center"><img src="../../_themes/e3301b/atecrule.gif" width="600" height="10"></p>
+This page has been&nbsp;<img alt src="http://www.seas.upenn.edu:8080/Scripts/nph-count?width=5&amp;link=~jan/spice/spice.overview.html&amp;increase=1">
+accessed since Jan. 12, 1996.<br>
+<a href="../upenn/upenn.htm#table of contents">Back to Table of Contents
+<!--msthemeseparator--><p align="center"><img src="../../_themes/e3301b/atecrule.gif" width="600" height="10"></p>
+</a>Jan Van der Spiegel
+<address>
+  jan@ee.upenn.edu
+</address>
+<br>
+Created Sept. 30, 1995; Updated October 15, 1995<!--mstheme--></font></body>
+
+</html>

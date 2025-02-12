@@ -1,0 +1,288 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="keywords" content="cisl courses">
+   <meta name="description" content="cisl courses">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>cisl courses</title>
+<style TYPE="text/css">
+
+   <!--
+
+A { color: blue; font-family:Times New Roman,Times; text-decoration: none; }
+
+SMALL { font-family: Times New Roman, Times; font-size: 10pt;}
+   -->
+
+</style>
+
+<script language="JavaScript">
+
+if(document.images){
+
+but1 = new Image();
+but1.src = "images/people1.gif";
+
+but2 = new Image();
+but2.src = "images/people2.gif";
+
+but3 = new Image();
+but3.src = "images/research1.gif";
+
+but4 = new Image();
+but4.src = "images/research2.gif";
+
+but5 = new Image();
+but5.src = "images/publications1.gif";
+
+but6 = new Image();
+but6.src = "images/publications2.gif";
+
+but7 = new Image();
+but7.src = "images/courses1.gif";
+
+but8 = new Image();
+but8.src = "images/courses2.gif";
+
+but9 = new Image();
+but9.src = "images/sponsors1.gif";
+
+but10 = new Image();
+but10.src = "images/sponsors2.gif";
+
+}
+
+function peopleOn(imgName) {
+        if(document.images) {
+           document["people"].src = eval(imgName + ".src");
+                }
+}
+
+function researchOn(imgName) {
+        if(document.images) {
+           document["research"].src = eval(imgName + ".src");
+                }
+}
+
+function pubOn(imgName) {
+        if(document.images) {
+           document["publications"].src = eval(imgName + ".src");
+                }
+}
+
+function coursesOn(imgName) {
+        if(document.images) {
+           document["courses"].src = eval(imgName + ".src");
+                        }
+}
+
+function sponsorsOn(imgName) {
+        if(document.images) {
+           document["sponsors"].src = eval(imgName + ".src");
+                        }
+}
+
+
+</script>
+</head>
+
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+<caption><!-- nav buttons --></caption>
+
+<tr>
+<td>
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+<tr>
+<td WIDTH="400"><a href="index.html" onMouseOver="window.status=''; return " true"><img SRC="images/subtitle.gif" ALT="CISL" BORDER=0 height=40 width=400></a></td>
+
+<td ALIGN=LEFT WIDTH="115">&nbsp;</td>
+
+<td WIDTH="65"><a href="index.html" onMouseOver="window.status=''; return true"><img SRC="images/subcisl.gif" NAME="cisl" ALT="cisl" BORDER=0 height=40 width=65 align=BOTTOM></a></td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr>
+<td><font size=-2>&nbsp;</font></td>
+</tr>
+
+<tr>
+<td>
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+
+    <tr>
+    <td ><a HREF="people.html"^
+        onMouseOver="peopleOn('but1')" onMouseOut="peopleOn('but2')"><img
+        SRC="images/people2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="people" NAME="people" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="research.html"
+        onMouseOut="researchOn('but4')" onMouseOver="researchOn('but3')"><img
+        SRC="images/research2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="research" NAME="research" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="publications.html"
+        onMouseOut="pubOn('but6')" onMouseOver="pubOn('but5')"><img
+        SRC="images/publications2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="publications" NAME="publications" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="courses.html"
+        onMouseOut="coursesOn('but8')" onMouseOver="coursesOn('but7')">
+        <img SRC="images/courses2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="courses" NAME="courses" WIDTH="110" HEIGHT="25"></a></td>
+    <td ><a HREF="sponsors.html"
+        onMouseOut="sponsorsOn('but10')"  onMouseOver="sponsorsOn('but9')">
+        <img SRC="images/sponsors2.gif" ALIGN="BOTTOM" BORDER="0"
+        ALT="sponsors" NAME="sponsors" WIDTH="110" HEIGHT="25"></a></td>
+  </tr></table> 
+</td>
+</tr>
+</table>
+
+<!--page content-->
+<br><br>
+<table BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH="580" >
+<tr>
+<td COLSPAN="2" >
+<center><font face="Arial, Times New Roman,Times"><font color="#FF0000">Courses</font></font>
+<br><font face="Arial, Times New Roman,Times"><font color="#FF0000">&nbsp;</font></font></center>
+</td>
+</tr>
+
+<tr>
+<td BGCOLOR="#FFFFFF" WIDTH="130">
+<center><font face="Times New Roman,Times"><font color="#000000">EE E4261</font></font></center>
+</td>
+
+<td><font face="Times New Roman,Times">Computational Methods of Circuit Analysis
+</font></td>
+</tr>
+
+<tr>
+<td BGCOLOR="#FFFFFF" WIDTH="130">
+<center><font face="Times New Roman,Times"><font color="#000000">EE E4303</font></font></center>
+</td>
+
+<td><font face="Times New Roman,Times">Analog Integrated Circuit Design</font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E4304</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">Analog Circuits and Systems in VLSI</font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E4306</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">Communications Circuits</font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E4321</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">VLSI Circuits
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E4332</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">VLSI Design Lab
+</font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E4340</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">Computer Hardware Design
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E6201</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">Linear System Theory </font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E6213</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">Network Theory</font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E6302</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">MOS Transistors</font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E6304</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">Advanced Electronic Circuits</font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E6920</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">Topics in VLSI Systems Design</font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E6930</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">VLSI Systems</font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E9201</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">Seminar in Circuit Theory </font></td>
+</tr>
+
+<tr>
+<td>
+<center><font face="Times New Roman,Times">EE E9303</font></center>
+</td>
+
+<td><font face="Times New Roman,Times">Seminar in Electronic Circuits</font></td>
+</tr>
+</table>
+<!-- footer -->
+<p>
+<hr ALIGN="left" WIDTH="580">
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+<tr>
+<td ALIGN=LEFT WIDTH="180"><small>Page under construction</small></td>
+
+<td ALIGN=LEFT WIDTH="58"><img SRC="images/construction4.gif" ALT="" height=34 width=58></td>
+
+<td ALIGN=RIGHT WIDTH="342"><a href="mailto:webmaster@cisl.columbia.edu"><small>webmaster</small></a></td>
+</tr>
+</table>
+
+</body>
+</html>

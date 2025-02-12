@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+"http://www.w3.org/TR/REC-html40/loose.dtd">
+<HTML>
+        <HEAD>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="Description" content="Student Projects Laboratory">
+		<title>
+			Student Projects Laboratory
+		</title>
+		<link rel="stylesheet" type="text/css" media="all" href="core.css">
+	</HEAD>
+
+<BODY bgcolor="#FFFFFF">
+
+<center><h2>Student Projects Laboratory</h2></center>
+
+<p>
+The Department of Electrical Engineering invites you to use
+the EE Student Projects Laboratory
+at 1212 S.W. Mudd Building
+<p>
+
+This is an "open doors" laboratory. This essentially means that you can walk
+in and work on whatever project you would like, as long as the laboratory
+doors
+are open.
+<p>
+<h2>More About the Lab</h2>
+<p>
+The laboratory is equipped with electronic test and measurement equipment,
+discrete components, breadboards and soldering stations. If you have
+any projects in mind, you can build and test it over here. There will be
+project ideas made available to you through the lab TA from time to time.
+If you are new to electronics and are keen on learning more, this is a
+quick way to pick up skills! If you are even peripherally interested, just
+come in, talk to us, and tinker with the tools and equipment.
+
+<p>
+
+<table cellspacing="2" width="100%" cellpadding="2">
+<tr>
+<td align="center" width="33%">
+<img src="pictures/lab.jpg" alt="Lab during busy hours" width="240" height="160">
+</td>
+<td align="center" width="33%">
+<img src="pictures/soiltdr.jpg" alt="Measuring soil moisture" width="240" height="160">
+</td>
+<td align="center" width="33%">
+<img src="pictures/audioamp.jpg" alt="An audio amplifier on breadboard" width="240" height="180">
+</td>
+</tr>
+<tr>
+<td align="center">Lab during busy hours</td>
+<td align="center">Measuring soil moisture</a>
+<td align="center">An audio amplifier on a breadboard</td>
+<tr>
+<td align="center" width="33%">
+<img src="pictures/testing.jpg" alt="Testing the audio amplifier" width="240" height="180">
+</td>
+<td align="center" width="33%">
+<img src="pictures/txrx.jpg" alt="AM transmitter and receiver testing" width="240" height="180">
+</td>
+<td align="center" width="33%">
+<img src="pictures/binclk.jpg" alt="Binary Clock" width="240" height="180">
+</td>
+</tr>
+<tr>
+<td align="center">Testing the audio amplifier</td>
+<td align="center">AM transmitter and receiver testing</td>
+<td align="center">Binary Clock</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<img src="pictures/crowdedlab.jpg" alt="Laboratory at peak hours" width="240" height="180">
+</td>
+<td align="center" width="33%">
+<img src="pictures/atwork.jpg" alt="Students at work" width="180" height="240">
+</td>
+<td align="center" width="33%">
+<img src="pictures/ecg.jpg" alt="Testing the EKG monitor" width="240" height="180">
+</td>
+</tr>
+<tr>
+<td align="center">Laboratory at peak hours</td>
+<td align="center">Students at work</td>
+<td align="center">Testing the EKG monitor</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<img src="pictures/crowded.jpg" alt="Futher EKG testing" width="240" height="180">
+</td>
+</tr>
+<tr>
+<td align="center">Further EKG testing</td>
+</tr>
+</table>
+
+<p>
+
+<h2>Lab Hours:</h2>
+<p>
+<ul>
+<li>TA hours: Sunday to Tuesday 7-9pm, Wednesday and Thursday 2-4pm during semester (Fall 2005).
+<li>If you would like to work in the lab at any other hours, you are welcome. 
+Please contact the TA.
+<li>For access during the summer, please contact <a href="mailto:kazana at ee.columbia.edu">John Kazana</a>.
+</ul>
+
+<p>
+<h2>Contact Information</h2>
+<ul>
+<li>Teaching Assistant:<br>
+Malcolm Knapp:mfk2104 AT columbia.edu (Fall 2005)
+<li>Manager of Undergraduate Labs:<br>
+John Kazana:kazana AT ee.columbia.edu
+<li>Faculty Advisor:<br>
+David Vallancourt:ddv82 AT ee.columbia.edu
+<li>Faculty Advisor:<br>
+Peter Kinget:kinget AT ee.columbia.edu
+<li>Faculty Advisor:<br>
+Yannis Tsividis:tsividis AT ee.columbia.edu
+</ul>
+
+<p>
+<h2><a href="safety.html">Safety in the Laboratory</a></h2>
+<p>
+To ensure a safe laboratory a list of rules and fundamental safety principles 
+has been developed and provided for you <a href="safety.html">here</a>. These rules must be followed at all times. This, in the form of a contract, is
+available <a href="Safety.doc">here</a>. Please print this out, sign it, and
+keep a copy for yourself. The signed copy should be handed over to John Kazana.
+
+<p>
+<h2>Good Lab Practices</h2>
+Hints for good lab practices, breadboarding, debugging, running
+experiments, ground connections etc. can be found in the book by Y.
+Tsividis, "A First Lab in Circuits and Electronics", Wiley, New York, 2002.
+<p>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,80 @@
+<HTML>
+<HEAD><TITLE> Ken Shepard</TITLE></HEAD>
+<BODY text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000" background="images/main.jpg">
+<center>
+<H1>Analog effects in digital integrated circuits </H1>
+</center>
+
+<h2>
+Description:
+</h2>
+<p>
+In digital integrated circuits, analog voltages are used to define logic '0' and '1'. 
+In particular, in CMOS design, a node at the supply voltage is traditionally regarded as representing a 
+logic '1' while a node at ground is a logic '0'.
+The logic abstraction has largey dominated the tools and techniques of digital design.
+Because of technology scaling and every more aggressive clock frequencies, "analog" effects which 
+challenge these simplifications must be considered in digital design to an extent never before
+required.  
+</p>
+<p>
+In this research, we have developed a technique known as "static noise analysis"
+which allows chip-wide verification of signal integrity in digital integrated circuits.
+This research has been commercialized in the PacifIC and CeltIC products from
+<a href="http://www.cadence.com">Cadence Design Systems</a>.
+</p>
+
+<h2>
+Selected publications:
+</h2>
+<li><a href="../publications/harmony.pdf">
+K. L. Shepard, V. Narayanan, and R. Rose, ``Harmony:  A methodology for noise analysis in deep submicron
+digital integrated circuits," IEEE Transactions on CAD, August, 1999, pages 1132 - 1150.
+</a>
+<p>
+As technology scales into the deep submicron regime, noise immunity is becoming a 
+metric of comparable importance to area, timing, and power for the analysis and design
+of very large scale (VLSI) systems.
+A metric for noise immunity is define, and a static noise analysis methodology based on this noise-stability
+metric is introduced to demonstrate how noise can be analyzed systematically on a full-chip basis
+using simulation-based transistor-level analysis.
+We then describe Harmony, a two-level (macro and global) hierarchical implementation 
+of static noise analysis.
+At the macro level, simplified interconnect models and timing assumptions guide efficient
+analysis.
+The global level involves a careful combination of static noise analysis, static timine analysis,
+and detailed interconnect macromodels based on reduced-order modeling techniques.
+We describe how the interconnect macromodels are practially employed to perform 
+coupling analysis and how timing constraints can be used to limit pessimism in the 
+analysis.
+</p> </li>
+<li><a href="..publications/cicc00.pdf">
+K. L. Shepard and K. Chou, "Cell characterization for noise stability,"
+Proceedings of the Custom Intergrated Circuits Conference, May, 2000 </a>
+<p>
+Verifying whether a digital standard-cell design is functional in the presence
+of interconnect coupling noise is an important concern to ASIC designers.
+Determingin whether the coupling noise occuring on a node is excessive
+requires comparing this noise against the dynamic noise margins of the receiving
+gates.
+The noise stability requirement, introduced in the context of transistor-lvel
+static noise analysis, is a technique for quantifying these ac noise margins.
+In this paper, we describe a technique for modelling noise stability
+in the form of a five-parameter rule which can be used to characterize the cells
+of a digital standard-cell library.
+</p>
+</li>
+<li><a href="..publications/dt.pdf"> 
+K. L. Shepard and V. Narayanan, "Conquering noise in deep submicron digital ICs,"
+IEEE Design and Test of Computers, January-March, 1998
+</a>
+<p>
+As feature sized descrease and clock frequencies increase, noise is becoming a greater
+concern in digital IC design.
+The authors describe a verification metric, noise stability, which guarantees functionality
+in the presence of noise, and a CAD technique, static noise analysis, for 
+applying this metric on a chipwide basis.
+</p>
+</body>
+</html>
+

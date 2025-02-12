@@ -1,0 +1,1407 @@
+<html>
+
+
+
+<head>
+
+<title>Devices</title>
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+
+	<h2><center>Devices</center></h2>
+
+
+
+<p align="center">
+
+<nobr>[&nbsp;<a
+
+	href="../Introduction.htm">Introduction</a>&nbsp;]</nobr>
+
+<nobr>[&nbsp;<a href="../Files/files.htm">Files</a>&nbsp;]</nobr>
+
+<nobr>[&nbsp;<a
+
+	href="../SourceFile.htm">Source&nbsp;File</a>&nbsp;]</nobr>
+
+<nobr>[&nbsp;Devices&nbsp;]</nobr> <nobr>[&nbsp;<a
+
+	href="../Commands.htm">Commands</a>&nbsp;]</nobr>
+
+<nobr>[&nbsp;<a href="../Notes.htm">Notes</a>&nbsp;]</nobr>
+
+</p>
+
+	<p>
+
+	This page lists some typical circuit devices and their uses and notations
+
+in HSPICE.
+
+<p>(This page is a slightly edited version of <a href="http://www.ece.orst.edu/~moon/ece323/hspice/device.html">material
+
+created</a> by Ryan Carlson of the ECE department at Oregon State University)</p>
+
+<h3><a name="index">Index:</a></h3>
+
+<ul>
+
+	<li><a href="#ele">General Element Statements</a>
+
+	<li><a href="#mod">.Model Statements</a>
+
+	<li><a href="#par">.Param Statements</a>
+
+	<li><a href="#dev">Devices</a>
+
+	<ul>
+
+		<li><a href="#pas">Passive</a>
+
+		<ul>
+
+			<li><a href="#res">Resistors</a>
+
+			<li><a href="#cap">Capacitors</a>
+
+			<li><a href="#ind">Inductors</a>
+
+		</ul>
+
+		<li><a href="#act">Active</a>
+
+		<ul>
+
+			<li><a href="#dio">Diodes</a>
+
+			<li><a href="#bjt">Bipolar transistors (BJT's)</a>
+
+			<li><a href="#fet">MOSFETS</a>
+
+		</ul>
+
+		<li><a href="#sou">Independent sources</a>
+
+		<ul>
+
+			<li><a href="#gen">General DC,AC and transient</a>
+
+			<li><a href="#pul">Pulse</a>
+
+			<li><a href="#sin">Sinusoidal</a>
+
+			<li><a href="#exp">Exponential</a>
+
+			<li><a href="#pwl">Piecewise linear</a>
+
+		</ul>
+
+	</ul>
+
+</ul>
+
+<hr>
+
+<h2><a name="ele">General Element Statements</a></h2>
+
+<p>
+
+The element statement specifies the type of element or independent
+
+source used. It has a field for the element name, the connecting nodes, a value
+
+for the component, and optional parameters.
+
+<p><i>General Form:</i><br>
+
+<pre>	NAME node1 node2 nodeN &lt;model reference&gt; value &lt;optional parameters&gt;
+
+</pre>
+
+Note: all fields in '&lt;&gt;' are optional and do not have to be included.
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>NAME</b>
+
+  <dd>Specifies the type and name of element. The first letter in the name field
+
+    identifies the element as a specific type, e.g., C=capacitor, L=inductor,
+
+    R=resistor. The remaining letters give the element a unique name.
+
+  <dt><b>node</b>
+
+  <dd>Specifies how the element is connected in the netlist, e.g., what nodes
+
+    the element is between.
+
+  <dt><b>value</b>
+
+  <dd>Gives the values of the element.
+
+  <dt><b>&lt;model reference&gt;</b>
+
+  <dd>Refers to the model when the basic element value does not provide an
+
+    adequate description.
+
+  <dt><b>&lt;optional parameters&gt;</b>
+
+  <dd>Used to modify existing values within a .MODEL for this particular
+
+    element. In other words a .MODEL might have a temperature of 27 degrees when
+
+    you want 40 degrees Centigrade.</dd>
+
+</dl>
+
+<p><i>Example:</i>
+
+<pre>	c1 2 0 10u</pre>
+
+Represents an a 10uF capacitor (named '1') located between node 2 and ground.
+
+<p>Another example for element statements can be found in <a href="http://www.ece.orst.edu/~moon/ece323/hspice/Training/lab1a.sp"><i>lab1a.sp</i></a>.
+
+The element statements are those not beginning with a '.'.
+
+<hr>
+
+<p>&nbsp;
+
+<h2><a name="mod">.Model Statements</a></h2>
+
+.MODEL statements allow extra device descriptions are required for
+
+accuracy. For instance, a .MODEL statement can be used to give resistors
+
+operating temperatures, L and W values to MOSFET's, or even insulator thickness
+
+on a capacitor. .MODEL statements can be included any within the <i>.lis</i>,
+
+though they are usually placed before the netlist for convenience.
+
+<p><i>General Form:</i><br>
+
+<pre>	.MODEL mname modeltype&lt;keyword=value&gt;</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>mname</b>
+
+  <dd>The model reference name specified in the asociated element statement.
+
+  <dt><b>modeltype</b>
+
+  <dd>Specifies the model type to be used, i.e., R for a resister, C for a
+
+    capacitor, and L for inductor.</dd>
+
+</dl>
+
+<i>Example:</i>
+
+<pre>	.MODEL res1 R RES=1k	$just a 1 ohm resistor
+
+	.MODEL res2 R RAC=100	$resistor with 100 ohm AC resistance</pre>
+
+<p>Example file <a href="http://www.ece.orst.edu/~moon/ece323/hspice/Training/lab3b.sp"><i>lab3b.sp</i></a>
+
+displays a .MODEL statement where tansisters labn and labp are labeled as npn
+
+and pnp respectively.
+
+<hr>
+
+<p>&nbsp;
+
+<h2><a name="par">.Param Statements</a></h2>
+
+.PARAM statements allow the user to define local variables. The
+
+variables can be defined as values, equations, or even functions.
+
+<p><i>General Form:</i><br>
+
+<pre>	.PARAM variable = 'expression'
+
+			or
+
+	.PARAM variable = value</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>variable</b>
+
+  <dd>Represents the name of the variable or function to be defined.
+
+  <dt><b>expression</b>
+
+  <dd>Represents the value, equation, or function to be assigned to the
+
+    variable.</dd>
+
+</dl>
+
+<i>Example:</i>
+
+<pre>	.PARAM x=5		$x assigned the value of 5
+
+	.PARAM x='y+3'		$algebraic equation
+
+	.PARAM rho(leff,weff)='x*leff*weff-2u'
+
+	+			$Function declarations</pre>
+
+<hr>
+
+<h2><a name="dev">Devices</a></h2>
+
+
+
+<h3><a name="pas">Passive:</a></h3>
+
+<h4><a name="res">Resistors:</a></h4>
+
+The resistor elements use the following formats:
+
+<p><i>General Form:</i><br>
+
+<pre>	Rxxx n1 n2 Rval	
+
+
+
+	Rxxx n1 n2 &lt;mname&gt; Rval &lt;TC1=val&gt; &lt;TC2=val&gt; &lt;SCALE=val&gt; &lt;m=val&gt;
+
+	+&lt;AC=val&gt; &lt;DTEMP=val&gt; &lt;L=val&gt; &lt;W=val&gt; &lt;C=val&gt;
+
+				
+
+	Rxxx n1 n2 R='equation'</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>AC</b>
+
+  <dd>AC resistance used in the AC analysis. Default=Reff
+
+  <dt><b>C</b>
+
+  <dd>Capacitance connected from node n2 to bulk. Default=0.0
+
+  <dt><b>DTEMP</b>
+
+  <dd>Element and circuit temperature difference. Defualt=0.0
+
+  <dt><b>equation</b>
+
+  <dd>The resistor can be described as a function of any node voltages, branch
+
+    currents, and any independent variables such as TIME, frequency (HERTZ), or
+
+    temperature (TEMPER).
+
+  <dt><b>L</b>
+
+  <dd>Resistor length. Defualt=0.0
+
+  <dt><b>M</b>
+
+  <dd>Multiplier used to simulate parallel resistors. Default=1
+
+  <dt><b>mname</b>
+
+  <dd>Model name.
+
+  <dt><b>n1</b>
+
+  <dd>Positive terminal node name.
+
+  <dt><b>n2</b>
+
+  <dd>Negative terminal node name.
+
+  <dt><b>R</b>
+
+  <dd>Resistance.
+
+  <dt><b>Rxxx</b>
+
+  <dd>resistor element name. Must begin with an 'R' followed by up to 15
+
+    alphanumeric characters.
+
+  <dt><b>SCALE</b>
+
+  <dd>Element scale factor for resistance and capacitance. Default=1
+
+  <dt><b>TC1</b>
+
+  <dd>1st order Temp. Coeff. for resistor.
+
+  <dt><b>TC2</b>
+
+  <dd>2nd order Temp. Coeff. for resistor.
+
+  <dt><b>W</b>
+
+  <dd>Resistor width. Default=0.0</dd>
+
+</dl>
+
+<i>Examples:</i>
+
+<pre>	R1 Rnode1 Rnode2 100		$100 ohm res. between Rnode1 and Rnode2
+
+	RC1 12 17 1k TC=0.001, 0 1.2	$res. with TC1=0.001, SCALE =0, and
+
+					$M=1.2
+
+	R4 33 0 45 RTC1 RTC2 7		$45 ohm res. with TC1=RTC1, TC2=RTC2,
+
+					$and SCALE =7.</pre>
+
+<p>&nbsp;
+
+<p>&nbsp;
+
+<hr>
+
+<h4><a name="cap">Capacitors:</a></h4>
+
+The capacitor elements use the following formats:
+
+<p><i>General Form:</i><br>
+
+<pre>	Cxxx n1 n2 capval
+
+
+
+	Cxxx n1 n2 &lt;mname&gt; capval &lt;TC1 &lt;TC2&gt;&gt; &lt;SCALE=val&gt; &lt;IV=val&gt; &lt;M=val&gt;
+
+	+&lt;DTEMP=val&gt; &lt;L=val&gt; &lt;W=val&gt;
+
+				
+
+	Cxxx n1 n2 &lt;mname&gt; C=val &lt;TC1=val&gt; &lt;TC2=val&gt; &lt;IV=val&gt; &lt;SCALE=val&gt; &lt;M=val&gt;
+
+	+&lt;DTEMP=val&gt; &lt;L=val&gt; &lt;W=val&gt;			
+
+				
+
+	Cxxx n1 n2 C='equation' CTYPE=0 or 1</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>Cxxx</b>
+
+  <dd>Capacitor element name. Must begin with an 'C' followed by up to 15
+
+    alphanumeric characters.
+
+  <dt><b>C</b>
+
+  <dd>Capacitance in farads at room temperature.
+
+  <dt><b>CTYPE</b>
+
+  <dd>For capacitance, if C is a function of v(n1,n2), then CTYPE=0 else, CTYPE=1.
+
+    The capacitance charge is calculated differently depending on the value of
+
+    CTYPE.
+
+  <dt><b>DTEMP</b>
+
+  <dd>Element and circuit temperature difference. Defualt=0.0
+
+  <dt><b>equation</b>
+
+  <dd>The capacitor value can be described as a function of any node voltages,
+
+    branch currents, and any independent variables such as TIME, frequency
+
+    (HERTZ), or temperature (TEMPER).
+
+  <dt><b>IV</b>
+
+  <dd>Initial volatge across the capacitor in volts.
+
+  <dt><b>L</b>
+
+  <dd>Capacitor length length. Defualt=0.0
+
+  <dt><b>M</b>
+
+  <dd>Multiplier used to simulate parallel capacitors. Default=1
+
+  <dt><b>mname</b>
+
+  <dd>Model name.
+
+  <dt><b>n1</b>
+
+  <dd>Positive terminal node name.
+
+  <dt><b>n2</b>
+
+  <dd>Negative terminal node name.
+
+  <dt><b>SCALE</b>
+
+  <dd>Element scale factor. Default=1
+
+  <dt><b>TC1</b>
+
+  <dd>1st order Temp. Coeff.
+
+  <dt><b>TC2</b>
+
+  <dd>2nd order Temp. Coeff.
+
+  <dt><b>W</b>
+
+  <dd>Capacitor width. Default=0.0</dd>
+
+</dl>
+
+<i>Examples:</i>
+
+<pre>	C1 1 2 CAPXX	$Capacitor between nodes 1 and 2 with value CAPXX
+
+	Cload 5 0 10u	$10uF cap. between node 5 and ground.</pre>
+
+<p>&nbsp;
+
+<hr>
+
+<h4><a name="ind">Inductors:</a></h4>
+
+The inductor elements use the following formats:
+
+<p><i>General Form:</i><br>
+
+<pre>	Lxxx n1 n2 lval
+
+
+
+	Lxxx n1 n2 lval &lt;TC1 &lt;TC2&gt;&gt; &lt;SCALE=val&gt; &lt;IC=val&gt; &lt;M=val&gt;
+
+	+&lt;DTEMP=val&gt; &lt;R=val&gt;
+
+				
+
+	Lxxx n1 n2 L=val &lt;TC1=val&gt; &lt;TC2=val&gt; &lt;IC=val&gt; &lt;SCALE=val&gt; &lt;M=val&gt;
+
+	+&lt;DTEMP=val&gt; &lt;R=val&gt;			
+
+				
+
+	Lxxx n1 n2 C='equation' LTYPE=0 or 1 &lt;R=val&gt;</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>DTEMP</b>
+
+  <dd>Element and circuit temperature difference. Defualt=0.0
+
+  <dt><b>equation</b>
+
+  <dd>The indcutor value can be described as a function of any node voltages,
+
+    branch currents, and any independent variables such as TIME, frequency
+
+    (HERTZ), or temperature (TEMPER).
+
+  <dt><b>IC</b>
+
+  <dd>Initial current through the inductor in ampres.
+
+  <dt><b>Lxxx</b>
+
+  <dd>Inductor element name. Must begin with an 'L' followed by up to 15
+
+    alphanumeric characters.
+
+  <dt><b>LTYPE</b>
+
+  <dd>For capacitance, if L is a function of I(Lxxx), then LTYPE=0 (default)
+
+    else, LTYPE=1. The inductance flux is calculated differently depending on
+
+    the value of LTYPE.
+
+  <dt><b>M</b>
+
+  <dd>Multiplier used to simulate parallel inductors. Default=1
+
+  <dt><b>n1</b>
+
+  <dd>Positive terminal node name.
+
+  <dt><b>n2</b>
+
+  <dd>Negative terminal node name.
+
+  <dt><b>SCALE</b>
+
+  <dd>Element scale factor. Default=1
+
+  <dt><b>TC1</b>
+
+  <dd>1st order Temp. Coeff.
+
+  <dt><b>TC2</b>
+
+  <dd>2nd order Temp. Coeff.
+
+  <dt><b>R</b>
+
+  <dd>Resistance in ohms of the inductor element.</dd>
+
+</dl>
+
+<i>Examples:</i>
+
+<pre>	Llink 42 69 1u				$1uH ind. between nodes 42 and 69
+
+	Lshunt 23 51 10u .001 0 15 IC=15.7m	$10uH ind. between nodes 23 and
+
+						$51 with a 1st oder temp. 
+
+						$coeff.=.001, SCALE=15, and 
+
+						$15.7mA of initial current</pre>
+
+<p>&nbsp;
+
+<p>&nbsp;
+
+<hr>
+
+<h3><a name="act">Active:</a></h3>
+
+<h4><a name="dio">Diodes:</a></h4>
+
+Diodes in HSPICE can be anywhere from very complex realistic diodes to simple
+
+ideal ones depending on the circuit designer. In general all diodes will have a
+
+model name and be defined by a .MODEL statement. Since most models are provided,
+
+.MODEL descriptions will not be given in any detail. The diode element uses the
+
+following foramts:
+
+<p><i>General Form:</i><br>
+
+<pre>	Dxxx nplus nminus mname &lt;options)
+
+	
+
+	Dxxx nplus nminus mname &lt;AREA=val&gt; &lt;PJ=val&gt; &lt;WP=val&gt; &lt;LP=val&gt; &lt;WM=val&gt;
+
+	+	&lt;LM=val&gt; &lt;OFF&gt; &lt;IC=vd&gt; &lt;M=val&gt; &lt;DTEMP=val&gt;
+
+	
+
+	Dxxx nplus nminus mname &lt;W=val&gt; &lt;L=val&gt; &lt;WP=val&gt; &lt;LP=val&gt; &lt;WM=val&gt;
+
+	+	&lt;LM=val&gt; &lt;OFF&gt; &lt;IC=vd&gt; &lt;M=val&gt; &lt;DTEMP=val&gt;
+
+</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>AREA</b>
+
+  <dd>Represetns the area of the diode. Default=1.
+
+  <dt><b>DTEMP</b>
+
+  <dd>The temperature difference between the element and circuit. Defualt=0.
+
+  <dt><b>Dxxx</b>
+
+  <dd>Diode element name. Must begin with an 'D' followed by up to 15
+
+    alphanumeric characters.
+
+  <dt><b>IC</b>
+
+  <dd>Initial diode voltage.
+
+  <dt><b>L</b>
+
+  <dd>Diode length (in meters).
+
+  <dt><b>LM</b>
+
+  <dd>Metal cpacitor length (in meters).
+
+  <dt><b>LP</b>
+
+  <dd>Polysilicon capacitor length (in mters).
+
+  <dt><b>M</b>
+
+  <dd>Multiplier factor to simulate multiple diodes.
+
+  <dt><b>mname</b>
+
+  <dd>Diode model name (up to 16 characters).
+
+  <dt><b>nplus</b>
+
+  <dd>Positive terminal name (arrow end) of the diode (up to 16 characters).
+
+  <dt><b>nminus</b>
+
+  <dd>Negative terminal name (line end) of the diode (up to 16 characters).
+
+  <dt><b>OFF</b>
+
+  <dd>Sets the diode initially to the off operation region (DC analysis).
+
+    Default=ON.
+
+  <dt><b>PJ</b>
+
+  <dd>Periphery of junction.
+
+  <dt><b>vd</b>
+
+  <dd>Value of the initial voltage across the diode.
+
+  <dt><b>W</b>
+
+  <dd>Diode width (in meters).
+
+  <dt><b>WM</b>
+
+  <dd>Metal capacitor width (in meters).
+
+  <dt><b>WP</b>
+
+  <dd>Polysilicon capacitor width (in meters).</dd>
+
+</dl>
+
+<i>Examples:</i>
+
+<pre>	Dbridge 2 10 diode1		$simple diode modeled by diode1 that
+
+					$lies between nodes 2 and 10.
+
+	dclmmmp 3 substrate dmod IC=0.2	$diode conected between nodes 3 and
+
+					$substrate, model name dmod, and .2v 
+
+					$initial voltage.
+
+</pre>
+
+<p>&nbsp;
+
+<p>&nbsp;
+
+<hr>
+
+<h4><a name="bjt">Bipolar Transistors (BJT's):</a></h4>
+
+BJT's in HSPICE, like the diode, also require .MODEL statements. Since the
+
+.MODEL statement defines if a transistor is npn or pnp, a general .MODEL
+
+statement is shown below:<pre>	.MODEL mname NPN &lt;<i>or</i> PNP&gt; &lt;paramters&gt;
+
+</pre>
+
+Only the model name (up to 16 characters) and NPN (or PNP) must be included. The
+
+BJT element uses the following formats:
+
+<p><i>General Form:</i><br>
+
+<pre>	Qxxx nc nb ne mname
+
+	
+
+	Qxxx nc nb ne &lt;ns&gt; mname &lt;aval&gt; &lt;OFF&gt; &lt;IC=vbeval,vceval&gt; &lt;M=val&gt;
+
+	+	&lt;DTEMP=val&gt;
+
+	
+
+	Qxxx nc nb ne &lt;ns&gt; mname &lt;AREA=val&gt; &lt;AREAB=val&gt; &lt;AREAC=val&gt; &lt;OFF&gt;
+
+	+	&lt;VBE=val&gt; &lt;VCE=val&gt; &lt;M=val&gt; &lt;DTEMP=val&gt;
+
+</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>AREA</b>
+
+  <dd>Multiplying factor for the emitter area. Default=1 (effects resistances,
+
+    capacitances, and currents within the transistor).
+
+  <dt><b>AREAB</b>
+
+  <dd>Area of the base. Default=AREA.
+
+  <dt><b>AREAC</b>
+
+  <dd>Area of the collector. Default=Area.
+
+  <dt><b>aval</b>
+
+  <dd>Value of the AREA variable.
+
+  <dt><b>DTEMP</b>
+
+  <dd>The temperature difference between the element and circuit. Defualt=0.
+
+  <dt><b>IC</b>
+
+  <dd>Variable for the initial condition of the transistor.
+
+  <dt><b>M</b>
+
+  <dd>Multiplier factor to simulate multiple BJTs (effects all resistance,
+
+    capacitance, and currents).
+
+  <dt><b>mname</b>
+
+  <dd>Transistor model name (up to 16 characters).
+
+  <dt><b>nb</b>
+
+  <dd>Node name for the base terminal (up to 16 characters).
+
+  <dt><b>nc</b>
+
+  <dd>Node name for the collector terminal (up to 16 characters).
+
+  <dt><b>ne</b>
+
+  <dd>Node name for the emitter terminal (up to 16 characters).
+
+  <dt><b>ns</b>
+
+  <dd>Node name for the substrate terminal (up to 16 characters).
+
+  <dt><b>OFF</b>
+
+  <dd>Sets the transistor initially to the off operation region (DC analysis).
+
+    Default=ON.
+
+  <dt><b>Qxxx</b>
+
+  <dd>BJT element name. Must begin with an 'Q' followed by up to 15 alphanumeric
+
+    characters.
+
+  <dt><b>vbeval</b>
+
+  <dd>Initial base-emitter voltage.
+
+  <dt><b>vceval</b>
+
+  <dd>Initial collector-emitter voltage.</dd>
+
+</dl>
+
+<i>Examples:</i>
+
+<pre>	Q23 10 24 13 qmod	$BJT with collector, base, and emiter at nodes
+
+				$10, 24, and 13 respectively and model name qmod
+
+	Q50 11 265 4 20 mod1	$substrate connection at node 20
+
+	
+
+	q100 cx bx ex qpnp AREA=1.5 AREAB=2.5 AREAC=3.0
+
+				$Differing emitter, base, and collector areas
+
+</pre>
+
+<p>&nbsp;
+
+<p>&nbsp;
+
+<hr>
+
+<h4><a name="fet">MOSFETS:</a></h4>
+
+MOSFETs are another device within HSPICE that requires a .MODEL statement. The
+
+.MODEL statement is required to define whether or not the circuit designer want
+
+to deal with a p- or n-channel device. The syntax for the .MODEL statement is
+
+shown below:<pre>	.MODEL mname NMOS &lt;<i>or</i> PMOS&gt; &lt;parameters&gt;
+
+</pre>
+
+Only the model name, <i>mname</i>, and the NMOS (or PMOS) are required. The
+
+MOSFET transistor element uses the follwing formats:
+
+<p><i>General Form:</i><br>
+
+<pre>	Mxxx nd ng ns mname
+
+	
+
+	Mxxx nd ng ns &lt;nb&gt; mname &lt;L=val&gt; &lt;W=val&gt; &lt;AD=val&gt; &lt;AS=val&gt; &lt;PD=val&gt;
+
+	+	&lt;PS=val&gt; &lt;NRD=val&gt; &lt;NRS=val&gt; &lt;RDC=val&gt; &lt;RSC=val&gt; &lt;OFF&gt;
+
+	+	&lt;IC=vds,vgs,vbs&gt; &lt;M=val&gt; &lt;DTEMP=val&gt; &lt;GEO=val&gt; &lt;DELVTO=val&gt;
+
+	
+
+	Mxxx nd ng ns &lt;nb&gt; mname lval wval...
+
+</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>AD</b>
+
+  <dd>Diffusion area of the drain.
+
+  <dt><b>AS</b>
+
+  <dd>Diffusion area of the source.
+
+  <dt><b>DELVTO</b>
+
+  <dd>Zero-bias threshold voltage shift. Default=0.
+
+  <dt><b>DTEMP</b>
+
+  <dd>The temperature difference between the element and circuit. Defualt=0.
+
+  <dt><b>GEO</b>
+
+  <dd>Source-drain sharing selector (only use for ACM=3 in .MODEL). Default=0.
+
+  <dt><b>L</b>
+
+  <dd>Channel length (in meters).
+
+  <dt><b>mname</b>
+
+  <dd>Transistor model name (up to 16 characters).
+
+  <dt><b>M</b>
+
+  <dd>Multiplier factor to simulate multiple MOSFETs
+
+  <dt><b>Mxxx</b>
+
+  <dd>MOSFET element name. Must begin with an 'M' followed by up to 15
+
+    alphanumeric characters.
+
+  <dt><b>nb</b>
+
+  <dd>Node name for the bulk terminal (up to 16 characters).
+
+  <dt><b>nd</b>
+
+  <dd>Node name for the drain terminal (up to 16 characters).
+
+  <dt><b>ng</b>
+
+  <dd>Node name for the gate terminal (up to 16 characters).
+
+  <dt><b>ns</b>
+
+  <dd>Node name for the source terminal (up to 16 characters).
+
+  <dt><b>NRD</b>
+
+  <dd>Number of resistance squares of drain diffusion. Default=0.
+
+  <dt><b>NRS</b>
+
+  <dd>Number of resistance squares of source diffusion. Default=0.
+
+  <dt><b>OFF</b>
+
+  <dd>Sets the transistor initially to the off operation region (DC analysis).
+
+    Default=ON.
+
+  <dt><b>PD</b>
+
+  <dd>Drain junction perimeter (including channel edge). Default=0.
+
+  <dt><b>PS</b>
+
+  <dd>Source junction perimeter (including channel edge). Default=0.
+
+  <dt><b>RDC</b>
+
+  <dd>Contact resistance on the drain. Default=0.
+
+  <dt><b>RSC</b>
+
+  <dd>Contact resistance on the source. Default=0.
+
+  <dt><b>vbs</b>
+
+  <dd>Initial bulk-source voltage.
+
+  <dt><b>vds</b>
+
+  <dd>Initial drain-source voltage.
+
+  <dt><b>vgs</b>
+
+  <dd>Initial gate-source voltage.
+
+  <dt><b>W</b>
+
+  <dd>Channel width (in meters).</dd>
+
+</dl>
+
+<i>Examples:</i>
+
+<pre>	m1 24 2 0 type1		$MOSFET with drain node 24, gate node 2, and
+
+				$source ground.  The transistor is defined dy 
+
+				$the type1 model.
+
+	M2 2 17 6 10 MODM 5u 2u	$bulk connection at node 10 and has a 5um
+
+				$legnth and 2um width channel.
+
+				
+
+	m3 2 9 3 0 mod1 ad=100p as=100p pd=40u ps=40u
+
+				$100pm^2 drain and 100pm^2 source diffusion
+
+				$area and 40um perimeter source and drain
+
+				$junctions
+
+</pre>
+
+<p>&nbsp;
+
+<p>&nbsp;
+
+<hr>
+
+<h3><a name="sou">Independent sources:</a></h3>
+
+<h4><a name="gen">General Form:</a></h4>
+
+In general, voltage and current sources in HSPICE can be very almost anything
+
+from simple dc sources too incedibly complex piecewise linear ones. The general
+
+form for both current and voltage sources are shown below:
+
+<p><i>General Form:</i><br>
+
+<pre>  <b>Voltage:</b>	
+
+	Vxxx n+ n- &lt;DC=&gt;dcval
+
+
+
+	Vxxx n+ n- &lt;AC=&gt;acmag, acphase
+
+	
+
+	Vxxx n+ n- tranfun
+
+  <b>Current:</b>
+
+	Ixxx n+ n- &lt;DC=&gt;dcval
+
+	
+
+	Ixxx n+ n- &lt;AC=&gt;acmag, acphase
+
+	
+
+	Ixxx n+ n- tranfun</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>AC</b>
+
+  <dd>Indicates the source is to be used in AC small signal analysis.
+
+  <dt><b>acmag</b>
+
+  <dd>magnitude of AC source.
+
+  <dt><b>acphase</b>
+
+  <dd>phase of AC source. Default=0.
+
+  <dt><b>tranfun</b>
+
+  <dd>Transient source function (i.e. PULSE, PU, SIN, EXP, PWL, PL).
+
+  <dt><b>Ixxx</b>
+
+  <dd>Independent current source element name. Must begin with an &quot;I&quot;
+
+    followed by up to 15 alphanumeric characters.
+
+  <dt><b>M</b>
+
+  <dd>Multiplier used for simulating parallel current sources. Default=1.
+
+  <dt><b>n+</b>
+
+  <dd>Positive node
+
+  <dt><b>n-</b>
+
+  <dd>Negative node
+
+  <dt><b>Vxxx</b>
+
+  <dd>Independent voltage source element name. Must begin with an &quot;V&quot;
+
+    followed by up to 15 alphanumeric characters.</dd>
+
+</dl>
+
+<i>Examples:</i>
+
+<pre>	Vx 1 0 5		$5 volt dc source between 1 and ground
+
+	Vb 2 0 dc=vcc		$dc source with voltage vcc
+
+	Vh 3 6 dc=2 ac=1,90	$2v dc souce with a 1v 90degree ac component
+
+	Ig 8 7 PWL(1ma 0s 5ma 25ms) $piecewise linear current source</pre>
+
+<p>&nbsp;
+
+<p>&nbsp;
+
+<hr>
+
+<h4><a name="pul">Pulse Function:</a></h4>
+
+The pulse function can create either a linear rectangular or linear trapazoidal
+
+pulse with an initial time delay. The function also has user defined rise, fall,
+
+and high times. The functions are placed in the tranfun position listed above.
+
+The pulse function has the form:
+
+<p><i>General Form:</i><br>
+
+<pre>	PULSE &lt;(&gt;v1 v2 &lt;td&gt; &lt;tr&gt; &lt;tf&gt; &lt;pw&gt; &lt;per&gt; &lt;)&gt;
+
+
+
+	PU &lt;(&gt;v1 v2 &lt;td&gt; &lt;tr&gt; &lt;tf&gt; &lt;pw&gt; &lt;per&gt; &lt;)&gt;</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>per</b>
+
+  <dd>Pulse repetition period in seconds (i.e. how often it repeats). Defualt=TSTEP
+
+    (the transient timestep).
+
+  <dt><b>pw</b>
+
+  <dd>Pulse width (the time the pulse remains high). Default=TSTEP
+
+  <dt><b>td</b>
+
+  <dd>Time delay for the start of the transient interval to the up ramp.
+
+    Default=0
+
+  <dt><b>tf</b>
+
+  <dd>Fall time. Default=TSTEP.
+
+  <dt><b>tr</b>
+
+  <dd>Rise time. Default=TSTEP.
+
+  <dt><b>v1</b>
+
+  <dd>Initial value of voltage or current before the pulse.
+
+  <dt><b>v2</b>
+
+  <dd>Pulse current or volatge value</dd>
+
+</dl>
+
+<i>Examples:</i><br>
+
+<pre>	Vin 3 0 PULSE (-1 1 2n 2n 2n 50n 100n)	$Pulse function form -1v to +1v
+
+						$with a 2ns delay, 2ns rise time, 2ns fall time,
+
+						$50ns pulse width, and a 500ns
+
+						$repitition period.
+
+	V1 99 0 PU 1 5 3ns 1ns 1ns 25ns 150ns	$An alternaive notation</pre>
+
+<p>&nbsp;
+
+<p>&nbsp;
+
+<hr>
+
+<h4><a name="sin">Sin Function:</a></h4>
+
+The HSPICE sin function can produce a sin wave input with user defined delay,
+
+magnitude, and phase. Also, HSPICE can also produce exponentially damped sin
+
+sources.
+
+<p><i>General Form:</i><br>
+
+<pre>	SIN &lt;(&gt;vo va &lt;freq &lt;td &lt;damp&lt;pd&gt;&gt;&gt;&gt; &lt;)&gt;</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>freq</b>
+
+  <dd>Wave frequency in Hz. Default=1/TSTOP
+
+  <dt><b>pd</b>
+
+  <dd>Phase delay in degrees (<i>not radians</i>). Default=0
+
+  <dt><b>td</b>
+
+  <dd>Wave time delay in seconds. Default=0.
+
+  <dt><b>damp</b>
+
+  <dd>Wave damping factor in 1/seconds. Default=0.
+
+  <dt><b>va</b>
+
+  <dd>Wave voltage or current amplitude in volts or amps.
+
+  <dt><b>vo</b>
+
+  <dd>Wave offset in volts or amps.</dd>
+
+</dl>
+
+<i>Examples:</i><br>
+
+<pre>	VIN 3 0 sin (0 1 100meg 1ns 1e10)	$1 volt 0 offset 100MHz sin
+
+						$wave with a 1ns delay and 
+
+						$1e10 damping factor
+
+	V12 1 0 sin 0 5	10k			$5v 0v offset 10kHz sin wave
+
+</pre>
+
+<p>&nbsp;
+
+<p>&nbsp;
+
+<hr>
+
+<h4><a name="exp">Exponential Function:</a></h4>
+
+The exp function produces an exponential with user definable rise time and fall
+
+time constants and delay values.
+
+<p><i>General Form:</i><br>
+
+<pre>	EXP &lt;(&gt; v1 v2 &lt;td1&gt; &lt;t1&gt; &lt;td2&gt; &lt;t2&gt; &lt;)&gt;
+
+</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>t1</b>
+
+  <dd>Rise time constant in seconds. Default=TSTEP
+
+  <dt><b>t2</b>
+
+  <dd>Fall time constant in seconds. Default=TSTEP
+
+  <dt><b>td1</b>
+
+  <dd>Rise delay time in seconds. Default=0
+
+  <dt><b>td2</b>
+
+  <dd>Fall delay time in seconds. Default=td1+TSTEP
+
+  <dt><b>v1</b>
+
+  <dd>Starting voltage (in volts) or current (in amps).
+
+  <dt><b>v2</b>
+
+  <dd>Pulse value of voltage (in volts) or current (in amps).</dd>
+
+</dl>
+
+<i>Examples:</i><br>
+
+<pre>	Vin 3 0 exp -4 -1 2n 30n 60n 40n	$A waveform that rises from -4v
+
+						$to -1v exponentially with a
+
+						$30ns time constant. The drops
+
+						$to -4v at 60ns with 40ns time
+
+						$constant.
+
+</pre>
+
+<p>&nbsp;
+
+<p>&nbsp;
+
+<hr>
+
+<h4><a name="pwl">Piecewise Linear Function:</a></h4>
+
+The HSPICE piecewise linear function is a collection of user defined pulses and
+
+steps. All plateaus and rise and fall times are also user definable. In
+
+addition, when moving between differing voltages or currents, the function will
+
+always proceed linearly.
+
+<p><i>General Form:</i><br>
+
+<pre>	PWL &lt;(&gt; v1 t1, &lt;v2 t2, v3 t3,...&gt; &lt;R =&lt;repeat&gt;&gt; &lt;TD=delay&gt; &lt;)&gt;
+
+</pre>
+
+<p><i>The fields are:</i>
+
+<dl>
+
+  <dt><b>R</b>
+
+  <dd>Forces the function to repeat.
+
+  <dt><b>repeat</b>
+
+  <dd>The start time for the function to repeat in seconds.
+
+  <dt><b>t1...</b>
+
+  <dd>The time values in seconds.
+
+  <dt><b>TD</b>
+
+  <dd>Keyword for the function time delay
+
+  <dt><b>delay</b>
+
+  <dd>Actual time delay in secnonds.
+
+  <dt><b>v1...</b>
+
+  <dd>Current or voltage values.</dd>
+
+</dl>
+
+<b>Note:</b> Each voltage and time come in pairs. For example, at t1 the
+
+function will be at voltage v1, at t2, the function will be v2.
+
+<p><i>Examples:</i><br>
+
+<pre>	V1 1 0 pwl 60n 0v, 120n 0v, 130n 5v, 170n 5v, 180 0v, R
+
+	
+
+	$This pwl function mimics a pulse function with a rise time of 10ns
+
+	$(from 120n-130n) a 5v high for 40ns (130n-170n), and a 10ns fall time
+
+	$(170n-180n). Next the function repeats (period=180ns).
+
+</pre>
+
+
+
+<p align="center"><img src="../../images/atecrule.gif" width="600" height="10"></p>
+
+<p><font size="2">
+The material in this website is an expanded version
+of material presented by Dr. J. Steensgaard.
+This website is  maintained by <a
+
+		href="http://www.cisl.columbia.edu/grads/tuku/">Shouri
+
+Chatterjee</a>.&nbsp; This page was last updated on
+
+02/11/2003
+
+</body>
+
+</html>
+

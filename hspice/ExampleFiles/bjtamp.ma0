@@ -1,0 +1,5 @@
+$DATA1 SOURCE='HSPICE' VERSION='96.3.'  
+.TITLE 'bjt example (ece 322 spice assignment)'
+ a0 adb mzi mzo fl fu temper alter#  
+   -9.7525   19.7827  209.9450   99.7238  982.7347  3.446e+08   25.0000  
+    1.0000  

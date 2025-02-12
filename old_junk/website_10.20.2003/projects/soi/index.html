@@ -1,0 +1,30 @@
+<HTML>
+<HEAD><TITLE> Ken Shepard</TITLE></HEAD>
+<BODY text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000" background="images/main.jpg">
+<center>
+<H1>Design and CAD issues for digital integrated circuits in PD-SOI technology </H1>
+</center>
+
+<h2>
+Description:
+</h2>
+<p>
+Partially-depleted silicon-on-insulator (PD-SOI) has emerged as a leading technology for high-performance, low-power deep-submicron digital integrated circuits. PD-SOI technology offers reduced parasitic capacitance associated with source and drain diffusion regions and reduced reverse-body effect in FET series connections. These effects allow for higher speed (or lower power) operation in PD-SOI than in bulk CMOS. In addition, PD-SOI eases the tradeoff of logic functionality vs speed for a given channel-connected component (CCC), allowing for larger CCC's. The main drawback to this technology is that the body of a PD-SOI transistor is floating. This leads to uncertainties in body potential and hence, the threshold voltage. For many circuits, the design margining required to protect against this uncertainty can erode the potential performance advantages. In addition, a floating body can lead to a parasitic bipolar effect which can result in noise failures. To deal with these issues, existing static timing and static noise tools must be enhanced to understand the unique features of PD-SOI technology.
+<br> 
+<br> 
+Our work in this area has lead to a model that captures the dominant physical mechanisms affecting floating body potential, and a CAD tool which implements this model while leveraging switching and circuit topology information to provide accurate bounds on the floating body potential. Model parameters for our CAD program are extracted once, during a pre-characterization step of a given PD-SOI technology, based on transistor level simulations. The actual body voltage estimation requires no transistor level simulation. This CAD tool can be easily incorporated into existing static timing and static noise analyzers to make them "SOI aware." A more active approach to bounding floating-body potential in practice might be to keep PD-SOI circuits stimulated with known input vectors, during periods of inactivity. Hence, hysteresis can be used to hold controlled body voltage variations. The feasibility of this approach, and the exact nature and frequency of the input vectors remain to be investigated.
+
+</p>
+
+<h2>
+Selected publications:
+</h2>
+<li><p>
+K. L. Shepard and D.-J. Kim, ``Body-voltage estimation in digital PD-SOI circuits and its
+application to static timing analysis,"  Proceedings of the International Conference on Computer-Aided
+Design, 1999.
+</p>
+
+</body>
+</html>
+
