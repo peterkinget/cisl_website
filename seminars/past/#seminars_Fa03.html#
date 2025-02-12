@@ -1,0 +1,292 @@
+<BASE HREF="http://www.cisl.columbia.edu/">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <style TYPE="text/css">
+   <!--
+   A { font-family: Arial, sans-serif;font-size:10pt;font-weight: bold; text-decoration: none; }
+   SMALL { font-family: Arial, sans-serif; font-size: 10pt;}
+   P { font-family: Arial, sans-serif; font-size: 10pt;}   
+   -->
+   </style>
+
+   <script language="JavaScript" src="jsp/menu.js">
+
+</script>
+   <script language="JavaScript" src="jsp/share.js">
+
+</script>
+</head>
+
+<body bgcolor="#777777" link="#3366ff" vlink="#3366ff">
+<!-- <body bgcolor="#777777white" link="#3366ff" vlink="#3366ff"> --> 
+
+<CENTER><TABLE bgcolor="white" width="700">
+<TR><TD align="center">
+<CENTER><A href="index.html"><IMG src="images/CISL_white.gif" border="0" width ="408" height="127" alt="Columbia Integrated System Lab"> </A></CENTER>
+</TD></TR>
+<TR><TD>
+<CENTER> | <A href="index.html">Home</A> | <A href="people.html">People</A> | <A href="research.html">Research</A> | <A href="publications.html">Publications</A> | <A href="seminars/seminars.html">Seminars</A> | <A href="courses.html">Courses</A> | <A href="sponsors.html">Sponsors</A> | </CENTER></TD></TR>
+<TR><TD>
+<CENTER><TABLE width="700"
+ border="0" cellpadding="0" cellspacing="0">
+ <TR>
+<TD>
+
+
+
+
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=10 COLS=1>
+<TR>
+<TD>
+<CENTER><H1>Seminars Fall 2003</H1></CENTER><HR>
+</TD>
+</TR>
+
+<TR><TD>
+Dr. Hans Georg Brachtendorf
+<BR>
+<BR>Fraunhofer Institute IIS-A, Erlangen, Germany
+<BR>
+Date: Monday December 24th, 2003, 3:00pm 
+<BR>
+Place: Room 425 (4th Floor), Pupin Building
+<BR><BR>
+<FONT color=#ff0000>
+Title: Frequency Entrainment: Theory and Applications
+</FONT>
+<P>
+Abstract:
+<P>
+The understanding of synchronization mechanisms is mandatory in the design of a lot of technical systmes such as PLLs, in the suppresion of phase noise, e.g. in injection locked lasers, in stimulating the heart by an external electrical impulse by a pacemaker and so on.<BR>
+The underlying physical effect is referred to as injection locking or frequency entrainment. In recent time injection locking has been applied to the design of quadrature oscillators with low phase-noise and in novel concepts for receiver synchronisation. From a circuit designer's viewpoint the knowledge of the locking range is extremely important.<BR>
+In our talk we first review different ways of understanding this phenomenon. Based on that we give a general theory of entrainment based on Floque'ts theory of linear periodic time-varying systems. Based on this theory one obtains a simple differential equation which predicts the locking range reliably. Optimization with regard to system parameters can therefore be done easily. The accuracy of the method could be proven by comparison with a pure numerical method. Based on this, new circuit designs are investigated.
+</P><HR>
+</TD></TR>
+
+
+<TR><TD>
+David M. Binkley
+<BR>
+<BR>The University of North Carolina at Charlotte
+<BR>
+Date: Friday November 21th, 2003, 3:00pm 
+<BR>
+Place: Room 414 (4th Floor), Schapiro Building (CEPSR)
+<BR><BR>
+<FONT color=#ff0000>
+Title: Optimizing Analog CMOS Design from Weak through Strong Inversion
+</FONT>
+<P>
+Abstract:
+<P> 
+
+Analog CMOS design has been traditionally taught assuming MOS strong 
+inversion operation with square-law device characteristics. However, the 
+high transconductance efficiency, moderate bandwidth, and low 
+drain-source saturation voltage available in moderate inversion make 
+this region increasingly important for power efficient, low voltage 
+designs. Additionally, there is little or no strong-inversion, 
+square-law region for small channel length devices due to velocity 
+saturation and other small-geometry, high-field effects. As a result, 
+there is a need for analog CMOS design methods that freely permit design 
+in weak, moderate, and strong inversion, inclusive of velocity 
+saturation, dc mismatch, flicker noise, and other advanced effects. In 
+the methods described in this seminar, the inversion coefficient is used 
+as a numerical measure of MOS inversion level. Analog CMOS optimization 
+is described where drain current, inversion coefficient, and channel 
+length are used as the three degrees of design freedom with channel 
+width easily determined as needed for layout. Optimized tradeoffs in 
+gain, bandwidth, white and flicker noise, dc mismatch, drain-source 
+saturation voltage, power efficiency, and other measures are presented. 
+Additionally, measured 0.5- and 0.25-um transconductance efficiency, 
+gm/ID, and normalized output conductance, VA = ID/gds, is presented from 
+weak through strong inversion over a wide range of channel lengths. 
+These measurements with comparisons to the EKV 2.6 and 3.0 MOS model 
+provide a rich source of information for the modern analog designer. The 
+design methods are illustrated on the design of three simple operational 
+transconductance amplifiers designed for optimal bandwidth, optimal dc 
+gain, dc mismatch, and flicker noise, and balanced bandwidth and dc 
+performance. Finally, a CAD tool developed at UNC Charlotte is presented 
+to guide the designer towards optimum analog CMOS design without the use 
+of time-consuming, iterative circuit simulations.
+</P><HR>
+</TD></TR>
+
+
+<TR><TD>
+Laurence W. Nagel
+<BR>
+<BR>Omega Enterprises
+<BR>
+Date: Friday November 7th, 2003, 2:30pm 
+<BR>
+Place: Interschool Lab (7th floor), Schapiro Building (CEPSR)
+<BR><BR>
+<FONT color=#ff0000>
+Is It Time for SPICE 4 ?
+</FONT>
+<P>
+Abstract:
+<P> 
+
+SPICE originally was released into the public domain in 1971 by the University of California, Berkeley. The program enjoyed almost instant  acceptance, with universities all over the world employing the program in integrated circuit design courses as well as computer-aided design research.  SPICE2 was released into the public domain in 1975, again by the University of California, Berkeley.  SPICE2 also enjoyed wide acceptance, and after SPICE 2G.6, work on SPICE at Berkeley waned.  Not until 1989, almost 15 years later, was SPICE3 released into the public domain by Berkeley.  The latest public-domain SPICE3 simulator was released around 1993, about ten years ago.  This talk will chronicle the crucial role SPICE had in launching a cottage industry of alphabet SPICE programs as well as hundreds of university research projects in various areas of circuit simulation. Paramount in this role was the fact that SPICE has always been in the public domain, available to all at a very nominal cost.  SPICE-like programs, notably SPECTRE and ELDO, have been written since SPICE3 was released, but these follow-on programs are notably not in the public domain. The talk concludes by pondering the question of whether a more recent, public-domain circuit simulation program is necessary at this point.
+
+ 
+</P></TD></TR>
+</TABLE>
+<HR>
+
+<TR><TD>
+Michael Perrott
+<BR>
+<BR>Massachusetts Institute of Technology
+<BR>
+Friday October 24th, 2003, 2.30pm 
+<BR>
+Interschool Lab (7th floor), Schapiro Building (CEPSR)
+<BR><BR>
+<FONT color=#ff0000>
+Design and Simulation of Phased Locked Loops
+
+</FONT>
+<P>
+Abstract: <P> Phase locked loops (PLL) are  used in a large variety of
+applications  ranging from wireless and  wireline  data links to  high
+performance  microprocessors.  It is  quickly becoming  clear that the
+performance of these circuits will  dictate the achievable performance
+of many future systems  since they will set  the spectral mask and A/D
+performance  achievable  in future  wireless  systems, and  the jitter
+levels    achievable   in  future    data  link    and  microprocessor
+applications. Yet, despite  their   importance in current and   future
+systems, today's  design techniques are   cumbersome and difficult for
+beginners,  and current simulation  techniques are slow and inaccurate
+when attempting to characterize both the dynamic and noise performance
+of PLL circuits.   In this talk,  we present a computer-aided approach
+to PLL  system design that allows  the user to  quickly explore system
+level tradeoffs and to quickly assess, at the system level, the impact
+of nonidealities such as parasitic poles  and parameter variations due
+to changes  in process and   temperature.  We then  present simulation
+techniques that  allow fast and accurate  characterization  of PLL and
+DLL circuits at a behavioral level, with special focus being placed on
+fractional-N frequency synthesizers. Finally, calculated and simulated
+phase noise   plots  are compared   to measured  results of  a  custom
+fractional-N synthesizer   to  verify the  accuracy   of the presented
+techniques.
+
+
+ <HR>
+</P></TD></TR>
+
+<TR><TD>
+Marcel Pelgrom
+<BR>
+<BR>Philips Research
+<BR>
+Wednesday October 15th, 2003 2.30pm
+<BR>
+Room: 414, CEPSR
+<BR><BR>
+<FONT color=#ff0000>
+CMOS Matching In The Digital Era
+
+</FONT>
+<P>
+Abstract:
+<P> 
+This talk will discuss some issues of (mis-)matching of CMOS transistors and the 
+consequences for IC design. Stochastical fluctuations of especially the threshold
+voltage of CMOS transistors are considered one of the major bottlenecks in
+advanced CMOS design both for analog as well as for digital circuits. Next to a
+short introduction to the basic model, several examples of mis-matching
+circuits will be shown and design techniques and technological measures will be 
+discussed. The trends in more advanced CMOS processes will be discussed 
+briefly. The talk will start with a short introduction to Philips Electronics.
+ 
+<HR>
+</P></TD></TR>
+
+
+<TR><TD>
+Omar Wing
+<BR>
+<BR>Professor Emeritus, Columbia University
+<BR>
+Friday October 10th, 2003 2.30pm
+<BR>
+Room: Interschool Lab, CEPSR
+<BR><BR>
+<FONT color=#ff0000>
+A New Chaos Oscillator for Chaos Shift-Keying Communications
+
+</FONT>
+<P>
+Abstract:
+<P>
+We present a new structure of chaotic oscillator and demonstrate
+its potential applications in chaotic digital communications with both
+coherent choas-shift-keying and non-coherent differential chaos-shift-keying.
+A new non-coherent communication method which detects binary digits according
+to the direction of rotation of the received signal is presented and we
+compare its performance with a conventional one based on correlation.
+<HR>
+</P></TD></TR>
+
+<TR><TD>
+Siva Narendra
+<BR>
+<BR>Microprocessor Research Lab, Intel Corporation
+<BR>
+Friday September 12, 2003 2.30pm
+<BR>
+Room: Interschool Lab, CEPSR
+<BR><BR>
+<FONT color=#ff0000>
+Silicon Integration Choices in Sub-45nm Power Limited Microprocessors
+
+</FONT>
+<P>
+Abstract:
+<P>
+Traditional scaling of microprocessors relies on performance improvement
+of general purpose computations. This is achieved through augmented
+architecture and circuit design complexities, apart from device
+technology scaling. The performance improvement from architectural and circuit
+complexities increase demands higher level of integration and
+die size growth. Scaling of device technology results in increased
+sub-threshold and tunneling leakage currents. This combination of device
+scaling and integration trend results in ever increasing power
+consumption which cannot be sustained in the long run. Implementation of
+special purpose power efficient applications in future microprocessors
+enables us to add functionality without significant power penalty. In
+this talk, I will first highlight the above mentioned scaling trends and
+the resulting power challenges.  Next, I will present the benefits of
+special purpose computation to achieve better power efficiency by
+highlighting two communication applications - TCP/IP network processing
+and Ultra Wide Band wireless protocol implementation.
+<HR>
+</P></TD></TR>
+
+</TABLE>
+
+<P>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH="580" >
+<TR>
+<TD align="center">
+<A href="seminars/seminars.html">
+Back to current seminar(s) at CISL </A>
+</TD>
+</TABLE>
+<BR>
+
+ </TD>
+ </TR>
+</TABLE></CENTER><P><HR align=center width=580>
+<CENTER><TABLE WIDTH=580 BORDER=0 CELLSPACING=0 CELLPADDING=0>
+ <TR> <TD align=center><FONT size="-1">Copyright © 2003 The 
+Trustees of  Columbia University
+ in the City of New York</FONT></TD> </TR> </TABLE></CENTER></P>
+</TD></TR></TABLE></CENTER>
+</BODY>
+</HTML>
