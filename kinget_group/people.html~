@@ -1,0 +1,117 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="kinget_group.css">
+</head>
+
+<body>
+<!-- Here is the logo -->
+<div id="logo">
+<a href="http://www.columbia.edu"><img style="margin-top:-10px" border="0" align="middle" alt="cu_logo" src="images/cu_logo.gif"></a>
+<img width="150" height="1" src="">
+<a href="http://www.cisl.columbia.edu"><img style="margin-top:-10px" width="250" border="0" align="middle" alt="cisl_logo" src="images/cisl_logo_transparant.gif"></a><br>
+<center>
+<img width="719" style="margin-top:-20px" src="images/Logo3.gif"> <br>
+<!-- <h1 style="font-family:verdana, times; margin-top:0;
+margin-bottom:0; " >Analog and RF IC Design Research <br> 
+(Kinget Group)</h1> -->
+<h1 style="font-family:verdana, times; margin-top:-8px; margin-bottom:0; color:black;" >Kinget Group</h1>
+</center> 
+</div>
+
+<!-- Here is the navigation bar definition -->
+<!-- <div id="navigation" style="position: relative; top: 0px;
+left:0px;"> -->
+<div id="navigation">
+<center> |
+<a href="index.html">Home</a> |
+<a href="people.html">People</a> |
+<a href="research.html">Research</a> |
+<a href="publications.html">Publications</a> |
+<a href="gallery.html">Chip Gallery</a> |
+<a href="http://www.cisl.columbia.edu/seminars/seminars.html" target="_blank">Seminars</a> | 
+<a href="sponsors.html">Sponsors</a> | 
+<a href="prospective.html">Prospective Students</a> |
+</center>
+</div>
+
+<!-- Here will start the main page -->
+
+<!-- <div id="content" style="position: relative; top: 0px;
+left:200px;"> -->
+
+<div id="content">
+
+<center><img width="640" alt="kinget_group_photo" src="images/kinget_group_lowres.jpg"></center>
+<h2>Faculty </h2>
+<ul>
+<li> <a href="http://www.ee.columbia.edu/~kinget/">Peter Kinget</a> </li>
+</ul>
+
+<h2>Ph.D. Students</h2>
+<ul>
+<li> <a href="../grads/anu/">Anuranjan Jha</a> </li>
+<li> <a href="../grads/frank/">Frank Zhang</a> </li>
+<li> <a href="../grads/junhua/">Junhua Shen</a> </li>
+<li> <a href="../grads/ajay/">Ajay Balankutty</a> </li>
+<li> <a href="../grads/yiping">Yiping Feng</a> </li>
+<li> <a href="../grads/shihan/">Shih-An Yu</a> </li>
+</ul>
+
+<h2>Part-time Ph.D. Students</h2>
+<ul>
+<li> <a href="">Gautam Gangasani</a> </li>
+</ul>
+
+<h2>Ph.D. Alumni</h2>
+<ul>
+<li> <a href="../grads/tuku/">Shouri Chatterjee</a> </li>
+<li> <a href="../grads/babak/">Babak Soltanian</a> </li>
+</ul>
+
+<h2>M.S. Students</h2>
+
+<ul>
+<li> Ran Chang (Fall 06-)
+<li> Chia-Yin Chen (Spring 06-)
+<li> Adam Dolin (Fall 06-)
+<li> H.S. Lin (Summer 06-)
+<li> Jonathan Tompson (Fall 06-)
+<li> Christos Vezyrtzis (Fall 06-)
+
+</ul>
+
+<h2>Undergraduate Students</h2>
+<ul>
+<li> Ed Chiang (Summer 05-)</li>
+</ul>
+
+<h2>Former Students (partial)</h2>
+<ul>
+<li> Vivek Rajeswaran (B.S., Fall 05-Spring 06)</li>
+<li> Hector Hung (B.S., Summer 04-Spring 06)</li>
+<li> Vladislav Adzic (B.S., Summer 05-Spring 06)</li>
+<li> Kuo-Chih Feng (M.S., Spring 06)
+<li> Jin Wook Son (M.S., Spring 06)
+<li> Inanc Meric (M.S., Fall 06)
+<li> Tekalegn Habta Lemji (Fall 06)
+<li> Tai-Chiao Chih (M.S., Summer 05 - Fall 05)</li>
+<li> Tawfiq Musah (B.S., Summer 04 - Spring 05)</li>
+<li> Sebastian Sorgenfrei (B.S., Fall 05 - Spring 05)</li>
+<li> Vasilios Giannopoulos (M.S., Spring 05)</li>
+<li> Mustapha Abdulai (M.S., Spring 05)</li>
+<li> Cheng-Feng Chu (M.S., Fall 04)</li>
+<li> Allen Chen (M.S., Spring 04 - Fall 04)</li>
+<li> Steven Battle (M.S., Fall 04)</li>
+<li> Chia-Ching Chen (B.S., Summer 04)</li>
+
+</ul>
+</div>
+
+<div id="footer">
+<p><center> &copy 2006 by the Authors and Columbia University <br>
+Last modified on 2007/04/06 09:18:46
+</center>
+</p>
+</div>
+
+</body>
+</html>

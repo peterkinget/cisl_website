@@ -1,0 +1,443 @@
+<HTML>
+<HEAD>
+<TITLE>[ WPP - The Web Preprocessor ] </TITLE>
+<LINK REV=MADE HREF="mailto:lm@geocities.com">
+<META NAME="author" CONTENT="Marco (LM) Lamberto - lm@geocities.com">
+<META NAME="description" CONTENT="WPP is a small perl script that allows preprocessing of html files.  It's useful for giving an uniform layout to different html pages. It can be used into cgi scripts for dynamic generation of pages.">
+<META NAME="keywords" CONTENT="html, preprocessor, preprocessing, web, perl, script, cgi, the sunny spot">
+<META NAME="generator" CONTENT="By Hand v1.0 with VIM for Linux + WPP ;)">
+
+
+</HEAD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<BODY BGCOLOR="#ffffff">
+<FONT FACE="arial,helvetica">
+
+<CENTER>
+<TABLE WIDTH="100%" BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR VALIGN=MIDDLE>
+<TD ALIGN=LEFT><A
+	HREF="http://www.geocities.com/Tokyo/1474/"><IMG SRC="images/tss_logo.gif" WIDTH=90 HEIGHT=32 ALT="[ The Sunny Spot ]" BORDER=0></A></TD>
+<TD ALIGN=CENTER WIDTH="70%">
+	<FONT FACE="arial,helvetica" COLOR="#ffffff">
+	<FONT SIZE="+1"><B>WPP v2.13 - The Web Preprocessor</B></FONT><BR>
+	<FONT SIZE="-1">Author : <A HREF="mailto:lm@geocities.com">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">Marco Lamberto</FONT></A></FONT>
+	</FONT>
+</TD>
+<TD ALIGN=RIGHT><A
+	HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32 ALT="Preprocessed by WPP" BORDER=0></A></TD>
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="images/null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+
+&nbsp;&nbsp;
+<A HREF="manual_1.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Next &gt;</B></FONT></A>
+&nbsp;&nbsp;
+</TD>
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="images/null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+</TABLE>
+</CENTER>
+<P>
+
+
+
+
+
+<TABLE WIDTH="100%" BORDER=0 CELLPADDING=5>
+<TR VALIGN=TOP>
+<TD><IMG SRC="images/wpp_logo.gif" WIDTH=300 HEIGHT=100 ALT="" >
+<FONT FACE="arial,helvetica">
+<P>
+WPP is a small perl5 script that allows preprocessing of html files.<BR>
+You can define <I>variables</I>, which are abbreviations for longer
+constructs, and include common html fragments.
+<BR>It's useful for giving an uniform layout to different html pages.
+<BR>It can be used into cgi-bin programs for automatic generation of pages.
+With less html code inside them you can make more flexible and readable scripts.
+
+<P>WPP provides four separate facilities that you can use as you see fit:
+<UL>
+<LI>Inclusion of text/html fragments.
+<LI>Variables expansion.
+<LI>Conditional generation.
+<LI>Macros expansion.
+</UL>
+</FONT>
+</TD>
+
+<TD WIDTH="90%">
+<FONT FACE="arial,helvetica">
+<DL>
+<DT><B>Index</B>
+<UL TYPE=circle>
+<LI><A HREF="#LICENSE">License</A>
+
+<LI><A HREF="#MLISTS">Mailing Lists</A>
+<LI><A HREF="#INSTALLING">Installing WPP</A>
+<LI><A HREF="#BUGS">Known bugs</A>
+<LI><A HREF="#AUTHOR">Contacting the author</A>
+<LI><A HREF="#THANKS">Thanks!</A>
+</UL>
+<DT><BR><B>User Manual</B>
+<OL>
+<LI><A HREF="manual_1.html">Command line switches</A>
+<LI><A HREF="manual_2.html">General notes</A>
+<LI><A HREF="manual_3.html">A step by step example</A>
+<UL TYPE=circle>
+<LI><A HREF="manual_3.html#S1">Step 1: Yor first file</A>
+<LI><A HREF="manual_3.html#S2">Step 2: Using templates</A>
+<LI><A HREF="manual_3.html#S3">Step 3: The config files and the conditional
+	generation</A>
+</UL>
+<LI><A HREF="manual_4.html">Variables and constants</A>
+<UL TYPE=circle>
+<LI><A HREF="manual_4.html#VARASSIGN">Variables assignment</A>
+<LI><A HREF="manual_4.html#VARSUBST">Variables substitution</A>
+<LI><A HREF="manual_4.html#SPVARS">Special variables</A>
+<LI><A HREF="manual_4.html#ROVARS">Read-only variables</A>
+</UL>
+<LI><A HREF="manual_5.html">Directives</A>
+<LI><A HREF="manual_6.html">Macros</A>
+<UL TYPE=circle>
+<LI><A HREF="manual_6.html#MACRO">Macro expansion</A>
+<LI><A HREF="manual_6.html#BIMACRO">Built-in macros</A>
+<LI><A HREF="manual_6.html#EVALMACRO">The EVAL macro</A>
+</UL>
+<LI><A HREF="manual_7.html">Configuration variables and directives</A>
+<LI><A HREF="manual_8.html">Keywords list</A>
+<LI><A HREF="manual_9.html">Links and references</A>
+<LI><A HREF="test_page.html">Test page</A>
+</OL>
+</DL>
+</FONT>
+</TD>
+</TABLE>
+
+<FONT FACE="arial,helvetica">
+<DL>
+<!-- License -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="LICENSE">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>License</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+
+<TABLE>
+<TR VALIGN=TOP><TD WIDTH="70%">
+<FONT FACE="arial,helvetica">
+	WPP is distributed under the terms of the <A HREF="GPL.txt">GNU General
+	Public License (GPL).</A> As such, you can use this program free of charge
+	but there is no warranty.
+</FONT>
+<TD WIDTH="30%">
+
+<TABLE>
+<TR><TD ALIGN=RIGHT VALIGN=BOTTOM>
+	<FONT FACE="arial,helvetica">
+	<!-- WPP LINK LOGO STARTS -->
+	<A HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32 ALT="[Preprocessed by WPP]" BORDER=0></A>
+	<!-- WPP LINK LOGO ENDS -->
+	</FONT>
+</TD>
+<TR><TD VALIGN=TOP>
+	<FONT FACE="arial,helvetica">
+	Feel free to <A HREF="http://www.geocities.com/Tokyo/1474/wpp/">link
+	WPP</A> by adding <A HREF="images/pp_by_wpp.gif">the official logo</A>
+	into your web pages.
+	</FONT>
+</TD>
+</TABLE>
+
+</TD>
+</TABLE>
+
+
+
+
+
+<!-- Mailing Lists -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="MLISTS">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Mailing Lists</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+<DL>
+<DT><LI><B>wpp-announce</B>
+<DD>Here you can receive a message only when WPP updates.
+<form method=GET action="http://www.egroups.com/subscribe">
+<input type=hidden name="listname" value="wpp-announce">
+<input type=hidden name="SubmitAction" value="Subscribe">
+<table width=200 cellspacing=0 cellpadding=2 border=0 bgcolor=#E0E0E0>
+<tr>
+ <td>
+   <input type=text name="emailaddr" value="enter e-mail" size=21>
+ </td><td>
+   <input type=submit value="Click here to join wpp-announce"
+   name="Click here to join wpp-announce">
+ </td>
+</tr>
+</TABLE>
+</form>
+If this form doesn't work you can subscribe by sending a message to
+<A HREF="mailto:wpp-announce-subscribe@egroups.com">wpp-announce-subscribe@egroups.com</A>.
+<BR>
+For unsubscribing simply send a message to <A HREF="mailto:wpp-announce-unsubscribe@egroups.com">wpp-announce-unsubscribe@egroups.com</A>.
+
+<DT><P><LI><B>wpp-devel</B>
+<DD>WPP developers mailing list. Here you can send your feature requests, bug
+reports, patches, ...
+<form method=GET action="http://www.egroups.com/subscribe">
+<input type=hidden name="listname" value="wpp-devel">
+<input type=hidden name="SubmitAction" value="Subscribe">
+<table width=200 cellspacing=0 cellpadding=2 border=0 bgcolor=#E0E0E0>
+<tr>
+ <td>
+   <input type=text name="emailaddr" value="enter e-mail" size=21>
+ </td><td>
+   <input type=submit value="Click here to join wpp-devel"
+   name="Click here to join wpp-devel">
+ </td>
+</tr>
+</TABLE>
+</form>
+If this form doesn't work you can subscribe by sending a message to
+<A HREF="mailto:wpp-devel-subscribe@egroups.com">wpp-devel-subscribe@egroups.com</A>.
+<BR>
+For unsubscribing simply send a message to <A HREF="mailto:wpp-devel-unsubscribe@egroups.com">wpp-devel-unsubscribe@egroups.com</A>.
+</DL>
+
+<P>If you have some troubles and those forms don't work mail me everything at
+<A HREF="mailto:lm@geocities.com?subject=WPP - The Web Preprocessor">lm@geocities.com</A>
+
+
+
+<!-- Why using WPP? -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="WHY">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Why using WPP?</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+
+I've written WPP insipred by <B>cpp</B> (the C preprocessor). The <B>cpp</B>
+and <B>m4</B> are a couple of preprocessor available for almost every system
+but the syntax of them is quite undistinguishable inside a text/html source.
+<BR>The prototype for WPP was written in awk and it can do only templates
+inclusion and few other things, then I've started studying perl and so WPP
+became what you're seeing.
+<BR>The @ delimiter was taken from <B>autoconf</B> while looking inside the
+config.status files.
+
+<!-- Installing WPP -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="INSTALLING">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Installing WPP</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+
+Just copy the script named wpp into some convenient directory in your
+PATH (i.e. /usr/local/bin). You should probably put this file somewhere safe
+in case you want to refer to it later.<BR>
+You may need to change the first row of the wpp script in order to match
+the correct path for your perl interpreter.
+
+
+<!-- Known bugs -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="BUGS">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Known bugs</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+Actually WPP cannot check for recursive template inclusion (while 1.34 do
+that) or macro call, this stuff will be fixed as soon as possible.
+
+
+<!-- Contacting the author -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="AUTHOR">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Contacting the author</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+
+
+
+
+If you find a problem with this program or you would like to make a
+suggestion, or whatever, feel free to e-mail me at
+<A HREF="mailto:lm@geocities.com?subject=WPP - The Web Preprocessor">lm@geocities.com</A>
+
+
+
+
+<!-- Thanks! -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="THANKS">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Thanks!</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+My thanks go to the following people for submitting feedback and/or
+code. Apologies to anyone I have forgotten
+(<A HREF="mailto:lm@geocities.com?subject=WPP - The Web Preprocessor">send me an e-mail!</A>).
+
+<UL>
+<LI><A HREF="http://www.geocities.com/Paris/2481/">Luca Sironi (Luca_)</A>.
+<LI><A HREF="http://kame.usr.dsi.unimi.it:1111/">Fancesco Chemolli (Kinkie)</A>.
+<LI><A HREF="http://www.silab.dsi.unimi.it/~ms568411/">Matteo Sala (Ares)</A>.
+<LI>Jean-Pierre Malisse, who sent me some suggestions that pushed me in writing
+	the multi line macros feature of WPP ;)
+<LI><A HREF="http://www.lastknight.com">Matteo Flora (Last Knight)</A>,
+	he discovered that 
+	<A HREF="http://www.math.fu-berlin.de/~guckes/vim/">VIM (VI iMproved)</A>
+	+ WPP can be better than MS FrontPad and that the trashcan may be the
+	best place for the last one. ;P
+<LI><A HREF="http://fsinfo.cs.uni-sb.de/~calvin">Bastian Kleineidam</A>, who
+	discovered and fixed a <I>missing tail inclusion</I> bug. ;)
+<LI>Colin Turnbull (CT), let me notice that removing empty lines
+	is bad behaviour for &lt;PRE&gt; formatted stuff. He also asked for macro
+	expansion into variables assigments and macro arguments ... done! ;)
+<LI>Michelangelo Grigni for some interesting suggestions.
+<LI>Matt Massie, another who catched the &lt;PRE&gt; bug of wpp 2.00 - 2.01.
+<LI>Andreas Forsgren said: "<CITE>WPP is *great* *great* *great*, I love it!
+	Thank *you* for making it.</CITE>" ... then requested an enhancement for the
+	@IF@ ;)
+<LI><A HREF="http://www.silab.dsi.unimi.it/~ss546470/">Stefano Strada
+	(Harlock)</A>.
+<LI><A HREF="http://space.tin.it/salute/roflora/">Roberto Flora</A>, who used
+	WPP for the web site
+	<A HREF="http://space.tin.it/associazioni/guivital/info.htm">Ordine Agronomi
+	e Forestali di Bergamo</A>.
+<LI><A HREF="http://www.slad.cz/~jirka/">Jiri Rubes</A>, who reported and fixed
+	a problem with wpp 2.09 running in some environments that don't set PWD.
+<LI>Petr Prazak, who made some new features for wpp-2.11 (DATE_FORMAT,
+	FILE_SIZE, FILE_DATE) and fixed some bugs.
+<LI>Bastian Kleineidam, who made a patch for implementing the SYSTEM built-in
+	macro for wpp-2.11.
+<LI>Martin Fischer, who reported a couple of serious bugs in wpp 2.11.
+</UL>
+
+</DL>
+</FONT>
+
+<!-- -->
+<BR CLEAR=ALL>
+<P>
+<TABLE BORDER=0 WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="images/null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+<A HREF="#">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>^ Top</B></FONT></A>
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+
+&nbsp;&nbsp;
+<A HREF="manual_1.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Next &gt;</B></FONT></A>
+&nbsp;&nbsp;
+</TD>
+
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="images/null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+<TR VALIGN=MIDDLE>
+  <TD WIDTH="33%">
+		<FONT FACE="arial,helvetica" SIZE="-2" COLOR="#ffffff">
+		Marco (LM) Lamberto <A HREF="mailto:lm@geocities.com?subject=WPP - The Web Preprocessor">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">lm@geocities.com</FONT></A><BR>
+		Revised: 2000/12/10 12:34:04
+
+	
+
+		<BR>
+		<A HREF="http://www.geocities.com/Tokyo/1474/wpp/index.html"
+			>
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">http://www.geocities.com/Tokyo/1474/wpp/index.html</FONT></A>
+		</FONT>
+	</TD><TD ALIGN=CENTER WIDTH="34%">
+		<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+		<TR VALIGN=BOTTOM>
+
+		<TD><A HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG  SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32  ALT="Preprocessed by WPP" BORDER=0></A></TD>
+
+		<TD><IMG SRC="images/null.gif" WIDTH=5 HEIGHT=32 ALT=""></TD>
+		<TD><A HREF="http://www.gimp.org/"><IMG  SRC="images/gfx_by_gimp.gif" WIDTH=90 HEIGHT=36  BORDER=0 ALT="Graphics by GIMP"></A></TD>
+		</TABLE>
+	</TD><TD ALIGN=RIGHT WIDTH="33%">
+
+		<IMG SRC="images/null.gif" WIDTH=90 HEIGHT=32 BORDER=0 ALT="">
+
+	</TD>
+</TABLE>
+</FONT>
+</BODY>
+</HTML>

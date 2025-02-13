@@ -1,0 +1,43 @@
++-------------------------+-------+
+| Directives              | Use   |
++-------------------------+-------+
+| HEAD                    | R     | 1
+| IF/ELSE/ENDIF           | R T C |
+| INCLUDE                 | R T   |
+| INCLUDECFG              |     C |
+| MACRO/ENDMACRO          | R T C |
+| TAIL                    | R     | 1
+| @D@Date@D@              | R     | 1
++-------------------------+-------+
+
+
++-------------------------+-------+-------+
+| Variables/Constants     | Assign| Read  |
++-------------------------+-------+-------+
+| AT                      |       | R T C |
+| DATE                    |       | R T   | 2
+| DATE_FORMAT             | R T C | R T C |
+| DEFAULT_EXTENSION       |     C | R T C |
+| DEFAULT_HEAD            |     C | R T C |
+| DEFAULT_OUTPUTDIR       |     C | R T C |
+| DEFAULT_RAW_EXTENSION   |     C | R T C |
+| DEFAULT_TAIL            |     C | R T C |
+| DEFAULT_TMPLDIR         |     C | R T C |
+| DEFAULT_TMPL_EXTENSION  |     C | R T C |
+| EXTENSION               |       | R T C | 3
+| FILENAME                |       | R T   |
+| INCLUDE                 |       | R T   |
+| OUTPUTDIR               |       | R T C | 3
+| OUTPUTSUBDIR            |       | R T C |
+| RAWDIR                  |       | R T   |
+| RAW_EXTENSION           |       | R T C | 3
+| TEMPLATE                |       | R T   |
+| TMPLDIR                 |       | R T C | 3
+| TMPL_EXTENSION          |       | R T C | 3
+| WPP_VERSION             |       | R T C |
++-------------------------+-------+-------+
+
+
+NOTE 1: You can use this directive also in included templates but header, footer and in particular the modification date should be used only in a source files.
+NOTE 2: DATE has a value of '' (empty string) until the @D@Date@D@ directive is reached.
+NOTE 3: This value can be modified into config files through the respective DEFAULT_* variable.

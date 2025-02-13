@@ -1,0 +1,31 @@
+Begin3
+Title:          WPP - The Web Preprocessor
+Version:        2.13
+Entered-date:   10DEC00
+Description:    WPP is a small perl5 script that allows to preprocessing of
+                html files. It's useful for giving an uniform layout to
+                different html pages.
+                It allows you to define "variables", which are abbreviations
+                for longer constructs, and include common html fragments.
+                WPP provides four separate facilities that you can use as you
+                fit: inclusion of templates, variables expansion, conditional
+                generation and macro expansion.
+                It can be used into cgi scripts for dynamic generation of pages.
+                With less html code inside them you can make more flexible and
+                readable cgi-scripts.
+                
+                Marco Lamberto (lm@geocities.com)
+                http://www.geocities.com/marcolamberto/wpp/
+
+Keywords:       html preprocessor preprocessing web perl perl5 script cgi
+Author:         lm@geocities.com (Marco Lamberto)
+Maintained-by:  lm@geocities.com (Marco Lamberto)
+Primary-site:   www.geocities.com /marcolamberto/wpp
+                wpp.tgz
+Alternate-site: sunsite.unc.edu /pub/Linux/apps/www/misc
+                wpp-2.13.tgz
+Original-site:
+Platforms:      perl
+Copying-policy: GNU GENERAL PUBLIC LICENSE                                      
+                All rights reserved by the author
+End

@@ -1,0 +1,250 @@
+@TITLE=@WPP_TITLE@ Test Page@
+@TSSNAVBAR_IS_4=y@
+@TSSNAVBAR_URL_L=@TSS_DIR_PREFIX@manual_9@
+@TSSNAVBAR_URL_R=@TSS_DIR_PREFIX@index@
+@FONTF=@FONT@ SIZE=-1@
+@EDIT_CFG=(edit the <A HREF="raw/config">raw/config</A> file)@
+
+@INCLUDE utils/box_macros@
+@INCLUDE wpplogo@
+$Date: 1998/09/23 11:26:51 $
+
+<TABLE WIDTH="100%">
+<TR ALIGN=CENTER>
+<TD>
+
+@BOX_TITLE=Predefined Variables Test@
+@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+<FONT @FONTF@>
+<DL>
+<DT><P>Read-Only Variables:<BR>
+<DD>
+	WPP_VERSION=[@WPP_VERSION@]<BR>
+	DATE=[@DATE@]<BR>
+	RCS_DATE=[@RCS_DATE@]<BR>
+	AT=[@AT@]<BR> 
+	TEMPLATE=[@TEMPLATE@]<BR>
+	FILENAME=[@FILENAME@]<BR>
+	TMPLDIR=[@TMPLDIR@]<BR>
+	RAWDIR=[@RAWDIR@]<BR>
+	OUTPUTDIR=[@OUTPUTDIR@]<BR>
+	OUTPUTSUBDIR=[@OUTPUTSUBDIR@]<BR>
+	EXTENSION=[@EXTENSION@]<BR>
+<DT><P>Configuration Variables:<BR>
+<DD>
+	DEFAULT_HEAD=[@DEFAULT_HEAD@]<BR>
+	DEFAULT_TAIL=[@DEFAULT_TAIL@]<BR>
+	DEFAULT_TMPLDIR=[@DEFAULT_TMPLDIR@]<BR>
+	DEFAULT_OUTPUTDIR=[@DEFAULT_OUTPUTDIR@]<BR>
+	DEFAULT_EXTENSION=[@DEFAULT_EXTENSION@]
+</DL>
+</FONT>
+@BOX_CLOSE()@
+
+
+<TD>
+
+@BOX_TITLE=Variables Test@
+@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+<FONT @FONTF@>
+	TITLE=[@TITLE@]<BR>
+	V_ASSIGN[@VAR=ciao@]<BR>
+	VAR=[@VAR@]<BR>
+@VAR = ciao @
+	VAR=[@VAR@]<BR>
+@A1=<A HREF="#">@
+@A2=</A>@
+	@A1@ FILENAME=[@FILENAME@]@A2@
+<P>
+@LI=UL@
+	<@LI@>
+	<LI>Variable LI=UL
+	<LI> a
+	<LI> b
+	<LI> c
+	</@LI@>
+@LI=OL@
+	<@LI@>
+	<LI>Variable LI=OL
+	<LI> a
+	<LI> b
+	<LI> c
+	</@LI@>
+@IF READ_ONLY@
+	@AT=1@
+@ELSE@
+	Read-only variables test skipped @EDIT_CFG@.
+@FI@
+</FONT>
+@BOX_CLOSE()@
+
+
+<TR ALIGN=CENTER>
+<TD>
+
+@BOX_TITLE=IF Test@
+@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+<FONT @FONTF@>
+<DL>
+<DT>Simple:
+<DD>
+@TEST=@
+@IF TEST@
+test failed
+@ELSE@
+test passed
+@FI@
+<BR>
+@IF !TEST@
+! test passed
+@ELSE@
+! test failed
+@FI@
+
+<DT><P>Nested:
+<DT>Part 1:<DD>
+@IF !IF1@
+1i OK<BR>
+	@IF !IF2@
+	2i OK<BR>
+	@ELSE@
+	2e<BR>
+	@FI@
+@ELSE@
+1e<BR>
+	@IF !IF3@
+	3i<BR>
+	@ELSE@
+	3e<BR>
+	@FI@
+@FI@
+
+<DT>Part 2:<DD>
+@IF IF1@
+1i<BR>
+	@IF !IF2@
+	2i OK<BR>
+	@ELSE@
+	2e<BR>
+	@FI@
+	@IF IF3@
+	3i<BR>
+	@ELSE@
+	3e OK<BR>
+	@FI@
+@ELSE@
+1e OK<BR>
+	@IF IF4@
+	4i<BR>
+	@ELSE@
+	4e OK<BR>
+	@FI@
+	@IF !IF5@
+	5i OK<BR>
+	@ELSE@
+	5e<BR>
+	@FI@
+@FI@
+</DL>
+</FONT>
+@BOX_CLOSE()@
+
+
+<TD>
+
+@BOX_TITLE=INCLUDE Test@
+@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+<FONT @FONTF@>
+<DL>
+<DT>last included template: [@INCLUDE@]
+@INC=ciao@
+@IF INC1@
+@INCLUDE tests/include1@
+@FI@
+	last included template: [@INCLUDE@]<BR>
+	TEMPLATE=[@TEMPLATE@]<BR>
+<DT><A HREF="raw/@FILENAME@.raw">html file from @FILENAME@.raw</A>
+</DL>
+@IF !RECURSIVE@
+	INCLUDE recursion test skipped @EDIT_CFG@.
+@ELSE@
+	@INCLUDE tests/include1@
+@FI@
+</FONT>
+@BOX_CLOSE()@
+
+
+
+<TR ALIGN=CENTER>
+<TD>
+
+@MACRO TEST_INC()@
+[@INCLUDE tests/include1@]
+@ENDMACRO@
+
+@MACROTESTBREAKER=",slap,"@
+@BOX_OPEN("Macro Expansion Test 1", "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+<FONT @FONTF@>
+BOX_OPEN() &amp; BOX_CLOSE() macros.
+<P>
+Include inside a macro.<BR>
+<DL><DT>Begin @TEST_INC()@ End</DL>
+</FONT>
+@BOX_CLOSE()@
+
+<TD>
+
+@MACRO TEST_MACRO_1(ARG1, ARG2)@
+<TD>
+<FONT @FONTF@>
+<OL>
+<LI>test args:
+<LI>@ARG1@
+<LI>@ARG2@
+</OL>
+</FONT>
+</TD>
+@ENDMACRO@
+
+@MACRO TEST_MACRO_2(ARG1, ARG2, ARG3)@
+<TD>
+<FONT @FONTF@>
+<OL>
+<LI>test args:
+<LI>@ARG1@
+<LI>@ARG2@
+<LI>@ARG3@
+</OL>
+</FONT>
+</TD>
+@ENDMACRO@
+
+@MACRO BOX_SEP(TITLE)@
+<TR VALIGN=TOP>
+<TD COLSPAN=2><FONT @FONTF@>@TITLE@</FONT>
+<TR VALIGN=TOP>
+@ENDMACRO@
+
+@BOX_TITLE=Macro Expansion Test 2@
+@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+<TABLE>
+@BOX_SEP("String args")@
+@TEST_MACRO_1("A String", "String with @AT@ ")@
+@TEST_MACRO_1("<B>\"</B> escaping", "<B>,</B> inside <B>\"</B>")@
+@BOX_SEP("<BR>Variables args")@
+@TEST_MACRO_2(@FILENAME@, @DEFAULT_EXTENSION@, "@WPP_VERSION@")@
+@TEST_MACRO_2(@WPP_VERSION@, @DATE@, @TITLE@)@
+</TABLE>
+
+@WPP_LOGO("Built-in Macro HTML_IMAGE_SIZE Test", "pp_by_wpp.gif")@
+@BOX_CLOSE()@
+
+</TD>
+
+</TABLE>

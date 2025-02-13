@@ -1,0 +1,35 @@
+@H_SECTION("General notes", "GNOTES")@
+WPP now can handle directives, variables and macros without caring if they are
+together into a big line or separated.<BR>
+Remember that a line ending with a single <B>\</B> will be joined with the
+following.
+So if you want to split a long directive or a macro you could use the <B>\</B>
+char at the end of every chunk except for the last.<BR>
+However if you need the last <B>\</B> for other reasons you could escape it by
+doubling the <B>\</B> into <B>\\</B> that will be replaced with the single
+<B>\</B>.<BR>
+You could also add an extra space after the <B>\</B>, making it no
+more the last character of the line.
+
+	<DL>
+	<DD>
+	@BOX_OPEN("Source file", "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+	&nbsp;&nbsp;&nbsp;...<BR>
+	@AT@A_VAR=I've made this on @AT@DATE@AT@@AT@<BR>
+	@AT@A_MACRO("text", "text @AT@A_VAR@AT@!", "@AT@B_MACRO(\"arg1\", \\
+	<BR>&nbsp;&nbsp;&nbsp;\"arg2\")@AT@ text")@AT@<BR>
+	@AT@INCLUDE @AT@EXTRA_INCL_DIR@AT@/test@AT@<BR>
+	&nbsp;&nbsp;&nbsp;...
+	@BOX_CLOSE()@
+	</DL>
+
+<P>
+Macros can be called within other macros (pay attention to recursive calls!),
+variables assignments or macro aguments.
+<P>
+Variables are expanded almost everywhere, even into variables assignments or
+into the arguments of a called macro.
+<P>
+Paths are relative to the template or the output directories. You can't use
+absolute paths.

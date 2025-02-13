@@ -1,0 +1,67 @@
+@H_SECTION("Special variables", "SPVARS")@
+<DL>
+<DT> <A NAME="DATE_FORMAT">@AT@DATE_FORMAT@AT@</A>
+<DD>
+	This variable holds the @AT@DATE@AT@ and @AT@RCS_DATE@AT@ output format.
+	It can be assigned to any string value.
+	Ordinary characters placed in the format string are copied
+	to it without conversion. Conversion specifiers are introduced
+	by a `%' character, and are replaced as follows:
+
+@MACRO TCELL(VAL, TEXT)@
+<TR>
+<TD>@H_FONT("@VAL@")@</TD>
+<TD>@H_FONT("@TEXT@")@</TD>
+@ENDMACRO@
+
+<TABLE>
+@TCELL("%a", "The abbreviated weekday name according to the current locale.")@
+@TCELL("%A", "The full weekday name according to the current locale.")@
+@TCELL("%b", "The abbreviated month name according to the current locale.")@
+@TCELL("%B", "The full month name according to the current locale.")@
+@TCELL("%c", "The preferred date and time representation for the current locale.")@
+@TCELL("%d", "The day of the month as a decimal number (range 01 to 31).")@
+@TCELL("%H", "The hour as a decimal number using a 24-hour clock (range 00 to 23).")@
+@TCELL("%I", "The hour as a decimal number using a 12-hour clock (range 01 to 12).")@
+@TCELL("%j", "The day of the year as a decimal number (range 001 to 366).")@
+@TCELL("%m", "The month as a decimal number (range 01 to 12).")@
+@TCELL("%M", "The minute as a decimal number.")@
+@TCELL("%p", "Either `am' or `pm' according to the given time value, or the corresponding strings for the current locale.")@
+@TCELL("%S", "The second as a decimal number.")@
+@TCELL("%U", "The week number of the current year as a decimal number, starting with the first Sunday as the first day of the first week.")@
+@TCELL("%W", "The week number of the current year as a decimal number, starting with the first Monday as the first day of the first week.")@
+@TCELL("%w", "The day of the week as a decimal, Sunday being 0.")@
+@TCELL("%x", "The preferred date representation for the current locale without the time.")@
+@TCELL("%X", "The preferred time representation for the current locale without the date.")@
+@TCELL("%y", "The year as a decimal number without a century (range 00 to 99).")@
+@TCELL("%Y", "The year as a decimal number including the century.")@
+@TCELL("%Z", "The time zone or name or abbreviation.")@
+@TCELL("%%", "A literal `%' character.")@
+</TABLE>
+
+<DL>
+<DD>
+<TABLE>
+<TR VALIGN=TOP>
+<TD WIDTH="50%">
+	@BOX_TITLE=Source file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+	@AT@DATE_FORMAT=Year: %Y - Month: %m@AT@<BR>
+	@AT@DATE@AT@
+	@BOX_CLOSE()@
+</TD>
+<TD WIDTH="50%">
+	@BOX_TITLE=Output file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+	@ODF=@DATE_FORMAT@@
+	@DATE_FORMAT=Year: %Y - Month: %m@
+	@DATE@
+	@DATE_FORMAT=@ODF@@
+	@BOX_CLOSE()@
+</TD>
+</TABLE>
+</DL>
+
+</DL>

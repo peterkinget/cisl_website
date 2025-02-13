@@ -1,0 +1,12 @@
+@TITLE=@WPP_TITLE@ General notes@
+@TSSNAVBAR_IS_4=y@
+@TSSNAVBAR_URL_L=@TSS_DIR_PREFIX@manual_1@
+@TSSNAVBAR_URL_R=@TSS_DIR_PREFIX@manual_3@
+
+@INCLUDE utils/box_macros@
+@INCLUDE utils/h_macros@
+$Date: 1998/09/23 11:26:51 $
+
+<DL>
+@INCLUDE parags/gnotes@
+</DL>

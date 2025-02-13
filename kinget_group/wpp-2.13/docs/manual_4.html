@@ -1,0 +1,701 @@
+<HTML>
+<HEAD>
+<TITLE>[ WPP - The Web Preprocessor ]  Variables and constants</TITLE>
+<LINK REV=MADE HREF="mailto:lm@geocities.com">
+<META NAME="author" CONTENT="Marco (LM) Lamberto - lm@geocities.com">
+<META NAME="description" CONTENT="WPP is a small perl script that allows preprocessing of html files.  It's useful for giving an uniform layout to different html pages. It can be used into cgi scripts for dynamic generation of pages.">
+<META NAME="keywords" CONTENT="html, preprocessor, preprocessing, web, perl, script, cgi, the sunny spot">
+<META NAME="generator" CONTENT="By Hand v1.0 with VIM for Linux + WPP ;)">
+
+
+</HEAD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<BODY BGCOLOR="#ffffff">
+<FONT FACE="arial,helvetica">
+
+<CENTER>
+<TABLE WIDTH="100%" BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR VALIGN=MIDDLE>
+<TD ALIGN=LEFT><A
+	HREF="http://www.geocities.com/Tokyo/1474/"><IMG SRC="images/tss_logo.gif" WIDTH=90 HEIGHT=32 ALT="[ The Sunny Spot ]" BORDER=0></A></TD>
+<TD ALIGN=CENTER WIDTH="70%">
+	<FONT FACE="arial,helvetica" COLOR="#ffffff">
+	<FONT SIZE="+1"><B>WPP v2.13 - The Web Preprocessor</B></FONT><BR>
+	<FONT SIZE="-1">Author : <A HREF="mailto:lm@geocities.com">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">Marco Lamberto</FONT></A></FONT>
+	</FONT>
+</TD>
+<TD ALIGN=RIGHT><A
+	HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32 ALT="Preprocessed by WPP" BORDER=0></A></TD>
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="images/null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+
+<A HREF="index.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Index</B></FONT></A>
+
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+
+<A HREF="manual_3.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>&lt; Previous</B></FONT></A>
+
+&nbsp;&nbsp;
+<A HREF="manual_5.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Next &gt;</B></FONT></A>
+&nbsp;&nbsp;
+</TD>
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="images/null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+</TABLE>
+</CENTER>
+<P>
+
+
+
+<DL>
+<!-- Variables assignment -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="VARASSIGN">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Variables assignment</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+
+<DL>
+<DT> @NAME=val@
+<DD>
+  Valid names can contain uppercase letters, numbers and the '_' underscore
+  char.<BR>
+	The value can contain other variables and macro calls delimitated by the
+	@ char.<BR>
+
+	<DL>
+	<DD>
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Source file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+    <FONT COLOR="#777777">&lt;!-- assigns to <B>FOO_0</B> the value <B>Title</B> --&gt;</FONT><BR>
+    &nbsp;&nbsp;&nbsp;@FOO_0=<FONT COLOR="#550000">Title</FONT>@<P>
+    <FONT COLOR="#777777">&lt;!-- deletes <B>FOO_1</B> if defined --&gt;</FONT><BR>
+    &nbsp;&nbsp;&nbsp;@FOO_1=@<P>
+    <FONT COLOR="#777777">&lt;!-- sets <B>FOO_0</B> to <B>FOO_1</B> --&gt;</FONT><BR>
+    &nbsp;&nbsp;&nbsp;@FOO_0=<FONT COLOR="#550000">@FOO_1@</FONT>@
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</DL>
+</DL>
+
+
+
+<!-- Variables substitution -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="VARSUBST">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Variables substitution</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+
+<DL>
+<DT> @NAME@
+<DD>
+	Simply put the variable name between two '@'.
+
+	<DL>
+	<DD>
+	<TABLE>
+	<TR VALIGN=MIDDLE ALIGN=CENTER><TD WIDTH="50%">
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Source file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+  @FOO1=<FONT COLOR="#550000">A</FONT>@<BR>
+  @FOO2=<FONT COLOR="#550000">B</FONT>@<BR>
+  <FONT COLOR="#777777">Choose </FONT>@FOO1@
+	<FONT COLOR="#777777"> or </FONT>@FOO2@
+	<FONT COLOR="#777777"> ?</FONT>
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+
+	</TD>
+	<TD>
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000" SIZE="+2">=</FONT></TD>
+	<TD WIDTH="50%">
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Output file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+  Choose A or B ?
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</TD>
+	</TABLE>
+	</DL>
+</DL>
+
+
+
+<!-- Special variables -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="SPVARS">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Special variables</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+<DL>
+<DT> <A NAME="DATE_FORMAT">@DATE_FORMAT@</A>
+<DD>
+	This variable holds the @DATE@ and @RCS_DATE@ output format.
+	It can be assigned to any string value.
+	Ordinary characters placed in the format string are copied
+	to it without conversion. Conversion specifiers are introduced
+	by a `%' character, and are replaced as follows:
+
+
+
+<TABLE>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%a</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The abbreviated weekday name according to the current locale.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%A</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The full weekday name according to the current locale.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%b</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The abbreviated month name according to the current locale.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%B</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The full month name according to the current locale.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%c</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The preferred date and time representation for the current locale.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%d</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The day of the month as a decimal number (range 01 to 31).</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%H</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The hour as a decimal number using a 24-hour clock (range 00 to 23).</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%I</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The hour as a decimal number using a 12-hour clock (range 01 to 12).</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%j</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The day of the year as a decimal number (range 001 to 366).</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%m</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The month as a decimal number (range 01 to 12).</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%M</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The minute as a decimal number.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%p</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >Either `am' or `pm' according to the given time value, or the corresponding strings for the current locale.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%S</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The second as a decimal number.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%U</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The week number of the current year as a decimal number, starting with the first Sunday as the first day of the first week.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%W</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The week number of the current year as a decimal number, starting with the first Monday as the first day of the first week.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%w</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The day of the week as a decimal, Sunday being 0.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%x</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The preferred date representation for the current locale without the time.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%X</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The preferred time representation for the current locale without the date.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%y</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The year as a decimal number without a century (range 00 to 99).</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%Y</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The year as a decimal number including the century.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%Z</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >The time zone or name or abbreviation.</FONT></TD>
+<TR>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >%%</FONT></TD>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >A literal `%' character.</FONT></TD>
+</TABLE>
+
+<DL>
+<DD>
+<TABLE>
+<TR VALIGN=TOP>
+<TD WIDTH="50%">
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Source file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+	@DATE_FORMAT=Year: %Y - Month: %m@<BR>
+	@DATE@
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+</TD>
+<TD WIDTH="50%">
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Output file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+	
+	
+	Year: 2000 - Month: 12
+	
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+</TD>
+</TABLE>
+</DL>
+
+</DL>
+
+
+
+<!-- Read-only variables -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="ROVARS">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Read-only variables</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+
+<DL>
+<DT> @WPP_VERSION@
+<DD>
+  The program version.
+<DT> @INCLUDE@
+<DD>
+  Contains the name of the last included template.
+<DT> @FILENAME@
+<DD>
+  The bare name without extensions (.raw or .html) and path.
+<DT> @TEMPLATE@
+<DD>
+  If evaluated into a template is the template name, otherwise is an empty
+	string.
+<DT> @DATE@
+<DD>
+	Is the modify time for the output file.
+<DT> @RCS_DATE@
+<DD>
+  RCS <A HREF="manual_5.html#DATE">$Date$</A> tag value (if you use RCS,
+	otherwise is the last modify time or, if the source is STDIN, the current
+	date).
+<DT> @AT@
+<DD>
+  The '@' char.
+<DT> @EXTENSION@
+<DD>
+  Contains the extension of the output file (default is 'html'). It can be
+	changed into a config file through the @DEFAULT_EXTENSION@
+	variable.
+<DT> @RAW_EXTENSION@
+<DD>
+	Contains the extension of the input file (default is 'raw'). It can be
+	changed into a config file through the @DEFAULT_RAW_EXTENSION@
+	variable.
+<DT> @TMPL_EXTENSION@
+<DD>
+	Contains the extension of the template files (default is 'tmpl'). It can be
+	changed into a config file through the @DEFAULT_TMPL_EXTENSION@
+	variable.
+<DT> @OUTPUTDIR@
+<DD>
+  Contains the output directory. It can be
+	changed into a config file through the @DEFAULT_OUTPUTDIR@
+	variable.
+<DT> @OUTPUTSUBDIR@
+<DD>
+  Contains the output subdirectory path.<BR>
+	By running wpp on <I>@OUTPUTSUBDIR@/ex.raw</I> the output file will be
+	placed into <I>@OUTPUTDIR@/@OUTPUTSUBDIR@/ex.html</I>.
+<DT> @RAWDIR@
+<DD>
+	Contains the directory of the raw sources.
+<DT> @TMPLDIR@
+<DD>
+  Contains the templates director It can be
+	changed into a config file through the @DEFAULT_TMPLDIR@
+	variable.
+</DL>
+
+
+
+</DL>
+
+<!-- -->
+<BR CLEAR=ALL>
+<P>
+<TABLE BORDER=0 WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="images/null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+<A HREF="#">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>^ Top</B></FONT></A>
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+
+<A HREF="manual_3.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>&lt; Previous</B></FONT></A>
+
+&nbsp;&nbsp;
+<A HREF="manual_5.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Next &gt;</B></FONT></A>
+&nbsp;&nbsp;
+</TD>
+
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="images/null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+<TR VALIGN=MIDDLE>
+  <TD WIDTH="33%">
+		<FONT FACE="arial,helvetica" SIZE="-2" COLOR="#ffffff">
+		Marco (LM) Lamberto <A HREF="mailto:lm@geocities.com?subject=WPP - The Web Preprocessor">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">lm@geocities.com</FONT></A><BR>
+		Revised: 2000/12/10 12:34:09
+
+	
+
+		<BR>
+		<A HREF="http://www.geocities.com/Tokyo/1474/wpp/manual_4.html"
+			>
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">http://www.geocities.com/Tokyo/1474/wpp/manual_4.html</FONT></A>
+		</FONT>
+	</TD><TD ALIGN=CENTER WIDTH="34%">
+		<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+		<TR VALIGN=BOTTOM>
+
+		<TD><A HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG  SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32  ALT="Preprocessed by WPP" BORDER=0></A></TD>
+
+		<TD><IMG SRC="images/null.gif" WIDTH=5 HEIGHT=32 ALT=""></TD>
+		<TD><A HREF="http://www.gimp.org/"><IMG  SRC="images/gfx_by_gimp.gif" WIDTH=90 HEIGHT=36  BORDER=0 ALT="Graphics by GIMP"></A></TD>
+		</TABLE>
+	</TD><TD ALIGN=RIGHT WIDTH="33%">
+
+		<IMG SRC="images/null.gif" WIDTH=90 HEIGHT=32 BORDER=0 ALT="">
+
+	</TD>
+</TABLE>
+</FONT>
+</BODY>
+</HTML>

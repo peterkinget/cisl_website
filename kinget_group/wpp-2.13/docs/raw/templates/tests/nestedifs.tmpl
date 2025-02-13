@@ -1,0 +1,17 @@
+Nested IF Test:
+@IF !IF1@
+<BR>1i
+	@IF !IF2@
+	<BR>2i
+	@ELSE@
+	<BR>2e
+	@FI@
+@ELSE@
+<BR>1e
+	@IF !IF3@
+	<BR>3i
+	@ELSE@
+	<BR>3e
+	@FI@
+@FI@
+

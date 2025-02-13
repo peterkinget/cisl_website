@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>MakeGraph</title>
+</head>
+<body>
+<div style="text-align: center;"><big><big><big><big><span
+ style="font-family: impact;"><big style="color: rgb(51, 51, 255);"><span
+ style="font-family: forte;">M</span></big>onte <big
+ style="color: rgb(51, 51, 255);"><span style="font-family: forte;">C</span></big>arlo
+<big style="color: rgb(51, 51, 255);"><span style="font-family: forte;">S</span></big>imulation</span></big></big></big></big><br>
+</div>
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;"><a href="main.html">[<big><big><big><big><big><span
+ style="font-family: impact;"></span></big></big></big></big></big>main]</a>
+<a href="inputrandomizer.html">[inputrandomizer]</a>
+<a href="RunSpectre.html">[runspectre]</a>
+<a href="outputorganizer.html">[outputorganizer]</a>
+<a
+ href="file:///D:/My%20Documents/Fall%202004/summer%20research/MakeGraph.html">[makegraph]</a>
+<a href="parameters%20file.html">[parameters
+file]</a> <a href="guided%20tutorial.html">[guided
+tutorial]</a> <a href="work%20summary.html">[work
+summary]</a> <a href="downloads.html">[downloads]</a>
+</div>
+</div>
+<a href="downloads.html"></a></div>
+</div>
+<a href="downloads.html"></a></div>
+</div>
+<a
+ href="file:///D:/My%20Documents/summer%20research/work%20summary.html"></a></div>
+</div>
+<div style="text-align: center;"><big style="font-weight: bold;"><big><big><big><big><span
+ style="font-family: impact;"></span></big></big></big><span
+ style="font-weight: bold;"><span
+ style="font-family: forte; color: rgb(255, 0, 0);">M</span>ake </span></big></big><big
+ style="font-weight: bold;"><big><span style="font-weight: bold;"><span
+ style="font-family: forte; color: rgb(255, 0, 0);">G</span></span></big></big><big
+ style="font-weight: bold;"><big><span style="font-weight: bold;">raph<br>
+</span></big></big>
+<div style="text-align: left;"><br>
+This program looks into an output organized&nbsp; file specified by the
+user.<small><br>
+</small><big><small>In this case, the input
+netlist is input.scs, there are fiverepetitions and the deviations
+file is called parameters.txt.</small></big><big
+ style="font-weight: bold;"><small><br>
+<br>
+Click <a href="MCMakeGraph.pl">here</a> to download the
+MCMakeGraph.pl file only.<br>
+</small></big><big style="font-weight: bold;"><small>Click <a
+ href="downloads.html">here </a>to go to the downloads page.</small></big><br>
+<small><br>
+<br>
+</small><big><small><small>
+#!/usr/bin/perl -w</small></small></big><br>
+<big><small><small>#Written by Hector Hung, Shouri Chatterjee and
+Professor Peter Kinget <br>
+# Copyright (C) 2004 by the authors and Columbia Integrated Systems <br>
+# Laboratory.<br>
+<br>
+# There is no warranty or support and we cannot be held liable in any
+way.<br>
+# Everyone is permitted to copy verbatim copies of the code including <br>
+# this message.<br>
+<br>
+</small></small></big><small><br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Monte Carlo <br>
+<span style="font-weight: bold; background-color: rgb(255, 255, 102);">use
+Getopt::Std;</span><span style="background-color: rgb(255, 255, 102);">&nbsp;&nbsp;
+</span><br>
+# usage:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '.pl'<br>
+<br>
+<br>
+</small>
+<div style="position: absolute; top: 549px; left: 158px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<small>#for processing&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <br>
+%options=();&nbsp;&nbsp; &nbsp;&nbsp; </small><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--
+List of options from GetOpt</span><br>
+<small>$options{t}='Title';<br>
+$options{x}='X Label';<br>
+$options{y}='Y Label';<br>
+$options{f}='out.gnu';<br>
+$options{o}='out.ps';<br>
+<br>
+#parse all parameters and override defaults<br>
+getopts("t:x:y:f:o:",\%options);<br>
+<br>
+#if not input files specified, show usage<br>
+if (!defined $ARGV[0]) {<br>
+&nbsp;&nbsp;&nbsp; print <span
+ style="background-color: rgb(255, 255, 102);">"Usage: MCMakeGraph.pl
+-f out.gnu -o out.ps -t 'graph title' -x 'x label' -y 'y label [file1]
+[file2] ... [filen]'\n";</span><br>
+&nbsp;&nbsp;&nbsp; exit;<br>
+}<br>
+<br>
+#show summary<br>
+print "Graph&nbsp; Title:&nbsp; $options{t}\n";<br>
+print "X Axis Label:&nbsp; $options{x}\n"; <br>
+print "Y Axis Label:&nbsp; $options{y}\n"; <br>
+print "GnuPlot File:&nbsp; $options{f}\n"; <br>
+print "Graph&nbsp;&nbsp; File:&nbsp; $options{o}\n"; <br>
+<br>
+<br>
+<span style="background-color: rgb(255, 255, 102);">#basic gnuplot
+commands</span><br>
+$PLOTCOMMAND =<br>
+&nbsp;&nbsp;&nbsp; "set terminal postscript\n" .<br>
+&nbsp;&nbsp;&nbsp; "set output \"$options{o}\"\n" .<br>
+&nbsp;&nbsp;&nbsp; "set title&nbsp; \"$options{t}\"\n" .<br>
+&nbsp;&nbsp;&nbsp; "set xlabel \"$options{x}\"\n" .<br>
+&nbsp;&nbsp;&nbsp; "set ylabel \"$options{y}\"\n" .<br>
+&nbsp;&nbsp;&nbsp; "set logscale x\n" .<br>
+&nbsp;&nbsp;&nbsp; "set data style linespoints\n" .<br>
+&nbsp;&nbsp;&nbsp; "plot ";<br>
+<br>
+<br>
+<br>
+#add plot commands for each file<br>
+$first =1;<br>
+foreach $file (@ARGV) {<br>
+&nbsp;&nbsp;&nbsp; open (IN, $file) or die "cannot open file $file!";<br>
+&nbsp;&nbsp;&nbsp; $_ = &lt;IN&gt;;<br>
+&nbsp;&nbsp;&nbsp; close IN;<br>
+&nbsp;&nbsp;&nbsp; $columns = scalar((@_ = split(/\s+/)));<br>
+<br>
+&nbsp;&nbsp;&nbsp; #if columns have no avg/ stddev quit<br>
+&nbsp;&nbsp;&nbsp; #min columns = 1 row number, 1 x axis, 2+ data, 1
+avg,1 stddev = 6<br>
+&nbsp;&nbsp;&nbsp; next if ($columns &lt; 6 );<br>
+<br>
+&nbsp;&nbsp;&nbsp; $datacolumn = $columns-1;<br>
+<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; if ($first) {<br>
+<br>
+&nbsp;&nbsp;&nbsp; $PLOTCOMMAND .= "\"$file\" using 2:$datacolumn
+";&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; </small><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--Plots
+the 2nd column as the x-axis followed by all other columns</span><br>
+<small>&nbsp;&nbsp;&nbsp; $first=0;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+</small>
+<div style="position: absolute; top: 1425px; left: 361px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<small>&nbsp;&nbsp;&nbsp; else {<br>
+<br>
+&nbsp;&nbsp;&nbsp; $PLOTCOMMAND .= ", \"$file\" using 2:$datacolumn ";<br>
+&nbsp;&nbsp;&nbsp; }<br>
+}<br>
+<br>
+<br>
+$PLOTCOMMAND .= "\n";<br>
+<br>
+<br>
+#generate output gnuplot file<br>
+open (OUT, "&gt;$options{f}") or die "cannot open outpput file
+$options{f}";<br>
+print OUT "$PLOTCOMMAND";<br>
+close OUT;<br>
+<span style="background-color: rgb(255, 255, 102);">#run gnuplot</span><br>
+print `gnuplot $options{f}`;<br>
+</small><big style="font-weight: bold;"><small><br>
+</small></big><big style="font-weight: bold;"><small><br>
+If you have any questions, please email me at hch2007@columbia.edu </small></big><br>
+<big style="font-weight: bold;"><big><span style="font-weight: bold;"></span></big></big></div>
+</div>
+</body>
+</html>

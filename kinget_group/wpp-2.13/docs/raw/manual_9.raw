@@ -1,0 +1,42 @@
+@TITLE=[ WPP - The Web Preprocessor ] Links and references@
+@TSSNAVBAR_IS_4=y@
+@TSSNAVBAR_URL_L=@TSS_DIR_PREFIX@manual_8@
+@TSSNAVBAR_URL_R=@TSS_DIR_PREFIX@test_page@
+
+@INCLUDE utils/box_macros@
+@INCLUDE utils/h_macros@
+$Date: 1998/09/23 11:26:51 $
+
+<DL>
+
+@H_SECTION("Links and references", "LINKSNREFS")@
+
+<DD><B>Perl</B>
+	<UL TYPE=circle>
+	<LI><A HREF="http://www.perl.org/">The Perl Institute</A>
+	<LI><A HREF="http://cpan.perl.org/">CPAN Comprehensive Perl Archive
+		Network</A>
+	<LI><A HREF="http://agora.leeds.ac.uk/Perl/">Perl tutorial</A>
+	</UL>
+<P>
+<DD><B>HTML</B>
+<DD>References
+	<UL TYPE=circle>
+	<LI><A HREF="http://www.w3.org/pub/WWW/">World Wide Web Consortium (W3C)</A>
+	<LI><A HREF="http://www.w3.org/MarkUp/html-spec/html-spec_toc.html">HTML 2.0
+		Specification</A>
+	<LI><A HREF="http://www.w3.org/TR/REC-html32.html">HTML 3.2 Reference
+		Specification</A>
+	<LI><A HREF="http://www.w3.org/TR/REC-html40/">HTML 4.0 Specification</A>
+	</UL>
+<DD>Syntax checkers
+	<UL TYPE=circle>
+	<LI><A HREF="http://www.cre.canon.co.uk/~neilb/weblint/">Weblint</A>
+	</UL>
+<DD>Style guides
+	<UL TYPE=circle>
+	<LI><A HREF="http://info.med.yale.edu/caim/manual/index.html">Yale C/AIM Web
+		Style Guide</A>
+	<LI><A HREF="http://www.sun.com/styleguide/">Guide to Web Style</A>
+	</UL>
+</DL>

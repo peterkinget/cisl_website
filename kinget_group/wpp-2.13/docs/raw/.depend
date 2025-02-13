@@ -1,0 +1,160 @@
+../index.html: \
+	config \
+	config.common \
+	config.email \
+	templates/utils/box_macros.tmpl \
+	templates/utils/h_macros.tmpl \
+	templates/head.tmpl \
+	templates/meta.tmpl \
+	../images/tss_logo.gif \
+	../images/pp_by_wpp.gif \
+	../images/wpp_logo.gif \
+	templates/author.tmpl \
+	templates/tail.tmpl \
+	../images/gfx_by_gimp.gif \
+	./index.raw
+../manual_1.html: \
+	config \
+	config.common \
+	config.email \
+	templates/utils/box_macros.tmpl \
+	templates/utils/h_macros.tmpl \
+	templates/head.tmpl \
+	templates/meta.tmpl \
+	../images/tss_logo.gif \
+	../images/pp_by_wpp.gif \
+	templates/parags/commandl.tmpl \
+	templates/tail.tmpl \
+	../images/gfx_by_gimp.gif \
+	./manual_1.raw
+../manual_2.html: \
+	config \
+	config.common \
+	config.email \
+	templates/utils/box_macros.tmpl \
+	templates/utils/h_macros.tmpl \
+	templates/head.tmpl \
+	templates/meta.tmpl \
+	../images/tss_logo.gif \
+	../images/pp_by_wpp.gif \
+	templates/parags/gnotes.tmpl \
+	templates/tail.tmpl \
+	../images/gfx_by_gimp.gif \
+	./manual_2.raw
+../manual_3.html: \
+	config \
+	config.common \
+	config.email \
+	templates/utils/box_macros.tmpl \
+	templates/utils/h_macros.tmpl \
+	templates/head.tmpl \
+	templates/meta.tmpl \
+	../images/tss_logo.gif \
+	../images/pp_by_wpp.gif \
+	templates/parags/using.tmpl \
+	templates/tail.tmpl \
+	../images/gfx_by_gimp.gif \
+	./manual_3.raw
+../manual_4.html: \
+	config \
+	config.common \
+	config.email \
+	templates/utils/box_macros.tmpl \
+	templates/utils/h_macros.tmpl \
+	templates/head.tmpl \
+	templates/meta.tmpl \
+	../images/tss_logo.gif \
+	../images/pp_by_wpp.gif \
+	templates/parags/varassign.tmpl \
+	templates/parags/varsubst.tmpl \
+	templates/parags/spvars.tmpl \
+	templates/parags/rovars.tmpl \
+	templates/tail.tmpl \
+	../images/gfx_by_gimp.gif \
+	./manual_4.raw
+../manual_5.html: \
+	config \
+	config.common \
+	config.email \
+	templates/utils/box_macros.tmpl \
+	templates/utils/h_macros.tmpl \
+	templates/head.tmpl \
+	templates/meta.tmpl \
+	../images/tss_logo.gif \
+	../images/pp_by_wpp.gif \
+	templates/parags/directives.tmpl \
+	templates/tail.tmpl \
+	../images/gfx_by_gimp.gif \
+	./manual_5.raw
+../manual_6.html: \
+	config \
+	config.common \
+	config.email \
+	templates/utils/box_macros.tmpl \
+	templates/utils/h_macros.tmpl \
+	templates/head.tmpl \
+	templates/meta.tmpl \
+	../images/tss_logo.gif \
+	../images/pp_by_wpp.gif \
+	templates/parags/macro.tmpl \
+	templates/parags/bimacro.tmpl \
+	templates/tail.tmpl \
+	../images/gfx_by_gimp.gif \
+	./manual_6.raw
+../manual_7.html: \
+	config \
+	config.common \
+	config.email \
+	templates/utils/box_macros.tmpl \
+	templates/utils/h_macros.tmpl \
+	templates/head.tmpl \
+	templates/meta.tmpl \
+	../images/tss_logo.gif \
+	../images/pp_by_wpp.gif \
+	templates/parags/configuration.tmpl \
+	templates/tail.tmpl \
+	../images/gfx_by_gimp.gif \
+	./manual_7.raw
+../manual_8.html: \
+	config \
+	config.common \
+	config.email \
+	templates/utils/box_macros.tmpl \
+	templates/utils/h_macros.tmpl \
+	templates/head.tmpl \
+	templates/meta.tmpl \
+	../images/tss_logo.gif \
+	../images/pp_by_wpp.gif \
+	templates/tail.tmpl \
+	../images/gfx_by_gimp.gif \
+	./manual_8.raw
+../manual_9.html: \
+	config \
+	config.common \
+	config.email \
+	templates/utils/box_macros.tmpl \
+	templates/utils/h_macros.tmpl \
+	templates/head.tmpl \
+	templates/meta.tmpl \
+	../images/tss_logo.gif \
+	../images/pp_by_wpp.gif \
+	templates/tail.tmpl \
+	../images/gfx_by_gimp.gif \
+	./manual_9.raw
+../test_page.html: \
+	config \
+	config.common \
+	config.email \
+	templates/utils/box_macros.tmpl \
+	templates/wpplogo.tmpl \
+	templates/head.tmpl \
+	templates/meta.tmpl \
+	templates/utils/h_macros.tmpl \
+	../images/tss_logo.gif \
+	../images/pp_by_wpp.gif \
+	templates/tests/include1.tmpl \
+	templates/tests/include2.tmpl \
+	templates/tests/include3.tmpl \
+	templates/tail.tmpl \
+	../images/gfx_by_gimp.gif \
+	./test_page.raw

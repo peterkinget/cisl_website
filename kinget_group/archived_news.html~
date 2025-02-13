@@ -1,0 +1,145 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="kinget_group.css">
+</head>
+
+<body>
+<!-- Here is the logo -->
+<div id="logo">
+<a href="http://www.columbia.edu"><img style="margin-top:-10px" border="0" align="middle" alt="cu_logo" src="images/cu_logo.gif"></a>
+<img width="150" height="1" src="">
+<a href="http://www.cisl.columbia.edu"><img style="margin-top:-10px" width="250" border="0" align="middle" alt="cisl_logo" src="images/cisl_logo_transparant.gif"></a><br>
+<center>
+<img width="719" style="margin-top:-20px" src="images/Logo3.gif"> <br>
+<!-- <h1 style="font-family:verdana, times; margin-top:0;
+margin-bottom:0; " >Analog and RF IC Design Research <br> 
+(Kinget Group)</h1> -->
+<h1 style="font-family:verdana, times; margin-top:-8px; margin-bottom:0; color:black;" >Kinget Group</h1>
+</center> 
+</div>
+
+<!-- Here is the navigation bar definition -->
+<!-- <div id="navigation" style="position: relative; top: 0px;
+left:0px;"> -->
+<div id="navigation">
+<center> |
+<a href="index.html">Home</a> |
+<a href="people.html">People</a> |
+<a href="research.html">Research</a> |
+<a href="publications.html">Publications</a> |
+<a href="gallery.html">Chip Gallery</a> |
+<a href="http://www.cisl.columbia.edu/seminars/seminars.html" target="_blank">Seminars</a> | 
+<a href="sponsors.html">Sponsors</a> | 
+<a href="prospective.html">Prospective Students</a> |
+</center>
+</div>
+
+<!-- Here will start the main page -->
+
+<!-- <div id="content" style="position: relative; top: 0px;
+left:200px;"> -->
+
+<div id="content">
+
+
+<h2> Archived News </h2>
+
+<h3>2005</h3>
+
+<ul>
+
+<li> Babak Soltanian and Frank Zhang will present their work on "Tail
+current shaping VCOs" and "VCO-in-the-coil" at the IEEE CICC in San
+Jose (CA, USA) in September.</li><br>
+
+<li> Peter Kinget has received an IBM Faculty Award.</li><br>
+
+<li> Frank Zhang and Shouri Chatterjee presented their work on "CMOS
+Distributed Low Noise Amplifier" and "MOS Varactors for ultra-low
+Voltage Filters" at the Symposium for VLSI Circuits in Kyoto (Japan)
+in June. </li><br>
+
+<li> Peter Kinget presented his work (with A. Lazar and Laszlo Toth)
+on the robustness of the analog implementation of a time encoding
+machine at the International Symposium on Circuits and Systems (ISCAS)
+in Kobe (Japan) in May.</li><br>
+
+<li> Intel Corporation has selected our research proposal (with
+Prof. Tsividis) on 0.5V circuits for funding.</li><br>
+
+<li> Realtek semiconductors approved our research proposal for 0.5V
+analog interfaces for funding.</li><br>
+
+<li> Shouri Chatterjee presented his work on "A 0.5V continuous time low pass
+filter with PLL tuning" at the International Solid-State Circuits
+Conference (ISSCC) in San Francisco (CA, USA) in February 2005.</li><br>
+
+</ul>
+
+<h3>2004</h3>
+
+<ul>
+
+<li> Our collaborative proposal with Prof. R. Gharpurey (U. of Texas)
+for UWB circuit research has been selected to be funded by the
+National Science Foundation.</li><br>
+
+<li> The Semiconductor Research Corporation has selected our proposal
+in the area of integrated oscillators for funding.</li><br>
+
+<li> Philips Semiconductors has donated IC fabrication services for
+the fabrication of our test-chips in their 0.25um/40GHz BiCMOS
+process.</li><br>
+
+<li> Silicon Laboratories has approved sponsoring for our research
+work.</li><br>
+
+<li> Analog Devices has approved funding for our 0.5V analog
+integrated circuits for nanoscale CMOS research (with Prof. Tsividis).</li><br>
+
+</ul>
+
+<h3>2003</h3>
+
+<ul>
+
+<li> Our group (with Prof. Tsividis) received an NSF MRI grant and
+associated matching funding from Columbia University and the School of
+Engineering to upgrade our IC characterization lab.</li><br>
+
+<li> Motorola approved funding for our research proposal on UWB
+circuit research.</li><br>
+
+</ul>
+
+<h3>2002</h3>
+
+<ul>
+
+<li> Our group became part of <a
+href="http://www.ceis.rochester.edu/ceis/mdc/"
+target="_blank">Microelectronics Design Center</a> and received
+associated funding from <a
+href="http://www.nystar.state.ny.us/defaultnoflash.htm"
+target="_blank">New York State Office of Science, Technology, and
+Academic Research</a>.</li><br>
+
+</ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div id="footer">
+<p><center> &copy 2006 by the Authors and Columbia University <br>
+Last modified on 2007/04/06 09:18:46
+</center>
+</p>
+</div>
+
+</body>
+</html>

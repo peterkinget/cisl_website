@@ -1,0 +1,84 @@
+$Date$
+
+<center><h2>Gallery of Chip Photographs</h2></center> 
+
+<p> Here are some of the recent chips we designed, fabricated and
+tested. Details can be found in our (upcoming) publications.
+
+<center>
+
+<img src="images/0p5V_rcv.png" width=400 ><br><br>
+<gal_title>0.5V 2.4GHz Sliding-IF Receiver (90nm CMOS)
+<br>[RFIC07, JSSC08]</gal_title><br><br><br>
+
+<!--<img src="images/CUN_90nm_March2007_pk.png" width=400 ><br><br>
+<gal_title>Various 0.5V and UWB test-circuits (90nm CMOS March 07 in fab)</gal_title><br><br><br>-->
+
+<img src="images/variation_0p25um_chip_photo_DSCN0430.jpg" width=300><br><br>
+<gal_title>Ring Oscillator Mismatch Test Structure (0.25 um/40 GHz BiCMOS) <br>[CICC07]</gal_title><br><br><br>
+
+<img src="images/0p5V_pipelined_adc-1.png" width=200 ><img src="images/0p5V_pipelined_adc-2.png" width=200 ><br><br>
+<gal_title>0.5V 8bit 10Msps pipelined ADC (90nm CMOS)
+<br>[VLSI07, JSSC08]</gal_title><br><br><br>
+
+<img src="images/0p5V_rcv.png" width=400 ><br><br>
+<gal_title>0.5V 2.4GHz Sliding-IF Receiver (90nm CMOS)
+<br>[RFIC07, JSSC08]</gal_title><br><br><br>
+
+<img src="images/0p65V_synthesizer.png" width=300 ><br><br>
+<gal_title>0.65/0.5V Frequency Synthesizer (90nm CMOS)
+<br>[ISSCC07]</gal_title><br><br><br>
+
+<!-- <img src="images/CUN_March06_lowres.jpg" width=400 ><br><br>
+<gal_title>Various 0.5V and UWB test-circuits (90nm CMOS)
+<br>[ISSCC07, RFIC07, VLSI07]</gal_title><br><br><br> -->
+
+<img src="images/BS_QVCO_diephoto_lowres.jpg" width=300><br><br>
+<gal_title>Quadrature VCO with Capacitive Common-Source
+coupling<br>(0.25 um/40 GHz BiCMOS) <br>[ESSCIRC06]</gal_title><br><br><br>
+
+<img src="images/SC_sha_lowres.jpg" width=300 height=300><br><br>
+<gal_title>0.5 V Track and Hold Amplifier (0.25um
+CMOS) <br>[VLSI06, JSSC07]</gal_title><br><br><br>
+
+<img src="images/0p5V_RF_Frontend.jpg" width=300 ><br><br>
+<gal_title>0.5 V 900MHz RF Front-end (0.18um
+CMOS) <br>[VLSI06]</gal_title><br><br><br>
+
+<img src="images/AJ_dac_lowres.jpg" width=200 height=200><br><br>
+<gal_title>5-bit DAC for UWB Pulse Generation (0.25 um/40 GHz ft BiCMOS)
+<br>[ISCAS06]</gal_title><br><br><br>
+
+<img src="images/KP_0p5_SDM_diephoto_lowres.jpg" width=300><br><br>
+<gal_title>0.5 V Sigma Delta Converter (0.18um CMOS) <br>[ISSCC06, JSSC07]</gal_title><br><br><br>
+
+<img src="images/BS_VCO_Tail_diephoto_lowres.jpg" width=450><br><br>
+<gal_title>VCO without (VCO1) and with (VCO2) Tail Current Shaping<br>
+(0.25 um/40 GHz BiCMOS) <br>[CICC05, JSSC06]</gal_title><br><br><br>
+
+<img src="images/FZ_vcol_diephoto_color_lowres.jpg" width=450><br><br>
+<gal_title>VCO in a coil (0.25 um/40 GHz BiCMOS) <br>[CICC05, JSSC06]</gal_title><br><br><br>
+
+<img src="images/FZ_DA_diephoto_lowres.jpg" width=450><br><br>
+<gal_title>Distributed CMOS LNA for UWB applications (0.18um CMOS)
+<br>[VLSI05, JSSC06]</gal_title><br><br><br>
+
+<img src="images/SC_milli_lowres.jpg" width=300 height=300><br><br>
+<gal_title>0.5 V Filter With PLL-Based tuning (0.18um CMOS) <br>[ISSCC05, JSSC05]</gal_tile><br><br><br>
+
+<img src="images/SC_bulkamp_lowres.jpg" width=280><br><br>
+<gal_title>0.5 V Bulk-input amplifier (0.18um CMOS) <br>[ESSCIRC04, JSSC05]</gal_title><br><br><br>
+
+<!-- <table>
+<tr>
+<td>
+<img src="images/frank/chip2_resonator_bw.jpg" width=388 height=161>
+</td>
+<td>
+<img src="images/frank/ind_fill_comp.jpg" width=365 height=161>
+</td>
+</tr>
+</table>
+-->
+
+</center>

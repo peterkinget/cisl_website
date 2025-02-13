@@ -1,0 +1,304 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>新增網頁 0</title>
+</head>
+
+<body>
+
+<p style="line-height: 150%">　</p>
+<p style="line-height: 150%"><font size="5">1. What should the program Do ?</font></p>
+<p style="line-height: 150%"><font size="5">&nbsp;&nbsp;&nbsp; </font>As a 
+programmer, we&nbsp; should write down the main function of this program. </p>
+<ul>
+  <li>
+  <p style="line-height: 150%"><b><font size="4">Variable Transmission Rate</font>&nbsp;&nbsp;&nbsp;&nbsp;
+  </b></li>
+</ul>
+<p style="line-height: 150%"><font size="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>Although our 
+Tx / Rx is set to 2400kbps, the program should be able to perform higher speed 
+testing if we improve our Tx / Rx module</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in the 
+future. </p>
+<ul>
+  <li>
+  <p style="line-height: 150%"><b><font size="4">Duplex Chat mode&nbsp; </font></b></li>
+</ul>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp; </b>&nbsp;&nbsp;&nbsp;&nbsp; Chat mode is short word 
+string transmission. It is the fast way to check whether the connection is 
+setup. Duplex mode is necessary because </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; we will need duplex 
+channel testing in the future. </p>
+<ul>
+  <li>
+  <p style="line-height: 150%"><b><font size="4">Duplex&nbsp; Error Test mode </font></b></li>
+</ul>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>Relative to Chat 
+mode, Error test mode is to send date in&nbsp; <b>variable length . </b>It can 
+be used to simulate a file transmission. </p>
+<ul>
+  <li>
+  <p style="line-height: 150%"><b><font size="4">Error rate calculation&nbsp; </font></b></li>
+</ul>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>Once it received the 
+testing message, the program should be able to compare it with correct message&nbsp; 
+table and calculate the error rate.</p>
+<ul>
+  <li>
+  <p style="line-height: 150%"><b><font size="4">Compatible to (Ms) Windows </font></b></li>
+</ul>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>Sadly, more than 80% 
+of computers use MS windows as their primary OS......</p>
+<p style="line-height: 150%">　</p>
+<p style="line-height: 150%">&nbsp;<font size="5">2. Use Com Port in Visual Basic</font></p>
+<p style="line-height: 150%"><font size="5">&nbsp;&nbsp;&nbsp; </font>Visual Basic is quite a easy program 
+to learn. It takes me 3 days to read 400 pages of manual before starting working 
+on the main program.&nbsp; </p>
+<p style="line-height: 150%">　</p>
+<ul>
+  <li>
+  <p style="line-height: 150%"><b><font size="4">General Properties </font></b></li>
+</ul>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp; Mscomm1</b> is a function in VB to control Com port.&nbsp; 
+It has the following properties.&nbsp; </p>
+<table cols="2" cellPadding="5" rules="rows" border="1" frame="below">
+  <tr vAlign="top">
+    <td class="label" width="29%">
+    <p style="line-height: 150%"><b>Properties</b></td>
+    <td class="label" width="71%">
+    <p style="line-height: 150%"><b>Description</b></td>
+  </tr>
+  <tr vAlign="top">
+    <td width="29%">
+    <p style="line-height: 150%"><b>CommPort</b></td>
+    <td width="71%">
+    <p style="line-height: 150%">Sets and returns the communications port number.</td>
+  </tr>
+  <tr vAlign="top">
+    <td width="29%">
+    <p style="line-height: 150%"><b>Settings</b></td>
+    <td width="71%">
+    <p style="line-height: 150%">Sets and returns the baud rate, parity, data bits, and stop 
+    bits as a string.</td>
+  </tr>
+  <tr vAlign="top">
+    <td width="29%">
+    <p style="line-height: 150%"><b>PortOpen</b></td>
+    <td width="71%">
+    <p style="line-height: 150%">Sets and returns the state of a communications port. Also 
+    opens and closes a port.</td>
+  </tr>
+  <tr vAlign="top">
+    <td width="29%">
+    <p style="line-height: 150%"><b>Input</b></td>
+    <td width="71%">
+    <p style="line-height: 150%">Returns and removes characters from the receive buffer.</td>
+  </tr>
+  <tr vAlign="top">
+    <td width="29%">
+    <p style="line-height: 150%"><b>Output</b></td>
+    <td width="71%">
+    <p style="line-height: 150%">Writes a string of characters to the transmit buffer.</td>
+  </tr>
+</table>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For example, if we want to use 
+comt 1 with 2400, non parity , 8 data bits, stop bit =1&nbsp;&nbsp; </p>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp;&nbsp; </b><i>&nbsp;&nbsp; MSComm1.CommPort = 1 </i></p>
+<p style="line-height: 150%"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MScomm1.settings = 2400,n,8,1</i></p>
+<p style="line-height: 150%"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mscomm1.portOpen = True</i></p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Note that portOpen must after the 
+&quot;settings&quot; and &quot;comport&quot; property.&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p style="line-height: 150%">　</p>
+<p align="center" style="line-height: 150%">
+　</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<ul>
+  <li>
+  <p style="line-height: 150%"><b><font size="4">How to Transmit and Receive</font> </b></li>
+</ul>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>To Transmit&nbsp; data or Receive 
+data, we should put strings in Input or Output buffer. </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Example:</b></p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<i>&nbsp;MSComm1.Output = strOutput</i></p>
+<p style="line-height: 150%"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+strInput = MSComm1.Input</i></p>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>We can use a do-loop to monitor 
+the input buffer all the time. </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>&nbsp;Example: </b></p>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp; <i>&nbsp;&nbsp;&nbsp;&nbsp; </i></b><i>Do Until 
+cancelflag = True<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+If MSComm1.InBufferCount &lt;&gt; 0 Then&nbsp;&nbsp; ' print only when there receive 
+something<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+text_rx.Text = text_rx.Text &amp; MSComm1.Input 'show Rx data<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+text_brx.Text = text_rx.Text</i></p>
+<p style="line-height: 150%"><i><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+End If<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+DoEvents<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Loop</i></p>
+<p style="line-height: 150%"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </i>Here we print 
+the received data in to test_rx.Text and attached new messages on when they are 
+received.</p>
+<p style="line-height: 150%" align="center">
+<img border="0" src="setting.jpg" width="500" height="399"></p>
+<p style="line-height: 150%" align="center">　</p>
+<p style="line-height: 150%" align="center">　</p>
+<p style="line-height: 150%"><font size="5">&nbsp;3. Intro. to Talk Mode and Error Test Mode </font></p>
+<ul>
+  <li>
+  <p style="line-height: 150%"><b><font size="4">&nbsp; Talk mode </font></b></li>
+</ul>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Talk mode is the extension&nbsp; 
+of&nbsp; the loop above. If there&nbsp; is&nbsp; &quot;DoEvents&quot;&nbsp; in the loop, 
+then we can halt the loop if user triggers another </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; action; that is , 
+click the SEND key. The loop continues after finishing the action.</p>
+<p style="line-height: 150%">　</p>
+<p align="center" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="talk.jpg" width="500" height="399"></p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<ul>
+  <li>
+  <p style="line-height: 150%"><b><font size="4">Error Test Mode </font></b></li>
+</ul>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In Error Test mode, we must setup 
+a &quot;Table&quot; that should be the same in each test parts.</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tx will transmit the content of 
+the table to Rx. Rx will compare the received date with the &quot;Table&quot; and 
+calculate the error rate.</p>
+<p style="line-height: 150%">　</p>
+<p align="center" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="error.jpg" width="500" height="399"></p>
+<p style="line-height: 150%"><font size="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>When the &quot;Calculate&quot; 
+command is clicked. It will store both Table and Received words into array, and 
+compare each unit of the array. </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Users can types any 
+thing they want to transfer in Table area, but must make sure that&nbsp; both 
+test part share the same table.&nbsp; </p>
+<p style="line-height: 150%">　</p>
+<p style="line-height: 150%"><font size="5">4. Miscellaneous Notes. </font> </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To state full 
+program line by line is impossible. Here are some key notes that will be very 
+useful to users and those who want to modify</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the 
+program.</p>
+<blockquote>
+  <ul>
+    <li>
+    <p style="line-height: 150%"><b>Error test Page</b></li>
+  </ul>
+</blockquote>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</b>&nbsp; 
+1.&nbsp; If there are pages of data in &quot;Received words&quot;, It might take much 
+memory to store the array.&nbsp; The most top text area will </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+show what's in the array.</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+2.&nbsp; It always compare the data from the top of&nbsp; &quot;Received Word&quot; text 
+area. As a result, one should click &quot;Rx clear&quot; before </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+performing error test unless he wants to calculate the total received words. </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+3. When&nbsp; &quot;Test command&quot; is clicked, &quot;Transmitted Word&quot; area will show what 
+is transmitted. Old message won't be erased </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+unless &quot;Tx Clear&quot;&nbsp; is clicked. It will be useful in counting how many words 
+has been send. </p>
+<p style="line-height: 150%">　</p>
+<blockquote>
+  <ul>
+    <li>
+    <p style="line-height: 150%"><b>Setup Page</b></li>
+  </ul>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>1.&quot;Flow 
+control&quot; and &quot;Echo &quot; is reserved for future use. It might need CTS and RTS 
+signal of RS232. </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Each 
+time user changes the setting, he must go to <b>Main page</b> to disconnect and 
+re-connect again.</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. 
+Transmitting over 1000 words in &quot;Error test&quot;&nbsp; with&nbsp; slow speed ( 300 
+bps) will suffer some words lost,</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+even in perfect channel ( connect Tx and Rx in Com port with short wire). I 
+&quot;guess&quot; the reason might be that we halt </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+the loop in order to perform transmission, but the loop continues&nbsp; before 
+it finish sending out all the data in buffer. </p>
+<p style="line-height: 150%">　</p>
+  <ul>
+    <li>
+    <p style="line-height: 150%"><b>Main P</b>age </li>
+  </ul>
+</blockquote>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+1. Always Use &quot;Exit&quot; to end the program or there will be error message such as 
+&quot;Port is still open&quot; </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+2. Tx/ Rx selection will only for&nbsp; &quot;stupid protection&quot; . It shut down Tx 
+function if receiver is selected, and shut down Rx function</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+when Tx is selected. </p>
+<blockquote>
+  <ul>
+    <li>
+    <p style="line-height: 150%"><b>OCX</b>&nbsp; <b>missing&nbsp;&nbsp; </b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    </li>
+  </ul>
+<p style="line-height: 150%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If windows 
+complains missing&nbsp;Tabctl32.OCX , just copy <a href="TABCTL32.OCX">TABCTL32.OCX</a>&nbsp; 
+or <a href="MSCOMM32.OCX">MSCOMM32.OCX</a>&nbsp; 
+into windows\system32. </p>
+</blockquote>
+<p style="line-height: 150%">　</p>
+<p style="line-height: 150%"><font size="5">5. 1 PC , 2 PC Test</font></p>
+<blockquote>
+  <ul>
+    <li>
+    <p style="line-height: 150%"><b><font size="4">1 PC Test</font></b></li>
+  </ul>
+  <blockquote>
+<p style="line-height: 150%">&nbsp;Use 1 PC to test the program is the most convenient way. We just have 
+to connect Tx and Rx together in Com port.</p>
+<p align="center" style="line-height: 150%">　</p>
+<p align="center" style="line-height: 150%">
+<img border="0" src="rs232pin.jpg" width="551" height="618"></p>
+  </blockquote>
+  <ul>
+    <li>
+    <p style="line-height: 150%"><b><font size="4">2 PCs test</font></b></li>
+  </ul>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Performing 2 PCs test, we could 
+connect Tx of PC 1 to Rx of PC2&nbsp; and vias versus. <b>Remember to Connect 
+Signal Ground to each other, or they won't 
+talk to each other. </b> </p>
+  <ul>
+    <li>
+    <p style="line-height: 150%">&nbsp;<b><font size="4"> Result&nbsp; </font></b></li>
+  </ul>
+<p style="line-height: 150%"><font size="4"><b>&nbsp;&nbsp;&nbsp;&nbsp; </b></font>Our 1 PC test is 
+successful immediately, but the success of 2 PCs takes 3 hours because we forget 
+to connect signal ground </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; together !</p>
+<p style="line-height: 150%">　</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp; <font size="4">&nbsp;&nbsp;&nbsp; <a href="chapter4.htm">
+Next Step is to HOOK up PC with Tx/Rx</a></font></p>
+</blockquote>
+
+</body>
+
+</html>

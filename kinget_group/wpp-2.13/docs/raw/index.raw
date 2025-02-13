@@ -1,0 +1,311 @@
+@TITLE=@WPP_TITLE@@
+@TSSNAVBAR_IS_4=y@
+@TSSNAVBAR_URL_L=@
+@TSSNAVBAR_URL_R=@TSS_DIR_PREFIX@manual_1@
+
+@INCLUDE utils/box_macros@
+@INCLUDE utils/h_macros@
+$Date: 1998/09/23 11:26:51 $
+
+@IF !LOCAL_DOCS@
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function strip(txt) {
+	var i, str = "" + txt;
+
+	while ((i = str.indexOf(' ')) != -1)
+		str = str.substring(0, i) + str.substring(i + 1);
+	return str;
+}
+
+function checkSubmit(form) {
+	var name = strip(form.uname.value);
+	var email = strip(form.email.value);
+	
+	if (name.length == 0) {
+		alert("Please insert your name.");
+		return false;
+	} else if (email.length == 0 || email.indexOf('@') == -1) {
+		alert("Please enter a valid e-mail address.");
+		return false;
+	}
+	return true;
+}
+//-->
+</SCRIPT>
+@ENDIF@
+
+<TABLE WIDTH="100%" BORDER=0 CELLPADDING=5>
+<TR VALIGN=TOP>
+<TD>@HTML_IMAGE("@WPP_IMG_DIR@wpp_logo.gif")@
+<FONT @FONT@>
+<P>
+WPP is a small perl5 script that allows preprocessing of html files.<BR>
+You can define <I>variables</I>, which are abbreviations for longer
+constructs, and include common html fragments.
+<BR>It's useful for giving an uniform layout to different html pages.
+<BR>It can be used into cgi-bin programs for automatic generation of pages.
+With less html code inside them you can make more flexible and readable scripts.
+
+<P>WPP provides four separate facilities that you can use as you see fit:
+<UL>
+<LI>Inclusion of text/html fragments.
+<LI>Variables expansion.
+<LI>Conditional generation.
+<LI>Macros expansion.
+</UL>
+</FONT>
+</TD>
+
+<TD WIDTH="90%">
+<FONT @FONT@>
+<DL>
+<DT><B>Index</B>
+<UL TYPE=circle>
+<LI><A HREF="#LICENSE">License</A>
+@IF !LOCAL_DOCS@
+<LI><A HREF="#DOWNLOAD">Download WPP</A>
+@ENDIF@
+<LI><A HREF="#MLISTS">Mailing Lists</A>
+<LI><A HREF="#INSTALLING">Installing WPP</A>
+<LI><A HREF="#BUGS">Known bugs</A>
+<LI><A HREF="#AUTHOR">Contacting the author</A>
+<LI><A HREF="#THANKS">Thanks!</A>
+</UL>
+<DT><BR><B>User Manual</B>
+<OL>
+<LI><A HREF="manual_1.html">Command line switches</A>
+<LI><A HREF="manual_2.html">General notes</A>
+<LI><A HREF="manual_3.html">A step by step example</A>
+<UL TYPE=circle>
+<LI><A HREF="manual_3.html#S1">Step 1: Yor first file</A>
+<LI><A HREF="manual_3.html#S2">Step 2: Using templates</A>
+<LI><A HREF="manual_3.html#S3">Step 3: The config files and the conditional
+	generation</A>
+</UL>
+<LI><A HREF="manual_4.html">Variables and constants</A>
+<UL TYPE=circle>
+<LI><A HREF="manual_4.html#VARASSIGN">Variables assignment</A>
+<LI><A HREF="manual_4.html#VARSUBST">Variables substitution</A>
+<LI><A HREF="manual_4.html#SPVARS">Special variables</A>
+<LI><A HREF="manual_4.html#ROVARS">Read-only variables</A>
+</UL>
+<LI><A HREF="manual_5.html">Directives</A>
+<LI><A HREF="manual_6.html">Macros</A>
+<UL TYPE=circle>
+<LI><A HREF="manual_6.html#MACRO">Macro expansion</A>
+<LI><A HREF="manual_6.html#BIMACRO">Built-in macros</A>
+<LI><A HREF="manual_6.html#EVALMACRO">The EVAL macro</A>
+</UL>
+<LI><A HREF="manual_7.html">Configuration variables and directives</A>
+<LI><A HREF="manual_8.html">Keywords list</A>
+<LI><A HREF="manual_9.html">Links and references</A>
+<LI><A HREF="test_page.html">Test page</A>
+</OL>
+</DL>
+</FONT>
+</TD>
+</TABLE>
+
+<FONT @FONT@>
+<DL>
+@H_SECTION("License", "LICENSE")@
+
+<TABLE>
+<TR VALIGN=TOP><TD WIDTH="70%">
+<FONT @FONT@>
+	WPP is distributed under the terms of the <A HREF="GPL.txt">GNU General
+	Public License (GPL).</A> As such, you can use this program free of charge
+	but there is no warranty.
+</FONT>
+<TD WIDTH="30%">
+
+<TABLE>
+<TR><TD ALIGN=RIGHT VALIGN=BOTTOM>
+	<FONT @FONT@>
+	<!-- WPP LINK LOGO STARTS -->
+	<A HREF="http://www.geocities.com/Tokyo/1474/wpp/">@HTML_IMAGE(\
+	"@IMG_DIR@pp_by_wpp.gif", "[Preprocessed by WPP]", "BORDER=0")@</A>
+	<!-- WPP LINK LOGO ENDS -->
+	</FONT>
+</TD>
+<TR><TD VALIGN=TOP>
+	<FONT @FONT@>
+	Feel free to <A HREF="http://www.geocities.com/Tokyo/1474/wpp/">link
+	WPP</A> by adding <A HREF="@IMG_DIR@pp_by_wpp.gif">the official logo</A>
+	into your web pages.
+	</FONT>
+</TD>
+</TABLE>
+
+</TD>
+</TABLE>
+
+
+@IF !LOCAL_DOCS@
+@H_SECTION("Download WPP", "DOWNLOAD")@
+
+The program and the documentation, including this file you are reading, is
+available as:
+<UL>
+<LI>a GNU tar gizip'd file <A HREF="wpp.tgz">wpp-@WPP_VERSION@.tgz</A>
+<LI>a standard zip archive <A HREF="wpp.zip">wpp-@WPP_VERSION@.zip</A>
+<LI>a ready to install RPM archive for Linux RedHat systems <A HREF="wpp.rpm">wpp-@WPP_VERSION@-1.noarch.rpm</A>
+</UL>
+
+@IF NOT_USE_MAILING_LISTS@
+<P>Please note that the following information is for mine records only.
+I <B>do not</B> and <B>will not</B> sell or re-distribute this information in
+any form. I use this information only to keep you informed about upgrades to
+WPP.
+
+<FORM METHOD=post ACTION="@MAIL_ACTION@" onSubmit="return checkSubmit(this)" NAME="dwnf">
+<INPUT TYPE="HIDDEN" NAME="Mail-Form" VALUE="WPP-List-Form">
+<DL>
+<DD>
+<TABLE>
+<TR><TD>@HELV_FONT("<B>name</B>")@</TD>
+	<TD>@HELV_FONT("<INPUT TYPE=\"text\" NAME=\"uname\" SIZE=50>")@</TD>
+<TR><TD>@HELV_FONT("<B>e-mail</B>")@</TD>
+	<TD>@HELV_FONT("<INPUT TYPE=\"text\" NAME=\"email\" SIZE=50>")@</TD>
+<TR><TD COLSPAN=2 ALIGN=RIGHT>
+@HELV_FONT(\
+	"<INPUT TYPE=\"submit\" VALUE=\" Send me an e-mail when WPP updates! \">")@
+&nbsp;&nbsp;&nbsp;&nbsp;
+@HELV_FONT("<INPUT TYPE=\"reset\" VALUE=\" Clear \">")@
+</TD>
+</TABLE>
+</DL>
+</FORM>
+
+<P>If you have some troubles and this form doesn't work mail me everything at
+<A HREF="mailto:@EMAIL@?subject=@EMTITLE@">@EMAIL@</A>
+@ENDIF@
+@ENDIF@
+
+
+@H_SECTION("Mailing Lists", "MLISTS")@
+<DL>
+<DT><LI><B>wpp-announce</B>
+<DD>Here you can receive a message only when WPP updates.
+<form method=GET action="http://www.egroups.com/subscribe">
+<input type=hidden name="listname" value="wpp-announce">
+<input type=hidden name="SubmitAction" value="Subscribe">
+<table width=200 cellspacing=0 cellpadding=2 border=0 bgcolor=#E0E0E0>
+<tr>
+ <td>
+   <input type=text name="emailaddr" value="enter e-mail" size=21>
+ </td><td>
+   <input type=submit value="Click here to join wpp-announce"
+   name="Click here to join wpp-announce">
+ </td>
+</tr>
+</TABLE>
+</form>
+If this form doesn't work you can subscribe by sending a message to
+<A HREF="mailto:wpp-announce-subscribe@egroups.com">wpp-announce-subscribe@egroups.com</A>.
+<BR>
+For unsubscribing simply send a message to <A HREF="mailto:wpp-announce-unsubscribe@egroups.com">wpp-announce-unsubscribe@egroups.com</A>.
+
+<DT><P><LI><B>wpp-devel</B>
+<DD>WPP developers mailing list. Here you can send your feature requests, bug
+reports, patches, ...
+<form method=GET action="http://www.egroups.com/subscribe">
+<input type=hidden name="listname" value="wpp-devel">
+<input type=hidden name="SubmitAction" value="Subscribe">
+<table width=200 cellspacing=0 cellpadding=2 border=0 bgcolor=#E0E0E0>
+<tr>
+ <td>
+   <input type=text name="emailaddr" value="enter e-mail" size=21>
+ </td><td>
+   <input type=submit value="Click here to join wpp-devel"
+   name="Click here to join wpp-devel">
+ </td>
+</tr>
+</TABLE>
+</form>
+If this form doesn't work you can subscribe by sending a message to
+<A HREF="mailto:wpp-devel-subscribe@egroups.com">wpp-devel-subscribe@egroups.com</A>.
+<BR>
+For unsubscribing simply send a message to <A HREF="mailto:wpp-devel-unsubscribe@egroups.com">wpp-devel-unsubscribe@egroups.com</A>.
+</DL>
+
+<P>If you have some troubles and those forms don't work mail me everything at
+<A HREF="mailto:@EMAIL@?subject=@EMTITLE@">@EMAIL@</A>
+
+
+
+@H_SECTION("Why using WPP?", "WHY")@
+
+I've written WPP insipred by <B>cpp</B> (the C preprocessor). The <B>cpp</B>
+and <B>m4</B> are a couple of preprocessor available for almost every system
+but the syntax of them is quite undistinguishable inside a text/html source.
+<BR>The prototype for WPP was written in awk and it can do only templates
+inclusion and few other things, then I've started studying perl and so WPP
+became what you're seeing.
+<BR>The @AT@ delimiter was taken from <B>autoconf</B> while looking inside the
+config.status files.
+
+@H_SECTION("Installing WPP", "INSTALLING")@
+
+Just copy the script named wpp into some convenient directory in your
+PATH (i.e. /usr/local/bin). You should probably put this file somewhere safe
+in case you want to refer to it later.<BR>
+You may need to change the first row of the wpp script in order to match
+the correct path for your perl interpreter.
+
+
+@H_SECTION("Known bugs", "BUGS")@
+Actually WPP cannot check for recursive template inclusion (while 1.34 do
+that) or macro call, this stuff will be fixed as soon as possible.
+
+
+@H_SECTION("Contacting the author", "AUTHOR")@
+@SKIP_AUTHOR_HEADER=y@
+@TITLE=@EMTITLE@@
+@INCLUDE author@
+
+
+@H_SECTION("Thanks!", "THANKS")@
+My thanks go to the following people for submitting feedback and/or
+code. Apologies to anyone I have forgotten
+(<A HREF="mailto:@EMAIL@?subject=@EMTITLE@">send me an e-mail!</A>).
+
+<UL>
+<LI><A HREF="http://www.geocities.com/Paris/2481/">Luca Sironi (Luca_)</A>.
+<LI><A HREF="http://kame.usr.dsi.unimi.it:1111/">Fancesco Chemolli (Kinkie)</A>.
+<LI><A HREF="http://www.silab.dsi.unimi.it/~ms568411/">Matteo Sala (Ares)</A>.
+<LI>Jean-Pierre Malisse, who sent me some suggestions that pushed me in writing
+	the multi line macros feature of WPP ;)
+<LI><A HREF="http://www.lastknight.com">Matteo Flora (Last Knight)</A>,
+	he discovered that 
+	<A HREF="http://www.math.fu-berlin.de/~guckes/vim/">VIM (VI iMproved)</A>
+	+ WPP can be better than MS FrontPad and that the trashcan may be the
+	best place for the last one. ;P
+<LI><A HREF="http://fsinfo.cs.uni-sb.de/~calvin">Bastian Kleineidam</A>, who
+	discovered and fixed a <I>missing tail inclusion</I> bug. ;)
+<LI>Colin Turnbull (CT), let me notice that removing empty lines
+	is bad behaviour for &lt;PRE&gt; formatted stuff. He also asked for macro
+	expansion into variables assigments and macro arguments ... done! ;)
+<LI>Michelangelo Grigni for some interesting suggestions.
+<LI>Matt Massie, another who catched the &lt;PRE&gt; bug of wpp 2.00 - 2.01.
+<LI>Andreas Forsgren said: "<CITE>WPP is *great* *great* *great*, I love it!
+	Thank *you* for making it.</CITE>" ... then requested an enhancement for the
+	@AT@IF@AT@ ;)
+<LI><A HREF="http://www.silab.dsi.unimi.it/~ss546470/">Stefano Strada
+	(Harlock)</A>.
+<LI><A HREF="http://space.tin.it/salute/roflora/">Roberto Flora</A>, who used
+	WPP for the web site
+	<A HREF="http://space.tin.it/associazioni/guivital/info.htm">Ordine Agronomi
+	e Forestali di Bergamo</A>.
+<LI><A HREF="http://www.slad.cz/~jirka/">Jiri Rubes</A>, who reported and fixed
+	a problem with wpp 2.09 running in some environments that don't set PWD.
+<LI>Petr Prazak, who made some new features for wpp-2.11 (DATE_FORMAT,
+	FILE_SIZE, FILE_DATE) and fixed some bugs.
+<LI>Bastian Kleineidam, who made a patch for implementing the SYSTEM built-in
+	macro for wpp-2.11.
+<LI>Martin Fischer, who reported a couple of serious bugs in wpp 2.11.
+</UL>
+
+</DL>
+</FONT>

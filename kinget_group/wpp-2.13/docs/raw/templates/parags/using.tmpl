@@ -1,0 +1,156 @@
+@D=$@
+
+@H_SECTION("Step 1: Yor first file", "S1")@
+<DD><P>
+Suppose you have a file <B>p.html</B> that you wish to generate throught
+wpp.<BR>
+Make a 'raw/templates' directory with the command:<BR>
+&nbsp;&nbsp;<B>mkdir -p raw/templates</B>
+<P>Files in the raw directory are called raw files, files in the templates
+directory are called templates.<BR>
+Enter into the raw directory and start writing a new file called <B>p.raw</B>
+
+<DL>
+<DD>
+@BOX_TITLE=p.raw@
+@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+@H_PARAM("@AT@HEAD@AT@<BR>@AT@TAIL@AT@<BR>@D@Date@D@<BR>")@
+	&lt;HTML&gt;<BR>
+	&lt;HEAD&gt;<BR>
+	&lt;TITLE&gt;Generated from p.raw&lt;/TITLE&gt;<BR>
+	&lt;/HEAD&gt;<P>
+	&lt;BODY&gt;<BR>
+	&lt;H1&gt;Generated from p.raw&lt;/H1&gt;<BR>
+	&lt;/BODY&gt;<BR>
+	&lt;/HTML&gt;
+@BOX_CLOSE()@
+</DL>
+
+p.raw resemble a common html file except from the first three lines.<BR>
+Generate the <B>../p.html</B> file with the command<BR>
+&nbsp;&nbsp;<B>wpp p.raw</B>
+<P>Suppose you want to change the "<B>Generated from p.raw</B>" title it into
+"<B>My First Page</B>", you have to write it twice.
+You could use <B>sed</B> but if you don't know it or don't want to use it the
+best solution is to use wpp.<BR>
+
+<DL>
+<DD>
+@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+@H_COMMENT("@AT@HEAD@AT@<BR>@AT@TAIL@AT@<BR>@D@Date@D@<BR>")@
+@H_PARAM("@AT@TITLE=My First Page@AT@<BR>")@
+	&lt;HTML&gt;<BR>
+	&lt;HEAD&gt;<BR>
+@H_PARAM("&lt;TITLE&gt;@AT@@PIXEL@TITLE@AT@&lt;/TITLE&gt;<BR>")@
+	&lt;/HEAD&gt;<P>
+	&lt;BODY&gt;<BR>
+@H_PARAM("&lt;H1&gt;@AT@@PIXEL@TITLE@AT@&lt;/H1&gt;<BR>")@
+	&lt;/BODY&gt;<BR>
+	&lt;/HTML&gt;
+@BOX_CLOSE()@
+</DL>
+
+In the fourth line we have declared a simple variable called <B>TITLE</B>, so
+every time you want to change the title of p.raw you should edit it once.
+<P>
+
+<DT>@H_SECTION("Step 2: Using templates", "S2")@
+<DD><P>
+You may need to write two or more file with common header and footer (except
+from title or something else).<BR>
+By default WPP include a file <B>templates/head.tmpl</B> after the @D@Date@D@
+tag and a <B>templates/tail.tmpl</B> at the end of file.<BR>
+In the first step we have used the <B><A HREF="manual_5.html#HEAD">@AT@HEAD@AT@</A></B>
+and <B><A HREF="manual_5.html#TAIL">@AT@TAIL@AT@</A></B> directives in order to avoid to
+include them.<BR>
+Now you can change <B>p.raw</B> and create <B>templates/head.tmpl</B> and
+<B>templates/tail.tmpl</B>.
+
+<DL>
+<DD>
+<TABLE>
+<TR VALIGN=TOP><TD>
+@BOX_TITLE=p.raw@
+@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+	@AT@TITLE=My First Page@AT@<BR>
+	@D@Date@D@<BR>
+	This is an example page.<BR>
+	...
+@BOX_CLOSE()@
+</TD><TD>
+@BOX_TITLE=templates/head.tmpl@
+@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+	&lt;HTML&gt;<BR>
+	&lt;HEAD&gt;<BR>
+	&lt;TITLE&gt;@AT@TITLE@AT@&lt;/TITLE&gt;<BR>
+	&lt;/HEAD&gt;<P>
+	&lt;BODY&gt;<BR>
+	&lt;H1&gt;@AT@TITLE@AT@&lt;/H1&gt;<BR>
+@BOX_CLOSE()@
+</TD><TD>
+@BOX_TITLE=templates/tail.tmpl@
+@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+	Author: jack@hide<BR>
+	&lt;/BODY&gt;<BR>
+	&lt;/HTML&gt;
+@BOX_CLOSE()@
+</TD>
+</TABLE>
+</DL>
+
+The template is simply an html fragment that may contain variables and if
+conditions, as you can do in a .raw file.<BR>
+Including an html fragment is quite simple, write it into a file in the
+templates directory and call it <B>fragment.tmpl</B> (don't forget the
+<B>.tmpl</B> extension).<BR>
+To include the template use the
+<A HREF="manual_5.html#INCLUDE">@AT@INCLUDE fragment@AT@</A> directive (here you <B>must</B>
+omit the <B>templates</B> directory and the <B>.tmpl</B> extension).<BR>
+Into the templates directory you can create other directories, in order to
+include a file you simply use @AT@INCLUDE dir/fragment@AT@.
+<P>
+
+<DT>@H_SECTION("Step 3: The config files and the conditional generation",\
+	"S3")@
+<DD><P>
+When wpp is started it first look into the raw directory for a file called
+'config' (this is the default, you can specify a different file with the
+<A HREF="manual_1.html#--config">config file switch</A>).<BR>
+Here you can put common variables and use different config files for
+conditional generation of files.<BR>
+In example you could create a file called <B>ctest.raw</B>:
+
+<DL>
+<DD>
+@BOX_TITLE=ctest.raw@
+@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+	"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+@D@Date@D@<BR>
+...<BR>
+@AT@IF SHOW_IMAGES@AT@<BR>
+&nbsp;&nbsp;&lt;IMG SRC="images/ctest.gif"&gt;<BR>
+@AT@ENDIF@AT@<BR>
+...<BR>
+@BOX_CLOSE()@
+</DL>
+
+Now write three config files:
+<UL>
+<LI>config.common that contains common variables
+<LI>config
+<LI>config.noimg
+</UL>
+The last two configs contains an
+<B>@AT@<A HREF="manual_7.html#INCLUDECFG">INCLUDECFG</A> config.common@AT@</B> directive and
+a variable declaration <B>@AT@SHOW_IMAGES=y@</B> in <B>config</B>.<BR>
+Now if you run<BR>
+&nbsp;&nbsp;<B>wpp -c=config.noimg ctest.raw</B><BR>
+it generates <B>../ctest.html</B> without images.<BR>
+You can set the <A HREF="manual_7.html#DEFAULT_OUTPUTDIR">DEFAULT_OUTPUTDIR</A> to something
+different from "<B>..</B>" (i.e. ../noimg.version/ into config.noimg) in order
+to create separate versions of <B>ctest.html</B>.

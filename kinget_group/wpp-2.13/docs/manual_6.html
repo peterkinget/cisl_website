@@ -1,0 +1,793 @@
+<HTML>
+<HEAD>
+<TITLE>[ WPP - The Web Preprocessor ]  Macros</TITLE>
+<LINK REV=MADE HREF="mailto:lm@geocities.com">
+<META NAME="author" CONTENT="Marco (LM) Lamberto - lm@geocities.com">
+<META NAME="description" CONTENT="WPP is a small perl script that allows preprocessing of html files.  It's useful for giving an uniform layout to different html pages. It can be used into cgi scripts for dynamic generation of pages.">
+<META NAME="keywords" CONTENT="html, preprocessor, preprocessing, web, perl, script, cgi, the sunny spot">
+<META NAME="generator" CONTENT="By Hand v1.0 with VIM for Linux + WPP ;)">
+
+
+</HEAD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<BODY BGCOLOR="#ffffff">
+<FONT FACE="arial,helvetica">
+
+<CENTER>
+<TABLE WIDTH="100%" BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR VALIGN=MIDDLE>
+<TD ALIGN=LEFT><A
+	HREF="http://www.geocities.com/Tokyo/1474/"><IMG SRC="images/tss_logo.gif" WIDTH=90 HEIGHT=32 ALT="[ The Sunny Spot ]" BORDER=0></A></TD>
+<TD ALIGN=CENTER WIDTH="70%">
+	<FONT FACE="arial,helvetica" COLOR="#ffffff">
+	<FONT SIZE="+1"><B>WPP v2.13 - The Web Preprocessor</B></FONT><BR>
+	<FONT SIZE="-1">Author : <A HREF="mailto:lm@geocities.com">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">Marco Lamberto</FONT></A></FONT>
+	</FONT>
+</TD>
+<TD ALIGN=RIGHT><A
+	HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32 ALT="Preprocessed by WPP" BORDER=0></A></TD>
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="images/null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+
+<A HREF="index.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Index</B></FONT></A>
+
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+
+<A HREF="manual_5.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>&lt; Previous</B></FONT></A>
+
+&nbsp;&nbsp;
+<A HREF="manual_7.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Next &gt;</B></FONT></A>
+&nbsp;&nbsp;
+</TD>
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="images/null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+</TABLE>
+</CENTER>
+<P>
+
+
+
+<DL>
+<!-- Macro expansion -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="MACRO">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Macro expansion</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+
+<DL>
+<DT>@MACRO MNAME(arg1, arg2, ...)@<BR>
+&nbsp;&nbsp;&nbsp;...<BR>
+@ENDMACRO@
+<DD>
+	Declare <B>MNAME</B> as a new macro. Notice that the valid charset for the
+	name and the arguments is the same of the variables (A-Z,0-9,_).
+<DT><P>@<B>MNAME</B>("arg1", "arg2", ...)@
+<DD>
+	Calls <B>MNAME</B>. Notice that the <B>"</B> are required only if you are
+	using string constants as argument, you can omit them if you use a variable
+	(with the <B>@</B> included). If you use <B>"</B> into a macro argument
+	you should excape it with a <B>\</B>.<P>
+
+	<DL>
+	<DD>
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Source file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+
+	<FONT COLOR="#777777">&lt;!-- macro declaration --&gt;</FONT><BR>
+	@MACRO MY_MACRO(NAME, HREF)@<BR>
+	&lt;A HREF="@HREF@"&gt;@NAME@&lt;/A&gt;<BR>
+	@ENDMACRO@<P>
+
+	<FONT COLOR="#777777">&lt;!-- macro called with args containing string constants --&gt;</FONT><BR>
+	@MY_MACRO("Test", "test.html")@<P>
+	
+	<FONT COLOR="#777777">&lt;!-- macro called with args containing variables --&gt;</FONT><BR>
+	@MY_MACRO(@FILENAME@, "@FILENAME@.html")@<P>
+	
+	<FONT COLOR="#777777">&lt;!-- example of splitted macro call --&gt;</FONT><BR>
+	@MY_MACRO("\"@FILENAME@\" is the source",\<BR>
+	&nbsp;&nbsp;&nbsp;&nbsp;"@FILENAME@.html")@<P>
+
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</DL>
+
+<P><B>Notes</B>
+	<UL>
+	<LI>You cannot declare a macro from inside another macro.
+	<LI>Macros can be called within other macros (pay attention to recursive
+		calls!), variables assignments or macro aguments.
+	</UL>
+</DL>
+
+
+
+<!-- Built-in macros -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="BIMACRO">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Built-in macros</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+
+<DL>
+<DD>
+	Built-in macros are predefined macros allowing particular operations, you
+	can use them as normal macros.<BR>
+	Usually if a built-in macro reads data from a file, this file will be
+	included into the dependencies list
+	(see the <A HREF="manual_1.html#--depend"><B>--depend</B> switch</A>).
+</DL>
+<DL>
+<DT><P><B>Macros working on images</B><BR>
+<DD>
+	Allowed file formats are GIF, JPEG and PNG.
+<P>
+<TABLE CELLSPACING=2 CELLPADDING=0 BORDER=0 BGCOLOR="#eeeeee">
+<TR VALIGN=MIDDLE ALIGN=CENTER>
+<TD BGCOLOR="#cccccc">
+	
+
+<FONT FACE="arial,helvetica" >Macro</FONT></TD>
+<TD BGCOLOR="#cccccc">
+	
+
+<FONT FACE="arial,helvetica" >Expanded to</FONT></TD>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@HTML_IMAGE(img)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >&lt;IMG SRC="<B><I>img</I></B>" WIDTH="<I>(image width)</I>"	HEIGHT="<I>(image height)</I>"&gt;</FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@HTML_IMAGE(img, alt)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >&lt;IMG SRC="<B><I>img</I></B>" WIDTH="<I>(image width)</I>"	HEIGHT="<I>(image height)</I>" ALT="<B><I>alt</I></B>" &gt;</FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@HTML_IMAGE(img, alt, extra)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >&lt;IMG SRC="<B><I>img</I></B>" WIDTH="<I>(image width)</I>"	HEIGHT="<I>(image height)</I>" ALT="<B><I>alt</I></B>"	<B><I>extra</I></B>&gt;</FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@HTML_IMAGE_SIZE(img)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >SRC="<B><I>img</I></B>" WIDTH="<I>(image width)</I>"	HEIGHT="<I>(image height)</I>"</FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@HTML_IMAGE_SIZEO(img)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >WIDTH="<I>(image width)</I>" HEIGHT="<I>(image height)</I>"</FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@HTML_IMAGE_WIDTH(img)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >WIDTH="<I>(image width)</I>"</FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@HTML_IMAGE_HEIGHT(img)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >HEIGHT="<I>(image height)</I>"</FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@IMAGE_WIDTH(img)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" ><I>(image width)</I></FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@IMAGE_HEIGHT(img)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" ><I>(image height)</I></FONT>
+</TABLE>
+
+	<DL>
+	<DT><P>Example:
+	<DD>
+	<TABLE>
+	<TR><TD>
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Source file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+	@HTML_IMAGE("index.jpg", "my logo",\<BR>
+	&nbsp;&nbsp;&nbsp;&nbsp;"BORDER=0 HSPACE=10")@
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</TD>
+	<TD>
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>HTML file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+	&lt;IMG SRC="index.jpg" WIDTH=100 HEIGHT=200 ALT="my logo" BORDER=0
+		HSPACE=10 &gt;
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</TD>
+	</TABLE>
+	</DL>
+</DL>
+
+<DL>
+<DT><P><B>Macros working on image maps</B><BR>
+<DD>
+	These macros read a server side imagemap and are expanded into a converted
+	HTML client side version.<BR>
+	In the map files the ALT field is taken from the comment line before the area
+	definition.
+<P>
+<TABLE CELLSPACING=2 CELLPADDING=0 BORDER=0 BGCOLOR="#eeeeee">
+<TR VALIGN=MIDDLE ALIGN=CENTER>
+<TD BGCOLOR="#cccccc">
+	
+
+<FONT FACE="arial,helvetica" >Macro</FONT></TD>
+<TD BGCOLOR="#cccccc">
+	
+
+<FONT FACE="arial,helvetica" >Expanded to</FONT></TD>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@CERN2HTML(mapfile)@</FONT>
+<BR>
+	
+
+<FONT FACE="arial,helvetica" >@NCSA2HTML(mapfile)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >	&lt;MAP NAME="<B><I>mapfile</I></B>"&gt;<BR>	&lt;AREA SHAPE="..." HREF="..." COORDS="..." ALT="..."&gt;<BR>	&lt;/MAP&gt;</FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@CERN2HTML(mapfile, mapname)@</FONT>
+<BR>
+	
+
+<FONT FACE="arial,helvetica" >@NCSA2HTML(mapfile, mapname)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >	&lt;MAP NAME="<B><I>mapname</I></B>"&gt;<BR>	&lt;AREA SHAPE="..." HREF="..." COORDS="..." ALT="..."&gt;<BR>	&lt;/MAP&gt;</FONT>
+</TABLE>
+
+	<DL>
+	<DT><P>Example:
+	<DD>
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Source file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+	@NCSA2HTML("index.map", "myindex")@
+	<P>&lt;A HREF="index.map"&gt;&lt;IMG SRC="menu.gif" WIDTH=600 HEIGHT=50<BR>
+	&nbsp;&nbsp;&nbsp;&nbsp;ISMAP USEMAP="#myindex"&gt;&lt;/A&gt;
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</DL>
+</DL>
+
+<DL>
+<DT><P><B>Macros working on files</B><BR>
+<DD>
+<P>
+<TABLE CELLSPACING=2 CELLPADDING=0 BORDER=0 BGCOLOR="#eeeeee">
+<TR VALIGN=MIDDLE ALIGN=CENTER>
+<TD BGCOLOR="#cccccc">
+	
+
+<FONT FACE="arial,helvetica" >Macro</FONT></TD>
+<TD BGCOLOR="#cccccc">
+	
+
+<FONT FACE="arial,helvetica" >Expanded to</FONT></TD>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@FILE_SIZE(file)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" ><I>(file size in bytes)</I></FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@FILE_DATE(file)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" ><I>(file modification date, according to <A 	HREF="manual_4.html#DATE_FORMAT">DATE_FORMAT</A>)</I></FONT>
+</TABLE>
+</DL>
+
+<DL>
+<DT><P><B>Misc macros</B><BR>
+<DD>
+<P>
+<TABLE CELLSPACING=2 CELLPADDING=0 BORDER=0 BGCOLOR="#eeeeee">
+<TR VALIGN=MIDDLE ALIGN=CENTER>
+<TD BGCOLOR="#cccccc">
+	
+
+<FONT FACE="arial,helvetica" >Macro</FONT></TD>
+<TD BGCOLOR="#cccccc">
+	
+
+<FONT FACE="arial,helvetica" >Expanded to</FONT></TD>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@SYSTEM(cmd)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" ><I>(cmd output)</I></FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@RANDOM()@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" ><I>Random integer value taken from Perl's rand() value without the leading '0.'</I></FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@RANDOM(to)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" ><I>Random integer value starting from 0 up to <B>to</B></I></FONT>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@RANDOM(from, to)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" ><I>Random integer value starting from <B>from</B> up to <B>to</B></I></FONT>
+</TABLE>
+</DL>
+
+
+<!-- The EVAL macro -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="EVALMACRO">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>The EVAL macro</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+
+<DL>
+<DD>The EVAL macro was added in order to allow more sophisticated expansions
+and it was a way for adding loops and complex controls without implementing
+them directly (yeah, I'm a lazy boy!).
+<BR>The argument string should be <B>a valid Perl expression</B>,
+otherwise wpp will warn you of syntax errors without stopping the parsing
+process.
+<P>
+<TABLE CELLSPACING=2 CELLPADDING=0 BORDER=0 BGCOLOR="#eeeeee">
+<TR VALIGN=MIDDLE ALIGN=CENTER>
+<TD BGCOLOR="#cccccc">
+	
+
+<FONT FACE="arial,helvetica" >Macro</FONT></TD>
+<TD BGCOLOR="#cccccc">
+	
+
+<FONT FACE="arial,helvetica" >Expanded to</FONT></TD>
+<TR VALIGN=TOP>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" >@EVAL(expr)@</FONT>
+<TD>
+	
+
+<FONT FACE="arial,helvetica" ><I>(the output of the Perl expression <B>expr</B>)</I></FONT>
+</TABLE>
+
+<P>The following example shows a simple for loop (in Perl), it outputs a
+sequence of numbers starting from 0 up to 10. Please notice how the '"' char
+should be still escaped throgh '\"'.
+
+<DL>
+<DD>
+<PRE>
+@EVAL(" \
+	for($i = 0, $str = ''; $i &lt; 11; $i++) { \
+		$str .= $i . ' '; \
+	} \
+	return $str; \
+")@
+</PRE>
+</DL>
+
+
+<P>The string passed as argument to the EVAL macro can contain wpp variables
+and macros, they will be expanded <B>before</B> evaluation through Perl's eval.
+
+<DL>
+<DD>
+<PRE>
+@LIMIT=11@
+@EVAL(" \
+	for($i = 0, $str = ''; $i &lt; @LIMIT@; $i++) { \
+		$str .= \"@RANDOM()@ \"; \
+	} \
+	return $str; \
+")@
+</PRE>
+</DL>
+
+<P>If you run the previous example you can notice that the RANDOM() output is
+always the same, that's because the evaluation of RANDOM() is done before the
+eval call.
+<BR>Within a evaluated string you could call wpp parser by using the function
+<B>wpp_eval</B>, which takes a string as input argument and returns the parsed
+string.
+<BR>In the following example I've modified the previous one in order to call
+<B>wpp_eval</B>. Please notice the "'@'.'RANDOM()@'", I've splitted the
+the RANDOM() call in order to avoid it's parsing before eval, so I've used the
+perl string concatenation operator '.' for rebuilding the right call at
+evaluation time.
+
+<DL>
+<DD>
+<PRE>
+@EVAL(" \
+	for($i = 0, $str = ''; $i &lt; @LIMIT@; $i++) { \
+		$str .= wpp_eval('@'.'RANDOM()@') . ' '; \
+	} \
+	return $str; \
+")@
+</PRE>
+</DL>
+
+
+<P>This is a bit more complex example, here I open and read a file
+(/etc/group), for each line of it I call the macro TEST that simply print it
+within square brackets.
+
+<DL>
+<DD>
+<PRE>
+@MACRO TEST(TEXT)@
+	[@TEXT@]
+@ENDMACRO@
+
+@F=/etc/group@
+
+@EVAL(" \
+	$str = ''; \
+	open(FH, '@F@'); \
+	while (&lt;FH&gt;) { \
+		chomp; \
+		$str .= <B>wpp_eval</B>('@TEST(\"'.$_.'\")@') . \"\n\"; \
+	}; \
+	close(FH); \
+	return $str; \
+")@
+</PRE>
+</DL>
+
+
+<P>Here you can see how to use EVAL for test conditions.
+
+<DL>
+<DD>
+<PRE>
+@TVAL=@EVAL("1 != 1")@@
+@IF !TVAL@
+	EVAL ok!
+@ENDIF@
+
+@TVAL=@EVAL("1 == 1")@@
+@IF TVAL@
+	EVAL ok!
+@ENDIF@
+</PRE>
+</DL>
+
+
+<P>EVAL returns the value returned by the Perl expression, however if you don't
+want return a value, just because you've already done it with a print or
+something similar inside the Perl expression, you have to return explicitly an
+empty string (tipically a "<B>return '';</B>"). Note that <B>the print
+statement could be effectively printed before the text preceding the EVAL
+call</B>, that's because WPP buffers its output, so <B>don't use print or
+printf</B>, instead output data within a string and return it at the end of the
+computation process.
+<BR>The second line of the example shows a safer way for outputing data.
+
+<DL>
+<DD>
+<PRE>
+@EVAL("print 'TEST ' . (1 == 1); return '';")@
+
+@EVAL("return 'TEST ' . (1 == 1);")@
+</PRE>
+</DL>
+
+
+<P>The following and last example shows an invalid expression that raise an
+EVAL error, the parsing doesn't stop but a warning is printed by WPP.
+
+<DL>
+<DD>
+<PRE>
+@EVAL("1+1'A'")@
+</PRE>
+</DL>
+
+
+</DL>
+
+</DL>
+
+<!-- -->
+<BR CLEAR=ALL>
+<P>
+<TABLE BORDER=0 WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="images/null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+<A HREF="#">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>^ Top</B></FONT></A>
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+
+<A HREF="manual_5.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>&lt; Previous</B></FONT></A>
+
+&nbsp;&nbsp;
+<A HREF="manual_7.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Next &gt;</B></FONT></A>
+&nbsp;&nbsp;
+</TD>
+
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="images/null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+<TR VALIGN=MIDDLE>
+  <TD WIDTH="33%">
+		<FONT FACE="arial,helvetica" SIZE="-2" COLOR="#ffffff">
+		Marco (LM) Lamberto <A HREF="mailto:lm@geocities.com?subject=WPP - The Web Preprocessor">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">lm@geocities.com</FONT></A><BR>
+		Revised: 2000/12/10 17:45:30
+
+	
+
+		<BR>
+		<A HREF="http://www.geocities.com/Tokyo/1474/wpp/manual_6.html"
+			>
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">http://www.geocities.com/Tokyo/1474/wpp/manual_6.html</FONT></A>
+		</FONT>
+	</TD><TD ALIGN=CENTER WIDTH="34%">
+		<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+		<TR VALIGN=BOTTOM>
+
+		<TD><A HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG  SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32  ALT="Preprocessed by WPP" BORDER=0></A></TD>
+
+		<TD><IMG SRC="images/null.gif" WIDTH=5 HEIGHT=32 ALT=""></TD>
+		<TD><A HREF="http://www.gimp.org/"><IMG  SRC="images/gfx_by_gimp.gif" WIDTH=90 HEIGHT=36  BORDER=0 ALT="Graphics by GIMP"></A></TD>
+		</TABLE>
+	</TD><TD ALIGN=RIGHT WIDTH="33%">
+
+		<IMG SRC="images/null.gif" WIDTH=90 HEIGHT=32 BORDER=0 ALT="">
+
+	</TD>
+</TABLE>
+</FONT>
+</BODY>
+</HTML>

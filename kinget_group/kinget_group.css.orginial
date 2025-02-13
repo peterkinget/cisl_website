@@ -1,0 +1,83 @@
+body {  
+/* background-color:#FFFFCC; */
+        background-color:#eee;  
+/*        background-color:green;  */
+        color:navy;
+/*	margin:50px 0px;  */
+        padding:0px;
+	text-align:center;
+        font-family:sans-serif,arial; 
+        font-size:11pt; }
+/* definitions of different div */
+#Content {
+	width:770px; /* 800-2x15 (padding) */
+	margin:0px auto; 
+	text-align:left;
+	padding:15px; 
+/*	border:1px dashed #333; */
+	background-color:#eee;
+	background-color:white; 
+	}
+#Logo {
+	width:800px;
+	margin:0px auto;
+	text-align:left;
+/*	padding:15px; */
+/*	border:1px dashed #333; */
+	background-color:#eee;
+	background-color:white; 
+	}
+#Navigation {
+	width:790px; /* 800 - 2xpadding */
+	margin:0px auto;
+	text-align:center;
+        color:white;
+	padding:5px; 
+/*	border:1px dashed #333; */
+	background-color:navy; 
+	}
+/* Appearance of the links in the navigation bar */
+div#Navigation A:link  {color:white; 
+           text-decoration:none; }
+div#Navigation A:visited  {color:white; 
+           text-decoration:none; }
+div#Navigation A:hover {text-decoration:none; 
+           color:navy;
+           background:white; }
+#Footer {
+	width:800px;
+	margin:0px auto;
+	text-align:center;
+        font-size:8pt;
+/*	padding:15px; */
+/*	border:1px dashed #333; 
+	background-color:#eee; 	*/
+	background-color:white; 
+	}
+/* Main text elements */
+
+P {font-family:arial; 
+   font-size:11pt; color:navy; }
+
+H1 {font-family:arial; 
+    font-size:16pt;
+    font-variant:small-caps; 
+    color:navy;}
+
+H2 {font-family:arial; 
+    font-size:12pt;
+/*    font-variant:small-caps; */
+    text-transform:uppercase; }
+
+H3 {font-family:arial; 
+    font-size:10pt;
+/*    font-variant:small-caps; */
+    text-transform:uppercase; }
+
+A:link  {color:navy; 
+           text-decoration:underline; }
+A:visited  {color:navy; 
+           text-decoration:underline; }
+A:hover {text-decoration:none; 
+           color:navy;
+           background:yellow; }

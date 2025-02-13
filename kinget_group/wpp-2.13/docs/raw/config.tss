@@ -1,0 +1,6 @@
+@GEOCITIES=y@
+@LOCAL_DOCS=@
+
+@DEFAULT_OUTPUTDIR=/home/lm/html/HP-new/wpp@
+
+@INCLUDECFG config.common@

@@ -1,0 +1,170 @@
+<html><head>
+<link rel="stylesheet" type="text/css" href="kinget_group.css">
+</head>
+
+<body>
+<!-- Here is the logo -->
+<div id="logo">
+<a href="http://www.columbia.edu"><img style="margin-top:-10px" border="0" align="middle" alt="cu_logo" src="images/cu_logo.gif"></a>
+<img width="150" height="1" src="">
+<a href="http://www.cisl.columbia.edu"><img style="margin-top:-10px" width="250" border="0" align="middle" alt="cisl_logo" src="images/cisl_logo_transparant.gif"></a><br>
+<center>
+<img width="719" style="margin-top:-20px" src="images/Logo3.gif"> <br>
+<!-- <h1 style="font-family:verdana, times; margin-top:0;
+margin-bottom:0; " >Analog and RF IC Design Research <br> 
+(Kinget Group)</h1> -->
+<h1 style="font-family:verdana, times; margin-top:-8px; margin-bottom:0; color:black;" >Kinget Group</h1>
+</center> 
+</div>
+
+<!-- Here is the navigation bar definition -->
+<!-- <div id="navigation" style="position: relative; top: 0px;
+left:0px;"> -->
+<div id="navigation">
+<center> |
+<a href="index.html">Home</a> |
+<a href="people.html">People</a> |
+<a href="research.html">Research</a> |
+<a href="publications.html">Publications</a> |
+<a href="gallery.html">Chip Gallery</a> |
+<a href="http://www.cisl.columbia.edu/seminars/seminars.html" target="_blank">Seminars</a> | 
+<a href="sponsors.html">Sponsors</a> | 
+<a href="prospective.html">Prospective Students</a> |
+</center>
+</div>
+
+<!-- Here will start the main page -->
+
+<!-- <div id="content" style="position: relative; top: 0px;
+left:200px;"> -->
+
+<div id="content">
+
+
+<p> Welcome to the homepage of the Kinget Group at <a
+href="http://www.columbia.edu">Columbia University</a> in New York
+City. Our research group is part of the <a
+href="http://www.cisl.columbia.edu">Columbia Integrated Systems
+Laboratory</a> in the <a href="http://www.ee.columbia.edu">Electrical
+Engineering Department</a>.
+
+<p>Our research focuses on the design, simulation and measurement of
+analog and radio-frequency integrated circuits in advanced IC
+technologies. Our ongoing research projects are described in the <a
+href="research.html">"Research"</a> section and our <a
+href="publications.html">"Publications"</a>. You can find
+microphotographs of some of the chips we have designed in the <a
+href="gallery.html">"Chip Gallery"</a>. 
+
+<p>In case you wonder: 'The electronic world is going digital, why
+analog?', check out these <a
+href="http://www.ee.columbia.edu/~kinget/why_analog.html">quotes</a>.
+
+<p> If you are interested in research projects for undergraduate
+or M.S. students or in opportunities to join our group, check out the
+<a href="prospective.html">"Prospective Students"</a> section.
+
+<h2> News </h2>
+<ul>
+
+<li> Junhua Shen will present his ultra-low voltage ADC research at the
+IEEE VLSI symposium in Kyoto, Japan in June 2007. His paper is entitled
+"A 0.5V 8bit 10Msps Pipelined ADC in 90nm CMOS."
+
+<li> Nebojsa Stanic (Tsividis group) and Ajay Balankutty will present
+their research results on an ultra-low voltage receiver at the IEEE RFIC
+Symposium in June 2007 in a paper entitled "A 0.5 V Receiver in 90 nm
+CMOS for 2.4GHz Applications."</li>
+
+<li> Shih-An Yu will present his research work on ultra-low voltage RF
+synthesizers at the International Solid-State Circuits Conference (ISSCC), 
+San Francisco in Feb. 2007 in a paper entitled "A 0.65 V 2.5 GHz Fractional-N Frequency Synthesizer 
+in 90nm CMOS."</li>
+
+<li> Babak Soltanian presented his compact VCO and quadrature VCO
+research results at the IEEE European Solid-State Circuit Conference 
+(ESSCIRC) 2006 and at the IEEE Custom Integrated Circuits Conference (CICC) 2006.</li>
+
+<li> Shouri Chatterjee and Nebojsa Stanic (Tsividis group) presented
+their work on "A 0.5-V 1-Msample/s 60-dB SNDR Track-and-Hold Circuit"
+and "A 0.5 V 900 MHz CMOS Receiver Front End" at the Symposium for VLSI
+Circuits in Honolulu, Hawai'i, in June 2006.</li>
+
+<li>Babak Soltanian presented his paper "AM-FM Conversion by the
+Active Devices in MOS LC-VCOs and its Effect on the Optimal Amplitude"
+at the IEEE Radio Frequency Integrated Circuits Conference (RFIC) in San
+Francisco in June 2006. </li>
+
+<li> Anuranjan, Mustapha, and Gautam presented their research in 4 contributions
+to the International Symposium on Circuits and Systems (ISCAS) in May
+2006. </li>
+
+<li> Shouri Chatterjee and K.P. Pun presented their work on "A 0.5 V 74dB
+SNDR 25kHz CT Delta-Sigma Modulator with Return-to-Open DAC" at the International
+Solid-State Circuits Conference (ISSCC) in Feb. 2006.</li>
+
+<li> Frank Zhang has received a best TA award for E4318 (Microwave Circuit Design) for
+Fall 2005.</li>
+
+<li> Babak Soltanian and Frank Zhang presented their work on "Tail
+current shaping VCOs" and "VCO-in-the-coil" at the IEEE CICC in San
+Jose (CA, USA) in September 2005.</li>
+
+<li> Peter Kinget has received an IBM Faculty Award.</li>
+
+<li> Frank Zhang and Shouri Chatterjee presented their work on "CMOS
+Distributed Low Noise Amplifier" and "MOS Varactors for ultra-low
+Voltage Filters" at the Symposium for VLSI Circuits in Kyoto (Japan)
+in June 2005.</li>
+
+<li> Peter Kinget presented his work (with A. Lazar and Laszlo Toth)
+on the robustness of the analog implementation of a time encoding
+machine at the International Symposium on Circuits and Systems (ISCAS)
+in Kobe (Japan) in May 2005.</li>
+
+<li> Shouri Chatterjee presented his work on "A 0.5V continuous time low pass
+filter with PLL tuning" at the International Solid-State Circuits
+Conference (ISSCC) in San Francisco (CA, USA) in February 2005.</li>
+
+<li> <a href="archived_news.html">Archived News</a>
+
+</ul>
+
+<h2> Contact </h2>
+<table>
+<tr><td></td><td valign=top>mail address:</td> <td valign=top><table><tr><td>1312 S. W. Mudd Building</td></tr><tr><td>500 West 120th Street</td></tr><tr><td>New York, NY 10027, U.S.A</td></tr></table></td></tr>
+<tr><td></td><td valign=top>lab:</td>        <td valign=top><table><tr><td>CEPSR 422 (Shapiro)</td></tr><tr><td><a href="http://www.columbia.edu/cu/aboutcolumbia/maps.html">Directions</a> | <a href="http://www.columbia.edu/cu/aboutcolumbia/maps/index.html">campus map</a> | <a href="http://www.columbia.edu/cu/aboutcolumbia/maps/sectionD.html">building map</a></td></tr></table></td></tr>
+<!-- <tr><td></td><td></td>         <td><a href="http://www.columbia.edu/cu/aboutcolumbia/maps.html">Directions</a> | <a href="http://www.columbia.edu/cu/aboutcolumbia/maps/index.html">campus map</a> | <a href="http://www.columbia.edu/cu/aboutcolumbia/maps/sectionD.html">building map</a></td></tr> -->
+</table>
+
+<!-- tracker -->
+<a href="http://t.extreme-dm.com/?login=kingetgr"
+target="_top"><img src="http://t1.extreme-dm.com/i.gif"
+name="EXim" border="0" height="38" width="41"
+alt="eXTReMe Tracker"></img></a>
+<script type="text/javascript" language="javascript1.2"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;//-->
+</script><script type="text/javascript"><!--
+var EXlogin='kingetgr' // Login
+var EXvsrv='s9' // VServer
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+EXd.write("<img src=\"http://e0.extreme-dm.com",
+"/"+EXvsrv+".g?login="+EXlogin+"&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXd.referrer)+"\" height=1 width=1>");//-->
+</script><noscript><img height="1" width="1" alt=""
+src="http://e0.extreme-dm.com/s9.g?login=kingetgr&amp;j=n&amp;jv=n"/>
+</noscript>
+</div>
+
+<div id="footer">
+<p><center> &copy 2007 by the Authors and Columbia University <br>
+Last modified on 2007/04/06 09:59:36
+</center>
+</p>
+</div>
+
+</body>
+</html>

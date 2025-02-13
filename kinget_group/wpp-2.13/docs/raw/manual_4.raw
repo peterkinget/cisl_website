@@ -1,0 +1,15 @@
+@TITLE=@WPP_TITLE@ Variables and constants@
+@TSSNAVBAR_IS_4=y@
+@TSSNAVBAR_URL_L=@TSS_DIR_PREFIX@manual_3@
+@TSSNAVBAR_URL_R=@TSS_DIR_PREFIX@manual_5@
+
+@INCLUDE utils/box_macros@
+@INCLUDE utils/h_macros@
+$Date: 1998/09/23 11:26:51 $
+
+<DL>
+@INCLUDE parags/varassign@
+@INCLUDE parags/varsubst@
+@INCLUDE parags/spvars@
+@INCLUDE parags/rovars@
+</DL>

@@ -1,0 +1,940 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>guided tutorial</title>
+</head>
+<body>
+<div style="text-align: center;"><big><big><big><big><span
+ style="font-family: impact;"><big style="color: rgb(51, 51, 255);"><span
+ style="font-family: forte;">M</span></big>onte <big
+ style="color: rgb(51, 51, 255);"><span style="font-family: forte;">C</span></big>arlo
+<big style="color: rgb(51, 51, 255);"><span style="font-family: forte;">S</span></big>imulation<br>
+</span></big></big></big></big></div>
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;"><a href="main.html">[<big><big><big><big><big><span
+ style="font-family: impact;"></span></big></big></big></big></big>main]</a>
+<a href="inputrandomizer.html">[inputrandomizer]</a>
+<a href="RunSpectre.html">[runspectre]</a>
+<a href="outputorganizer.html">[outputorganizer]</a>
+<a href="MakeGraph.html">[makegraph]</a> <a
+ href="parameters%20file.html">[parameters
+file]</a> <a
+ href="file:///D:/My%20Documents/Fall%202004/summer%20research/guided%20tutorial.html">[guided
+tutorial]</a> <a href="work%20summary.html">[work
+summary]</a> <a href="downloads.html">[downloads]</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<big style="font-weight: bold;"><big><big><big><big><span
+ style="font-family: impact;"></span></big></big></big><span
+ style="font-weight: bold;"><span
+ style="font-family: forte; color: rgb(255, 0, 0);">G</span></span></big></big><big
+ style="font-weight: bold;"><big><span style="font-weight: bold;">uided</span></big></big><big
+ style="font-weight: bold;"><big><span style="font-weight: bold;"> </span></big></big><big
+ style="font-weight: bold;"><big><span style="font-weight: bold;"><span
+ style="font-family: forte; color: rgb(255, 0, 0);">T</span></span></big></big><big
+ style="font-weight: bold;"><big><span style="font-weight: bold;">utorial<br>
+<br>
+</span></big></big>
+<div style="text-align: left;"><big style="font-weight: bold;"><small>All
+files and samples are included in the downloads page. <br>
+This is a sample current mirror.&nbsp; We will be comparing the current
+running through the negative terminals of the dummy voltmeters V0 and
+V2.</small><big><span style="font-weight: bold;"></span></big></big><br>
+<big style="font-weight: bold;"><big><span style="font-weight: bold;"></span></big></big></div>
+<big style="font-weight: bold;"><big><span style="font-weight: bold;"></span></big></big>
+<div style="text-align: left;"><big style="font-weight: bold;"><br>
+<big><span style="font-weight: bold;"><span style="font-weight: bold;"></span></span></big></big></div>
+<div style="text-align: left;">
+<div style="text-align: center;"><big style="font-weight: bold;"><big><span
+ style="font-weight: bold;"></span></big></big><img alt="current mirror"
+ src="currentmirror.JPG" style="width: 632px; height: 337px;"><br>
+</div>
+<br>
+<br>
+To start, make sure all "info" lines of the netlists are commented out
+as spectre cannot format "info".&nbsp; <br>
+We also make sure we have the netlist and deviations file prepared.<br>
+<br>
+<big><span style="background-color: rgb(255, 0, 0);">Step 1: </span></big>we
+run the first program:&nbsp; <span
+ style="background-color: rgb(255, 255, 102);">./MCInputRandomizer.pl</span><span
+ style="background-color: rgb(255, 255, 102);"><br>
+</span>But this error will show up because we did not provide enough
+input arguments:<br>
+<br>
+<small>Monte Carlo Simulation Input Randomizer takes a Spectre netlist
+and generates variations of the netlist<br>
+<br>
+usage: MCInputRandomizer.pl &lt;input_netlist.scs&gt;
+&lt;num_outputs&gt; &lt;deviation_file&gt;</small><br>
+<br>
+<span style="background-color: rgb(255, 255, 102);"></span>To properly
+run: <span style="background-color: rgb(255, 255, 102);">./MCInputRandomizer.pl
+input.scs 5 parameters.txt</span><br>
+<br>
+This is the output.&nbsp; Please note we only ran a DC Analysis:<br>
+<br>
+<small>Starting parsing deviations file parameters.txt...<br>
+Voltage Nodes:<br>
+Voltage Nodes:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+V0:n V2:n <br>
+Resistor Deviation:&nbsp;&nbsp;&nbsp;&nbsp;
+-0.10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Shift:&nbsp; 0.10<br>
+Capacitor Deviation:&nbsp;&nbsp;&nbsp;
+0.01&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Shift:&nbsp; -0.10<br>
+Inductor Deviation:&nbsp;&nbsp;&nbsp;&nbsp;
+0.05&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Shift:&nbsp; 0.01<br>
+MOSFET n_bpw_18_mm<br>
+MOSFET n_zero_18_mm<br>
+MOSFET nch<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Ab:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+.03<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+avt:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+0.1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+db_b:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.01<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+delvt:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0.1<br>
+MOSFET p_18_mm<br>
+Done parsing deviations file parameters.txt...<br>
+<br>
+save&nbsp; V0:n V2:n<br>
+<br>
+<big>If you check inside the results folder there should be 5 files: <span
+ style="background-color: rgb(255, 255, 102);">ls results/</span><br>
+<br>
+<small>input1.scs&nbsp; input2.scs&nbsp; input3.scs&nbsp;
+input4.scs&nbsp; input5.scs</small><br>
+</big><br>
+</small><big><span style="background-color: rgb(255, 0, 0);">Step 2:</span>
+</big>we run the second program:&nbsp; <span
+ style="background-color: rgb(255, 255, 102);">./MCRunSpectre.pl<br>
+</span>Spectre should output the following five times.<br>
+<br>
+<small>Simulating `results/input5.scs' on corinth.cisl.columbia.edu at
+12:48:05 AM,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sun Dec 12, 2004.<br>
+<br>
+Warning from spectre during circuit read-in.<br>
+&nbsp;&nbsp;&nbsp; IM2: `region' is not a valid parameter for an
+instance of `Nnch'.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ignored.<br>
+&nbsp;&nbsp;&nbsp; IM1: `region' is not a valid parameter for an
+instance of `Nnch'.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ignored.<br>
+&nbsp;&nbsp;&nbsp; IM0: `region' is not a valid parameter for an
+instance of `Nnch'.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ignored.<br>
+<br>
+<br>
+Circuit inventory:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+nodes 10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; equations 29<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+iprobe 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+bsim3v3 3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+cccs 3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+isource 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+vsource 9<br>
+<br>
+<br>
+******************************************<br>
+DC Analysis `dc': I0 = (100e-06 -&gt; 10e-03)<br>
+******************************************<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 120.2e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (4
+%), step = 10.58e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 144.5e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (8
+%), step = 12.72e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 190.5e-06&nbsp;&nbsp;&nbsp;&nbsp; (14 %),
+step = 16.77e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 229.1e-06&nbsp;&nbsp;&nbsp;&nbsp; (18 %),
+step = 20.16e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 302e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(24 %), step = 26.57e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 363.1e-06&nbsp;&nbsp;&nbsp;&nbsp; (28 %),
+step = 31.95e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 478.6e-06&nbsp;&nbsp;&nbsp;&nbsp; (34 %),
+step = 42.11e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 575.4e-06&nbsp;&nbsp;&nbsp;&nbsp; (38 %),
+step = 50.63e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 758.6e-06&nbsp;&nbsp;&nbsp;&nbsp; (44 %),
+step = 66.75e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 912e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(48 %), step = 80.25e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 1.202e-03&nbsp;&nbsp;&nbsp;&nbsp; (54 %),
+step = 105.8e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 1.445e-03&nbsp;&nbsp;&nbsp;&nbsp; (58 %),
+step = 127.2e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 1.905e-03&nbsp;&nbsp;&nbsp;&nbsp; (64 %),
+step = 167.7e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 2.291e-03&nbsp;&nbsp;&nbsp;&nbsp; (68 %),
+step = 201.6e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 3.02e-03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (74
+%), step = 265.7e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 3.631e-03&nbsp;&nbsp;&nbsp;&nbsp; (78 %),
+step = 319.5e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 4.786e-03&nbsp;&nbsp;&nbsp;&nbsp; (84 %),
+step = 421.1e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 5.754e-03&nbsp;&nbsp;&nbsp;&nbsp; (88 %),
+step = 506.3e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 7.586e-03&nbsp;&nbsp;&nbsp;&nbsp; (94 %),
+step = 667.5e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+<br>
+Warning from spectre at I0 = 9.12011e-03 during DC analysis `dc'.<br>
+&nbsp;&nbsp;&nbsp; IM2.Nnch: Vgs has exceeded the oxide breakdown
+voltage of `vbox' = 4.08 V.<br>
+&nbsp;&nbsp;&nbsp; IM1.Nnch: Vgs has exceeded the oxide breakdown
+voltage of `vbox' = 4.08 V.<br>
+&nbsp;&nbsp;&nbsp; IM0.Nnch: Vgs has exceeded the oxide breakdown
+voltage of `vbox' = 4.08 V.<br>
+<br>
+&nbsp;&nbsp;&nbsp; dc: I0 = 9.12e-03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (98
+%), step = 802.5e-06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2 %)<br>
+<br>
+Warning from spectre at I0 = 10e-03 during DC analysis `dc'.<br>
+&nbsp;&nbsp;&nbsp; IM2.Nnch: Vgs has exceeded the oxide breakdown
+voltage of `vbox' = 4.08 V.<br>
+&nbsp;&nbsp;&nbsp; IM1.Nnch: Vgs has exceeded the oxide breakdown
+voltage of `vbox' = 4.08 V.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Further occurrences of this
+warning will be suppressed.<br>
+<br>
+Total time required for dc analysis `dc' was 80 ms.<br>
+<br>
+<br>
+Warning from spectre.<br>
+&nbsp;&nbsp;&nbsp; 1 warning suppressed.<br>
+<br>
+<br>
+Aggregate audit (12:48:06 AM, Sun Dec 12, 2004):<br>
+Time used: CPU = 680 ms, elapsed = 1 s, util. = 68%.<br>
+Virtual memory used = 3.16 Mbytes.<br>
+spectre completes with 0 errors, 10 warnings, and 0 notices.<br>
+<br>
+</small><br>
+<big><span style="background-color: rgb(255, 255, 102);"><span
+ style="background-color: rgb(255, 0, 0);">Step 3:</span></span>&nbsp; </big>We
+now organize the output: <span
+ style="background-color: rgb(255, 255, 102);">./MCOutputOrganizer.pl<span
+ style="background-color: rgb(255, 0, 0);"></span><br>
+<br>
+</span><small>0:I0<br>
+1:V0:n<br>
+2:V2:n<br>
+<br>
+<big>Also to check, we now have .scs files, .out files and individual
+RESULTnet files: <span style="background-color: rgb(255, 255, 102);">ls
+/results</span></big><br>
+</small><span style="background-color: rgb(255, 255, 102);"><br>
+</span><small>input1.out&nbsp; input2.out&nbsp; input3.out&nbsp;
+input4.out&nbsp; input5.out&nbsp; RESULTSV0n<br>
+input1.scs&nbsp; input2.scs&nbsp; input3.scs&nbsp; input4.scs&nbsp;
+input5.scs&nbsp; RESULTSV2n<br>
+<br>
+<big>A sample RESULTSV0n file looks like this:</big><br>
+<br>
+</small>
+<table x:str="" style="border-collapse: collapse; width: 637pt;"
+ border="0" cellpadding="0" cellspacing="0" width="848">
+  <col style="width: 21pt;" width="28"> <col style="width: 77pt;"
+ width="102"> <col span="6" style="width: 81pt;" width="108"> <col
+ style="width: 53pt;" width="70"> <tbody>
+    <tr style="height: 16.5pt;" height="22">
+      <td class="xl23" style="height: 16.5pt; width: 21pt;" height="22"
+ width="28"><small>#</small></td>
+      <td class="xl23" style="width: 77pt;" width="102"><small>Time</small></td>
+      <td class="xl23" style="width: 81pt;" width="108"><small>Trial #1</small></td>
+      <td class="xl23" style="width: 81pt;" width="108"><small>Trial #2</small></td>
+      <td class="xl23" style="width: 81pt;" width="108"><small>Trial #3</small></td>
+      <td class="xl23" style="width: 81pt;" width="108"><small>Trial #4</small></td>
+      <td class="xl23" style="width: 81pt;" width="108"><small>Trial #5</small></td>
+      <td class="xl23" style="width: 81pt;" width="108"><small>Mean</small></td>
+      <td class="xl23" style="width: 53pt;" width="70"><small>Standard
+Deviation</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" height="22"><small><br>
+      </small></td>
+      <td><small><br>
+      </small></td>
+      <td><small><br>
+      </small></td>
+      <td><small><br>
+      </small></td>
+      <td><small><br>
+      </small></td>
+      <td><small><br>
+      </small></td>
+      <td><small><br>
+      </small></td>
+      <td><small><br>
+      </small></td>
+      <td><small><br>
+      </small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>0</small></td>
+      <td x:num="1E-4" align="right"><small>0.0001</small></td>
+      <td x:num="-1.3202044080251E-4" align="right"><small>-0.00013202</small></td>
+      <td x:num="-1.3202044080130599E-4" align="right"><small>-0.00013202</small></td>
+      <td x:num="-1.3202044080301001E-4" align="right"><small>-0.00013202</small></td>
+      <td x:num="-1.3202044080525899E-4" align="right"><small>-0.00013202</small></td>
+      <td x:num="-1.3202044080406201E-4" align="right"><small>-0.00013202</small></td>
+      <td x:num="-1.3202044080322899E-4" align="right"><small>-0.00013202</small></td>
+      <td class="xl22" x:num="1.50645719774064E-15" align="right"><small>1.51E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>1</small></td>
+      <td x:num="1.09647819614319E-4" align="right"><small>0.000109648</small></td>
+      <td x:num="-1.43289319643776E-4" align="right"><small>-0.000143289</small></td>
+      <td x:num="-1.4328931964252201E-4" align="right"><small>-0.000143289</small></td>
+      <td x:num="-1.43289319644295E-4" align="right"><small>-0.000143289</small></td>
+      <td x:num="-1.4328931964664501E-4" align="right"><small>-0.000143289</small></td>
+      <td x:num="-1.4328931964539601E-4" align="right"><small>-0.000143289</small></td>
+      <td x:num="-1.43289319644527E-4" align="right"><small>-0.000143289</small></td>
+      <td class="xl22" x:num="1.57154198717076E-15" align="right"><small>1.57E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>2</small></td>
+      <td x:num="1.20226443461741E-4" align="right"><small>0.000120226</small></td>
+      <td x:num="-1.5556225033037699E-4" align="right"><small>-0.000155562</small></td>
+      <td x:num="-1.5556225032907099E-4" align="right"><small>-0.000155562</small></td>
+      <td x:num="-1.55562250330915E-4" align="right"><small>-0.000155562</small></td>
+      <td x:num="-1.5556225033337099E-4" align="right"><small>-0.000155562</small></td>
+      <td x:num="-1.5556225033206599E-4" align="right"><small>-0.000155562</small></td>
+      <td x:num="-1.5556225033116E-4" align="right"><small>-0.000155562</small></td>
+      <td class="xl22" x:num="1.63908376942391E-15" align="right"><small>1.64E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>3</small></td>
+      <td x:num="1.3182567385564101E-4" align="right"><small>0.000131826</small></td>
+      <td x:num="-1.68892223195209E-4" align="right"><small>-0.000168892</small></td>
+      <td x:num="-1.68892223193848E-4" align="right"><small>-0.000168892</small></td>
+      <td x:num="-1.6889222319576501E-4" align="right"><small>-0.000168892</small></td>
+      <td x:num="-1.6889222319832399E-4" align="right"><small>-0.000168892</small></td>
+      <td x:num="-1.6889222319696701E-4" align="right"><small>-0.000168892</small></td>
+      <td x:num="-1.6889222319602299E-4" align="right"><small>-0.000168892</small></td>
+      <td class="xl22" x:num="1.7062751469082501E-15" align="right"><small>1.71E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>4</small></td>
+      <td x:num="1.4454397707459299E-4" align="right"><small>0.000144544</small></td>
+      <td x:num="-1.8337305197874999E-4" align="right"><small>-0.000183373</small></td>
+      <td x:num="-1.83373051977336E-4" align="right"><small>-0.000183373</small></td>
+      <td x:num="-1.8337305197932299E-4" align="right"><small>-0.000183373</small></td>
+      <td x:num="-1.8337305198198899E-4" align="right"><small>-0.000183373</small></td>
+      <td x:num="-1.8337305198057601E-4" align="right"><small>-0.000183373</small></td>
+      <td x:num="-1.8337305197959499E-4" align="right"><small>-0.000183373</small></td>
+      <td class="xl22" x:num="1.77374345345711E-15" align="right"><small>1.77E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>5</small></td>
+      <td x:num="1.5848931924611101E-4" align="right"><small>0.000158489</small></td>
+      <td x:num="-1.9910726100631201E-4" align="right"><small>-0.000199107</small></td>
+      <td x:num="-1.9910726100484701E-4" align="right"><small>-0.000199107</small></td>
+      <td x:num="-1.9910726100690201E-4" align="right"><small>-0.000199107</small></td>
+      <td x:num="-1.9910726100967201E-4" align="right"><small>-0.000199107</small></td>
+      <td x:num="-1.99107261008205E-4" align="right"><small>-0.000199107</small></td>
+      <td x:num="-1.9910726100718799E-4" align="right"><small>-0.000199107</small></td>
+      <td class="xl22" x:num="1.8394270809007901E-15" align="right"><small>1.84E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>6</small></td>
+      <td x:num="1.7378008287493801E-4" align="right"><small>0.00017378</small></td>
+      <td x:num="-2.1620692621594301E-4" align="right"><small>-0.000216207</small></td>
+      <td x:num="-2.16206926214428E-4" align="right"><small>-0.000216207</small></td>
+      <td x:num="-2.1620692621654799E-4" align="right"><small>-0.000216207</small></td>
+      <td x:num="-2.16206926219423E-4" align="right"><small>-0.000216207</small></td>
+      <td x:num="-2.16206926217902E-4" align="right"><small>-0.000216207</small></td>
+      <td x:num="-2.16206926216849E-4" align="right"><small>-0.000216207</small></td>
+      <td class="xl22" x:num="1.90439971056587E-15" align="right"><small>1.90E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>7</small></td>
+      <td x:num="1.90546071796325E-4" align="right"><small>0.000190546</small></td>
+      <td x:num="-2.3479459434513401E-4" align="right"><small>-0.000234795</small></td>
+      <td x:num="-2.34794594343571E-4" align="right"><small>-0.000234795</small></td>
+      <td x:num="-2.3479459434575301E-4" align="right"><small>-0.000234795</small></td>
+      <td x:num="-2.3479459434873199E-4" align="right"><small>-0.000234795</small></td>
+      <td x:num="-2.34794594347158E-4" align="right"><small>-0.000234795</small></td>
+      <td x:num="-2.3479459434607E-4" align="right"><small>-0.000234795</small></td>
+      <td class="xl22" x:num="1.9679623452764398E-15" align="right"><small>1.97E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>8</small></td>
+      <td x:num="2.0892961308540401E-4" align="right"><small>0.00020893</small></td>
+      <td x:num="-2.5500429054955103E-4" align="right"><small>-0.000255004</small></td>
+      <td x:num="-2.5500429054794099E-4" align="right"><small>-0.000255004</small></td>
+      <td x:num="-2.55004290550181E-4" align="right"><small>-0.000255004</small></td>
+      <td x:num="-2.5500429055326003E-4" align="right"><small>-0.000255004</small></td>
+      <td x:num="-2.5500429055163502E-4" align="right"><small>-0.000255004</small></td>
+      <td x:num="-2.5500429055051401E-4" align="right"><small>-0.000255004</small></td>
+      <td class="xl22" x:num="2.0282980790817401E-15" align="right"><small>2.03E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>9</small></td>
+      <td x:num="2.2908676527677699E-4" align="right"><small>0.000229087</small></td>
+      <td x:num="-2.7698262285354299E-4" align="right"><small>-0.000276983</small></td>
+      <td x:num="-2.7698262285188698E-4" align="right"><small>-0.000276983</small></td>
+      <td x:num="-2.7698262285418403E-4" align="right"><small>-0.000276983</small></td>
+      <td x:num="-2.7698262285736399E-4" align="right"><small>-0.000276983</small></td>
+      <td x:num="-2.7698262285568798E-4" align="right"><small>-0.000276983</small></td>
+      <td x:num="-2.7698262285453298E-4" align="right"><small>-0.000276983</small></td>
+      <td class="xl22" x:num="2.0887674371151801E-15" align="right"><small>2.09E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>10</small></td>
+      <td x:num="2.5118864315095801E-4" align="right"><small>0.000251189</small></td>
+      <td x:num="-3.0088999275183098E-4" align="right"><small>-0.00030089</small></td>
+      <td x:num="-3.0088999275013301E-4" align="right"><small>-0.00030089</small></td>
+      <td x:num="-3.0088999275248101E-4" align="right"><small>-0.00030089</small></td>
+      <td x:num="-3.0088999275575801E-4" align="right"><small>-0.00030089</small></td>
+      <td x:num="-3.0088999275403402E-4" align="right"><small>-0.00030089</small></td>
+      <td x:num="-3.0088999275284698E-4" align="right"><small>-0.00030089</small></td>
+      <td class="xl22" x:num="2.1456357512905799E-15" align="right"><small>2.15E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>11</small></td>
+      <td x:num="2.75422870333817E-4" align="right"><small>0.000275423</small></td>
+      <td x:num="-3.2690192241552498E-4" align="right"><small>-0.000326902</small></td>
+      <td x:num="-3.2690192241378603E-4" align="right"><small>-0.000326902</small></td>
+      <td x:num="-3.2690192241618097E-4" align="right"><small>-0.000326902</small></td>
+      <td x:num="-3.2690192241955197E-4" align="right"><small>-0.000326902</small></td>
+      <td x:num="-3.2690192241778299E-4" align="right"><small>-0.000326902</small></td>
+      <td x:num="-3.26901922416565E-4" align="right"><small>-0.000326902</small></td>
+      <td class="xl22" x:num="2.19984914941723E-15" align="right"><small>2.20E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>12</small></td>
+      <td x:num="3.0199517204020201E-4" align="right"><small>0.000301995</small></td>
+      <td x:num="-3.5521051029997698E-4" align="right"><small>-0.000355211</small></td>
+      <td x:num="-3.5521051029820003E-4" align="right"><small>-0.000355211</small></td>
+      <td x:num="-3.5521051030063699E-4" align="right"><small>-0.000355211</small></td>
+      <td x:num="-3.5521051030410101E-4" align="right"><small>-0.000355211</small></td>
+      <td x:num="-3.5521051030228601E-4" align="right"><small>-0.000355211</small></td>
+      <td x:num="-3.5521051030103999E-4" align="right"><small>-0.000355211</small></td>
+      <td class="xl22" x:num="2.2516779079441901E-15" align="right"><small>2.25E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>13</small></td>
+      <td x:num="3.3113112148259099E-4" align="right"><small>0.000331131</small></td>
+      <td x:num="-3.8602602855494398E-4" align="right"><small>-0.000386026</small></td>
+      <td x:num="-3.8602602855313201E-4" align="right"><small>-0.000386026</small></td>
+      <td x:num="-3.8602602855560502E-4" align="right"><small>-0.000386026</small></td>
+      <td x:num="-3.8602602855915898E-4" align="right"><small>-0.000386026</small></td>
+      <td x:num="-3.8602602855730098E-4" align="right"><small>-0.000386026</small></td>
+      <td x:num="-3.8602602855602802E-4" align="right"><small>-0.000386026</small></td>
+      <td class="xl22" x:num="2.3002334622442502E-15" align="right"><small>2.30E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>14</small></td>
+      <td x:num="3.63078054770102E-4" align="right"><small>0.000363078</small></td>
+      <td x:num="-4.1957867750757802E-4" align="right"><small>-0.000419579</small></td>
+      <td x:num="-4.1957867750573499E-4" align="right"><small>-0.000419579</small></td>
+      <td x:num="-4.1957867750823797E-4" align="right"><small>-0.000419579</small></td>
+      <td x:num="-4.19578677511879E-4" align="right"><small>-0.000419579</small></td>
+      <td x:num="-4.1957867750998099E-4" align="right"><small>-0.000419579</small></td>
+      <td x:num="-4.1957867750868201E-4" align="right"><small>-0.000419579</small></td>
+      <td class="xl22" x:num="2.3456870508303599E-15" align="right"><small>2.35E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>15</small></td>
+      <td x:num="3.98107170553498E-4" align="right"><small>0.000398107</small></td>
+      <td x:num="-4.5612051460729901E-4" align="right"><small>-0.000456121</small></td>
+      <td x:num="-4.56120514605426E-4" align="right"><small>-0.000456121</small></td>
+      <td x:num="-4.5612051460795398E-4" align="right"><small>-0.000456121</small></td>
+      <td x:num="-4.5612051461167903E-4" align="right"><small>-0.000456121</small></td>
+      <td x:num="-4.5612051460974199E-4" align="right"><small>-0.000456121</small></td>
+      <td x:num="-4.5612051460842002E-4" align="right"><small>-0.000456121</small></td>
+      <td class="xl22" x:num="2.3878204128319402E-15" align="right"><small>2.39E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>16</small></td>
+      <td x:num="4.36515832240166E-4" align="right"><small>0.000436516</small></td>
+      <td x:num="-4.9592757752313301E-4" align="right"><small>-0.000495928</small></td>
+      <td x:num="-4.9592757752123403E-4" align="right"><small>-0.000495928</small></td>
+      <td x:num="-4.9592757752378103E-4" align="right"><small>-0.000495928</small></td>
+      <td x:num="-4.9592757752759005E-4" align="right"><small>-0.000495928</small></td>
+      <td x:num="-4.9592757752561301E-4" align="right"><small>-0.000495928</small></td>
+      <td x:num="-4.9592757752427001E-4" align="right"><small>-0.000495928</small></td>
+      <td class="xl22" x:num="2.4277256829487499E-15" align="right"><small>2.43E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>17</small></td>
+      <td x:num="4.7863009232263903E-4" align="right"><small>0.00047863</small></td>
+      <td x:num="-5.3930222344646095E-4" align="right"><small>-0.000539302</small></td>
+      <td x:num="-5.3930222344453899E-4" align="right"><small>-0.000539302</small></td>
+      <td x:num="-5.3930222344709901E-4" align="right"><small>-0.000539302</small></td>
+      <td x:num="-5.3930222345098696E-4" align="right"><small>-0.000539302</small></td>
+      <td x:num="-5.3930222344897598E-4" align="right"><small>-0.000539302</small></td>
+      <td x:num="-5.3930222344761205E-4" align="right"><small>-0.000539302</small></td>
+      <td class="xl22" x:num="2.4638500858246902E-15" align="right"><small>2.46E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>18</small></td>
+      <td x:num="5.2480746024977305E-4" align="right"><small>0.000524807</small></td>
+      <td x:num="-5.8657570889292699E-4" align="right"><small>-0.000586576</small></td>
+      <td x:num="-5.8657570889098399E-4" align="right"><small>-0.000586576</small></td>
+      <td x:num="-5.8657570889354997E-4" align="right"><small>-0.000586576</small></td>
+      <td x:num="-5.86575708897515E-4" align="right"><small>-0.000586576</small></td>
+      <td x:num="-5.8657570889547204E-4" align="right"><small>-0.000586576</small></td>
+      <td x:num="-5.8657570889409001E-4" align="right"><small>-0.000586576</small></td>
+      <td class="xl22" x:num="2.4966099507413902E-15" align="right"><small>2.50E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>19</small></td>
+      <td x:num="5.7543993733715805E-4" align="right"><small>0.00057544</small></td>
+      <td x:num="-6.3811103618652905E-4" align="right"><small>-0.000638111</small></td>
+      <td x:num="-6.3811103618457001E-4" align="right"><small>-0.000638111</small></td>
+      <td x:num="-6.3811103618713404E-4" align="right"><small>-0.000638111</small></td>
+      <td x:num="-6.38111036191178E-4" align="right"><small>-0.000638111</small></td>
+      <td x:num="-6.3811103618910099E-4" align="right"><small>-0.000638111</small></td>
+      <td x:num="-6.3811103618770205E-4" align="right"><small>-0.000638111</small></td>
+      <td class="xl22" x:num="2.5272293205209101E-15" align="right"><small>2.53E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>20</small></td>
+      <td x:num="6.3095734448019396E-4" align="right"><small>0.000630957</small></td>
+      <td x:num="-6.9430609409388102E-4" align="right"><small>-0.000694306</small></td>
+      <td x:num="-6.9430609409190701E-4" align="right"><small>-0.000694306</small></td>
+      <td x:num="-6.9430609409446204E-4" align="right"><small>-0.000694306</small></td>
+      <td x:num="-6.9430609409858201E-4" align="right"><small>-0.000694306</small></td>
+      <td x:num="-6.9430609409647497E-4" align="right"><small>-0.000694306</small></td>
+      <td x:num="-6.9430609409506096E-4" align="right"><small>-0.000694306</small></td>
+      <td class="xl22" x:num="2.5541917592937098E-15" align="right"><small>2.55E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>21</small></td>
+      <td x:num="6.9183097091893699E-4" align="right"><small>0.000691831</small></td>
+      <td x:num="-7.5559712052012805E-4" align="right"><small>-0.000755597</small></td>
+      <td x:num="-7.5559712051814201E-4" align="right"><small>-0.000755597</small></td>
+      <td x:num="-7.5559712052068696E-4" align="right"><small>-0.000755597</small></td>
+      <td x:num="-7.5559712052488304E-4" align="right"><small>-0.000755597</small></td>
+      <td x:num="-7.5559712052274499E-4" align="right"><small>-0.000755597</small></td>
+      <td x:num="-7.5559712052131699E-4" align="right"><small>-0.000755597</small></td>
+      <td class="xl22" x:num="2.5810312644601799E-15" align="right"><small>2.58E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>22</small></td>
+      <td x:num="7.5857757502918505E-4" align="right"><small>0.000758578</small></td>
+      <td x:num="-8.2246251459263298E-4" align="right"><small>-0.000822463</small></td>
+      <td x:num="-8.2246251459063696E-4" align="right"><small>-0.000822463</small></td>
+      <td x:num="-8.2246251459316196E-4" align="right"><small>-0.000822463</small></td>
+      <td x:num="-8.2246251459743198E-4" align="right"><small>-0.000822463</small></td>
+      <td x:num="-8.2246251459526596E-4" align="right"><small>-0.000822463</small></td>
+      <td x:num="-8.2246251459382603E-4" align="right"><small>-0.000822463</small></td>
+      <td class="xl22" x:num="2.60340234323451E-15" align="right"><small>2.60E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>23</small></td>
+      <td x:num="8.3176377110267196E-4" align="right"><small>0.000831764</small></td>
+      <td x:num="-8.9542702371744095E-4" align="right"><small>-0.000895427</small></td>
+      <td x:num="-8.95427023715438E-4" align="right"><small>-0.000895427</small></td>
+      <td x:num="-8.95427023717936E-4" align="right"><small>-0.000895427</small></td>
+      <td x:num="-8.9542702372228105E-4" align="right"><small>-0.000895427</small></td>
+      <td x:num="-8.9542702372008597E-4" align="right"><small>-0.000895427</small></td>
+      <td x:num="-8.9542702371863596E-4" align="right"><small>-0.000895427</small></td>
+      <td class="xl22" x:num="2.6236497667662698E-15" align="right"><small>2.62E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>24</small></td>
+      <td x:num="9.1201083935591105E-4" align="right"><small>0.000912011</small></td>
+      <td x:num="-9.7506632819767099E-4" align="right"><small>-0.000975066</small></td>
+      <td x:num="-9.7506632819566598E-4" align="right"><small>-0.000975066</small></td>
+      <td x:num="-9.7506632819812701E-4" align="right"><small>-0.000975066</small></td>
+      <td x:num="-9.7506632820255196E-4" align="right"><small>-0.000975066</small></td>
+      <td x:num="-9.7506632820033097E-4" align="right"><small>-0.000975066</small></td>
+      <td x:num="-9.7506632819886903E-4" align="right"><small>-0.000975066</small></td>
+      <td class="xl22" x:num="2.6432322279170898E-15" align="right"><small>2.64E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>25</small></td>
+      <td x:num="1E-3" align="right"><small>0.001</small></td>
+      <td x:num="-1.0620120415816201E-3" align="right"><small>-0.001062012</small></td>
+      <td x:num="-1.06201204157961E-3" align="right"><small>-0.001062012</small></td>
+      <td x:num="-1.0620120415820299E-3" align="right"><small>-0.001062012</small></td>
+      <td x:num="-1.06201204158654E-3" align="right"><small>-0.001062012</small></td>
+      <td x:num="-1.06201204158429E-3" align="right"><small>-0.001062012</small></td>
+      <td x:num="-1.0620120415828201E-3" align="right"><small>-0.001062012</small></td>
+      <td class="xl22" x:num="2.66305902318661E-15" align="right"><small>2.66E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>26</small></td>
+      <td x:num="1.0964781961431899E-3" align="right"><small>0.001096478</small></td>
+      <td x:num="-1.15695713864641E-3" align="right"><small>-0.001156957</small></td>
+      <td x:num="-1.1569571386444101E-3" align="right"><small>-0.001156957</small></td>
+      <td x:num="-1.1569571386467799E-3" align="right"><small>-0.001156957</small></td>
+      <td x:num="-1.15695713865136E-3" align="right"><small>-0.001156957</small></td>
+      <td x:num="-1.1569571386490899E-3" align="right"><small>-0.001156957</small></td>
+      <td x:num="-1.15695713864761E-3" align="right"><small>-0.001156957</small></td>
+      <td class="xl22" x:num="2.6749507761064201E-15" align="right"><small>2.67E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>27</small></td>
+      <td x:num="1.20226443461741E-3" align="right"><small>0.001202264</small></td>
+      <td x:num="-1.2606618139001801E-3" align="right"><small>-0.001260662</small></td>
+      <td x:num="-1.2606618138981699E-3" align="right"><small>-0.001260662</small></td>
+      <td x:num="-1.2606618139004799E-3" align="right"><small>-0.001260662</small></td>
+      <td x:num="-1.26066181390516E-3" align="right"><small>-0.001260662</small></td>
+      <td x:num="-1.26066181390285E-3" align="right"><small>-0.001260662</small></td>
+      <td x:num="-1.2606618139013701E-3" align="right"><small>-0.001260662</small></td>
+      <td class="xl22" x:num="2.69272776129216E-15" align="right"><small>2.69E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>28</small></td>
+      <td x:num="1.3182567385564099E-3" align="right"><small>0.001318257</small></td>
+      <td x:num="-1.37395975988984E-3" align="right"><small>-0.00137396</small></td>
+      <td x:num="-1.37395975988785E-3" align="right"><small>-0.00137396</small></td>
+      <td x:num="-1.37395975989008E-3" align="right"><small>-0.00137396</small></td>
+      <td x:num="-1.3739597598948501E-3" align="right"><small>-0.00137396</small></td>
+      <td x:num="-1.3739597598925099E-3" align="right"><small>-0.00137396</small></td>
+      <td x:num="-1.37395975989103E-3" align="right"><small>-0.00137396</small></td>
+      <td class="xl22" x:num="2.7024946795116701E-15" align="right"><small>2.70E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>29</small></td>
+      <td x:num="1.4454397707459299E-3" align="right"><small>0.00144544</small></td>
+      <td x:num="-1.4977648331260601E-3" align="right"><small>-0.001497765</small></td>
+      <td x:num="-1.4977648331240801E-3" align="right"><small>-0.001497765</small></td>
+      <td x:num="-1.49776483312624E-3" align="right"><small>-0.001497765</small></td>
+      <td x:num="-1.4977648331310899E-3" align="right"><small>-0.001497765</small></td>
+      <td x:num="-1.49776483312873E-3" align="right"><small>-0.001497765</small></td>
+      <td x:num="-1.4977648331272399E-3" align="right"><small>-0.001497765</small></td>
+      <td class="xl22" x:num="2.7119652285875799E-15" align="right"><small>2.71E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>30</small></td>
+      <td x:num="1.5848931924611199E-3" align="right"><small>0.001584893</small></td>
+      <td x:num="-1.6330780402353099E-3" align="right"><small>-0.001633078</small></td>
+      <td x:num="-1.6330780402333399E-3" align="right"><small>-0.001633078</small></td>
+      <td x:num="-1.6330780402354101E-3" align="right"><small>-0.001633078</small></td>
+      <td x:num="-1.6330780402403599E-3" align="right"><small>-0.001633078</small></td>
+      <td x:num="-1.6330780402379801E-3" align="right"><small>-0.001633078</small></td>
+      <td x:num="-1.63307804023648E-3" align="right"><small>-0.001633078</small></td>
+      <td class="xl22" x:num="2.7238704140658401E-15" align="right"><small>2.72E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>31</small></td>
+      <td x:num="1.73780082874938E-3" align="right"><small>0.001737801</small></td>
+      <td x:num="-1.7809947177447999E-3" align="right"><small>-0.001780995</small></td>
+      <td x:num="-1.7809947177428399E-3" align="right"><small>-0.001780995</small></td>
+      <td x:num="-1.7809947177448099E-3" align="right"><small>-0.001780995</small></td>
+      <td x:num="-1.7809947177498599E-3" align="right"><small>-0.001780995</small></td>
+      <td x:num="-1.78099471774745E-3" align="right"><small>-0.001780995</small></td>
+      <td x:num="-1.7809947177459501E-3" align="right"><small>-0.001780995</small></td>
+      <td class="xl22" x:num="2.7309460399123302E-15" align="right"><small>2.73E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>32</small></td>
+      <td x:num="1.9054607179632499E-3" align="right"><small>0.001905461</small></td>
+      <td x:num="-1.9427116774869599E-3" align="right"><small>-0.001942712</small></td>
+      <td x:num="-1.9427116774850099E-3" align="right"><small>-0.001942712</small></td>
+      <td x:num="-1.9427116774868799E-3" align="right"><small>-0.001942712</small></td>
+      <td x:num="-1.9427116774920301E-3" align="right"><small>-0.001942712</small></td>
+      <td x:num="-1.94271167748959E-3" align="right"><small>-0.001942712</small></td>
+      <td x:num="-1.9427116774880899E-3" align="right"><small>-0.001942712</small></td>
+      <td class="xl22" x:num="2.7387357591662998E-15" align="right"><small>2.74E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>33</small></td>
+      <td x:num="2.0892961308540399E-3" align="right"><small>0.002089296</small></td>
+      <td x:num="-2.1195339134129098E-3" align="right"><small>-0.002119534</small></td>
+      <td x:num="-2.1195339134109799E-3" align="right"><small>-0.002119534</small></td>
+      <td x:num="-2.1195339134127199E-3" align="right"><small>-0.002119534</small></td>
+      <td x:num="-2.11953391341799E-3" align="right"><small>-0.002119534</small></td>
+      <td x:num="-2.1195339134155201E-3" align="right"><small>-0.002119534</small></td>
+      <td x:num="-2.11953391341402E-3" align="right"><small>-0.002119534</small></td>
+      <td class="xl22" x:num="2.7466219782441602E-15" align="right"><small>2.75E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>34</small></td>
+      <td x:num="2.2908676527677802E-3" align="right"><small>0.002290868</small></td>
+      <td x:num="-2.3128801561856402E-3" align="right"><small>-0.00231288</small></td>
+      <td x:num="-2.3128801561837502E-3" align="right"><small>-0.00231288</small></td>
+      <td x:num="-2.31288015618535E-3" align="right"><small>-0.00231288</small></td>
+      <td x:num="-2.3128801561907398E-3" align="right"><small>-0.00231288</small></td>
+      <td x:num="-2.3128801561882401E-3" align="right"><small>-0.00231288</small></td>
+      <td x:num="-2.31288015618674E-3" align="right"><small>-0.00231288</small></td>
+      <td class="xl22" x:num="2.7536048106794802E-15" align="right"><small>2.75E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>35</small></td>
+      <td x:num="2.5118864315095898E-3" align="right"><small>0.002511886</small></td>
+      <td x:num="-2.5242860149116402E-3" align="right"><small>-0.002524286</small></td>
+      <td x:num="-2.5242860149097802E-3" align="right"><small>-0.002524286</small></td>
+      <td x:num="-2.52428601491122E-3" align="right"><small>-0.002524286</small></td>
+      <td x:num="-2.5242860149167399E-3" align="right"><small>-0.002524286</small></td>
+      <td x:num="-2.5242860149142102E-3" align="right"><small>-0.002524286</small></td>
+      <td x:num="-2.5242860149127201E-3" align="right"><small>-0.002524286</small></td>
+      <td class="xl22" x:num="2.75856467279432E-15" align="right"><small>2.76E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>36</small></td>
+      <td x:num="2.7542287033381699E-3" align="right"><small>0.002754229</small></td>
+      <td x:num="-2.7554024772826801E-3" align="right"><small>-0.002755402</small></td>
+      <td x:num="-2.7554024772808499E-3" align="right"><small>-0.002755402</small></td>
+      <td x:num="-2.7554024772821202E-3" align="right"><small>-0.002755402</small></td>
+      <td x:num="-2.7554024772877802E-3" align="right"><small>-0.002755402</small></td>
+      <td x:num="-2.7554024772852102E-3" align="right"><small>-0.002755402</small></td>
+      <td x:num="-2.75540247728373E-3" align="right"><small>-0.002755402</small></td>
+      <td class="xl22" x:num="2.7651063437155999E-15" align="right"><small>2.77E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>37</small></td>
+      <td x:num="3.01995172040202E-3" align="right"><small>0.003019952</small></td>
+      <td x:num="-3.00798583742069E-3" align="right"><small>-0.003007986</small></td>
+      <td x:num="-3.0079858374189002E-3" align="right"><small>-0.003007986</small></td>
+      <td x:num="-3.00798583741999E-3" align="right"><small>-0.003007986</small></td>
+      <td x:num="-3.0079858374258001E-3" align="right"><small>-0.003007986</small></td>
+      <td x:num="-3.0079858374231902E-3" align="right"><small>-0.003007986</small></td>
+      <td x:num="-3.00798583742171E-3" align="right"><small>-0.003007986</small></td>
+      <td class="xl22" x:num="2.7754761689735801E-15" align="right"><small>2.78E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>38</small></td>
+      <td x:num="3.31131121482592E-3" align="right"><small>0.003311311</small></td>
+      <td x:num="-3.2838721799123699E-3" align="right"><small>-0.003283872</small></td>
+      <td x:num="-3.28387217991062E-3" align="right"><small>-0.003283872</small></td>
+      <td x:num="-3.28387217991149E-3" align="right"><small>-0.003283872</small></td>
+      <td x:num="-3.28387217991746E-3" align="right"><small>-0.003283872</small></td>
+      <td x:num="-3.2838721799148202E-3" align="right"><small>-0.003283872</small></td>
+      <td x:num="-3.28387217991335E-3" align="right"><small>-0.003283872</small></td>
+      <td class="xl22" x:num="2.7805985135159102E-15" align="right"><small>2.78E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>39</small></td>
+      <td x:num="3.6307805477010201E-3" align="right"><small>0.003630781</small></td>
+      <td x:num="-3.5849246330105899E-3" align="right"><small>-0.003584925</small></td>
+      <td x:num="-3.5849246330088998E-3" align="right"><small>-0.003584925</small></td>
+      <td x:num="-3.58492463300953E-3" align="right"><small>-0.003584925</small></td>
+      <td x:num="-3.58492463301567E-3" align="right"><small>-0.003584925</small></td>
+      <td x:num="-3.5849246330129899E-3" align="right"><small>-0.003584925</small></td>
+      <td x:num="-3.5849246330115401E-3" align="right"><small>-0.003584925</small></td>
+      <td class="xl22" x:num="2.78713918100905E-15" align="right"><small>2.79E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>40</small></td>
+      <td x:num="3.9810717055349804E-3" align="right"><small>0.003981072</small></td>
+      <td x:num="-3.9129338611689699E-3" align="right"><small>-0.003912934</small></td>
+      <td x:num="-3.9129338611673401E-3" align="right"><small>-0.003912934</small></td>
+      <td x:num="-3.9129338611677096E-3" align="right"><small>-0.003912934</small></td>
+      <td x:num="-3.9129338611740196E-3" align="right"><small>-0.003912934</small></td>
+      <td x:num="-3.91293386117131E-3" align="right"><small>-0.003912934</small></td>
+      <td x:num="-3.9129338611698702E-3" align="right"><small>-0.003912934</small></td>
+      <td class="xl22" x:num="2.7915600282087201E-15" align="right"><small>2.79E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>41</small></td>
+      <td x:num="4.3651583224016697E-3" align="right"><small>0.004365158</small></td>
+      <td x:num="-4.2694413454396696E-3" align="right"><small>-0.004269441</small></td>
+      <td x:num="-4.2694413454381396E-3" align="right"><small>-0.004269441</small></td>
+      <td x:num="-4.2694413454382098E-3" align="right"><small>-0.004269441</small></td>
+      <td x:num="-4.2694413454447003E-3" align="right"><small>-0.004269441</small></td>
+      <td x:num="-4.2694413454419404E-3" align="right"><small>-0.004269441</small></td>
+      <td x:num="-4.26944134544053E-3" align="right"><small>-0.004269441</small></td>
+      <td class="xl22" x:num="2.7936569360622599E-15" align="right"><small>2.79E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>42</small></td>
+      <td x:num="4.7863009232264001E-3" align="right"><small>0.004786301</small></td>
+      <td x:num="-4.6554429287929697E-3" align="right"><small>-0.004655443</small></td>
+      <td x:num="-4.6554429287915299E-3" align="right"><small>-0.004655443</small></td>
+      <td x:num="-4.6554429287912801E-3" align="right"><small>-0.004655443</small></td>
+      <td x:num="-4.6554429287979397E-3" align="right"><small>-0.004655443</small></td>
+      <td x:num="-4.6554429287951598E-3" align="right"><small>-0.004655443</small></td>
+      <td x:num="-4.6554429287937798E-3" align="right"><small>-0.004655443</small></td>
+      <td class="xl22" x:num="2.79177016039902E-15" align="right"><small>2.79E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>43</small></td>
+      <td x:num="5.2480746024977402E-3" align="right"><small>0.005248075</small></td>
+      <td x:num="-5.0709255238938601E-3" align="right"><small>-0.005070926</small></td>
+      <td x:num="-5.0709255238925496E-3" align="right"><small>-0.005070926</small></td>
+      <td x:num="-5.0709255238919199E-3" align="right"><small>-0.005070926</small></td>
+      <td x:num="-5.0709255238987304E-3" align="right"><small>-0.005070926</small></td>
+      <td x:num="-5.0709255238959401E-3" align="right"><small>-0.005070926</small></td>
+      <td x:num="-5.0709255238946E-3" align="right"><small>-0.005070926</small></td>
+      <td class="xl22" x:num="2.7744688768315E-15" align="right"><small>2.77E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>44</small></td>
+      <td x:num="5.75439937337159E-3" align="right"><small>0.005754399</small></td>
+      <td x:num="-5.5142143507251303E-3" align="right"><small>-0.005514214</small></td>
+      <td x:num="-5.5142143507239897E-3" align="right"><small>-0.005514214</small></td>
+      <td x:num="-5.5142143507229202E-3" align="right"><small>-0.005514214</small></td>
+      <td x:num="-5.5142143507298704E-3" align="right"><small>-0.005514214</small></td>
+      <td x:num="-5.5142143507270602E-3" align="right"><small>-0.005514214</small></td>
+      <td x:num="-5.5142143507257903E-3" align="right"><small>-0.005514214</small></td>
+      <td class="xl22" x:num="2.7465798991044699E-15" align="right"><small>2.75E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>45</small></td>
+      <td x:num="6.3095734448019502E-3" align="right"><small>0.006309573</small></td>
+      <td x:num="-5.9811965339214698E-3" align="right"><small>-0.005981197</small></td>
+      <td x:num="-5.9811965339205504E-3" align="right"><small>-0.005981197</small></td>
+      <td x:num="-5.9811965339190004E-3" align="right"><small>-0.005981197</small></td>
+      <td x:num="-5.9811965339260399E-3" align="right"><small>-0.005981197</small></td>
+      <td x:num="-5.9811965339232401E-3" align="right"><small>-0.005981197</small></td>
+      <td x:num="-5.9811965339220596E-3" align="right"><small>-0.005981197</small></td>
+      <td class="xl22" x:num="2.70280867220608E-15" align="right"><small>2.70E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>46</small></td>
+      <td x:num="6.9183097091893896E-3" align="right"><small>0.00691831</small></td>
+      <td x:num="-6.4646578129128598E-3" align="right"><small>-0.006464658</small></td>
+      <td x:num="-6.4646578129122301E-3" align="right"><small>-0.006464658</small></td>
+      <td x:num="-6.4646578129101198E-3" align="right"><small>-0.006464658</small></td>
+      <td x:num="-6.4646578129172001E-3" align="right"><small>-0.006464658</small></td>
+      <td x:num="-6.4646578129144202E-3" align="right"><small>-0.006464658</small></td>
+      <td x:num="-6.4646578129133698E-3" align="right"><small>-0.006464658</small></td>
+      <td class="xl22" x:num="2.6408220498911402E-15" align="right"><small>2.64E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>47</small></td>
+      <td x:num="7.5857757502918602E-3" align="right"><small>0.007585776</small></td>
+      <td x:num="-6.9541424645012404E-3" align="right"><small>-0.006954142</small></td>
+      <td x:num="-6.9541424645009403E-3" align="right"><small>-0.006954142</small></td>
+      <td x:num="-6.9541424644982402E-3" align="right"><small>-0.006954142</small></td>
+      <td x:num="-6.9541424645052701E-3" align="right"><small>-0.006954142</small></td>
+      <td x:num="-6.9541424645025501E-3" align="right"><small>-0.006954142</small></td>
+      <td x:num="-6.9541424645016498E-3" align="right"><small>-0.006954142</small></td>
+      <td class="xl22" x:num="2.5599802232338499E-15" align="right"><small>2.56E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>48</small></td>
+      <td x:num="8.3176377110267402E-3" align="right"><small>0.008317638</small></td>
+      <td x:num="-7.4366918675198204E-3" align="right"><small>-0.007436692</small></td>
+      <td x:num="-7.4366918675199201E-3" align="right"><small>-0.007436692</small></td>
+      <td x:num="-7.4366918675165799E-3" align="right"><small>-0.007436692</small></td>
+      <td x:num="-7.4366918675234997E-3" align="right"><small>-0.007436692</small></td>
+      <td x:num="-7.4366918675208204E-3" align="right"><small>-0.007436692</small></td>
+      <td x:num="-7.43669186752013E-3" align="right"><small>-0.007436692</small></td>
+      <td class="xl22" x:num="2.4786478333112E-15" align="right"><small>2.48E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>49</small></td>
+      <td x:num="9.1201083935591298E-3" align="right"><small>0.009120108</small></td>
+      <td x:num="-7.8983622992422099E-3" align="right"><small>-0.007898362</small></td>
+      <td x:num="-7.8983622992427199E-3" align="right"><small>-0.007898362</small></td>
+      <td x:num="-7.8983622992387405E-3" align="right"><small>-0.007898362</small></td>
+      <td x:num="-7.8983622992455007E-3" align="right"><small>-0.007898362</small></td>
+      <td x:num="-7.8983622992428604E-3" align="right"><small>-0.007898362</small></td>
+      <td x:num="-7.8983622992424094E-3" align="right"><small>-0.007898362</small></td>
+      <td class="xl22" x:num="2.41643913596487E-15" align="right"><small>2.42E-15</small></td>
+    </tr>
+    <tr style="height: 16.5pt;" height="22">
+      <td style="height: 16.5pt;" x:num="" align="right" height="22"><small>50</small></td>
+      <td x:num="" align="right"><small>0.01</small></td>
+      <td x:num="-8.3258600186951904E-3" align="right"><small>-0.00832586</small></td>
+      <td x:num="-8.3258600186961306E-3" align="right"><small>-0.00832586</small></td>
+      <td x:num="-8.3258600186915301E-3" align="right"><small>-0.00832586</small></td>
+      <td x:num="-8.3258600186980995E-3" align="right"><small>-0.00832586</small></td>
+      <td x:num="-8.3258600186954905E-3" align="right"><small>-0.00832586</small></td>
+      <td x:num="-8.3258600186952893E-3" align="right"><small>-0.00832586</small></td>
+      <td class="xl22" x:num="2.3867769943840801E-15" align="right"><small>2.39E-15</small></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<small><br>
+</small><span style="background-color: rgb(255, 255, 102);"><br>
+</span><big><span style="background-color: rgb(255, 255, 102);"><span
+ style="background-color: rgb(255, 0, 0);">Step 4:</span></span>&nbsp; </big>We
+now organize the output: <span
+ style="background-color: rgb(255, 255, 102);">./MCMakeGraph.pl</span><br>
+<span style="background-color: rgb(255, 255, 102);"><br>
+</span>This will give the error:&nbsp;&nbsp; <small><span
+ style="background-color: rgb(255, 255, 102);"></span>Usage:
+MCMakeGraph.pl -f out.gnu -o out.ps -t 'graph title' -x 'x label' -y 'y
+label [file1] [file2] ... [filen]'</small><span
+ style="background-color: rgb(255, 255, 102);"><br>
+</span>Because we didn't specify what files to print.&nbsp; <br>
+The user can also specify options including:<br>
+<br>
+<small>-t&nbsp; =&nbsp; Title<br>
+-x = X Axis Label<br>
+-y = YAxis Label<br>
+-f = Gnuplot File<br>
+-o = Gnuplot Output File</small><br>
+<br>
+<br>
+We choose to print all Result nets:&nbsp; <span
+ style="background-color: rgb(255, 255, 102);">./MCMakeGraph.pl -t
+Title results/RESULTSV*</span>&nbsp;&nbsp; <span
+ style="background-color: rgb(255, 255, 102);">&lt;--We set the title
+to be "Title"<br>
+</span><br>
+<small><br>
+If nothing is specified, the following default names will appear: <br>
+<br>
+<span style="background-color: rgb(255, 255, 102);">&nbsp;./MCMakeGraph.pl&nbsp;
+results/RESULTSV*<br>
+<br>
+</span>Graph&nbsp; Title:&nbsp; Title<br>
+X Axis Label:&nbsp; X Label<br>
+Y Axis Label:&nbsp; Y Label<br>
+GnuPlot File:&nbsp; out.gnu<br>
+Graph&nbsp;&nbsp; File:&nbsp; out.ps<br>
+Can't exec "gnuplot": No such file or directory at ./MCMakeGraph.pl
+line 82.</small><small> &nbsp;&nbsp; &nbsp;<span
+ style="background-color: rgb(255, 255, 102);"> </span><big
+ style="background-color: rgb(255, 255, 102);">&lt;--Unfortunately, our
+default shell does not have GNUPLOT</big></small><span
+ style="background-color: rgb(255, 255, 102);"><br>
+<br>
+</span><big><small>After</small> <small>running gnuplot, a postcript
+should be created.&nbsp; To view, try running&nbsp;</small> </big><span
+ style="background-color: rgb(255, 255, 102);">ggv out.ps<br>
+<br>
+</span>
+<div style="text-align: center;"><span
+ style="background-color: rgb(255, 255, 102);"><img alt="output graph"
+ src="out.jpg" style="width: 950px; height: 674px;"></span><br>
+<span style="background-color: rgb(255, 255, 102);"></span></div>
+<span style="background-color: rgb(255, 255, 102);"><br>
+</span><br>
+In total, there should be 12 files created in the results/ directory: <small><big><span
+ style="background-color: rgb(255, 255, 102);">ls /results</span></big></small><span
+ style="background-color: rgb(255, 255, 102);"><br>
+</span><small><br>
+input1.out&nbsp; input2.out&nbsp; input3.out&nbsp; input4.out&nbsp;
+input5.out&nbsp; out.gnu&nbsp; RESULTSV0n<br>
+input1.scs&nbsp; input2.scs&nbsp; input3.scs&nbsp; input4.scs&nbsp;
+input5.scs&nbsp; out.ps&nbsp;&nbsp; RESULTSV2n</small><span
+ style="background-color: rgb(255, 255, 102);"><br>
+<br>
+<br>
+</span><big style="font-weight: bold;"><small>If you have any
+questions, please email me at hch2007@columbia.edu </small></big><br>
+<span style="background-color: rgb(255, 255, 102);"><br>
+<br>
+</span><big style="font-weight: bold;"><big><span
+ style="font-weight: bold;"></span></big></big></div>
+</div>
+</body>
+</html>

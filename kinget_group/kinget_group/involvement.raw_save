@@ -1,0 +1,845 @@
+$Date$
+
+<h2 style="margin-bottom:-8px">Undergraduate & M.S. Student Research Involvement</h2>
+
+<table nocols="2" cellspacing="15">
+<tr>
+<tr>
+  <td colspan="2">
+  <ul><li> Our group has an active program of undergraduate and
+M.S. student research involvement during the semester and summer and we
+also participate in the School's <a
+href="http://engineering.columbia.edu/undergraduate-research-involvement-program">Undergraduate
+Reseach Involvement Program (URIP)</a>. </li>
+<!-- <li>If you are an Columbia
+Undergraduate, Master's, or Ph.D. student interested in doing a project
+(for credit) that involves <b><i>designing, simulating, building and/or
+measuring Analog or RF hardware or Integrated Circuits</i></b>, contact
+<a href="http://www.ee.columbia.edu/~kinget">Prof. Kinget</a>
+or <a href="people.html">one of his graduate students</a>. 
+</li></ul>-->
+  </td></tr>
+
+<!-- <tr>
+  <td colspan="2"><h4>Overview</h4>
+  </td></tr>
+--> 
+  <td colspan="2">
+<ul><li>Self-driven, highly motivated</i> candidates for projects for
+credit can
+contact <a href="http://www.ee.columbia.edu/~kinget">Prof. Kinget</a>. Before
+emailing, go carefully through this website. <font color='red'>Please make sure your
+email includes details on your education (resume, grades, ...), on your
+motivation for doing a research project and on your prior research or
+design experience (copies of papers, reports, ...).</font>  <b>Start the
+subject of your email with "[Student Interested in a Research
+Project]".</b> </li></ul>
+
+  </td></tr>
+  
+<!-- <td colspan="2"><h4>Details for Some Projects</h4>
+  </td></tr>
+
+<font size="+2">
+
+<tr> <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/uwb_link_enhants_fall_2011.pdf">
+  Ultra-Wideband (UWB) Pulse Radio Wireless Links for <a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a> </a></font> </li></ul></td></tr>
+
+<tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="">Applications of Ultrasound</a></font>
+  </li></ul></td></tr> 
+
+<tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;" href="">High
+  Efficiency Energy Conversion</a></font>
+  </li></ul></td></tr> 
+
+<tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;" href="">Advanced
+  RFIC or Analog IC design</a></font>
+  </li></ul></td></tr> 
+-->
+
+<!-- <tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;" href="">Energy
+  Harvesting Sensor Node Design and Implementation</a></font>
+  </li></ul></td></tr> 
+
+<tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/low_voltage_project.html">Ultra-low
+  Voltage Analog Integrated Circuit Design</a></font>
+  </li></ul></td></tr>
+
+<tr> <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/organics_project.html">Design of Organics
+  Interface Circuits </a></font> </li></ul></td></tr>
+-->
+
+<!-- <tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/mismatch_project.html">Device Variations
+  Characterization in Advanced IC Processes</a></font>
+  </li></ul></td></tr> -->
+
+<!-- <tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/wireless_test_project.html">Wireless Testing of
+  Integrated Circuits</a></font>
+  </li></ul></td></tr> -->
+
+<!-- <tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/project_al_pk_final.html">Study of the
+  implementation of a Time-Encoding Machine</a></font>
+  </li></ul></td></tr> -->
+ 
+<!-- <tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/project_shouri_mos_characterization.html">CMOS
+  characterization for ultra-low voltage circuit design</a></font>
+  </li></ul></td></tr>
+-->
+<!-- <tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/project_pk_design.html">Analog/RF Integrated
+  Circuit Design</a></font>
+  </li></ul></td></tr> -->
+
+</font>
+
+<!-- 
+<tr>
+  <td colspan="2"><h4>Undergraduate Reseach Involvement Program</h4>
+  </td></tr>
+
+<tr>
+  <td valign="top">
+  <ul><li> Our group also participates in the School's <a
+  href="http://www.engineering.columbia.edu/students/academics/research/ee.php">Undergraduate
+  Reseach Involvement Program (URIP)</a>.  </li></ul> </td> 
+
+  <td valign="top"> <img src="student_projects/images/urip_cover.jpg"
+  alt="urip_booklet_front" width="90"> </td></tr>
+--> 
+</table>
+
+
+<table nocols="2" cellspacing="15">
+<tr>
+  <td colspan="2" align="center"><img width="850px" src="student_projects/student_projects_overview.png">
+  </td></tr>
+</table> 
+
+</div> 
+
+<!-- -------------------------------------------- -->
+<div id="content" style="width:900px; margin:2px auto;">
+<table nocols="2" cellspacing="15">
+<tr>
+  <td colspan="2"><h4><a href="http://www.ee.columbia.edu/spl">EE
+  Student Projects Lab</a></h4> </td></tr>
+
+<tr>
+  <td colspan="1">
+  <ul><li> The EE deparment is happy to announce the <a
+  href="http://www.ee.columbia.edu/spl">Student Projects Lab</a>. This
+  lab is open to EE and CE students of all levels to pursue their own
+  projects. See the <a
+  href="student_projects/student_project_lab_announce.txt">announcement</a> of the chair
+  for details.  The opening of the lab was also featured in the Columbia
+  Campus Newspaper 'The Spectator'. Follow <a target="_blank"
+  href="http://www.columbiaspectator.com/?q=node/14048">this
+  link</a> or take a look at a <a
+  href="student_projects/student_project_lab_spectator_feb2004.pdf">the article in
+  pdf.</a> </li></ul> </td><td></td></tr>
+
+<!-- <tr>
+  <td colspan="2"><h4>Design Contest</h4>
+  </td></tr>
+
+<tr>
+  <td colspan="1">
+  <ul><li> The Columbia Integrated Systems Lab (CISL) is conducting a
+  <b>Design Contest</b> for a "Self-Powered Radio". The contest has
+  been posted on the bulletin board at the EE office in Mudd and
+  several other locations on campus; see the poster for the contest
+  details and prizes.  </li></ul> </td><td></td></tr> -->
+
+<tr>
+  <td colspan="2"><h4>IEEE-MTT Fellowships</h4>
+  </td></tr>
+
+<tr>
+  <td valign="top">
+  <ul><li> The IEEE Microwave Theory and Techniques Society offers
+  <b>undergraduate fellowships</b> for senior undergraduate students
+  who want to do a research project. Details can be found from the
+  society's homepage <a href="http://www.mtt.org">www.mtt.org</a> ->
+  Awards -> Undergraduate Scholarships. Contact <a href="http://www.ee.columbia.edu/~kinget">Prof. Kinget</a> if you are interested to apply. 
+  </li></ul> </td>
+
+  <td valign="top"> </td></tr>
+</table>
+
+</div>
+
+<!-- ===================================== --> 
+<div id="content" style="width:900px; margin:2px auto;">
+<h2>Current and Past Undergraduate & M.S. Student Projects</h2>
+
+<table nocols="2" cellspacing="15">
+
+<!--
+<tr>
+  <td colspan="2"><h4>Semester </h4></td></tr>
+
+<tr> <td><ul><li> Title</li></ul></td> <td
+valign="top">Student<br> 
+(undergraduate/M.S.)</td></tr>
+--> 
+<tr>
+  <td colspan="2"><h4>Summer 2013 </h4></td></tr>
+
+<tr> <td><ul><li> Automated Spectrum Occupancy Measurements</li></ul></td> <td
+valign="top">Jeffrey Yuan<br>
+(NSF REU undergraduates)</td></tr>
+
+<tr> <td><ul><li>UWB Pulse Radio Wireless Link for
+	<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a>
+	with Enhanced
+	Range <a href="http://enhants.ee.columbia.edu/12-news/69-poster-and-demo-session-showcasing-student-projects-from-summer-2013">(demo/poster
+	session)</a><br><br> </li></ul></td> <td valign="top">Mengxi
+	Lin<br> (M.S.)</td></tr>
+
+<tr> <td><ul><li> Energy Harvesting Module
+for <a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a>
+	<a href="http://enhants.ee.columbia.edu/12-news/69-poster-and-demo-session-showcasing-student-projects-from-summer-2013">(demo/poster session)</a></li></ul></td> <td
+valign="top">Zoga Borova<br> 
+(B.S. Cooper Union)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2013 </h4></td></tr>
+
+<tr> <td><ul><li> Automated Spectrum Occupancy Measurements</li></ul></td> <td
+valign="top">Allison Duh<br> and Jeffrey Yuan<br>
+(undergraduates)</td></tr>
+
+<tr> <td><ul><li>UWB Pulse Radio Wireless Link for
+	<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a> with Enhanced
+	Range<br><br> </li></ul></td> <td valign="top">Mengxi Lin<br> (M.S.)</td></tr>
+
+<tr> <td><ul><li> Energy Harvesting Module for <a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a></li></ul></td> <td
+valign="top">Youngwan Kim<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Coherent UWB Pulse Radio Front Ends</li></ul></td> <td
+valign="top">Vaibhav Pandey<br> 
+(M.S.)</td></tr>
+
+<!-- -->
+<tr>
+  <td colspan="2"><h4>Fall 2012 </h4></td></tr>
+
+<tr> <td><ul><li> Spectrum Occupancy Measurements</li></ul></td> <td
+valign="top">Allison Duh<br> 
+(undergraduate)</td></tr>
+<tr> <td><ul><li> VLSI Implementation of PN Sequence Generators</li></ul></td> <td
+valign="top">Michael Whalen<br> 
+(M.S.)</td></tr>
+<tr> <td><ul><li>Demonstrating a UWB Pulse Radio Wireless Link for
+	<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a><br><br> see R. Margolies et al., "Demo: An Adaptive
+Testbed of Energy Harvesting Active Networked Tags (<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a>)
+Prototypes", in Proc. IEEE INFOCOM'13, Turin, Italy, Apr. 2013.
+</li></ul></td> <td valign="top">Meng
+  Wang<br>and Hao Wang<br> (M.S.)</td></tr>
+
+<tr> <td><ul><li>Design and Analysis of Harmonic Reject Mixers<br><br> see Teng Yang, et al., "A 0.5GHz-1.5GHz
+    Order Scalable Harmonic Rejection Mixer," IEEE Radio Frequency
+    Integrated Circuits Symposium (RFIC), June 2013.
+</li></ul></td> <td
+valign="top">Teng Yang<br>
+(M.S.)</td></tr>
+<tr> <td><ul><li> Energy Harvesting Module for <a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a><br><br>see R. Margolies et al., "Demo: An Adaptive
+Testbed of Energy Harvesting Active Networked Tags (<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a>)
+Prototypes", in Proc. IEEE INFOCOM'13, Turin, Italy, Apr. 2013.</li></ul></td> <td
+valign="top">Youngwan Kim<br> 
+(M.S.)</td></tr>
+<tr> <td><ul><li> UWB Pulse Radio Testing</li></ul></td> <td
+valign="top">Pranav Sood<br> and Jian Lu<br> 
+(M.S.)</td></tr>
+<tr> <td><ul><li>Modeling of INL in Data Converters</li></ul></td> <td
+valign="top">Scott Newton<br> 
+(M.S.)</td></tr>
+<!-- -->
+  <td colspan="2"><h4>Summer 2012</h4></td></tr>
+
+<tr> <td><ul><li> FPGA implementation of a UWB pulse radio MAC <br><br>
+	see J. Sarik, et al. "Demo: Energy Harvesting Active
+	Network Tag (<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a>) Prototypes and Prototype Testbed", IDTechEx
+	Energy Harvesting and Storage USA'12, Washington, DC, November
+	2012 (invited demonstration).
+</li></ul></td> <td
+valign="top">Felipe de Oliveira Duque (Stevens Inst. of Techn.)<br> 
+(undergraduate)</td></tr>
+
+<tr> <td><ul><li>Efficient Residue Amplifier
+  Architectures<br><br> </li></ul></td> <td valign="top">Xiang Li<br> (M.S.)</td></tr>
+
+<tr> <td><ul><li>Demonstrating a UWB Pulse Radio Wireless Link for
+	<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a><br><br> </li></ul></td> <td valign="top">Meng
+  Wang<br>and Hao Wang<br> (M.S.)</td></tr>
+
+<tr> <td><ul><li>Modeling and Analysis of Iterative Downconverters</li></ul></td> <td
+valign="top">Teng Yang<br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2012 </h4></td></tr>
+
+<tr> <td><ul><li>Demonstrating a UWB Pulse Radio Wireless Link for
+	<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a><br><br> </li></ul></td> <td valign="top">Meng
+  Wang<br>and Hao Wang<br> (M.S.)</td></tr>
+
+<tr> <td><ul><li>Modeling and Analysis of Iterative Downconverters</li></ul></td> <td
+valign="top">Teng Yang<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>Ultrasound Data Communications</li></ul></td> <td
+valign="top">Zuyang Cao <br>and Jihing Zou<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>Modeling of INL in Data Converters</li></ul></td> <td
+valign="top">Scott Newton<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>Highly Integrated Power Factor Correction Circuits</li></ul></td> <td
+valign="top">Chen Keng<br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Fall 2011 </h4></td></tr>
+
+<tr> <td><ul><li>Demonstrating a UWB Pulse Radio Wireless Link for
+	<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a><br><br> see G. Stanje, et al., 
+        <a href="go_acm.html">"Demo: Organic Solar Cell-equipped Energy
+  Harvesting Active Networked Tag (EnHANT) Prototypes,"</a> ACM
+  Conference on Embedded Networked Sensor Systems (ACM SenSys 2011),
+  Seattle, WA, Nov. 2011. <i>Recipient of the <b>"Best Student Demo
+  Award".</b></li></ul></td> <td valign="top">Jianxun Zhu and <br>Meng
+  Wang<br> (M.S.)</td></tr>
+
+<tr> <td><ul><li>Modeling and Analysis of Iterative Downconverters</li></ul></td> <td
+valign="top">Teng Yang<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>Modeling of INL in Data Converters</li></ul></td> <td
+valign="top">Scott Newton<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>Highly Integrated Power Factor Correction Circuits</li></ul></td> <td
+valign="top">Chen Keng<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>Controllers for DC/DC converters</li></ul></td> <td
+valign="top">Ying Teng<br> 
+(M.S.)</td></tr>
+
+
+<tr>
+  <td colspan="2"><h4>Summer 2011 </h4></td></tr>
+
+<tr> <td><ul><li>Demonstrating a UWB Pulse Radio Wireless Link for
+	<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a><br><br> see J. Zhu et al., "Demo: Prototyping UWB
+	Enabled <a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a>," International Conference on Mobile Systems,
+	Applications and Services (MobiSys), June
+	2011.</li></ul></td> <td valign="top">Jianxun Zhu<br>
+	(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2011 </h4></td></tr>
+
+<tr> <td><ul><li>Demonstrating a UWB Pulse Radio Wireless Link for <a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a></li></ul></td> <td
+valign="top">Jianxun Zhu<br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Fall 2010 </h4></td></tr>
+
+<tr> <td><ul><li>Design of a 300Msps 4-bit ADC</li></ul></td> <td
+valign="top">Dinesh M.B. Maheswaran<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>Organic Circuit Design and Fabrication </li></ul></td> <td
+valign="top">Yuan Zhou and Chengrui Le<br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Summer 2010 </h4></td></tr>
+
+<tr> <td><ul><li>Interfacing Mica2 Motes with an UWB Radio <br><br> see
+M. Gorlatova et al., "Prototyping Energy Harvesting Active Networked
+Tags: Phase II MICA Mote-based Devices," ACM MobiCom'10, demo
+description, September 2010.</li></ul></td> <td valign="top">Jiasi
+Chen<br> (undergraduate)</td></tr>
+
+
+<tr> <td><ul><li>Interfacing Ultrasound Wake-up Receivers to Mica2 Motes </li></ul></td> <td
+valign="top">David Blumenfeld (UCLA)<br> 
+(undergraduate)</td></tr>
+
+<tr> <td><ul><li>Organic Circuit Design and Fabrication </li></ul></td> <td
+valign="top">Yuan Zhou and Chengrui Le<br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2010 </h4></td></tr>
+
+<tr> <td><ul><li>Interfacing Mica2 Motes with an UWB Radio <br><br> see
+M. Gorlatova et al., "Prototyping Energy Harvesting Active Networked
+Tags (<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a>) with MICA2 Motes", Seventh Annual IEEE Communications
+Society Conference on Sensor, Mesh and Ad-Hoc Communications and
+Networks (SECON), demo description, 3pp., June
+2010.</li></ul></td> <td valign="top">Jiasi Chen<br>
+(undergraduate)</td></tr>
+
+<tr> <td><ul><li>An automated system that measures energy harvested by a
+	solar cell under different light conditions. <br><br> see
+M. Gorlatova et al., "Prototyping Energy Harvesting Active Networked
+	Tags (<a href="http://enhants.ee.columbia.edu/student-projects">EnHANTs</a>) with MICA2 Motes", Seventh Annual IEEE Communications
+Society Conference on Sensor, Mesh and Ad-Hoc Communications and
+Networks (SECON), demo description, 3pp., June
+2010. </li></ul></td> <td
+valign="top">Deep Shreshta<br> 
+(undergraduate)</td></tr>
+
+<tr> <td><ul><li>Switched Capacitor Power Converters </li></ul></td> <td
+valign="top">Frank Fang<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>High Speed, low resolution, low power ADCs </li></ul></td> <td
+valign="top">Dinesh Maheswaran<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>High Performance PLLs<br><br> see C. Hsu, K. Tripurari,
+S.-A. Yu, and P. Kinget, "A 2.2GHz PLL using a Phase-Frequency Detector
+with an Auxiliary Sub-Sampling Phase Detector for In-Band Noise
+Suppression," IEEE Custom Integrated Circuits Conference
+(CICC), 2011.</li></ul></td> <td valign="top">Chunwei Hsu<br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>ADC Testing </li></ul></td> <td
+valign="top">Sudhir Nagaraj<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>Organic Circuit Design and Fabrication </li></ul></td> <td
+valign="top">Yuan Zhou and Chengrui Le<br> 
+(M.S.)</td></tr>
+
+
+<tr>
+  <td colspan="2"><h4>Fall 2009 </h4></td></tr>
+
+<tr> <td><ul><li>Interfacing Mica2 Motes with an UWB Radio </li></ul></td> <td
+valign="top">Jiasi Chen<br> 
+(undergraduate)</td></tr>
+
+<tr> <td><ul><li>Inductive Power Transfer </li></ul></td> <td
+valign="top">Ben Waters<br> 
+(undergraduate)</td></tr>
+
+<tr> <td><ul><li>Multi Source Sound Experiment </li></ul></td> <td
+valign="top">William Lee<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>ADC Testing </li></ul></td> <td
+valign="top">Tim Hyuk<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>FPGA Implementation of Digital Calibration for Receivers </li></ul></td> <td
+valign="top">Ankita Nayak<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>Organic Circuit Design and Fabrication </li></ul></td> <td
+valign="top">Mingdong Hu<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>Switched Capacitor Power Converters </li></ul></td> <td
+valign="top">Frank Fang<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>High Speed, low resolution, low power ADCs </li></ul></td> <td
+valign="top">Dinesh Maheswaran<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>High Speed DDFS </li></ul></td> <td
+valign="top">Chunwei Hsu<br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Summer 2009 </h4></td></tr>
+
+<tr> <td><ul><li>An automated system that measures energy harvested by a
+	solar cell under different light conditions </li></ul></td> <td
+valign="top">Deep Shreshta<br> 
+(undergraduate)</td></tr>
+
+<tr> <td><ul><li>ADC Testing </li></ul></td> <td
+valign="top">Tim Hyuk<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li>Organic Circuit Design and Fabrication </li></ul></td> <td
+valign="top">Mingdong Hu<br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2009 </h4></td></tr>
+
+<tr> <td><ul><li> Modeling of Device Mismatch in 90nm CMOS</li></ul></td> <td
+valign="top">Ryan Roberts<br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Energy Harvesting Wireless Sensor Node Design</li></ul></td> <td
+valign="top">Jayanth Kuppambatti (M.S.) and Jiasi Chen (undergraduate)
+</td></tr>
+
+<tr> <td><ul><li>Inductive Power Transfer </li></ul></td> <td
+valign="top">Ben Waters<br> 
+(undergraduate)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Fall 2008 </h4></td></tr>
+
+<tr> <td><ul><li> Characterization of Device Mismatch in 90nm CMOS</li></ul></td> <td
+valign="top">Ryan Roberts and Robin Stevenson <br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Ultra-low voltage Pipelined ADC</li></ul></td> <td
+valign="top">Navin Harwalkar <br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Energy Harvesting Wireless Sensor Node Design</li></ul></td> <td
+valign="top">Jayanth Kuppambatti <br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Summer 2008 </h4></td></tr>
+
+<tr> <td><ul><li> Characterization of Device Mismatch in 90nm CMOS</li></ul></td> <td
+valign="top">Ryan Roberts and Robin Stevenson <br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2008 </h4></td></tr>
+
+<tr> <td><ul><li> Characterization of Device Mismatch in 90nm CMOS</li></ul></td> <td
+valign="top">Ryan Roberts and Robin Stevenson <br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> High gain, ultra-low voltage amplifiers</li></ul></td> <td
+valign="top">Navin Harwalkar <br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Ultra Low Voltage Voltage Controlled Oscillator Design
+with High Power Supply Rejection</li></ul></td> <td valign="top">
+B.J. Lim <br> (M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Fall 2007 </h4></td></tr>
+
+<tr> <td><ul><li> Wireless Testing of Integrated Circuits<br><br> see
+J. Tompson, A. Dolin and P. Kinget, "2.6GHz RF Inductive Power Delivery
+for Contactless On- Wafer Characterization," IEEE International
+Conference on Microelectronic Test Structures (ICMTS), March
+2008</li></ul></td> <td valign="top">Jonathan Tompson <br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Reference circuits</li></ul></td> <td
+valign="top">Christos Vezyrtzis <br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> High gain, ultra-low voltage amplifiers</li></ul></td> <td
+valign="top">Navin Harwalkar <br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Summer 2007 </h4></td></tr>
+
+<tr> <td><ul><li> Device Variation Characterization</li></ul></td> <td
+valign="top">Jonathan Tompson  <br> (M.S.)</td></tr>
+
+<tr> <td colspan="2"><h4>Spring 2007 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Wireless Testing of Integrated Circuits</li></ul></td> <td
+valign="top">Jonathan Tompson  <br> Adam Dolin <br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Reference circuits</li></ul></td> <td
+valign="top">Christos Vezyrtzis <br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Fall 2006 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Device Variation Characterization </li></ul></td> <td
+valign="top">H.S. Lin <br>Chia-Yin Chen <br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Wireless Testing of Integrated Circuits</li></ul></td> <td
+valign="top">Jonathan Tompson  <br> Adam Dolin <br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Reference circuits</li></ul></td> <td
+valign="top">Christos Vezyrtzis <br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Summer 2006 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Automatic Measurement Setup for Device Variation Characterization </li></ul></td> <td
+valign="top">Chia-Yin Chen <br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Device Variation Characterization </li></ul></td> <td
+valign="top">H.S. Lin <br>
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2006 </h4></td></tr>
+
+<tr> <td><ul><li> Implementation of simulation scripts for Monte-Carlo
+  Simulation of device parameter variations and mismatch. <br><br>see
+  H. Hung, V. Adzic, and P.Kinget, "Monte Carlo Simulation of Device
+  Variations and Mismatch in Analog Integrated Circuits," in Proceedings
+  of the National Conference on Undergraduate Research (NCUR), April
+  2006.</li>
+</ul></td> <td valign="top">Hector Hung<br>Vladislav Adzic<br> (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang<br> Vivek Rajeswaran<br> (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Automatic Measurement Setup for Device Variation Characterization </li></ul></td> <td
+valign="top">Chia-Yin Chen <br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Single-ended to Differential Signal Converter </li></ul></td> <td
+valign="top">Tekalegn Habta Lemji <br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Wireless Testing of Integrated Circuits</li></ul></td> <td
+valign="top">Kuo-Chih Feng  <br> Jin Wook Son  <br> Inanc Meric <br>
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Fall 2005 </h4></td></tr>
+
+<tr> <td><ul><li> Single-ended to Differential Signal Converter </li></ul></td> <td
+valign="top">Tekalegn Habta Lemji  <br> Inanc Meric<br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Implementation of simulation scripts for Monte-Carlo
+  Simulation of device parameter variations and
+  mismatch. </li></ul></td> <td valign="top">Hector Hung<br>Vladislav Adzic<br> (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang and Vivek Rajeswaran (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Device Variation Characterization </li></ul></td> <td
+valign="top">Ajay Balankutty<br> Tai-Chiao Chih<br>
+(M.S.)</td></tr>
+
+  <td colspan="2"><h4>Summer 2005 </h4></td></tr>
+
+<tr> <td><ul><li> Implementation of simulation scripts for Monte-Carlo
+  Simulation of device parameter variations and
+  mismatch. </li></ul></td> <td valign="top">Hector Hung<br>Vladislav Adzic<br> (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Device Variation Characterization </li></ul></td> <td
+valign="top">Ajay Balankutty<br>Tai-Chiao Chih<br>
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2005 </h4></td></tr>
+
+<tr>  
+  <td><ul><li>Voltage references operating from a low power supply </li></ul></td>
+  <td valign="top">Tawfiq Musah (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul><li>Testing of Low Voltage Opamps </li></ul></td>
+  <td valign="top">Ajay Balankutty (M.S.)</td></tr>
+
+<tr>  
+  <td><ul><li>Design of Low Voltage Programmable Gain Amplifiers </li></ul></td>
+  <td valign="top">Vasilios Giannopoulos (M.S.)</td></tr>
+
+<tr>  
+  <td><ul><li>Design of Low Voltage OTAs </li></ul></td>
+  <td valign="top">Mustapha Abdulai (M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Fall 2004 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> Modeling and Characterization of MOS capacitors for
+  ultra-low voltage circuit design. 
+  <br><br>see T. Musah, and P.Kinget, "MOS varactors in weak inversion for
+  0.5 V analog filters," in Proceedings of the National Conference on
+  Undergraduate Research (NCUR), Lexington (VA), April 2005.
+  </li>  </ul></td>
+  <td valign="top">Tawfiq Musah (undergraduate)</td></tr>
+
+<!-- <tr>
+  <td>see T. Musah, and P.Kinget, "MOS varactors in weak inversion for
+  0.5 V analog filters," in Proceedings of the National Conference on
+  Undergraduate Research (NCUR), Lexington (VA), April 2005.</td>
+  <td></td></tr> -->
+
+<tr>  
+  <td><ul>  <li> Design and simulation of compact, on-chip LC resonators 
+  <br><br>see S. Sorgenfrei, and P.Kinget, "The effect of fill cell size on
+  planar inductors" in Proceedings of the National Conference on
+  Undergraduate Research (NCUR), Lexington (VA), April 2005.</li>  </ul></td>
+  <td valign="top">Sebastian Sorgenfrei (undergraduate)</td></tr>
+
+<!-- <tr>
+  <td>see S. Sorgenfrei, and P.Kinget, "The effect of fill cell size on
+  planar inductors" in Proceedings of the National Conference on
+  Undergraduate Research (NCUR), Lexington (VA), April 2005.</td>
+  <td></td></tr>
+-->
+
+<tr>  
+  <td><ul>  <li> 
+<a href="student_projects/DividerChip/DividerChipChenBattle.html">Novel Frequency Divider Integrated Circuit</a>
+  </li>  </ul></td>
+  <td>Steven Battle, <br>Allen Chen <br>(M.S.)</td></tr>
+
+<tr>  
+  <td><ul>  <li> Design of a quadrature LC oscillator. 
+  </li>  </ul></td>
+  <td> Cheng-Feng Chu (M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Summer 2004 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> Modeling and Characterization of MOS capacitors for
+  ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Tawfiq Musah (undergraduate)</td></tr>
+
+<tr> <td><ul> <li> <a
+  href="http://www.columbia.edu/~hch2007/summer_research/main.html">Implementation
+  of simulation scripts for Monte-Carlo Simulation of device parameter
+  variations and mismatch.</a> </li> </ul></td> <td>Hector Hung
+  (undergraduate)</td></tr>
+
+<tr> <td><ul> <li> <a href="student_projects/Pcells/index.html">
+  Implementation of parametrized layout cells for analog IC design.</a>
+  </li> </ul></td> <td>Chia-Ching (Peter) Chen (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> Design of operational amplifiers for the time encoding machine
+  </li>  </ul></td>
+  <td>Zelalem Asmamaw (M.S.)</td></tr>
+
+<tr>  
+  <td><ul>  <li> RF powered circuits.
+  </li>  </ul></td>
+  <td>Andrew Han (M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2004 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> Design and simulation of compact, on-chip LC resonators 
+  </li>  </ul></td>
+  <td>Sebastian Sorgenfrei (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Theodore Kengne (Undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> Novel Frequency Divider Integrated Circuit
+  </li>  </ul></td>
+  <td>Han-Yun Chang, <br>Allen Chen <br>(M.S.)</td></tr>
+
+<tr>  
+  <td><ul>  <li> Broadband integrated amplifier 
+  <br><br> see F. Zhang and P. Kinget, <a
+  href="http://www.ee.columbia.edu/%7Ekinget/go_ieee.html">"Low Power
+  Programmable-Gain CMOS Distributed LNA for Ultra-Wideband
+  Applications,"</a> in Digest of Technical Papers IEEE Symposium on VLSI
+  circuits, (accepted for presentation), June 2005. 
+  </li>  </ul></td>
+  <td>Frank Zhang (Ph.D.)</td></tr>
+
+  <td colspan="2"><h4>Fall 2003 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> Novel Frequency Divider Integrated Circuit
+  </li>  </ul></td>
+  <td>Han-Yun Chang, <br>Allen Chen <br>(M.S.)</td></tr>
+
+<tr>  
+  <td><ul>  <li> Broadband integrated amplifier
+  </li>  </ul></td>
+  <td>Frank Zhang (Ph.D.)</td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Theodore Kengne (Undergraduate)</td></tr>
+
+
+<tr>
+  <td colspan="2"><h4>Summer 2003 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> Novel Biasing for LC oscillators
+  </li>  </ul></td>
+  <td>Eric Chang<br> Waclaw Aleksander Godycki <br>(Undergraduate)</td></tr>
+
+<tr>  
+  <td colspan="2"><h4>Fall 2002 </h4></td></tr>
+
+<tr>
+  <td><ul>  <li> <a href="student_projects/ECG Report/E6001 ECG final report.htm" target="_blank">Electrocardiogram Measurements</a>
+  </li></ul></td>
+  <td>Chia-Hung Chen<br> Shi-Gun Pan<br>(M.S.)</td></tr>
+  
+<tr>
+  <td><ul> <li> <a href="student_projects/Wireless_Link/index.html" target="_blank">Short Range Wireless Data Transmission</a>
+  </li></ul></td>
+  <td>Chao-Chieh Hsu<br> Shao-Hsune Lee<br>(M.S.)</td></tr>
+
+</table>

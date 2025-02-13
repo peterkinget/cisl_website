@@ -1,0 +1,298 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>新增網頁 0</title>
+</head>
+
+<body>
+
+<p style="line-height: 150%"><b><font size="5">1. IC selection</font></b></p>
+<blockquote>
+  <p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp; To comply our requirement, we survey the several 
+  Tx / Rx IC and find Micrel has the IC might work for us. </p>
+  <p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We choose Micrel Micrf104 and Micrf011 as 
+  our Transmitter and Receiver IC.</p>
+  <p style="line-height: 150%"><b>Figures of Micrf104 (Tx):</b></p>
+  <ul>
+    <li>
+    <p style="line-height: 150%">Complete ASK/OOK transmitter on Chip</li>
+    <li>
+    <p style="line-height: 150%">Frequency 300 MHz&nbsp; to 470 MHz&nbsp;&nbsp;
+    </li>
+    <li>
+    <p style="line-height: 150%">Data rates to 20kbps</li>
+    <li>
+    <p style="line-height: 150%">Automatic antenna tuning.&nbsp; </li>
+    <li>
+    <p style="line-height: 150%">Variable Supply voltage (1.8V to 4 V)</li>
+    <li>
+    <p style="line-height: 150%">Max output power 2.5 dBm</li>
+  </ul>
+  <p style="line-height: 150%"><b>Figures of Micrf011 (Rx):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </b></p>
+  <ul>
+    <li>
+    <p style="line-height: 150%">Complete ASK/OOK receiver on Chip</li>
+    <li>
+    <p style="line-height: 150%">Frequency 300 to 440 MHz</li>
+    <li>
+    <p style="line-height: 150%">Data rates to 2.5kbps (SWP),10kbps (Fixed)</li>
+    <li>
+    <p style="line-height: 150%">Automatic antenna tuning.</li>
+    <li>
+    <p style="line-height: 150%">Low power consumption</li>
+    <li>
+    <p style="line-height: 150%">Receiver sensitivity is -103 dbm</li>
+  </ul>
+</blockquote>
+<p style="line-height: 150%">&nbsp;<b><font size="5">&nbsp; 2. Frequency and 
+Range calculation </font></b></p>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>The Tx 
+frequency is set around 400 MHz. (Calculation based on Micrf104 and Micrf011)</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> 
+Pr</b>( received power),&nbsp; <b>Pt</b>( transmitted power ),<b>PL</b> (power loss), Gt , Gr&nbsp; 
+Tx/Rx antenna gain.&nbsp; </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> 
+Pr</b> = <b>Pt</b> + <b>Gt</b> + <b>Gr</b> - 20log( 4<font face="Arial Black">π / </font>
+<font face="新細明體">λ)&nbsp; ... free space</font></p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Using the power budget for cellular radio</font></p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<b>PL</b> = PL (do) + 10n log (<b>d</b>/do) ...long distance model.</font></p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+do = free space reference distance, set to 1 m </font></p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+PL(1m) = 24.4829 dB</font></p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+n= 2.7 ~ 3.5 for Urban area cellular radio&nbsp; </font></p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Spec. of Micrf104 and Micrf011&nbsp; </font></p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<b>Pr</b> min = -103 dBm , <b>Pt</b> max. = 2.5 dBm&nbsp; <b>PL</b> max&nbsp; </font>&#8776;<font face="新細明體"> 
+100 dB </font></p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+100 = 24.48 + 27log(<b>d</b>/1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+</p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> 
+d</b>= 625 m when n=2.7 </font></p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<b>d</b>=143 m&nbsp; when n=3.5</font></p>
+<p style="line-height: 150%"><font size="5" face="新細明體">3. </font><b><font size="5">Crystal and Rx mode selection. </font></b>
+</p>
+<ul>
+  <li>
+<p style="line-height: 150%"><b><font size="4">Transmitter ( Micrf104 )&nbsp;&nbsp; ftx = 32 x fref
+</font> </b></p>
+  </li>
+</ul>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Crystal oscillator is chosen because&nbsp; it provide accurate and stable 
+oscillation.&nbsp; We find 12MHz crystal, so ftx = 32 x 12 <b>=384MHz </b> </p>
+<ul>
+  <li>
+<p style="line-height: 150%">&nbsp;<b><font size="4">Receiver ( Micrf011)</font></b></p>
+  </li>
+</ul>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+There are two operating modes in receiver, Fix mode and Sweep mode.</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Fix mode</b></p>
+<p style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</b>In Fixed mode, Rx frequency is exactly the same as Tx frequency. It provide 
+higher Rx speed (10kps)</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+flo (Internal Local Oscillator)= ftx <span lang="en"><font face="Arial">± </font>
+<font face="新細明體">1.064 * ( ftx / 390)&nbsp; </font></span></p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+frf = flo / 64.5&nbsp; </p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+for ftx = 384 MHz , frf = 5.96973 MHz or or 5.93726 MHz</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unfortunately, we can't find oscillators in either the frequency.</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>&nbsp; Sweep mode</b></p>
+  <blockquote>
+    <p style="line-height: 150%; margin-left:10" align="left">&nbsp;&nbsp;&nbsp; 
+    In sweep mode, the internal local oscillator is swept across a band of 
+    frequency in the vicinity of a certain&nbsp; frequency <b>(frx).
+    </b></p>
+    <p style="line-height: 150%; margin-left:10" align="left">&nbsp;&nbsp;&nbsp;The advantage is that we don't have to set Tx / Rx at exactly the same 
+    frequency. The disadvantages are :&nbsp; </p>
+    <ol>
+      <li>
+    <p style="line-height: 150%; margin-left:10" align="left">the upper&nbsp; limit on 
+    data rate is approximately 2.5kbps.</p>
+      </li>
+      <li>
+    <p style="line-height: 150%; margin-left:10" align="left">range penalty 
+    occurs If there exists a competing signal of sufficient strength in this 
+    small&nbsp;&nbsp;&nbsp; frequency band. 2.5 kbps is enough for us to report&nbsp;&nbsp; 
+    location data. </p>
+      </li>
+    </ol>
+  </blockquote>
+  <p style="line-height: 150%; margin-left:10" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The sweeping range is&nbsp; <span lang="en"><font face="Arial">± </font>
+  <font face="新細明體">&nbsp;0.5% of frx.&nbsp; The crystal oscillator we can find 
+  best is&nbsp; <b>5.9904 MHz</b> (frf), which can provide </span> <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span lang="en">384.88MHz </span> </b> <span lang="en">in</span></font><font face="新細明體"> <span lang="en">&nbsp;frx</span> 
+  (frx = 64.5 x frf)<span lang="en">.&nbsp; The 
+  available receiving range is frx&nbsp; </span> </font> <span lang="en"><font face="Arial">± </font>
+  <font face="新細明體">&nbsp;0.5% = 386.80 MHz to 382.95MHz that covers our Tx 
+  frequency, 384 MHz.&nbsp;&nbsp; </span> </font></p>
+  <p style="line-height: 150%" align="left">&nbsp;&nbsp;&nbsp;&nbsp; </p>
+  <div align="center">
+    <center>
+  <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="52%" id="AutoNumber1" height="66">
+    <tr>
+      <td width="50%" height="33" align="center">
+      <p align="center" style="line-height: 150%">Tx Frequency</td>
+      <td width="50%" height="33" align="center">
+      <p style="line-height: 150%">384 MHz</td>
+    </tr>
+    <tr>
+      <td width="50%" height="32" align="center">
+      <p style="line-height: 150%">Rx Frequency</td>
+      <td width="50%" height="32" align="center">
+      <p style="line-height: 150%">382.95MHz ~ 386.80MHz</td>
+    </tr>
+</table>
+    </center>
+</div>
+  <p style="line-height: 150%" align="left">　</p>
+  <p style="line-height: 150%" align="left"><span lang="en-us">
+  <font face="新細明體"><font size="5">4</font>.<b><font size="5">&nbsp; Build Tx / 
+  Rx module</font></b></font></span></p>
+  <p style="line-height: 150%" align="left"><span lang="en-us">
+  <font face="新細明體" size="5"><b>&nbsp;&nbsp;&nbsp; </b></font><font face="新細明體">
+  If you try to buy less than 10 chips from Web, shipping fee is usually&nbsp; 
+  more expensive than the price of IC's.&nbsp; What you can do is to ask samples 
+  from dealers. Most of them are willing to provide some chips &lt;10 to students.&nbsp;
+  </font></span></p>
+  <ul>
+    <li>
+  <p style="line-height: 150%" align="left"><span lang="en-us">
+  <font face="新細明體" size="4">Basic Transmitter Module </font></span></p>
+    </li>
+</ul>
+  <p style="line-height: 150%" align="left"><span lang="en-us">
+  <font face="新細明體"><b>&nbsp;&nbsp;&nbsp; </b>Micrf104 is in SOIC package, which 
+  is smaller than DIP package and <b>can not</b> be plugged on breadboard.</font></span> 
+  As a result, first we glue it on a small pc board, when it is fully dried, 
+  connect metal fine wires&nbsp; and it's pin by soldering. It must be done very 
+  carefully because the soldering point of wire and pin is small and is very 
+  easy to short another pins. Avoid touching pins directly by soldering tip, it 
+  might burn down the chip. </p>
+  <p style="line-height: 150%" align="center">&nbsp;&nbsp;&nbsp; This chip could 
+  be divided in to voltage convertion part and RF transmission part. The fist 
+  part is to convert input voltage (1.8 ~ 4 V) to 5 V,
+  <img border="0" src="104.jpg" width="300" height="225"></p>
+  <p style="line-height: 150%" align="left">&nbsp;which will be used in RF 
+  transmission part.&nbsp; The value of surrounding capacitor and inductors are 
+  listed in the manual.</p>
+  <ol>
+    <li>
+  <p style="line-height: 150%" align="left">The suggested&nbsp; inductor is 
+  22uH, but the smallest one we can find is 100 uH, so we make 4 100uH in 
+  parallel and it becomes 25u H. </p>
+    </li>
+    <li>
+  <p style="line-height: 150%" align="left">&nbsp;To work in Sweep mode, pin12 
+  should be high.&nbsp;&nbsp;&nbsp;&nbsp; </p>
+    </li>
+    <li>
+  <p style="line-height: 150%" align="left">&nbsp;Pin11 is to control Tx power. 
+  To have max. power, Pin11 must&nbsp; &gt; 0.45 V. A another power supply is need.</p>
+    </li>
+    <li>
+  <p style="line-height: 150%" align="left">&nbsp;A temporary Loop antenna could 
+  be done by&nbsp; a wire connecting&nbsp; ANTM(PIN7) and ANTP(PIN8) </p>
+    </li>
+    </ol>
+  <p style="line-height: 150%" align="left">　</p>
+  <ul>
+    <li>
+  <p style="line-height: 150%" align="left"><b><span lang="en-us">
+  <font face="新細明體" size="4">Basic Receiver </font></span></b>
+  <span lang="en-us"><b><font face="新細明體" size="4">Module</font></b></span></p>
+    </li>
+</ul>
+  <p style="line-height: 150%" align="left"><span lang="en-us">
+  <font face="新細明體">&nbsp;&nbsp;&nbsp; Comparing to transmitter,&nbsp; receiver 
+  is easier to be done. The Rx IC ( Micrf011) come in DIP&nbsp; package. To 
+  prevent burning down it when soldering it, we solder a socket on PCB first and 
+  plug in the IC when all the components are in position. </font></span> </p>
+  <p style="line-height: 150%" align="left">　</p>
+  <ol>
+    <li>
+  <p style="line-height: 150%" align="left"><span lang="en-us">
+  <font face="新細明體">Optima demodulator bandwidth is 0.65/Minimum Pulse Width =
+  <b>1.560k for 2400kbps </b>and <b>0.78k for 1200kbps.</b></font></span></p>
+    </li>
+    <li>
+  <p style="line-height: 150%" align="left"><span lang="en-us">
+  <font face="新細明體">Antenna is a 1/4 </font></span>
+<font face="新細明體">λ Dipole Antenna. We use a piece of wire with length 19.5 cm. </font> </p>
+    </li>
+    <li>
+  <p style="line-height: 150%" align="left"><font face="新細明體">Pin 14 must be 
+  enable to enter Sweep mode. </font> </p>
+    </li>
+    </ol>
+  <p style="line-height: 150%" align="center">
+  <img border="0" src="011.jpg" width="300" height="225"></p>
+  <p style="line-height: 150%" align="left"><b><font face="新細明體" size="5">5. First 
+  Test </font> </b> </p>
+  <p style="line-height: 150%" align="left"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp; 
+  Before running channel test, we do the following check.</font></p>
+  <p style="line-height: 150%" align="left"><font face="新細明體">&nbsp;&nbsp;&nbsp;
+  <b><font size="4">&nbsp;</font>Transmitter :</b></font></p>
+  <ol>
+    <li>
+  <p style="line-height: 150%" align="left"><font face="新細明體">Is Pin3 (5V)&nbsp; 
+  5 V ?</font></p>
+    </li>
+    <li>
+  <p style="line-height: 150%" align="left"><font face="新細明體">Is Pin14 (EN), Pin 
+  6(RFSTBY) enable ?</font></p>
+    </li>
+    <li>
+  <p style="line-height: 150%" align="left"><font face="新細明體">Is Pin10 (VDDRF) 5 
+  V?</font></p>
+    </li>
+    <li>
+  <p style="line-height: 150%" align="left"><font face="新細明體">Is crystal 
+  oscillator working ? (Use oscilloscope )</font></p>
+    </li>
+    <li>
+  <p style="line-height: 150%" align="left"><font face="新細明體">Is Pin11(Power 
+  control) at the voltage you want ? </font> </p>
+    </li>
+</ol>
+  <p style="line-height: 150%" align="left"><font face="新細明體">&nbsp;&nbsp;&nbsp;
+  <b>&nbsp; Receiver:</b></font></p>
+  <ol>
+    <li>
+  <p style="line-height: 150%" align="left"><font face="新細明體">Is Pin14(SWEN) 
+  enable ?</font></p>
+    </li>
+    <li>
+  <p style="line-height: 150%" align="left"><font face="新細明體">Is crystal 
+  oscillator working ?(Use oscilloscope)</font></p>
+    </li>
+</ol>
+  <p style="line-height: 150%" align="left"><font face="新細明體">&nbsp;&nbsp;&nbsp; 
+  After the checks, we can hook up Function Generator (FG)&nbsp; to Tx and 
+  Oscilloscope to Rx.&nbsp;&nbsp; Make sure the FG signal comply with the </font> </p>
+  <p style="line-height: 150%" align="left"><font face="新細明體">&nbsp;&nbsp;&nbsp; 
+  input requirement&nbsp; of Tx IC .&nbsp; ( 0 ~ 5 V )</font></p>
+  <p style="line-height: 150%" align="left"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp; 
+  It works !&nbsp; the Oscilloscope shows the correct wave form. </font> </p>
+  <p style="line-height: 150%" align="left"><font face="新細明體">
+  <a href="chapter3.htm">&nbsp;&nbsp;&nbsp; The next step is to develop a 
+  program and&nbsp; use PC to run a real &quot;data&quot; test...</a></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+  
+</body>
+
+</html>

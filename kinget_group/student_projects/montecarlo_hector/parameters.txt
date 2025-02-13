@@ -1,0 +1,52 @@
+#Written by Hector Hung, Shouri Chatterjee and Professor Peter Kinget
+# Copyright (C) 2004 by the authors and Columbia Integrated Systems
+# Laboratory.
+
+# There is no warranty or support and we cannot be held liable in any way.
+# Everyone is permitted to copy verbatim copies of the code including
+# this message.
+
+# This is a sample parameters file
+# blank lines and lines that start with a '#' are ignored
+
+# The first few lines specify the deviation and shift
+# for capacitors, resistors, and inductors
+
+# the format of the line is:
+# "device <deviation> <shift>"
+
+capacitor   0.01  -0.10  #this sets capacitor deviation to 1% and shift to 10%
+resistor   -0.10   0.10	 #both values are in decimals and not percents
+inductor    0.05    0.01
+
+
+# save lines indicate what voltage node or current node to save
+# the format of save lines is:
+# 'save <node1>'
+
+#save net13
+#save net17
+save V0:n
+save V2:n
+#save I1:1
+
+
+# all other lines are treated as MOSFET parameter lines
+# file format is:
+# "modelname param1=<value1> param2=<value2> ... paramn=<valuen>'
+# parameters can be passed in any order
+
+# delvt = V
+# db_b = %
+# avt = V*m
+# Ab = %*m
+# m = unitless
+
+# if no values exist, it is assumed that standard deviations of Vt and u are zero
+# thus, they will be zero as their means are zero.
+
+
+p_18_mm
+n_bpw_18_mm
+n_zero_18_mm
+nch delvt=0.1 db_b=0.01 avt=0.1 Ab=.03

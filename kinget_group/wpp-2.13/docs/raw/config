@@ -1,0 +1,4 @@
+@GEOCITIES=@
+@LOCAL_DOCS=y@
+
+@INCLUDECFG config.common@

@@ -1,0 +1,567 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>inputorganizer</title>
+</head>
+<body>
+<div style="text-align: center;"><big><big><big><big><span
+ style="font-family: impact;"><big style="color: rgb(51, 51, 255);"><span
+ style="font-family: forte;">M</span></big>onte <big
+ style="color: rgb(51, 51, 255);"><span style="font-family: forte;">C</span></big>arlo
+<big style="color: rgb(51, 51, 255);"><span style="font-family: forte;">S</span></big>imulation</span></big></big></big></big><br>
+</div>
+<div style="text-align: center;"><big><big><big><big><big><span
+ style="font-family: impact;"></span></big></big></big></big></big>
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;"><a href="main.html">[<big><big><big><big><big><span
+ style="font-family: impact;"></span></big></big></big></big></big>main]</a>
+<a
+ href="file:///D:/My%20Documents/Fall%202004/summer%20research/inputrandomizer.html">[inputrandomizer]</a>
+<a href="RunSpectre.html">[runspectre]</a>
+<a href="outputorganizer.html">[outputorganizer]</a>
+<a href="MakeGraph.html">[makegraph]</a> <a
+ href="parameters%20file.html">[parameters
+file]</a> <a href="guided%20tutorial.html">[guided
+tutorial]</a> <a href="work%20summary.html">[work
+summary]</a> <a href="downloads.html">[downloads]</a>
+</div>
+</div>
+<a href="downloads.html"></a></div>
+</div>
+<a href="work%20summary.html"></a></div>
+</div>
+<a href="work%20summary.html"></a></div>
+</div>
+<div style="text-align: center;"><big style="font-weight: bold;"><big><big><big><big><span
+ style="font-family: impact;"></span></big></big></big><span
+ style="font-weight: bold;"><span
+ style="font-family: forte; color: rgb(255, 0, 0);">I</span>nput </span></big></big><big
+ style="font-weight: bold;"><big><span style="font-weight: bold;"><span
+ style="font-family: forte; color: rgb(255, 0, 0);">R</span></span></big></big><big
+ style="font-weight: bold;"><big><span style="font-weight: bold;">andomizer<br>
+<small><br>
+</small></span></big></big>
+<div style="text-align: left;">This program takes in parameters: input
+netlist, number of repetitions and the parameters file.<small><br>
+</small><big><small>In this case, the input
+netlist is input.scs, there are fiverepetitions and the deviations
+file is called parameters.txt.</small></big><big
+ style="font-weight: bold;"><small><br>
+<br>
+Click <a href="MCInputRandomizer.pl">here</a> to download the
+MCInputRandomizer.pl file only.<br>
+</small></big><big style="font-weight: bold;"><small>Click <a
+ href="downloads.html">here </a>to go to the downloads page.</small></big><br>
+<big><small><small><br>
+<br>
+</small></small></big><big><small><small>#!/usr/bin/perl -w</small></small></big><br>
+<big><small><small>#Written by Hector Hung, Shouri Chatterjee and
+Professor Peter Kinget <br>
+# Copyright (C) 2004 by the authors and Columbia Integrated Systems <br>
+# Laboratory.<br>
+<br>
+# There is no warranty or support and we cannot be held liable in any
+way.<br>
+# Everyone is permitted to copy verbatim copies of the code including <br>
+# this message.<br>
+<br>
+<br>
+# MCInputRandomizer - Monte Carlo Simulation Input Randomizer<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+takes a Spectre netlist as an input, and<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+generates variations of the netlist<br>
+<br>
+</small></small></big>
+<div style="position: absolute; top: 615px; left: 220px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<big><small><small><br>
+<span style="background-color: rgb(255, 255, 102);"># usage:
+MCInputRandomizer.pl &lt;input_netlist.scs&gt;
+&lt;num_outputs&gt; &lt;deviation_file&gt;</span><br>
+#constants:<br>
+<br>
+my $EXECNAME = "MCInputRandomizer.pl";&nbsp; #filename of the script<br>
+my $RESULTPATH = "results/";&nbsp; </small></small></big><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--
+Modify here to change where results are placed</span><br>
+<big><small><small><br>
+#####################<br>
+#&nbsp;&nbsp; INITIALIZATION <br>
+#####################<br>
+<br>
+#check and parse parameters<br>
+if (scalar(@ARGV) != 3) {&nbsp; </small></small></big><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--
+Makes sure there are 3 input parameters: input netlist, total outputs
+and deviations file</span><br>
+<big><small><small>&nbsp;&nbsp;&nbsp; print "$EXECNAME: Monte Carlo
+Simulation Input
+Randomizer takes a Spectre\n";<br>
+&nbsp;&nbsp;&nbsp; print
+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+netlist and generates variations of the netlist\n";<br>
+&nbsp;&nbsp;&nbsp; print "usage: $EXECNAME &lt;input_netlist.scs&gt;
+&lt;num_outputs&gt; &lt;deviation_file&gt;\n";<br>
+&nbsp;&nbsp;&nbsp; exit;<br>
+}<br>
+$InputNetlist&nbsp;&nbsp; = $ARGV[0] || die "$EXECNAME: netlist input
+file not specified";<br>
+$TotalOutputs&nbsp;&nbsp; = $ARGV[1] || die "$EXECNAME: number of runs
+not specified";<br>
+$DeviationsFile = $ARGV[2] || die "$EXECNAME: deviations file not
+specified";<br>
+<br>
+</small></small></big>
+<div style="position: absolute; top: 718px; left: 209px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<big><small><small>#remove previous results, and recreate results
+directory,<br>
+#where the output netlists will be stored<br>
+`rm -rf $RESULTPATH`;<br>
+mkdir("$RESULTPATH", 0755)<br>
+&nbsp;&nbsp;&nbsp; || die "$EXECNAME: cannot create results directory:
+$!";<br>
+<br>
+#### Initalize Variables<br>
+#my @MOSFETsUsed;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #list of model
+names of the MOSFETs used (eg. "nch" )<br>
+@VoltageNodesUsed = (); #list of voltage nodes used (eg. "v(net1)" )<br>
+@CurrentNodesUsed = (); #list of current nodes used (eg. "i(v0)" )<br>
+$ResDev = 0;<br>
+$ResShift = 0;<br>
+$CapDev = 0&nbsp; ;</small></small></big><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--
+Add code here if more devices and parameters need to be saved</span><br>
+<big><small><small>$CapShift = 0;<br>
+$IndDev = 0;<br>
+$IndShift = 0;<br>
+%MOSFETSpecs = ();<br>
+%MOSFETSUsedByInput = ();<br>
+&amp;processDeviationsFile;<br>
+print "save @VoltageNodesUsed @CurrentNodesUsed\n";<br>
+<br>
+<br>
+</small></small></big>
+<div style="position: absolute; top: 1078px; left: 279px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<big><small><small><br>
+############################<br>
+#&nbsp;&nbsp; GENERATE OUTPUT FILES<br>
+############################<br>
+<br>
+#generate 'TotalOutputs' number of randomized netlists<br>
+for ($OutputNumber=1; $OutputNumber&lt;=$TotalOutputs; $OutputNumber++)
+{<br>
+<br>
+&nbsp;&nbsp;&nbsp; #pick appropriate filename format for output files<br>
+&nbsp;&nbsp;&nbsp; @temp = split(/\//, $InputNetlist);&nbsp; #split
+filename and path<br>
+&nbsp;&nbsp;&nbsp; @temp = pop(@temp);<br>
+&nbsp;&nbsp;&nbsp; @temp = split(/\./, $temp[0]); #separate filename
+from file extension<br>
+&nbsp;&nbsp;&nbsp; $OutputFilename = "$RESULTPATH" . $temp[0] .
+$OutputNumber . "." . $temp[1];<br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp; #open input netlist and new output file stream<br>
+&nbsp;&nbsp;&nbsp; open (IN, $InputNetlist)<br>
+&nbsp;&nbsp;&nbsp; || die "$EXECNAME: cannot open input file
+$InputNetlist";<br>
+&nbsp;&nbsp;&nbsp; open (OUT, "&gt;$OutputFilename")<br>
+&nbsp;&nbsp;&nbsp; || die "$EXECNAME: cannot create output file&nbsp;
+$OutputFilename";<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; while (&lt;IN&gt;) {<br>
+<br>
+&nbsp;&nbsp;&nbsp; #combine multiple lines if necessary (handle lines
+at end with '\')<br>
+&nbsp;&nbsp;&nbsp; while (s/(^.*)\\$/$1/) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; chomp;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $temp=$_;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $lineb =&lt;IN&gt;;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; chomp $lineb;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $_ = $temp . $lineb;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; s/\s+/ /g;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $_.="\n";<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+</small></small></big>
+<div style="position: absolute; top: 1838px; left: 408px;"><span
+ style="font-weight: bold;"><span
+ style="background-color: rgb(255, 255, 102);"></span><br>
+</span></div>
+<big><small><small>&nbsp;&nbsp;&nbsp; #CAPACITORS<br>
+&nbsp;&nbsp;&nbsp; #modify capacitor value by incorporating shift and
+deviation&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; if (m/(^[ ]*c.* c=[ ]*)([0123456789\.]*)(.*$)/i)
+{&nbsp; </small></small></big><span style="font-weight: bold;"><span
+ style="background-color: rgb(255, 255, 102);">&lt;-- copy this if/else
+loop if similar devices are to be added</span></span><br>
+<big><small><small>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $base = $1;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $value = $2;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $expo = $3;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if ($value =~ m/[0-9\.]/) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+$value=(&amp;RandomGaussian*$CapDev*$value)+$value*(1+$CapShift);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; print OUT "$base$value$expo\n";<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; } else { print OUT; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #RESISTORS<br>
+&nbsp;&nbsp;&nbsp; #modify resistor value by incorporating shift and
+deviation<br>
+&nbsp;&nbsp;&nbsp; elsif (m/(^[ ]*r.* r=[ ]*)([0123456789\.]*)(.*$)/i) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $base = $1;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $value = $2;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $expo = $3;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if ($value =~ m/[0-9\.]/) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+$value=(&amp;RandomGaussian*$ResDev*$value)+$value*(1+$ResShift);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; print OUT "$base$value$expo\n";<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; } else { print OUT; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #INDUCTORS<br>
+&nbsp;&nbsp;&nbsp; #modify inductor value by incorporating shift and
+deviation<br>
+&nbsp;&nbsp;&nbsp; elsif (m/(^[ ]*l.* l=[ ]*)([0123456789\.]*)(.*$)/i) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $base = $1;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $value = $2;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $expo = $3;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if ($value =~ m/[0-9\.]/) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+$value=(&amp;RandomGaussian*$IndDev*$value)+$value*(1+$IndShift);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; print OUT "$base$value$expo\n";<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; } else { print OUT; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #MOSFET<br>
+</small></small></big>
+<div style="position: absolute; top: 2354px; left: 284px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<big><small><small>&nbsp;&nbsp;&nbsp; elsif (m/^[ ]*(m\d*) (\(.*\))
+(\w*) (.*$)/i) {&nbsp;&nbsp; </small></small></big><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--This
+line matches the &lt;IN&gt; line&nbsp; for MOS model and other
+parameters</span><br>
+<big><small><small>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $mos_number =
+$1; #spectre fet id<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $mos_nodes = $2; #fet's nodes<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $mos_model = $3; #fet's model<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $mos_stats = $4; #fet's parameters<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; #mark mosfet used if not already
+used<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $MOSFETSUsedByInput{$mos_model} =
+"";<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $temp = $MOSFETSpecs{$mos_model};<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; #params for this type of fet from
+the deviations file<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; my %mos_params = %$temp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; #params of this particular
+instance of the fet<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; my %mos_instance_params;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; #fill mos_instance_params with
+values<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; @_= split(/\s+/,$mos_stats);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; foreach my $params (@_) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; my @temp =
+split(/\s*=\s*/,$params);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; for (my $i=0; $i &lt;
+scalar(@temp); $i+=2) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+$mos_instance_params{$temp[$i]} = $temp[$i+1];<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; #UPDATE PARAMETERS OF THE MOSFET
+INSTANCE<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; #first, update m value if needed<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if&nbsp;
+($mos_instance_params{"m"} &amp;&amp;&nbsp; $mos_params{"m"} ) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $mos_instance_params{"m"} =<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+(&amp;RandomGaussian*$mos_params{"m"}+1)* $mos_instance_params{"m"};<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $w =
+metricToDecimal($mos_instance_params{"w"});<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $l =
+metricToDecimal($mos_instance_params{"l"});<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $gain
+=$mos_params{"Ab"}/sqrt((2*$w*$l))*&amp;RandomGaussian
++$mos_params{"db_b"};<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+$Vt=$mos_params{"avt"}/sqrt((2*$w*$l))*&amp;RandomGaussian
++$mos_params{"delvt"};<br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $mos_instance_params{"gain"} =
+$gain;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+$mos_instance_params{"Vt"}&nbsp;&nbsp; = $Vt;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; <br>
+<br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $mos_line = "I$mos_number
+$mos_nodes N$mos_model";<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; foreach $param (keys
+%mos_instance_params) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $mos_line .= "
+$param=$mos_instance_params{$param}";<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; print OUT "$mos_line\n" ;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; #comment out save line, and print our own save line
+(print desired nodes)<br>
+&nbsp;&nbsp;&nbsp; elsif (m/(^[ ]*save.*$)/i) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $save = $1;<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; print OUT "//original save line:
+$save\n"; #copies original save line<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; print OUT "save @VoltageNodesUsed
+@CurrentNodesUsed\n";<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp; #if nothing else matched, reproduce line w/o
+modificiation<br>
+&nbsp;&nbsp;&nbsp; else {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; print OUT;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; }#end of while (&lt;IN&gt;)<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; #print subcircuits each mosfet model<br>
+&nbsp;&nbsp;&nbsp; foreach $mod_mos (keys %MOSFETSUsedByInput) {<br>
+&nbsp;&nbsp;&nbsp; &amp;printMOSFETSubcircuit($mod_mos);<br>
+&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp; <br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp; #close file streams<br>
+&nbsp;&nbsp;&nbsp; close(IN) || die "can't close $InputNetlist";<br>
+&nbsp;&nbsp;&nbsp; close(OUT) || die "can't close $OutputFilename";<br>
+}<br>
+<br>
+</small></small></big>
+<div style="position: absolute; top: 3576px; left: 261px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<big><small><small><br>
+#convert eg -10m to -0.01<br>
+sub metricToDecimal {&nbsp;&nbsp; </small></small></big><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--Changes
+Metric Suffix to Numeric Exponents of 10</span><br>
+<big><small><small>&nbsp;&nbsp;&nbsp; $number = shift;<br>
+&nbsp;&nbsp;&nbsp; $number =~ m/(-?\d*\.?\d*)(\w?)/;<br>
+&nbsp;&nbsp;&nbsp; $value = $1;<br>
+&nbsp;&nbsp;&nbsp; $suffix = $2;<br>
+&nbsp;&nbsp;&nbsp; return $value if ($suffix eq "");<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; $value *= 10^-12 if ($suffix =~ s/^p$//i);<br>
+&nbsp;&nbsp;&nbsp; $value *= 10^-9&nbsp; if ($suffix =~ s/^n$//i);<br>
+&nbsp;&nbsp;&nbsp; $value *= 10^-6&nbsp; if ($suffix =~ s/^u$//i);<br>
+&nbsp;&nbsp;&nbsp; $value *= 10^-3&nbsp; if ($suffix =~ s/^m$//i);<br>
+&nbsp;&nbsp;&nbsp; $value *= 10^3&nbsp;&nbsp; if ($suffix =~ s/^k$//i);<br>
+&nbsp;&nbsp;&nbsp; $value *= 10^6&nbsp;&nbsp; if ($suffix =~ s/^M$//i);<br>
+&nbsp;&nbsp;&nbsp; $value *= 10^9&nbsp;&nbsp; if ($suffix =~ s/^g$//i);<br>
+&nbsp;&nbsp;&nbsp; $value *= 10^12&nbsp; if ($suffix =~ s/^t$//i);<br>
+&nbsp;&nbsp;&nbsp; return $value;<br>
+}<br>
+<br>
+</small></small></big>
+<div style="position: absolute; top: 3905px; left: 378px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<big><small><small>#open and prase the user-specified devitations file<br>
+sub processDeviationsFile {&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; </small></small></big><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--
+Opens the deviations file and parses information to be saved</span><br>
+<big><small><small>&nbsp;&nbsp;&nbsp; print "Starting parsing
+deviations file
+$DeviationsFile...\n";&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; $ResDev&nbsp;&nbsp; = 0;<br>
+&nbsp;&nbsp;&nbsp; $ResShift = 0;<br>
+&nbsp;&nbsp;&nbsp; $CapDev&nbsp;&nbsp; = 0;<br>
+&nbsp;&nbsp;&nbsp; $CapShift = 0;<br>
+&nbsp;&nbsp;&nbsp; $IndDev&nbsp;&nbsp; = 0;<br>
+&nbsp;&nbsp;&nbsp; $IndShift = 0;<br>
+&nbsp;&nbsp;&nbsp; open (DEV, $DeviationsFile);<br>
+&nbsp;&nbsp;&nbsp; while (defined ($line = &lt;DEV&gt;)) {<br>
+&nbsp;&nbsp;&nbsp; #chomp and remove comments<br>
+&nbsp;&nbsp;&nbsp; chomp($line);<br>
+&nbsp;&nbsp;&nbsp; $line =~ s/\#.*//;<br>
+&nbsp;&nbsp;&nbsp; trim($line);<br>
+<br>
+&nbsp;&nbsp;&nbsp; #ignore blank lines<br>
+&nbsp;&nbsp;&nbsp; if ($line =~ m/^$/) {<br>
+&nbsp;&nbsp;&nbsp; } <br>
+&nbsp;&nbsp;&nbsp; #parse capacitor line<br>
+&nbsp;&nbsp;&nbsp; elsif ($line =~ m/^capacitor/i) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; @_= split(/\s+/,$line);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $CapDev = $_[1];<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $CapShift = $_[2];<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #parse resistor line<br>
+&nbsp;&nbsp;&nbsp; elsif ($line =~ m/^resistor/i) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; @_= split(/\s+/,$line);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $ResDev = $_[1];<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $ResShift = $_[2];<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #parse inductor line<br>
+&nbsp;&nbsp;&nbsp; elsif ($line =~ m/^inductor/i) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; @_= split(/\s+/,$line);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $IndDev = $_[1];<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $IndShift = $_[2];<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #parse save line<br>
+&nbsp;&nbsp;&nbsp; elsif ($line =~ m/^save/i) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; @_= split(/\s+/,$line);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if ($_[1] =~ m/^v/) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; push(@VoltageNodesUsed,$_[1]);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; else {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; push(@CurrentNodesUsed,$_[1]);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #parse mosfet lines<br>
+&nbsp;&nbsp;&nbsp; else {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; #get model, then split each token
+by = to get param=value sets<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; @_= split(/\s+/,$line);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; my $mos_model = shift(@_);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; my %mosparams;<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; foreach my $param (@_) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; my @temp =
+split(/\s*=\s*/,$param);<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; for (my $i=0; $i &lt;
+scalar(@temp); $i+=2) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+$mosparams{$temp[$i]} = $temp[$i+1];<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $MOSFETSpecs{$mos_model}&nbsp; =
+\%mosparams<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp; &amp;printDeviationsInfo;<br>
+&nbsp;&nbsp;&nbsp; close (DEV);<br>
+&nbsp;&nbsp;&nbsp; print "Done parsing deviations file
+$DeviationsFile...\n\n";<br>
+}<br>
+<br>
+#print all information parsed from the deviations file<br>
+sub printDeviationsInfo {<br>
+&nbsp;&nbsp;&nbsp; print "Voltage Nodes:\t\t@VoltageNodesUsed\n";<br>
+&nbsp;&nbsp;&nbsp; print "Voltage Nodes:\t\t@CurrentNodesUsed\n";<br>
+&nbsp;&nbsp;&nbsp; print "Resistor
+Deviation:\t$ResDev\t\tShift:\t$ResShift\n";<br>
+&nbsp;&nbsp;&nbsp; print "Capacitor
+Deviation:\t$CapDev\t\tShift:\t$CapShift\n";<br>
+&nbsp;&nbsp;&nbsp; print "Inductor
+Deviation:\t$IndDev\t\tShift:\t$IndShift\n";<br>
+&nbsp;&nbsp;&nbsp; foreach $key (sort keys %MOSFETSpecs) {<br>
+&nbsp;&nbsp;&nbsp; $temp = $MOSFETSpecs{$key};<br>
+&nbsp;&nbsp;&nbsp; %hash = %$temp;<br>
+&nbsp;&nbsp;&nbsp; print "MOSFET $key\n";<br>
+&nbsp;&nbsp;&nbsp; foreach $param (sort keys %hash) {<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; print
+"\t$param:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \t$hash{$param}\n";<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp; <br>
+}<br>
+<br>
+#remove trailing and leading whitespace off of a string<br>
+sub trim {<br>
+&nbsp;&nbsp;&nbsp; my $string = shift || return;<br>
+&nbsp;&nbsp;&nbsp; $string =~ s/\s*$//;<br>
+&nbsp;&nbsp;&nbsp; $string =~ s/^\s*//;<br>
+&nbsp;&nbsp;&nbsp; return $string;<br>
+}#sub trim<br>
+<br>
+#generates random numbers with gaussian distribution <br>
+sub RandomGaussian {&nbsp;&nbsp; &nbsp;&nbsp; </small></small></big><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--Generates
+Random Number with a </span><span style="font-weight: bold;"><span
+ style="background-color: rgb(255, 255, 102);">Standard Normal Gaussian
+Distribution</span></span><br>
+<big><small><small>&nbsp;&nbsp;&nbsp; my ($u1, $u2);&nbsp; # uniformly
+distributed random
+numbers<br>
+&nbsp;&nbsp;&nbsp; my
+$w;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # variance,
+then a weight<br>
+&nbsp;&nbsp;&nbsp; my ($g1, $g2);&nbsp; # gaussian-distributed numbers<br>
+<br>
+&nbsp;&nbsp;&nbsp; do {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $u1 = 2 * rand() - 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $u2 = 2 * rand() - 1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $w = $u1*$u1 + $u2*$u2;<br>
+&nbsp;&nbsp;&nbsp; } while ( $w &gt;= 1 );<br>
+<br>
+&nbsp;&nbsp;&nbsp; $w = sqrt( (-2 * log($w))&nbsp; / $w );<br>
+&nbsp;&nbsp;&nbsp; $g2 = $u1 * $w;<br>
+&nbsp;&nbsp;&nbsp; $g1 = $u2 * $w;<br>
+&nbsp;&nbsp;&nbsp; # return both if wanted, else just one<br>
+}#sub RandomGaussian<br>
+<br>
+<br>
+</small></small></big>
+<div style="position: absolute; top: 5724px; left: 418px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<div style="position: absolute; top: 5421px; left: 347px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><span
+ style="font-weight: bold;"><span
+ style="background-color: rgb(255, 255, 102);"></span><br>
+</span></div>
+<big><small><small>#function prints a subcircuit for the passed MOSFET
+model<br>
+sub printMOSFETSubcircuit {&nbsp;&nbsp; &nbsp;&nbsp; </small></small></big><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--Prints
+the subcircuit.&nbsp; modify here if you choose to use a different model</span><br>
+<big><small><small>&nbsp;&nbsp;&nbsp; my $mod_mos = shift || return;
+#grabs element from
+@model<br>
+&nbsp;&nbsp;&nbsp; print OUT "subckt N$mod_mos d g s b\n";<br>
+&nbsp;&nbsp;&nbsp; print OUT "&nbsp;&nbsp;&nbsp; parameters w=1u l=1u
+ad=1p as=1p pd=1u ps=1u Vt=0 gain=0 // subcircuit parameters\n";<br>
+&nbsp;&nbsp;&nbsp; print OUT "&nbsp;&nbsp;&nbsp; vsub (g gp) vsource
+dc=Vt\n";<br>
+&nbsp;&nbsp;&nbsp; print OUT "&nbsp;&nbsp;&nbsp; vtest (d dp) vsource
+dc=0\n";<br>
+&nbsp;&nbsp;&nbsp; print OUT "&nbsp;&nbsp;&nbsp; N$mod_mos (dp gp s b)
+$mod_mos w=w l=l ad=ad as=as pd=pd ps=ps\n";<br>
+&nbsp;&nbsp;&nbsp; print OUT "&nbsp;&nbsp;&nbsp; F0 (d s) cccs
+gain=gain probe=vtest\n";<br>
+&nbsp;&nbsp;&nbsp; print OUT "ends N$mod_mos\n";<br>
+}#sub printMOSFETSubcircuit<br>
+<br>
+</small></small></big><big style="font-weight: bold;"><small><br>
+If you have any questions, please email me at hch2007@columbia.edu </small></big><br>
+<big><small><small><br>
+</small></small></big>
+</div>
+<big style="font-weight: bold;"><big><span style="font-weight: bold;"><br>
+<br>
+</span></big></big></div>
+</body>
+</html>

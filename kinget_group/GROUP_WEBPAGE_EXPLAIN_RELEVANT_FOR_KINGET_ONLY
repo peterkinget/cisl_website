@@ -1,0 +1,9 @@
+
+Use group_webpage_real.prf to synchronize against the server location of
+the files of the group webpage.
+
+Make sure you set the file ownership and permissions!
+
+Use group_webpage_copy.prf to synchronize a copy of the group webpage
+files in the cadserv1 homedirectory of kinget
+

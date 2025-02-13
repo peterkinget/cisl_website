@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>outputorganizer</title>
+</head>
+<body>
+<div style="text-align: center;"><big><big><big><big><span
+ style="font-family: impact;"><big style="color: rgb(51, 51, 255);"><span
+ style="font-family: forte;">M</span></big>onte <big
+ style="color: rgb(51, 51, 255);"><span style="font-family: forte;">C</span></big>arlo
+<big style="color: rgb(51, 51, 255);"><span style="font-family: forte;">S</span></big>imulation</span></big></big></big></big><br>
+</div>
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;">
+<div style="text-align: center;"><a href="main.html">[<big><big><big><big><big><span
+ style="font-family: impact;"></span></big></big></big></big></big>main]</a>
+<a href="inputrandomizer.html">[inputrandomizer]</a>
+<a href="RunSpectre.html">[runspectre]</a>
+<a
+ href="file:///D:/My%20Documents/Fall%202004/summer%20research/outputorganizer.html">[outputorganizer]</a>
+<a href="MakeGraph.html">[makegraph]</a> <a
+ href="parameters%20file.html">[parameters
+file]</a> <a href="guided%20tutorial.html">[guided
+tutorial]</a> <a href="work%20summary.html">[work
+summary]</a> <a href="downloads.html">[downloads]</a>
+</div>
+</div>
+<a href="downloads.html"></a></div>
+</div>
+<a href="downloads.html"></a></div>
+</div>
+<a href="work%20summary.html"></a></div>
+</div>
+<a href="work%20summary.html"></a></div>
+<div style="text-align: center;"><big style="font-weight: bold;"><big><big><big><big><span
+ style="font-family: impact;"></span></big></big></big><span
+ style="font-weight: bold;"><span
+ style="font-family: forte; color: rgb(255, 0, 0);">O</span>utput </span></big></big><big
+ style="font-weight: bold;"><big><span style="font-weight: bold;"><span
+ style="font-family: forte; color: rgb(255, 0, 0);">O</span></span></big></big><big
+ style="font-weight: bold;"><big><span style="font-weight: bold;">rganizer<br>
+<br>
+</span></big></big>
+<div style="text-align: left;">Once again, this program looks into a
+results folder specified specified by the variable $RESULTPATH<br>
+The user should
+be weary that the modified input.scs files are still in the direct
+subdirectory results/<br>
+<big style="font-weight: bold;"><small>Click <a
+ href="MCOutputOrganizer.pl">here</a>
+to download the MCOutputOrganizer.pl file only.<br>
+</small></big><big style="font-weight: bold;"><small>Click <a
+ href="downloads.html">here </a>to go to the downloads page.</small></big><br>
+&nbsp;
+<br>
+<small>
+#!/usr/bin/perl -w</small><br>
+<big><small><small>#Written by Hector Hung, Shouri Chatterjee and
+Professor Peter Kinget <br>
+# Copyright (C) 2004 by the authors and Columbia Integrated Systems <br>
+# Laboratory.<br>
+<br>
+# There is no warranty or support and we cannot be held liable in any
+way.<br>
+# Everyone is permitted to copy verbatim copies of the code including <br>
+# this message.</small></small></big><br>
+<small><br>
+<br>
+<br>
+# MCOutputOrganizer - Monte Carlo Simulation Results Organizer<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+opens the outputs of multiple simulation runs and<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+organizes the output values<br>
+<br>
+<span style="background-color: rgb(255, 255, 102);"># usage:
+MCOutputOrganizer.pl</span><br>
+<br>
+<br>
+#constants:<br>
+my $RESULTPATH = "results/";<br>
+my $EXECNAME = "MCOutputOrganizer.pl";&nbsp; #filename of the script<br>
+<br>
+<br>
+#####################<br>
+#&nbsp;&nbsp; INITIALIZATION <br>
+#####################<br>
+<br>
+#get list of all .out output files in results directory<br>
+$files = `ls $RESULTPATH*.out | xargs`;<br>
+chomp $files;<br>
+<br>
+#gather information about the output, but do not collect data<br>
+$files =~ m/^(\S*)[ .*]?/;<br>
+open(FILE,$1);<br>
+<br>
+<br>
+$mode = 0; #This program has 3 modes. 0=ignore lines, 1=variables
+portion, 2=values portion&nbsp;&nbsp; &nbsp;&nbsp; </small><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--Variable
+for mode select</span><br>
+<small>@VARIABLES = ();<br>
+<br>
+</small>
+<div style="position: absolute; top: 854px; left: 516px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<small>#array of arrays<br>
+#array[0] will be the first var, array[1] second var, array[2] etc.<br>
+@ReferenceArray = (); <br>
+#store number of vars (excluding time/freq)&nbsp;&nbsp; &nbsp;&nbsp; </small><span
+ style="background-color: rgb(255, 255, 102); font-weight: bold;">&lt;--Number
+of simulations run</span><br>
+<small>$num_of_vars= 0;<br>
+$line = 0;<br>
+<br>
+</small>
+<div style="position: absolute; top: 955px; left: 284px;"><span
+ style="background-color: rgb(255, 255, 102); font-weight: bold;"></span><br>
+</div>
+<small>#first loop will read the first file and copy the time column<br>
+while (&lt;FILE&gt;) {<br>
+&nbsp;&nbsp;&nbsp; chomp;<br>
+&nbsp;&nbsp;&nbsp; #ignore lines until 'Variables:... ' line<br>
+&nbsp;&nbsp;&nbsp; if (m/^Variables:/) {<br>
+&nbsp;&nbsp;&nbsp; $mode=1;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #the following lines will be part of the results<br>
+&nbsp;&nbsp;&nbsp; if (m/Values/) {<br>
+&nbsp;&nbsp;&nbsp; $mode=2;<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #now we know all of our
+parameters so we can initiate the 2d array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $num_of_vars =
+scalar(@VARIABLES) -1;&nbsp;&nbsp; &nbsp;&nbsp; </small><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--
+Saves variable number and name</span><br>
+<small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for
+($i=0;$i&lt;$num_of_vars;$i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$ReferenceArray[$i][0] = "";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; next;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; #parse variable description lines<br>
+&nbsp;&nbsp;&nbsp; if ($mode ==1) {<br>
+&nbsp;&nbsp;&nbsp; s/Variables://;<br>
+&nbsp;&nbsp;&nbsp; s/^\s*//;<br>
+&nbsp;&nbsp;&nbsp; @parts = split(/\t+/);<br>
+&nbsp;&nbsp;&nbsp; print "$parts[0]:$parts[1]\n";<br>
+&nbsp;&nbsp;&nbsp; @VARIABLES[$parts[0]] = $parts[1];&nbsp;&nbsp;
+&nbsp;&nbsp; </small><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);">&lt;--
+Saves output numbers</span><br>
+<small>&nbsp;&nbsp;&nbsp; }<br>
+<br>
+</small>
+<div style="position: absolute; top: 1214px; left: 381px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<small>&nbsp;&nbsp;&nbsp; #parse values<br>
+&nbsp;&nbsp;&nbsp; if ($mode ==2) {<br>
+&nbsp;&nbsp;&nbsp; s/^ //;<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @temp = split (/\t+/);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (scalar(@temp) &lt;
+scalar(@VARIABLES+1)) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $_
+.= &lt;FILE&gt;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+chomp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+@temp = split (/\t+/);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for ($i=0;
+$i&lt;$num_of_vars; $i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$temp[1] =~ s/,.*//; #convert imaginary time to real time (drop the 0i)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$ReferenceArray[$i][$line] = "$temp[0]\t$temp[1]"; #stores column
+number and time/frequency<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $line++;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+}<br>
+</small>
+<div style="position: absolute; top: 1395px; left: 307px;"><span
+ style="font-weight: bold; background-color: rgb(255, 255, 102);"></span><br>
+</div>
+<small>close FILE;<br>
+<br>
+<br>
+<span style="background-color: rgb(255, 255, 102);">#for each file,
+gather info</span><br>
+foreach $file (split(' ',$files)) {<br>
+&nbsp;&nbsp;&nbsp; open(FILE,$file);<br>
+&nbsp;&nbsp;&nbsp; $line=0;<br>
+&nbsp;&nbsp;&nbsp; $mode=0;<br>
+&nbsp;&nbsp;&nbsp; while (&lt;FILE&gt;) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; chomp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #ignore lines until
+'Variables:... ' line<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (m/^Variables:/) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$mode=1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (m/Values/) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$mode=2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; next;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #parse values<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ($mode ==2) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s/^
+//;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+@temp = split (/\t+/);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+while (scalar(@temp) &lt; scalar(@VARIABLES+1)) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $_
+.= &lt;FILE&gt;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+chomp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+@temp = split (/\t+/);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+ style="background-color: rgb(255, 255, 102);">#stores result of (net1,
+output1) of current output in ReferenceArray[1][1] etc</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for
+($i=0; $i&lt;$num_of_vars; $i++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#if result is imaginary, convert to a+bi form<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if ($temp[$i+2] =~ m/(.*),(.*)/) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$real = $1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$imag = $2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if ($imag =~ m/\-/) { $ReferenceArray[$i][$line] .= "\t$real" . "$imag"
+."i"; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else { $ReferenceArray[$i][$line] .= "\t$real" ."+" . "$imag" . "i"; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$ReferenceArray[$i][$line] .= "\t$temp[$i+2]";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$line++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+}<br>
+<br>
+<span style="background-color: rgb(255, 255, 102);">#add average column
+and standard deviation column</span><br>
+for ($f=0; $f&lt;scalar(@ReferenceArray); $f++) {<br>
+&nbsp;&nbsp;&nbsp; $ref = $ReferenceArray[$f];<br>
+&nbsp;&nbsp;&nbsp; @ar = @$ref;<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; for ($j=0; $j&lt;scalar(@ar); $j++) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @temp = split(/\s+/,
+$ar[$j]);<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #if more than one column and
+not complex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ((scalar(@temp) &gt; 3)
+&amp;&amp; !($ar[$j] =~ m/i/)) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#ignore value column and x axis column<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+shift @temp; shift @temp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$average =0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$stddev=0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $n
+=0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+foreach $value (@temp) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$average += $value;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $n++;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$average /= $n;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+foreach $value (@temp) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$stddev += ($value - $average) * ($value - $average);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$stddev = sqrt($stddev / ($n-1));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$ReferenceArray[$f][$j] .= "\t" . $average . "\t" . $stddev;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #unhandled: 1 column of
+values || complex numbers<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+}<br>
+<br>
+<br>
+<br>
+<span style="background-color: rgb(255, 255, 102);">#print accumulated
+data to files</span><br>
+for ($f=0; $f&lt;scalar(@ReferenceArray); $f++) {<br>
+&nbsp;&nbsp;&nbsp; #remove bad ';' char from filename<br>
+&nbsp;&nbsp;&nbsp; $temp = $VARIABLES[$f+1];<br>
+&nbsp;&nbsp;&nbsp; $temp =~ s/\:*//g;<br>
+<br>
+&nbsp;&nbsp;&nbsp; open (OUTFILE, "&gt;" . $RESULTPATH .
+"RESULTS$temp");<br>
+&nbsp;&nbsp;&nbsp; $ref = $ReferenceArray[$f];<br>
+&nbsp;&nbsp;&nbsp; @ar = @$ref;<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; for ($j=0; $j&lt;scalar(@ar); $j++) {<br>
+&nbsp;&nbsp;&nbsp; print OUTFILE "$ar[$j]\n" ;<br>
+&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; close OUTFILE;<br>
+}<br>
+<br>
+</small><big style="font-weight: bold;"><small><br>
+If you have any questions, please email me at hch2007@columbia.edu </small></big><br>
+<br>
+<div style="position: absolute; top: 2652px; left: 457px;"><span
+ style="color: rgb(255, 255, 0);"></span><br>
+</div>
+<big style="font-weight: bold;"><big><span style="font-weight: bold;"></span></big></big></div>
+</div>
+</body>
+</html>

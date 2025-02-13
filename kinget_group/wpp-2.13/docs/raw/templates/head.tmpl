@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>@TITLE@</TITLE>
+@INCLUDE meta@
+</HEAD>
+@INCLUDE utils/h_macros@
+<BODY BGCOLOR="#ffffff">
+<FONT @FONT@>
+
+<CENTER>
+<TABLE WIDTH="100%" BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR VALIGN=MIDDLE>
+<TD ALIGN=LEFT><A
+	HREF="http://www.geocities.com/Tokyo/1474/">@HTML_IMAGE(\
+		"@IMG_DIR@tss_logo.gif", "[ The Sunny Spot ]", "BORDER=0")@</A></TD>
+<TD ALIGN=CENTER WIDTH="70%">
+	<FONT @FONT@ COLOR="#ffffff">
+	<FONT SIZE="+1"><B>WPP v@WPP_VERSION@ - The Web Preprocessor</B></FONT><BR>
+	<FONT SIZE="-1">Author : <A HREF="mailto:@EMAIL@">@H_FONTC(\
+		"Marco Lamberto", "#ffffff")@</A></FONT>
+	</FONT>
+</TD>
+<TD ALIGN=RIGHT><A
+	HREF="http://www.geocities.com/Tokyo/1474/wpp/">@HTML_IMAGE(\
+	"@IMG_DIR@pp_by_wpp.gif", "Preprocessed by WPP", "BORDER=0")@</A></TD>
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="@IMG_DIR@null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+@INCLUDE utils/h_macros@
+@IF TSSNAVBAR_URL_R@
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+@IF TSSNAVBAR_URL_L@
+<A HREF="index.html">@H_FONTC("<B>Index</B>",\
+	"#000000")@</A>
+@ENDIF@
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+@IF TSSNAVBAR_URL_L@
+<A HREF="@TSSNAVBAR_URL_L@.html">@H_FONTC("<B>&lt; Previous</B>",\
+	"#000000")@</A>
+@ENDIF@
+&nbsp;&nbsp;
+<A HREF="@TSSNAVBAR_URL_R@.html">@H_FONTC("<B>Next &gt;</B>", "#000000")@</A>
+&nbsp;&nbsp;
+</TD>
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="@IMG_DIR@null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+@ENDIF@
+
+</TABLE>
+</CENTER>
+<P>
+

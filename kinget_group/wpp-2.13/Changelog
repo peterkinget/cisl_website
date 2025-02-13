@@ -1,0 +1,183 @@
+2.13  2000/12/10
+PUBLIC RELEASE 2.13
+* Replaced the last "chop" calls with safer "chomp". The '\n' within macro
+  declared in config files now are kept as in raw and tmpl files. (Martin
+  Fischer)
+* New built-in macros: EVAL and RANDOM.
+
+2.12  2000/11/08
+PUBLIC RELEASE 2.12
+* Fixed a bug into the macro declaration parsing block, extra spaces after the
+  bracket made impossble a correct parsing of the macro arguments.
+  (Martin Fischer)
+* Fixed a bug in depend mode, config files dependencies in some circumstances
+  were printed before a valid makefile target. (Martin Fischer)
+
+2.11  1999/11/29
+PUBLIC RELEASE 2.11
+* Fixed a bug in macro argument expansion inside the IF test. (Petr Prazak)
+* Fixed a serious bug in nested macro expansion, now the macro arguments prefix
+  used internally by wpp is randomized.
+* New built-in macros:
+    FILE_SIZE, FILE_DATE (Petr Prazak)
+    SYSTEM (Bastian Kleineidam)
+* Customizable DATE format through the DATE_FORMAT variable. (Petr Prazak)
+* Stripped the leading spaces and empty lines from the output file. (Petr
+  Prazak)
+
+2.10  1999/05/09
+PUBLIC RELEASE 2.10
+* Requires perl 5.004.
+* Fixed a problem with wpp 2.09 running in some environments that don't set PWD
+  (Jiri Rubes).
+* Fixed a bug when changing the DEFAULT_RAW_EXTENSION from config files (Jiri
+  Rubes).
+
+2.09  1999/03/17
+PUBLIC RELEASE 2.09
+* New variable OUTPUTSUBDIR. By running wpp on "OUTPUTSUBDIR/ex.raw" the
+  output file will be placed into "OUTPUTDIR/OUTPUTSUBDIR/ex.html". 
+* The syntax for some switches (-c, -D, -W) is changed a bit because wpp now
+  uses Getopt::Long for retrieving command line switches.
+* Added POD (plain old documentation) documentation for wpp.
+* Man page generated with pod2man.
+
+2.08  1998/09/23
+PUBLIC RELEASE 2.08
+* The built-in macros: HTML_IMAGE, HTML_IMAGE_SIZEO now returns the value of
+  SRC attribute of the IMG tag between \".
+* When using the -D switch is now checked if you are trying to modify a
+  constant.
+* The ending '/', if present, is removed into TMPLDIR, OUTPUTDIR,
+  DEFAULT_TMPLDIR and DEFAULT_OUTPUTDIR.
+
+2.07  1998/08/31
+PUBLIC RELEASE 2.07
+* Removed the doubled '\n' at the of every line when expanding a macro.
+
+2.06  1998/08/30
+* In config files you can declare and use macros.
+* Now you can do also: @IF VAR=="value"@ and @IF VAR!="value"@.
+* If the $Date$ RCS tag is empty the @DATE@ variable now contains the last
+  modify time or, if the source is STDIN, the current date.
+
+2.05  1998/08/27
+* NEW ADDRESS: http://www.geocities.com/Tokyo/1474/wpp/
+* Clean up of the dependencies generation code.
+* Fixed a bug that didn't print depedencies into the tail template.
+* Fixed a bug into dependencies for images: if the size is already cached
+  the function image_size returns just before printing depedencies.
+
+2.04  1998/08/25
+* New built-in macros: HTML_IMAGE_SIZEO, HTML_IMAGE_WIDTH, HTML_IMAGE_HEIGHT,
+  IMAGE_WIDTH, IMAGE_HEIGHT, CERN2HTML, NCSA2HTML.
+* The image size used by the *IMAGE* macros is cached for avoiding excessive
+  and unnecessary I/O.
+* If a built-in macro reads data from a file, this file will be included into
+  the dependencies list.
+* Fixed a problem with the read-only variable TEMPLATE that, into the raw
+  files, was expanded with the filename value instead of ''.
+* Reorganization of the html manual.
+* Other minor changes.
+
+2.03  1998/08/18
+* Macro calls into variables assignments and macro arguments are detected and
+  expanded.
+
+2.02  1998/07/26
+* Added the HTML_IMAGE built-in macro.
+* The code for removing empty lines was removed because it can break the layout
+  of text putted into <PRE> tags (Colin Turnbull).
+
+2.01  1998/07/13
+* PUBLIC RELEASE 2.01
+* Fixed a missing inclusion of tail template when reading from STDIN and when
+  the input file is specified using a directory prefix (Bastian Kleineidam).
+
+2.00  1998/07/05
+* PUBLIC RELEASE 2.00
+* No limits for number of directives and assignments per line.
+* Better expansion of macros and variables assignments, now you can place
+  variables into a directive (except from the IF test) or a macro arguments.
+* You can use macros within a macro.
+* A line ending with a single '\' will be joined with the next, so you can
+  split long macro declarations, directives or variables assignments.
+* The -d (--depend) switch now print the templates (as 1.34) and the config
+  files dependencies.
+* New switches: -q (--quiet), -g (--debug), -Wall, -Wnone, -W.
+* Extension of raw and template files can be customized through
+  DEFAULT_RAW_EXTENSION and DEFAULT_TMPL_EXTENSION.
+
+1.34  1998/06/19
+* PUBLIC RELEASE 1.34
+* Fixed a bug when using built-in macros inside a macro definition, it was
+  erroneusly expanded while the macro is declared and stored.
+* Slightly changed some regexps into the Date and built-in macros blocks.
+
+1.33  1998/06/14
+* PUBLIC RELEASE 1.33
+* If you don't give any valid filename wpp ends with an usage message.
+* Constants defined through the -D switch now are really constants.
+* Changed the error message when trying to change a costant value or using a
+  reserved keyword for a variable name.
+
+1.32  1998/06/11
+* Added the command line -D switch for allowing the definition of contants.
+  Useful when processing files from STDIN that needs to know and use values of
+  constants like DEFAULT_OUTOUT_DIR (i.e. the HTML_IMAGE_SIZE use this value
+  for retrieving the image file).
+* Into the built-in macros section the print code is now disabled while wpp is
+  running for generating dependencies.
+* Some code clean-ups.
+
+1.31  1998/06/05
+* Fixed a bug that doesn't expand a macro if it's exactly at the end of a file.
+* It traps overwriting constant values and any reserved keyword (previous
+  versions catch only the first case).
+* Some code clean-ups.
+* Built-in macro HTML_IMAGE_SIZE that is expanded into the SRC field of an IMG
+  tag with the WIDTH and HEIGHT if the image file is gif, jpeg or png.
+
+1.30  1998/05/27
+* PUBLIC RELEASE 1.30
+* Fixed a bug that the leave the STDERR selected as STDOUT during the depend.
+* Fixed some unused print code during the depend.
+* The IF test now can be used to check if a macro is already defined.
+
+1.29  1998/05/24
+* PUBLIC RELEASE 1.29
+* Variables substitution now works also in assignments, they can be splitted
+  in two or more lines using \.
+
+1.28  1998/05/23
+* Using File::Basename for setting @FILENAME@. (wpp@proactiveresearch.com)
+* Now saves the leading and the ending part of a line that contains an
+  @INCLUDE@ directive or a variable assignment.
+* Fixed a broken regexp that made possible with wpp 1.27 assign a value to a
+  read-only variable.
+
+1.27  1998/05/21
+* PUBLIC RELEASE 1.27
+* Removing some extra parentheses in ? tests.
+* Macro declaration and call can be splitted on more than one line using \.
+
+1.26  1998/05/20
+* Removed debug output of macro code.
+* When input file is STDIN the depend is disabled.
+
+1.25  1998/05/20
+* If a macro argument is a variable the " are optionals.
+* The extremes of a line in which a macro is called are now included.
+* The last \n of the last line of a macro declaration is removed automatically.
+
+1.24  1998/05/20
+* Start working on macro expansion, added two new directives MACRO/ENDMACRO.
+* The IF/ELSE/FI was officially changed into IF/ELSE/ENDIF.
+* 'FI'still works but is deprecated.
+
+1.23  1998/03/27
+* PUBLIC RELEASE 1.23
+* Changed the author's e-mail, added the url for the web site.
+
+
+# vim: set ts=2 sw=2 tw=79 ai expandtab:

@@ -1,0 +1,13 @@
+@TITLE=@WPP_TITLE@ Macros@
+@TSSNAVBAR_IS_4=y@
+@TSSNAVBAR_URL_L=@TSS_DIR_PREFIX@manual_5@
+@TSSNAVBAR_URL_R=@TSS_DIR_PREFIX@manual_7@
+
+@INCLUDE utils/box_macros@
+@INCLUDE utils/h_macros@
+$Date: 1998/09/23 11:26:51 $
+
+<DL>
+@INCLUDE parags/macro@
+@INCLUDE parags/bimacro@
+</DL>

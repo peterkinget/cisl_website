@@ -1,0 +1,143 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>新增網頁 0</title>
+</head>
+
+<body>
+
+<p style="line-height: 150%"><b><font size="5">1. 1/2 </font>
+<font face="新細明體"><font size="5">λ Loop antenna with a parallel inductor</font> </font>
+</b>
+</p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Rx IC ( 
+Micr011) is designed to drive a&nbsp; 1/4 λ antenna. and Tx IC is designed 
+specifically to drive a loop antenna.&nbsp; </font></p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For Rx, 1/4 λ 
+antenna is a just 19.5 cm wire. For Tx, loop antenna design&nbsp; is more 
+complicate. </font></p>
+<p style="line-height: 150%"><font face="新細明體">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In loop antenna 
+design, the loop better to be λ or 1/2 λ and it should&nbsp; resonate&nbsp; at 
+ftx with a internal capacitor ( Varactor). The </font></p>
+<p style="line-height: 150%" align="center"><img border="0" src="ant.jpg" width="400" height="279"></p>
+
+<p style="line-height: 150%" align="left"><font face="新細明體">&nbsp; Inductance should be L=1/4(</font><font face="Arial Black">π^</font><font face="新細明體">2) 
+(ftx^2) C . After the&nbsp; calculation,&nbsp; L should between <b>21.5 nH to 34.4 nH.</b></font></p>
+
+<p style="line-height: 150%" align="left"><b><font face="新細明體">&nbsp;&nbsp;&nbsp;
+</font></b><font face="新細明體">&nbsp;A 
+1/2 λ Loop antenna has&nbsp; a diameter of 12.43cm . The inductance of the total 
+Loop is calculated as <b>390.4nH</b></font></p>
+
+<p style="line-height: 150%" align="left">　</p>
+
+<p style="line-height: 150%" align="center">
+<a href="http://emcsun.ece.umr.edu/new-induct/">
+<img border="0" src="inductance.jpg" width="320" height="60"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p style="line-height: 150%" align="center">
+　</p>
+
+<p style="line-height: 150%" align="center">&nbsp;&nbsp;&nbsp; N =1&nbsp;&nbsp; 
+R= 6.215 cm&nbsp; a=0.045cm&nbsp;&nbsp; ur=1 for copper wire.</p>
+
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+( N =number of turns; R=radius of circle; a=wire radius; ur=relative 
+permeability of medium) </p>
+
+<p style="line-height: 150%" align="left">&nbsp;&nbsp;&nbsp;&nbsp; <b>390.4nH</b> 
+antenna is apparently&nbsp; beyond&nbsp; the&nbsp; upper bond allowable 
+inductance!&nbsp; To make a power-matched antenna, we have to do </p>
+
+<p style="line-height: 150%" align="left">some modification. What we do is to 
+design a small inductor and make the paralleled inductance down to 25nH . </p>
+
+<p style="line-height: 150%" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="ant2.jpg" width="400" height="274"></p>
+
+<p style="line-height: 150%" align="left">　</p>
+
+<p style="line-height: 150%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>390.4nH 
+// 27 nH = 25.25 nH. </b>A 27 nH inductor will be: 2 loops , R = 0.285 cm, 
+a=0.045 cm , ur =1.</p>
+
+<p style="line-height: 150%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+We make it 2 loops because it is more robust than single loop. The final 
+antennal looks&nbsp; like this. </p>
+
+<p style="line-height: 150%" align="center">
+<img border="0" src="c5_2loops.jpg" width="640" height="480"></p>
+
+<p style="line-height: 150%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ 
+</p>
+
+<p style="line-height: 150%" align="left"><font face="新細明體" size="5">2. Observation: with loop and without 
+loop</font></p>
+
+<p style="line-height: 150%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To make sure whether it works or now, we use a &quot;all-band&quot; receiver
+<a href="ic1000.jpg">IC-1000</a> to measure the received power and use</p>
+
+<p style="line-height: 150%" align="left">&nbsp;<a href="c5_loptest.jpg">Function 
+Generator as signal source</a>. Testing environment is corridor out side the lab 
+and range is 40M. We do experiment with and without the </p>
+
+<p style="line-height: 150%" align="left">27 nH inductor. </p>
+
+<p style="line-height: 150%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+The result is pretty much like what we expect. Without a parallel&nbsp; loop, 
+the received power drops significantly.&nbsp;&nbsp; The signal drops about 10 
+dB. </p>
+
+<ul>
+  <li>
+
+<p style="line-height: 150%" align="left">&nbsp;<b><font size="4">2 With 
+parallel loop, 40 M </font></b> </p>
+
+  </li>
+</ul>
+
+<p style="line-height: 150%" align="center"><font size="4"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="05c2qd40.jpg" width="599" height="427"></b></font></p>
+
+<p style="line-height: 150%" align="left">　</p>
+
+<ul>
+  <li>
+
+<p style="line-height: 150%" align="left"><b><font size="4">&nbsp; Without 
+parallel loop , 40 M&nbsp;&nbsp; </font>&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+  </li>
+</ul>
+
+<p style="line-height: 150%" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="05c1qd40.jpg" width="599" height="427"></p>
+
+<p style="line-height: 150%" align="center">Red curve is max. envelop</p>
+
+<ul>
+  <li>
+
+<p style="line-height: 150%" align="left"><b><font size="4">&nbsp;2 PC Test</font></b></p>
+
+  </li>
+</ul>
+
+<p style="line-height: 150%" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Although the experiment above shows the additional small loop does work, we 
+notice that the received power is too small to be picked up&nbsp; by Rx. The 2 PC 
+test proofs our worry. The Range vs Error rate test result is so bad. Beyond 6 
+meters ,&nbsp; Error rate is 100 %. This is totally unacceptable</p>
+
+<p style="line-height: 150%" align="left">&nbsp;&nbsp;&nbsp; to us.<a href="chapter6.htm"> 
+Some more modification must be done on Tx antenna. </a> </p>
+
+</body>
+
+</html>

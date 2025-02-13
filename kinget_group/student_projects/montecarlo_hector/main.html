@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>main</title>
+</head>
+<body style="color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee"
+ vlink="#551a8b">
+<div style="text-align: center; background-color: rgb(255, 255, 255);"><big><big><big><big><span
+ style="font-family: impact;"><big style="color: rgb(51, 51, 255);"><span
+ style="font-family: forte;">M</span></big>onte <big
+ style="color: rgb(51, 51, 255);"><span style="font-family: forte;">C</span></big>arlo
+<big style="color: rgb(51, 51, 255);"><span style="font-family: forte;">S</span></big>imulation</span></big></big></big></big><br>
+<big><big><big><big><big><span style="font-family: impact;"></span></big></big></big></big></big></div>
+<div style="text-align: center; background-color: rgb(255, 255, 255);"><big
+ style="font-weight: bold;"><big><big><big><big><span
+ style="font-family: impact;"></span></big></big></big><span
+ style="font-weight: bold;"><span
+ style="font-family: forte; color: rgb(255, 0, 0);"><span
+ style="font-family: forte;"></span></span></span></big></big><big
+ style="font-weight: bold;"><big><span style="font-weight: bold;"><big><span
+ style="font-family: forte; color: rgb(255, 0, 0);">H</span></big>ector
+<big><span style="font-family: forte; color: rgb(255, 0, 0);">H</span></big>ung
+~ <big><span style="font-family: forte; color: rgb(255, 0, 0);">S</span></big>ummer
+<big><span style="font-family: forte; color: rgb(255, 0, 0);">2</span></big>004<br>
+<br>
+</span></big></big>
+<big style="font-weight: bold;"><big><span style="font-weight: bold;"><br>
+</span></big></big>
+<div style="text-align: left; background-color: rgb(255, 255, 255);"><big
+ style="font-weight: bold;">Introduction:<br>
+</big><br>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; In electrical and electronic circuits,
+during manufacture, circuit parameters often vary from the designed
+values by
+small amounts. These small variations can cause changes in circuit
+functionality and could be hard to predict through simulation. One
+technique to
+analyze these variations and their impact on circuit behavior is
+through <st1:place w:st="on">Monte Carlo</st1:place> analysis. <st1:place
+ w:st="on">Monte Carlo</st1:place>
+analysis is a process that repeatedly runs a given experiment while
+randomizing
+each component.<span style="">&nbsp; </span>Outputs from this
+procedure are organized and graphed to aid in visualization of system
+trends
+and behavior. </span></p>
+<span lang="EN-US"><span style=""> </span></span>
+<p class="MsoNormal" style="text-indent: 24pt;"><span lang="EN-US">In
+this
+simulation, PERL is the programming language of choice due to its
+powerful built-in
+regular expressions &#8211; those most important being the match and search
+and
+replace functions.<span style="">&nbsp; </span>Specific parameters
+may be found and altered to fit specific needs.<span style="">&nbsp;
+</span>Given the main input is assumed to be a text based Spectre
+netlist, PERL
+can easily parse and modify the input for randomization.<span style="">&nbsp;
+</span></span></p>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <span lang="EN-US"></span><span
+ lang="EN-US"> In this project, four files have
+been
+written in PERL: MCInputRandomizer, MCRunSpectre, MCOutputOrganizer and
+MCMakeGraph.<span style="">&nbsp; </span>MCInputRandomizer takes the
+input netlists and creates the requested number of random samples.<span
+ style="">&nbsp; </span>MCRunSpectre uses Cadence&#8217;s Spectre to
+perform analysis on the netlist.<span style="">&nbsp; </span>Third,
+MCOutputOrganizer formats the results and places them in separate file.<span
+ style="">&nbsp; </span>Each file is based on the node that it comes
+from.<span style="">&nbsp; </span>The first column is the result
+number;
+the second column is the time or frequency.<span style="">&nbsp;
+</span>Each column after represents a different trial.<span style="">&nbsp;
+</span>In addition, this program also calculates the
+average and standard deviation of each row.<span style="">&nbsp;
+</span>MCMakeGraph is a sample code for plotting our results using
+GNUPLOT.</span>
+<big style="font-weight: bold;"><br>
+&nbsp;&nbsp; <br>
+</big><!--[if mso & !supportInlineShapes & supportFields]><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+&#26032;&#32048;&#26126;&#39636;;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
+mso-bidi-language:AR-SA'><span style='mso-element:field-begin;mso-field-lock:
+yes'></span><span style='mso-spacerun:yes'> </span>SHAPE <span
+style='mso-spacerun:yes'> </span>\* MERGEFORMAT <span style='mso-element:field-separator'></span></span><![endif]--><span
+ style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;" lang="EN-US"><!--[if gte vml 1]><v:group id="_x0000_s1155"
+ editas="canvas" style='width:450pt;height:5in;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="1800,1169" coordsize="9000,7200">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75"
+  o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+  <v:stroke joinstyle="miter"/>
+  <v:formulas>
+   <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+   <v:f eqn="sum @0 1 0"/>
+   <v:f eqn="sum 0 0 @1"/>
+   <v:f eqn="prod @2 1 2"/>
+   <v:f eqn="prod @3 21600 pixelWidth"/>
+   <v:f eqn="prod @3 21600 pixelHeight"/>
+   <v:f eqn="sum @0 0 1"/>
+   <v:f eqn="prod @6 1 2"/>
+   <v:f eqn="prod @7 21600 pixelWidth"/>
+   <v:f eqn="sum @8 21600 0"/>
+   <v:f eqn="prod @7 21600 pixelHeight"/>
+   <v:f eqn="sum @10 21600 0"/>
+  </v:formulas>
+  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+  <o:lock v:ext="edit" aspectratio="t"/>
+ </v:shapetype><v:shape id="_x0000_s1156" type="#_x0000_t75" style='position:absolute;
+  left:1800;top:1169;width:9000;height:7200' o:preferrelative="f" filled="t"
+  fillcolor="yellow">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:shapetype id="_x0000_t202" coordsize="21600,21600" o:spt="202"
+  path="m,l,21600r21600,l21600,xe">
+  <v:stroke joinstyle="miter"/>
+  <v:path gradientshapeok="t" o:connecttype="rect"/>
+ </v:shapetype><v:shape id="_x0000_s1157" type="#_x0000_t202" style='position:absolute;
+  left:2160;top:4409;width:2880;height:540;mso-position-horizontal:absolute;
+  mso-position-vertical:absolute'>
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal align=center style='text-align:center'><b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US>MCInputRandomizer.pl<o:p></o:p></span></b></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1158" style='position:absolute' from="3600,3689"
+  to="3602,4409" coordsize="21600,21600">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shape id="_x0000_s1159" type="#_x0000_t202" style='position:absolute;
+  left:2160;top:3149;width:2341;height:540'>
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal align=center style='text-align:center'><span
+     lang=EN-US>InputNetlist.scs</span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1160" type="#_x0000_t202" style='position:absolute;
+  left:4680;top:3149;width:1981;height:540;mso-position-horizontal:absolute;
+  mso-position-vertical:absolute'>
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal align=center style='text-align:center'><span
+     lang=EN-US># of Outputs</span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1161" style='position:absolute;
+  mso-position-horizontal:absolute;mso-position-vertical:absolute' from="3600,4949"
+  to="3603,5669" coordsize="21600,21600">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shape id="_x0000_s1162" type="#_x0000_t202" style='position:absolute;
+  left:2160;top:5669;width:2880;height:540;mso-position-horizontal:absolute;
+  mso-position-vertical:absolute'>
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal align=center style='text-align:center'><b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US>MCRunSpectre.pl<o:p></o:p></span></b></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1163" style='position:absolute;
+  mso-position-horizontal:absolute;mso-position-vertical:absolute' from="3600,6209"
+  to="3603,6929" coordsize="21600,21600">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shape id="_x0000_s1164" type="#_x0000_t202" style='position:absolute;
+  left:2160;top:6929;width:2880;height:540;mso-position-horizontal:absolute;
+  mso-position-vertical:absolute'>
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal align=center style='text-align:center'><b
+     style='mso-bidi-font-weight:normal'><span lang=EN-US>MCOutputOrganizer.pl<o:p></o:p></span></b></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1165" type="#_x0000_t202" style='position:absolute;
+  left:6481;top:4409;width:1979;height:900;mso-position-horizontal:absolute;
+  mso-position-vertical:absolute'>
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt'>InputNetlist1.scs&#8230;<o:p></o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt'>InputNetlistn.scs<o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1166" type="#_x0000_t202" style='position:absolute;
+  left:7020;top:3149;width:1981;height:540;mso-position-horizontal:absolute;
+  mso-position-vertical:absolute'>
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal align=center style='text-align:center'><span
+     lang=EN-US>Deviations File</span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1167" style='position:absolute;flip:x' from="4140,3689"
+  to="7380,4409" coordsize="21600,21600">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1168" style='position:absolute;flip:x' from="3780,3689"
+  to="5220,4409" coordsize="21600,21600">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1169" style='position:absolute' from="5040,4949"
+  to="6481,4950" coordsize="21600,21600">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1170" style='position:absolute;flip:x' from="3780,5309"
+  to="6480,5669" coordsize="21600,21600">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shape id="_x0000_s1171" type="#_x0000_t202" style='position:absolute;
+  left:6480;top:5669;width:1980;height:900;mso-position-horizontal:absolute;
+  mso-position-vertical:absolute'>
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt'>InputNetlist1.out&#8230;<o:p></o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt'>InputNetlistn.out<o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1172" style='position:absolute;
+  mso-position-horizontal:absolute;mso-position-vertical:absolute' from="5040,6208"
+  to="6481,6209" coordsize="21600,21600">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1173" style='position:absolute;flip:x;
+  mso-position-horizontal:absolute;mso-position-vertical:absolute' from="3780,6569"
+  to="6480,6929" coordsize="21600,21600">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shape id="_x0000_s1174" type="#_x0000_t202" style='position:absolute;
+  left:6480;top:6929;width:1980;height:900;mso-position-horizontal:absolute;
+  mso-position-vertical:absolute'>
+  <v:textbox>
+   <![if !mso]>
+   <table cellpadding=0 cellspacing=0 width="100%">
+    <tr>
+     <td><![endif]>
+     <div>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt'>RESULTSnet1&#8230;<o:p></o:p></span></p>
+     <p class=MsoNormal><span lang=EN-US style='font-size:10.0pt'>RESULTSnetn<o:p></o:p></span></p>
+     </div>
+     <![if !mso]></td>
+    </tr>
+   </table>
+   <![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1175" style='position:absolute;
+  mso-position-horizontal:absolute;mso-position-vertical:absolute' from="5040,7468"
+  to="6481,7469" coordsize="21600,21600">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shapetype id="_x0000_t144" coordsize="21600,21600" o:spt="144"
+  adj="11796480" path="al10800,10800,10800,10800@2@14e">
+  <v:formulas>
+   <v:f eqn="val #1"/>
+   <v:f eqn="val #0"/>
+   <v:f eqn="sum 0 0 #0"/>
+   <v:f eqn="sumangle #0 0 180"/>
+   <v:f eqn="sumangle #0 0 90"/>
+   <v:f eqn="prod @4 2 1"/>
+   <v:f eqn="sumangle #0 90 0"/>
+   <v:f eqn="prod @6 2 1"/>
+   <v:f eqn="abs #0"/>
+   <v:f eqn="sumangle @8 0 90"/>
+   <v:f eqn="if @9 @7 @5"/>
+   <v:f eqn="sumangle @10 0 360"/>
+   <v:f eqn="if @10 @11 @10"/>
+   <v:f eqn="sumangle @12 0 360"/>
+   <v:f eqn="if @12 @13 @12"/>
+   <v:f eqn="sum 0 0 @14"/>
+   <v:f eqn="val 10800"/>
+   <v:f eqn="cos 10800 #0"/>
+   <v:f eqn="sin 10800 #0"/>
+   <v:f eqn="sum @17 10800 0"/>
+   <v:f eqn="sum @18 10800 0"/>
+   <v:f eqn="sum 10800 0 @17"/>
+   <v:f eqn="if @9 0 21600"/>
+   <v:f eqn="sum 10800 0 @18"/>
+  </v:formulas>
+  <v:path textpathok="t" o:connecttype="custom" o:connectlocs="10800,@22;@19,@20;@21,@20"/>
+  <v:textpath on="t" style='v-text-kern:t' fitpath="t"/>
+  <v:handles>
+   <v:h position="@16,#0" polar="10800,10800"/>
+  </v:handles>
+  <o:lock v:ext="edit" text="t" shapetype="t"/>
+ </v:shapetype><v:shape id="_x0000_s1176" type="#_x0000_t144" style='position:absolute;
+  left:2700;top:2069;width:7335;height:1020;mso-position-horizontal:absolute;
+  mso-position-vertical:absolute' fillcolor="black">
+  <v:shadow color="#868686"/>
+  <v:textpath style='font-family:"Arial Black"' fitshape="t" trim="t" string="Project Flow Chart"/>
+ </v:shape><w:wrap type="none"/>
+ <w:anchorlock/>
+</v:group><![endif]--><!--[if !vml]--><!--[endif]--></span><!--[if mso & !supportInlineShapes & supportFields]><span
+lang=EN-US style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+&#26032;&#32048;&#26126;&#39636;;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;
+mso-bidi-language:AR-SA'><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:450pt;
+ height:5in'>
+ <v:imagedata croptop="-65520f" cropbottom="65520f"/>
+</v:shape><span style='mso-element:field-end'></span></span><![endif]--><br>
+<span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;"
+ lang="EN-US"><br>
+</span><br>
+<div style="position: absolute; top: 633px; left: 218px;"><span
+ style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;" lang="EN-US"></span><br>
+</div>
+<big style="font-weight: bold;">&nbsp;&nbsp; <br>
+<br>
+&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp; </big><big style="font-weight: bold;"><small><br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp; <a href="parameters%20file.html">Deviations
+File</a></small></big><br>
+<big style="font-weight: bold;"><br>
+</big><span style="font-weight: bold;"><img alt="flowchart"
+ src="Flow.jpg"
+ style="width: 575px; height: 529px; position: absolute; top: 542px; left: 203px;"></span><br>
+<big style="font-weight: bold;"><br>
+&nbsp;&nbsp; </big><a href="inputrandomizer.html"><big
+ style="font-weight: bold;"><small>MC</small></big></a><big
+ style="font-weight: bold;"><small><a href="inputrandomizer.html">InputRandomizer</a><br>
+<br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp; </small></big><big style="font-weight: bold;"><small><a
+ href="RunSpectre.html"><span style="text-decoration: underline;">MCRunSpectre</span></a></small></big><br>
+<big style="font-weight: bold;"><small><br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp; <a href="outputorganizer.html"><span
+ style="text-decoration: underline;">MCOutputOrganizer</span></a><br>
+<br>
+<br>
+</small></big><big style="font-weight: bold;"><small><br>
+&nbsp;&nbsp;&nbsp; <a href="MakeGraph.html"><span
+ style="text-decoration: underline;">MCMakeGraph</span></a></small></big><br>
+<big style="font-weight: bold;"><small><br>
+&nbsp;&nbsp; </small></big><span style="font-weight: bold;"></span></div>
+<a href="work%20summary.html"><span style="font-weight: bold;"></span></a><big
+ style="font-weight: bold;"></big>
+<div style="text-align: left;"><big><small>&nbsp;&nbsp;&nbsp; <br>
+</small></big><big style="font-weight: bold;"><small>&nbsp;&nbsp;&nbsp;
+<a href="guided%20tutorial.html">Guided
+Tutorial</a><br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; <a href="downloads.html">Downloads</a><br>
+</small></big><br>
+</div>
+<div style="text-align: left;">&nbsp;&nbsp;&nbsp; <a
+ href="work%20summary.html"><span style="font-weight: bold;">Work
+Summary</span></a><br>
+<big><span style="font-weight: bold;"></span></big><br>
+<big><span style="font-weight: bold;">Support Links:</span></big><br>
+<br>
+&nbsp;&nbsp; <big style="font-weight: bold;"><big><span
+ style="font-weight: bold;"></span></big></big>&nbsp;&nbsp;&nbsp; <a
+ href="http://www.perldoc.com/perl5.6/pod/perlfunc.html">Perldoc.com</a>
+- this link contains Perl Documentation for writing functions.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+ style="text-decoration: underline;"></span><a
+ href="http://lsmwww.epfl.ch/EDA/eda_tools/Cadence/doc/spectreuser_5.0.pdf">Cadence</a>
+- this link contains a downloadable Spectre user manual for writing
+netlists.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <a
+ href="http://www.wordiq.com/definition/Monte_Carlo_method">Monte Carlo
+Simulation</a> - this link gives additional information about Monte
+Carlo Simulation<br>
+<br>
+</div>
+<big style="font-weight: bold;"><big><span style="font-weight: bold;"><br>
+</span></big></big>
+<div style="text-align: left; background-color: rgb(255, 255, 255);"><big
+ style="font-weight: bold;">Special Thanks to:<br>
+<br>
+</big><big><small>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Professor Peter Kinget<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; PhD Student Shouri Chatterjee<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Perl Guru Vladis Adzic<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Perl Guru James Yeh</small></big></div>
+<br>
+<div style="position: absolute; left: 8px; top: 837px;"><span
+ style="font-size: 12pt; font-family: &quot;Times New Roman&quot;;" lang="EN-US"></span><br>
+</div>
+<br>
+<big style="font-weight: bold;"><small><br>
+</small></big>
+<div style="text-align: left;"><big style="font-weight: bold;"><small>If
+you have any questions, please email me at hch2007@columbia.edu </small></big><br>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

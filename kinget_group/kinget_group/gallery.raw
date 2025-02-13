@@ -1,0 +1,170 @@
+$Date$
+
+<center><h2>Gallery of Chip Photographs</h2></center> 
+
+<p> Here are some of the recent chips we designed, fabricated and
+tested. Details can be found in our (upcoming) publications.
+
+<!-- <p> <font color='red'> (Note updates needed)</font> -->
+
+<center>
+
+<!-- TAPO Chips -->
+
+
+<!-- <img src="images/.jpg" width=300 ><br><br>
+<gal_title> <br> (nm CMOS) 
+<br></gal_title><br><br><br>  -->
+
+<img src="images/bv_uwb_isscc13_l.jpg" width=250 ><br><br>
+<gal_title> <br> Self-duty cycled, self-synchronized UWB Receiver SoC (65nm CMOS) 
+<br>[ISSCC13]</gal_title><br><br><br>  
+
+<img src="images/jk_adc_cicc12.jpg" width=350 ><br><br>
+<gal_title> <br> Current Reference Pre-charged Zero-crossing
+  Pipeline-SAR ADC (65nm CMOS) 
+<br>[CICC12]</gal_title><br><br><br> 
+
+<img src="images/bv_uwb_rfic12_l.jpg" width=250 ><br><br>
+<gal_title> <br> UWB Receiver with Automatic Threshold Recovery (65nm CMOS) 
+<br>[RFIC12]</gal_title><br><br><br> 
+
+<img src="images/hsu_pll.jpg" width=300 ><br><br>
+<gal_title> Phase Locked Loop<br> (65nm CMOS) 
+<br>[CICC11]</gal_title><br><br><br> 
+
+<img src="images/kuppambatti_adc.jpg" width=200 ><br><br>
+<gal_title> Zero-Crossing Based Pipelined ADC<br> (65nm CMOS) 
+<br></gal_title><br><br><br> 
+
+<img src="images/yadav_ultrasound_wakeup.jpg" width=200 ><br><br>
+<gal_title> Wake-up Receiver using Ultrasound Data Communications<br> (65nm CMOS) 
+<br>[VLSI11, JSSC13]</gal_title><br><br><br> 
+
+<img src="images/shen_ccp_adc.jpg" width=200 ><br><br>
+<gal_title> Current-Charge-Pump Pipelined ADC<br> (90nm CMOS) 
+<br>[TCASII11]</gal_title><br><br><br> 
+
+<img src="images/tripurari_phase_shifter.jpg" width=300 ><br><br>
+<gal_title> CMOS Phase Shifter with Frequency Doubling for
+  Multiple-Antenna Transceiver Systems <br> (90nm CMOS) 
+<br>[RWW11]</gal_title><br><br><br> 
+
+<img src="images/balankutty_0p6_rx_int_cancel.jpg" width=300 ><br><br>
+<gal_title> 0.6V 900MHz Receiver with Interference Cancellation<br> (65nm CMOS) 
+<br>[VLSI10, JSSC11]</gal_title><br><br><br> 
+
+<img src="images/feng_high_iip_receiver.jpg" width=300 ><br><br>
+<gal_title> Direct Conversion Front End with Digitally Assisted IIP2 Background Self Calibration<br> (130nm CMOS) 
+<br>[ISSCC10, JSSC11]</gal_title><br><br><br> 
+
+<img src="images/crepaldi_uwb_rx_lowres.jpg" height=250 ><img src="images/li_uwb_tx_lowres.jpg" height=250 ><br><br>
+<gal_title> IR-UWB Transceiver Chipset Using Self-Synchronizing OOK Modulation <br> (90nm CMOS) 
+<br>[ISSCC10, JSSC11]</gal_title><br><br><br> 
+
+<img src="images/syu_signal_source_chip_lowres.jpg" width=300 ><br><br>
+<gal_title> A Single-Chip 0.125-32GHz Signal Source 
+<br> (180nm SiGe BiCMOS) 
+<br>[RFIC08] and [JSSC11] </gal_title>(modified version)<br><br><br>
+
+<img src="images/ultra_compact_pll_45nm.jpg" width=300 ><br><br>
+<gal_title>A 0.042-mm2 Fully Integrated Analog PLL with Stacked
+  Capacitor-Inductor <br> (45nm CMOS) 
+<br>[ESSCIRC08]</gal_title><br><br><br> 
+
+<img src="images/ulv_reference_90nm.JPG" width=150 ><br><br>
+<gal_title>Voltage Reference for Ultra Low Voltage Supply Operation <br>(90nm CMOS)
+<br>[CICC08]</gal_title><br><br><br> 
+
+<img src="images/UWBRX07_90nm.jpg" width=200 ><br><br>
+<gal_title>UWB Pulse Radio Receiver <br>(90nm CMOS)
+<br>[RFIC08, JSSC09]</gal_title><br><br><br>
+
+<img src="images/UWBTX07_90nm.jpg" width=200 ><br><br>
+<gal_title>UWB Pulse Radio Transmitter <br>(90nm CMOS)
+<br>[RFIC08, JSSC09]</gal_title><br><br><br>
+
+<img src="images/HighIIP2_FE_08.jpg" width=200 ><br><br>
+<gal_title>High Performance 2GHz Direct Conversion Front End <br>(130nm CMOS)
+<br>[RFIC08, JSSC09]</gal_title><br><br><br>
+
+<!-- <img src="images/0p6V_rcv_synth_90nm.jpg" width=400 ><br><br> -->
+<img src="images/balankutty_isscc08.jpg" width=400 ><br><br>
+<gal_title>0.6V Highly Integrated 2.4GHz Receiver and Synthesizer <br>(90nm CMOS)
+<br>[ISSCC08, 2010]</gal_title><br><br><br>
+
+<img src="images/contactless_test_90nm.jpg" width=400 ><br><br>
+<gal_title>2.6GHz Inductive Power Delivery for Contactless Test <br>(90nm CMOS)
+<br>[ICMTS08]</gal_title><br><br><br>
+
+<!--<img src="images/CUN_90nm_March2007_pk.png" width=400 ><br><br>
+<gal_title>Various 0.5V and UWB test-circuits (90nm CMOS March 07 in fab)</gal_title><br><br><br>-->
+
+<img src="images/variation_0p25um_chip_photo_DSCN0430.jpg" width=300><br><br>
+<gal_title>Ring Oscillator Mismatch Test Structure <br>(0.25 um/40 GHz BiCMOS) <br>[CICC07]</gal_title><br><br><br>
+
+<img src="images/0p5V_pipelined_adc-1.png" width=200 ><img src="images/0p5V_pipelined_adc-2.png" width=200 ><br><br>
+<gal_title>0.5V 8bit 10Msps pipelined ADC <br>(90nm CMOS)
+<br>[VLSI07, JSSC08]</gal_title><br><br><br>
+
+<img src="images/0p5V_rcv.png" width=400 ><br><br>
+<gal_title>0.5V 2.4GHz Sliding-IF Receiver <br>(90nm CMOS)
+<br>[RFIC07, JSSC08]</gal_title><br><br><br>
+
+<img src="images/0p65V_synthesizer.png" width=300 ><br><br>
+<gal_title>0.65/0.5V Frequency Synthesizer <br>(90nm CMOS)
+<br>[ISSCC07]</gal_title><br><br><br>
+
+<!-- <img src="images/CUN_March06_lowres.jpg" width=400 ><br><br>
+<gal_title>Various 0.5V and UWB test-circuits (90nm CMOS)
+<br>[ISSCC07, RFIC07, VLSI07]</gal_title><br><br><br> -->
+
+<img src="images/BS_QVCO_diephoto_lowres.jpg" width=300><br><br>
+<gal_title>Quadrature VCO with Capacitive Common-Source
+coupling<br>(0.25 um/40 GHz BiCMOS) <br>[ESSCIRC06]</gal_title><br><br><br>
+
+<img src="images/SC_sha_lowres.jpg" width=300 height=300><br><br>
+<gal_title>0.5 V Track and Hold Amplifier <br>(0.25um
+CMOS) <br>[VLSI06, JSSC07]</gal_title><br><br><br>
+
+<img src="images/0p5V_RF_Frontend.jpg" width=300 ><br><br>
+<gal_title>0.5 V 900MHz RF Front-end <br>(0.18um
+CMOS) <br>[VLSI06]</gal_title><br><br><br>
+
+<img src="images/AJ_dac_lowres.jpg" width=200 height=200><br><br>
+<gal_title>5-bit DAC for UWB Pulse Generation <br>(0.25 um/40 GHz ft BiCMOS)
+<br>[ISCAS06]</gal_title><br><br><br>
+
+<img src="images/KP_0p5_SDM_diephoto_lowres.jpg" width=300><br><br>
+<gal_title>0.5 V Sigma Delta Converter <br>(0.18um CMOS) <br>[ISSCC06, JSSC07]</gal_title><br><br><br>
+
+<img src="images/BS_VCO_Tail_diephoto_lowres.jpg" width=450><br><br>
+<gal_title>VCO without (VCO1) and with (VCO2) Tail Current Shaping<br>
+<br>(0.25 um/40 GHz BiCMOS) <br>[CICC05, JSSC06]</gal_title><br><br><br>
+
+<img src="images/FZ_vcol_diephoto_color_lowres.jpg" width=450><br><br>
+<gal_title>VCO in a coil <br>(0.25 um/40 GHz BiCMOS) <br>[CICC05, JSSC06]</gal_title><br><br><br>
+
+<img src="images/FZ_DA_diephoto_lowres.jpg" width=450><br><br>
+<gal_title>Distributed CMOS LNA for UWB applications <br>(0.18um CMOS)
+<br>[VLSI05, JSSC06]</gal_title><br><br><br>
+
+<img src="images/SC_milli_lowres.jpg" width=300 height=300><br><br>
+<gal_title>0.5 V Filter With PLL-Based tuning <br>(0.18um CMOS) <br>[ISSCC05, JSSC05]</gal_tile><br><br><br>
+
+<img src="images/SC_bulkamp_lowres.jpg" width=280><br><br>
+<gal_title>0.5 V Bulk-input amplifier <br>(0.18um CMOS) <br>[ESSCIRC04, JSSC05]</gal_title><br><br><br>
+
+<!-- <table>
+<tr>
+<td>
+<img src="images/frank/chip2_resonator_bw.jpg" width=388 height=161>
+</td>
+<td>
+<img src="images/frank/ind_fill_comp.jpg" width=365 height=161>
+</td>
+</tr>
+</table>
+-->
+
+</center>

@@ -1,0 +1,50 @@
+@H_SECTION("WPP command line switches", "COMMANDL")@
+
+WPP now uses the Getopt::Long for retrieving command line switches, so the
+syntax for some is a bit different (see: -c, -D, -W).
+
+<DL>
+<P><DT><A NAME="--config">
+	-c <FONT @COL_PARAMS@>FILE</FONT><BR>
+	--config=<FONT @COL_PARAMS@>FILE</FONT></A>
+<DD>Use <FONT @COL_PARAMS@>FILE</FONT> as config file (default is 'config').
+<P><DT>
+	<A NAME="-D">
+	-D <FONT @COL_PARAMS@>CONST=VAL</FONT><BR>
+	-D <FONT @COL_PARAMS@>CONST</FONT></A><BR>
+	--define <FONT @COL_PARAMS@>CONST=VAL</FONT><BR>
+	--define <FONT @COL_PARAMS@>CONST</FONT></A>
+<DD>Declare a constant CONST with the optional associated value VAL.
+<P><DT>
+	<A NAME="--depend">
+	-d<BR>
+	--depend</A>
+<DD>Generate dependencies for make (it's disabled if wpp is reading data from
+	standard input).
+<P><DT>
+	-g<BR>
+	--debug
+<DD>Enable the debugging output of the internal parser.
+<P><DT>-h<BR>
+	--help
+<DD>Print the list of command line switches with a short description.
+<P><DT>-q<BR>
+	--quiet
+<DD>Run without printing any message and warning.
+<P><DT>-v<BR>
+	--version
+<DD>Print the version number of wpp and exit.
+<P><DT>-W all<BR>
+	--warn=all
+<DD>Enable printing all warnings.
+<P><DT>-W none<BR>
+	--warn=none
+<DD>Disable warnings.
+<P><DT>-W <FONT @COL_PARAMS@>LEV</FONT><BR>
+	--warn=<FONT @COL_PARAMS@>LEV</FONT>
+<DD>Set warning level LEV from 0 (none) to 7 (all).
+<P><DT>-
+<DD>Read raw data from the standard input, the html code is written to the
+	standard output. This is the default behaviour if no file is given and at
+	least one switch is used (obviously not '-h' or '-v').
+</DL>

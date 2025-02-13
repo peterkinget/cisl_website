@@ -1,0 +1,149 @@
+@H_SECTION("Directives", "DIRECTIVES")@
+
+<DL>
+
+
+<DT><A NAME="INCLUDE"> @AT@INCLUDE name@AT@</A>
+<DD>
+  Include a template. The 'name' value is expanded by adding the
+  @AT@DEFAULT_TMPLDIR@AT@ value as prefix and the
+	@AT@DEFAULT_TMPL_EXTENSION@AT@ as extension.
+
+	<DL>
+	<DD>
+	<TABLE>
+	<TR VALIGN=MIDDLE ALIGN=CENTER><TD COLSPAN=2>
+	@BOX_TITLE=Config file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+    @AT@DEFAULT_TMPLDIR=pub@AT@
+	@BOX_CLOSE()@
+	</TD>
+	<TD ROWSPAN=3>@H_FONTC("=", "#000000\" SIZE=\"+2")@</TD>
+	<TD WIDTH="33%" ROWSPAN=3>
+	@BOX_TITLE=Output file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+    <B>MENU</B><BR>
+		hhh iii jjj kkk lll mmm<P>
+    <B>DRINKS</B><BR>
+		aaa bbb ccc ddd eee fff ggg
+	@BOX_CLOSE()@
+	</TD>
+	<TR VALIGN=MIDDLE ALIGN=CENTER><TD WIDTH="33%">
+	@BOX_TITLE=Template pub/menu.tmpl@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+		<FONT @COL_COMMENTS@>
+    <B>MENU</B><BR>
+		hhh iii jjj kkk lll mmm
+		</FONT>
+	@BOX_CLOSE()@
+	</TD><TD WIDTH="33%">
+	@BOX_TITLE=Template pub/drinks/menu.tmpl@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+		<FONT @COL_COMMENTS@>
+    <B>DRINKS</B><BR>
+		aaa bbb ccc ddd eee fff ggg
+		</FONT>
+	@BOX_CLOSE()@
+	</TD>
+	<TR VALIGN=MIDDLE ALIGN=CENTER><TD COLSPAN=2>
+	@BOX_TITLE=Source file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+		@HTML_COMMENT("includes pub/menu.tmpl")@<BR>
+    @AT@INCLUDE <FONT @COL_PARAMS@>menu</FONT>@AT@<P>
+		@HTML_COMMENT("includes pub/drinks/menu.tmpl")@<BR>
+    @AT@INCLUDE <FONT @COL_PARAMS@>drinks/menu</FONT>@AT@
+	@BOX_CLOSE()@
+	</TD>
+	</TABLE>
+	</DL>
+
+	
+<DT><P>
+<DT><A NAME="IF"> @AT@IF @H_COMMENT("{")@!@H_COMMENT("}")@var@AT@</A>
+	@H_COMMENT("&nbsp;&nbsp;&nbsp;... {")@ @AT@ELSE@AT@
+	@H_COMMENT("&nbsp;&nbsp;&nbsp;... }")@
+	@AT@ENDIF@AT@
+<DT> @AT@IF var == "val"@AT@
+	@H_COMMENT("&nbsp;&nbsp;&nbsp;... {")@ @AT@ELSE@AT@
+	@H_COMMENT("&nbsp;&nbsp;&nbsp;... }")@
+	@AT@ENDIF@AT@
+<DT> @AT@IF var != "val"@AT@
+	@H_COMMENT("&nbsp;&nbsp;&nbsp;... {")@ @AT@ELSE@AT@
+	@H_COMMENT("&nbsp;&nbsp;&nbsp;... }")@
+	@AT@ENDIF@AT@
+<DD>
+  Is a simple if ... then implementation that made possible conditional
+  inclusion and evaluation of html fragments.<BR>
+  In the first expression if <I>var</I> differs from empty string or a macro
+	named <I>var</I> exists the code till @AT@ELSE@AT@ or @AT@ENDIF@AT@ is parsed
+	and included.<BR>
+  It can be nested.<P>
+
+	<DL>
+	<DD>
+	@BOX_TITLE=Source file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+	@AT@IF SHOW_IMAGE@AT@<BR>
+	@H_COMMENT("&nbsp;&nbsp;&nbsp;graphic map<BR>")@
+	@AT@ELSE@AT@<BR>
+	@H_COMMENT("&nbsp;&nbsp;&nbsp;text description<BR>")@
+	@AT@ENDIF@AT@<P>
+	@AT@IF !SHOW_IMAGE@AT@<BR>
+	@H_COMMENT("&nbsp;&nbsp;&nbsp;text map<BR>")@
+	@AT@ELSE@AT@<BR>
+	&nbsp;&nbsp;@AT@IF IMAGE_DESC=="Test"@AT@<BR>
+	@H_COMMENT("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test<BR>")@
+	&nbsp;&nbsp;@AT@ENDIF@AT@<BR>
+	@H_COMMENT("&nbsp;&nbsp;image<BR>")@
+	@AT@ENDIF@AT@<P>
+	@BOX_CLOSE()@
+	</DL>
+
+	<P><B>Notes</B>
+	<UL>
+	<LI>The previous versions of WPP used @AT@FI@AT@ instead of
+		@AT@ENDIF@AT@, this version can handle both but remember that
+		@AT@FI@AT@ is deprecated and could be removed in the future.
+	</UL>
+
+
+<DT><P>
+@D=$@
+<DT><A NAME="DATE"> @D@Date@D@</A>
+<DD>
+  This is the standard RCS @D@Date@D@ tag.
+	The header file will be included only when this tag is reached.<BR>
+	That is because some variables contained into the
+  header may need to be assigned to a particular value different from the
+  default empty string !<BR>
+  Also if you don't use RCS (or CVS) you MUST use this tag, otherwise the
+  header cannot be included.<BR>
+  The @AT@DATE@AT@ variable is assigned with the @D@Date@D@
+	tag value. If you don't use RCS this value is the making date.
+
+
+<DT><P>
+<DT><A NAME="HEAD"> @AT@HEAD tmpl@AT@</A>
+<DD>
+  Use a different header from @AT@DEFAULT_HEAD@AT@.
+	If 'tmpl' is omitted no header is included.
+	This directive MUST precede the RCS <A HREF="#DATE">@D@Date@D@</A> tag.
+	The 'tmpl' is the filename without the leading templates directory
+	(@AT@DEFAULT_TMPLDIR@AT@) and the extension (@AT@DEFAULT_TMPL_EXTENSION@AT@).
+
+
+<DT><P>
+<DT><A NAME="TAIL"> @AT@TAIL tmpl@AT@</A>
+<DD>
+  Same as <A HREF="#HEAD">@AT@HEAD@AT@</A> but works only on the footer
+	template (@AT@DEFAULT_TAIL@AT@) and doesn't need to precede the
+	<A HREF="#DATE">@D@Date@D@</A> tag.
+</DL>
+
+

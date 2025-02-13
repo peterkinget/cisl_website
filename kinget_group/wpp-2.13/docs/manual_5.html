@@ -1,0 +1,487 @@
+<HTML>
+<HEAD>
+<TITLE>[ WPP - The Web Preprocessor ]  Directives</TITLE>
+<LINK REV=MADE HREF="mailto:lm@geocities.com">
+<META NAME="author" CONTENT="Marco (LM) Lamberto - lm@geocities.com">
+<META NAME="description" CONTENT="WPP is a small perl script that allows preprocessing of html files.  It's useful for giving an uniform layout to different html pages. It can be used into cgi scripts for dynamic generation of pages.">
+<META NAME="keywords" CONTENT="html, preprocessor, preprocessing, web, perl, script, cgi, the sunny spot">
+<META NAME="generator" CONTENT="By Hand v1.0 with VIM for Linux + WPP ;)">
+
+
+</HEAD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<BODY BGCOLOR="#ffffff">
+<FONT FACE="arial,helvetica">
+
+<CENTER>
+<TABLE WIDTH="100%" BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR VALIGN=MIDDLE>
+<TD ALIGN=LEFT><A
+	HREF="http://www.geocities.com/Tokyo/1474/"><IMG SRC="images/tss_logo.gif" WIDTH=90 HEIGHT=32 ALT="[ The Sunny Spot ]" BORDER=0></A></TD>
+<TD ALIGN=CENTER WIDTH="70%">
+	<FONT FACE="arial,helvetica" COLOR="#ffffff">
+	<FONT SIZE="+1"><B>WPP v2.13 - The Web Preprocessor</B></FONT><BR>
+	<FONT SIZE="-1">Author : <A HREF="mailto:lm@geocities.com">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">Marco Lamberto</FONT></A></FONT>
+	</FONT>
+</TD>
+<TD ALIGN=RIGHT><A
+	HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32 ALT="Preprocessed by WPP" BORDER=0></A></TD>
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="images/null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+
+<A HREF="index.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Index</B></FONT></A>
+
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+
+<A HREF="manual_4.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>&lt; Previous</B></FONT></A>
+
+&nbsp;&nbsp;
+<A HREF="manual_6.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Next &gt;</B></FONT></A>
+&nbsp;&nbsp;
+</TD>
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="images/null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+</TABLE>
+</CENTER>
+<P>
+
+
+
+<DL>
+<!-- Directives -->
+<DT><P>
+<TABLE WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BORDER=0>
+<TR><TD BGCOLOR="#eecc66"><A NAME="DIRECTIVES">&nbsp;&nbsp;</A><FONT
+	FACE="arial,helvetica"><B>Directives</B></FONT></TD>
+	<TD BGCOLOR="#eecc66" ALIGN=right><A HREF="#" onMouseOver="status='Top of the page';		return true"><IMG SRC="images/arrow_up.gif" WIDTH=14 HEIGHT=14		ALT="[ ^ ]" BORDER=0></A></TD>
+</TABLE>
+<DD><P>
+
+<DL>
+
+
+<DT><A NAME="INCLUDE"> @INCLUDE name@</A>
+<DD>
+  Include a template. The 'name' value is expanded by adding the
+  @DEFAULT_TMPLDIR@ value as prefix and the
+	@DEFAULT_TMPL_EXTENSION@ as extension.
+
+	<DL>
+	<DD>
+	<TABLE>
+	<TR VALIGN=MIDDLE ALIGN=CENTER><TD COLSPAN=2>
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Config file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+    @DEFAULT_TMPLDIR=pub@
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</TD>
+	<TD ROWSPAN=3>
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000" SIZE="+2">=</FONT></TD>
+	<TD WIDTH="33%" ROWSPAN=3>
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Output file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+    <B>MENU</B><BR>
+		hhh iii jjj kkk lll mmm<P>
+    <B>DRINKS</B><BR>
+		aaa bbb ccc ddd eee fff ggg
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</TD>
+	<TR VALIGN=MIDDLE ALIGN=CENTER><TD WIDTH="33%">
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Template pub/menu.tmpl</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+		<FONT COLOR="#777777">
+    <B>MENU</B><BR>
+		hhh iii jjj kkk lll mmm
+		</FONT>
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</TD><TD WIDTH="33%">
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Template pub/drinks/menu.tmpl</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+		<FONT COLOR="#777777">
+    <B>DRINKS</B><BR>
+		aaa bbb ccc ddd eee fff ggg
+		</FONT>
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</TD>
+	<TR VALIGN=MIDDLE ALIGN=CENTER><TD COLSPAN=2>
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Source file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+		<FONT COLOR="#777777">&lt;!-- includes pub/menu.tmpl --&gt;</FONT><BR>
+    @INCLUDE <FONT COLOR="#550000">menu</FONT>@<P>
+		<FONT COLOR="#777777">&lt;!-- includes pub/drinks/menu.tmpl --&gt;</FONT><BR>
+    @INCLUDE <FONT COLOR="#550000">drinks/menu</FONT>@
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</TD>
+	</TABLE>
+	</DL>
+
+	
+<DT><P>
+<DT><A NAME="IF"> @IF <FONT COLOR="#777777">{</FONT>!<FONT COLOR="#777777">}</FONT>var@</A>
+	<FONT COLOR="#777777">&nbsp;&nbsp;&nbsp;... {</FONT> @ELSE@
+	<FONT COLOR="#777777">&nbsp;&nbsp;&nbsp;... }</FONT>
+	@ENDIF@
+<DT> @IF var == "val"@
+	<FONT COLOR="#777777">&nbsp;&nbsp;&nbsp;... {</FONT> @ELSE@
+	<FONT COLOR="#777777">&nbsp;&nbsp;&nbsp;... }</FONT>
+	@ENDIF@
+<DT> @IF var != "val"@
+	<FONT COLOR="#777777">&nbsp;&nbsp;&nbsp;... {</FONT> @ELSE@
+	<FONT COLOR="#777777">&nbsp;&nbsp;&nbsp;... }</FONT>
+	@ENDIF@
+<DD>
+  Is a simple if ... then implementation that made possible conditional
+  inclusion and evaluation of html fragments.<BR>
+  In the first expression if <I>var</I> differs from empty string or a macro
+	named <I>var</I> exists the code till @ELSE@ or @ENDIF@ is parsed
+	and included.<BR>
+  It can be nested.<P>
+
+	<DL>
+	<DD>
+	
+	
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Source file</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+	@IF SHOW_IMAGE@<BR>
+	<FONT COLOR="#777777">&nbsp;&nbsp;&nbsp;graphic map<BR></FONT>
+	@ELSE@<BR>
+	<FONT COLOR="#777777">&nbsp;&nbsp;&nbsp;text description<BR></FONT>
+	@ENDIF@<P>
+	@IF !SHOW_IMAGE@<BR>
+	<FONT COLOR="#777777">&nbsp;&nbsp;&nbsp;text map<BR></FONT>
+	@ELSE@<BR>
+	&nbsp;&nbsp;@IF IMAGE_DESC=="Test"@<BR>
+	<FONT COLOR="#777777">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test<BR></FONT>
+	&nbsp;&nbsp;@ENDIF@<BR>
+	<FONT COLOR="#777777">&nbsp;&nbsp;image<BR></FONT>
+	@ENDIF@<P>
+	<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+	</DL>
+
+	<P><B>Notes</B>
+	<UL>
+	<LI>The previous versions of WPP used @FI@ instead of
+		@ENDIF@, this version can handle both but remember that
+		@FI@ is deprecated and could be removed in the future.
+	</UL>
+
+
+<DT><P>
+
+<DT><A NAME="DATE"> $Date$</A>
+<DD>
+  This is the standard RCS $Date$ tag.
+	The header file will be included only when this tag is reached.<BR>
+	That is because some variables contained into the
+  header may need to be assigned to a particular value different from the
+  default empty string !<BR>
+  Also if you don't use RCS (or CVS) you MUST use this tag, otherwise the
+  header cannot be included.<BR>
+  The @DATE@ variable is assigned with the $Date$
+	tag value. If you don't use RCS this value is the making date.
+
+
+<DT><P>
+<DT><A NAME="HEAD"> @HEAD tmpl@</A>
+<DD>
+  Use a different header from @DEFAULT_HEAD@.
+	If 'tmpl' is omitted no header is included.
+	This directive MUST precede the RCS <A HREF="#DATE">$Date$</A> tag.
+	The 'tmpl' is the filename without the leading templates directory
+	(@DEFAULT_TMPLDIR@) and the extension (@DEFAULT_TMPL_EXTENSION@).
+
+
+<DT><P>
+<DT><A NAME="TAIL"> @TAIL tmpl@</A>
+<DD>
+  Same as <A HREF="#HEAD">@HEAD@</A> but works only on the footer
+	template (@DEFAULT_TAIL@) and doesn't need to precede the
+	<A HREF="#DATE">$Date$</A> tag.
+</DL>
+
+
+
+</DL>
+
+<!-- -->
+<BR CLEAR=ALL>
+<P>
+<TABLE BORDER=0 WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="images/null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+<A HREF="#">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>^ Top</B></FONT></A>
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+
+<A HREF="manual_4.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>&lt; Previous</B></FONT></A>
+
+&nbsp;&nbsp;
+<A HREF="manual_6.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Next &gt;</B></FONT></A>
+&nbsp;&nbsp;
+</TD>
+
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="images/null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+<TR VALIGN=MIDDLE>
+  <TD WIDTH="33%">
+		<FONT FACE="arial,helvetica" SIZE="-2" COLOR="#ffffff">
+		Marco (LM) Lamberto <A HREF="mailto:lm@geocities.com?subject=WPP - The Web Preprocessor">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">lm@geocities.com</FONT></A><BR>
+		Revised: 2000/12/10 12:34:10
+
+	
+
+		<BR>
+		<A HREF="http://www.geocities.com/Tokyo/1474/wpp/manual_5.html"
+			>
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">http://www.geocities.com/Tokyo/1474/wpp/manual_5.html</FONT></A>
+		</FONT>
+	</TD><TD ALIGN=CENTER WIDTH="34%">
+		<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+		<TR VALIGN=BOTTOM>
+
+		<TD><A HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG  SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32  ALT="Preprocessed by WPP" BORDER=0></A></TD>
+
+		<TD><IMG SRC="images/null.gif" WIDTH=5 HEIGHT=32 ALT=""></TD>
+		<TD><A HREF="http://www.gimp.org/"><IMG  SRC="images/gfx_by_gimp.gif" WIDTH=90 HEIGHT=36  BORDER=0 ALT="Graphics by GIMP"></A></TD>
+		</TABLE>
+	</TD><TD ALIGN=RIGHT WIDTH="33%">
+
+		<IMG SRC="images/null.gif" WIDTH=90 HEIGHT=32 BORDER=0 ALT="">
+
+	</TD>
+</TABLE>
+</FONT>
+</BODY>
+</HTML>

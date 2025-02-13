@@ -1,0 +1,26 @@
+@H_SECTION("Variables assignment", "VARASSIGN")@
+
+<DL>
+<DT> @AT@NAME=val@AT@
+<DD>
+  Valid names can contain uppercase letters, numbers and the '_' underscore
+  char.<BR>
+	The value can contain other variables and macro calls delimitated by the
+	@AT@ char.<BR>
+
+	<DL>
+	<DD>
+	@BOX_TITLE=Source file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+    @HTML_COMMENT("assigns to <B>FOO_0</B> the value <B>Title</B>")@<BR>
+    &nbsp;&nbsp;&nbsp;@AT@FOO_0=@H_PARAM("Title")@@AT@<P>
+    @HTML_COMMENT("deletes <B>FOO_1</B> if defined")@<BR>
+    &nbsp;&nbsp;&nbsp;@AT@FOO_1=@AT@<P>
+    @HTML_COMMENT("sets <B>FOO_0</B> to <B>FOO_1</B>")@<BR>
+    &nbsp;&nbsp;&nbsp;@AT@FOO_0=@H_PARAM("@AT@FOO_1@AT@")@@AT@
+	@BOX_CLOSE()@
+	</DL>
+</DL>
+
+

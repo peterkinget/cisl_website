@@ -1,0 +1,38 @@
+# this file is read by any robot that conforms to the WWW robot
+# guidelines described here:
+#	http://www.nexor.co.uk/mak/doc/robots/norobots.html
+
+User-agent: *
+Disallow: /acis/cria/rosenberg/
+Disallow: /acis/eds/dgate
+Disallow: /acis/experimental/
+Disallow: /acis/gif/
+Disallow: /acis/rad/stats/
+Disallow: /acis/sy/hosts
+Disallow: /cgi-bin/
+Disallow: /cu/archive/
+Disallow: /cu/gulf/
+Disallow: /cu/libraries/gifs/
+Disallow: /cu/libraries/clio_plus/user_guide/
+Disallow: /dlc/imaging/
+Disallow: /dlc/earthscape/test
+Disallow: /dlc/earthscape/upload/
+Disallow: /httpd/reports/
+Disallow: /imaging/
+
+User-agent: Ultraseek
+Disallow: /acis/cria/rosenberg/
+Disallow: /acis/experimental/
+Disallow: /acis/gif/
+Disallow: /acis/rad/stats/
+Disallow: /acis/sy/hosts
+Disallow: /cgi-bin/
+Disallow: /cu/archive/
+Disallow: /cu/gulf/
+Disallow: /cu/libraries/gifs/
+Disallow: /cu/libraries/clio_plus/user_guide/
+Disallow: /dlc/imaging/
+Disallow: /dlc/earthscape/test
+Disallow: /dlc/earthscape/upload/
+Disallow: /httpd/reports/
+Disallow: /imaging/

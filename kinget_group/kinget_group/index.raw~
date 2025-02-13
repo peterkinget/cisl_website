@@ -1,0 +1,117 @@
+$Date$
+
+
+<p><pL> Welcome to the homepage of the Kinget Group at <a
+href="http://www.columbia.edu">Columbia University</a> in New York
+City. Our research group is part of the <a
+href="http://www.cisl.columbia.edu">Columbia Integrated Systems
+Laboratory</a> in the <a href="http://www.ee.columbia.edu">Electrical
+Engineering Department</a>.
+
+<p><pL>Our research focuses on the design, simulation and measurement of
+<b><i>analog and radio-frequency integrated circuits in advanced IC
+technologies</i></b>.  Our ongoing research projects are described in
+the <a href="research.html">"Research"</a> section. You can find
+microphotographs of some of the chips we have designed in the <a
+href="gallery.html">"Chip Gallery"</a>.
+
+<p><pL>You can find our conference and journal papers listed in the <a
+href="publications.html">"Publications"</a> section. Our papers regularly
+appear in the <a href="publications_ranking.html">IEEExplore Top 100
+download ranking</a> and the <a href="publications_ranking.html">JSSC
+Most Read Articles lists</a>.
+
+<p><pL>In case you wonder: <b><i>'The electronic world is going digital,
+why analog?'</i></b>, check out these <a
+href="http://www.ee.columbia.edu/~kinget/why_analog.html">quotes</a>.
+
+<p><pL> If you are interested in research projects for undergraduate
+or M.S. students or in opportunities to join our group, check out the
+<a href="prospective.html">"Prospective Students"</a> section.
+
+</pL>
+
+<h2> News </h2>
+
+<li> Our group will (co)author four presentations and a tutorial at the
+IEEE Radio Frequency Integrated Circuits (RFIC)
+Symposium. Congratulations to Frank, Anu, and Yiping. </li><br>
+
+<li> Our April 2008 JSSC paper "A 0.5-V 8-bit 10-Ms/s Pipelined ADC in
+90-nm CMOS" appeared in the <a href="news/Top100_200804_shen.pdf">April
+2008</a> (ranked #38) <a href="publications_ranking.html"><b>Top 100
+Downloads of the whole IEEExplore site!</b></a></li><br>
+
+<li>Jonathan Tompson presented his research on RF inductive power
+delivery for contactless test at the IEEE Conference on Microelectronic
+Test Structures (ICMTS) in March 2008. </li><br>
+
+<li> Peter Kinget joined the editorial board of the IEEE Transactions on
+Circuits and Systems II as an associate editor. </li><br> 
+
+<li> Ajay Balankutty, Shih-An Yu and Yiping Feng will present a paper
+entitled "A 0.6V 32.5mW Highly-Integrated Receiver for 2.4GHz ISM-Band
+Applications" at the International Solid-State Circuits Conference
+(ISSCC), San Francisco in Feb. 2008.  </li><br>
+
+<li> Peter Kinget co-founded the <a
+href="http://edssscs.googlepages.com">NY EDS/SSCS IEEE chapter</a> and
+serves as its SSCS vice-chair <a href="news/SSCS_NY_chapter_Solid-State_Circuits_Society.pdf">(SSCS newsletter
+article)</a>.</li><br>
+
+<li> Peter Kinget gave an invited talk on "Ultra-low Voltage Analog
+Integrated Circuits for Nanoscale CMOS" at the IEEE Bipolar and BiCMOS
+Circuits and Technology Meeting in Boston (MA) in October 2007.</li><br>
+
+<li> Peter Kinget gave a plenary talk at the IEEE European
+Solid-State Circuits Conference in Munich, Germany, entitled "Designing
+Analog and RF circuits for Ultra-low Supply Voltages" in September 2007.</li><br>
+
+<li> Peter Kinget gave an invited talk at the IEEE Custom
+Integrated Circuits Conference in San Jose, CA, on "Advanced Design
+Techniques for Integrated Voltage Controlled LC Oscillators" in
+September 2007.</li><br>
+
+<li> Ajay Balankutty, T.C. Chih and C.Y. Chen presented their results
+on "Mismatch Characterization of Ring Oscillators" at the IEEE Custom
+Integrated Circuits Conference in San Jose, CA in September 2007.</li><br>
+
+<li> Our August 2007 JSSC paper "An Ultra Compact Differentially Tuned 6
+GHz CMOS LC VCO with Dynamic Common Mode Feedback" was ranked #55 in the
+<a href="news/Top100_200707_soltanian.pdf">July 2007</a> and #27 in the
+<a href="news/Top100_200708_soltanian.pdf">August 2007</a> <b>Top 100
+Downloads of the whole IEEExplore site!</b></li><br>
+
+<!--<br><br><h2><a href="archived_news.html">News</a></h2>-->
+
+<h2><a href="archived_news.html">Archived News</a></h2>
+
+<br><h2> Contact </h2>
+<table>
+<tr><td></td><td valign=top>mail address:</td> <td valign=top><table><tr><td>1312 S. W. Mudd Building</td></tr><tr><td>500 West 120th Street</td></tr><tr><td>New York, NY 10027, U.S.A</td></tr></table></td></tr>
+
+<tr><td></td><td valign=top>lab:</td>        <td valign=top><table><tr><td>CEPSR 422 (Shapiro)</td></tr><tr><td><a href="http://www.columbia.edu/about_columbia/directions.html">Directions</a> | <a href="http://www.columbia.edu/cu/aboutcolumbia/maps/index.html">campus map</a> | <a href="http://www.columbia.edu/about_columbia/map/schapiro_center.html">building map</a></td></tr></table></td></tr>
+
+<!-- <tr><td></td><td></td>         <td><a href="http://www.columbia.edu/cu/aboutcolumbia/maps.html">Directions</a> | <a href="http://www.columbia.edu/cu/aboutcolumbia/maps/index.html">campus map</a> | <a href="http://www.columbia.edu/cu/aboutcolumbia/maps/sectionD.html">building map</a></td></tr> -->
+</table>
+
+<!-- tracker -->
+<a href="http://t.extreme-dm.com/?login=kingetgr"
+target="_top"><img src="http://t1.extreme-dm.com/i.gif"
+name="EXim" border="0" height="38" width="41"
+alt="eXTReMe Tracker"></img></a>
+<script type="text/javascript" language="javascript1.2"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;//-->
+</script><script type="text/javascript"><!--
+var EXlogin='kingetgr' // Login
+var EXvsrv='s9' // VServer
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+EXd.write("<img src=\"http://e0.extreme-dm.com",
+"/"+EXvsrv+".g?login="+EXlogin+"&amp;",
+"jv="+EXjv+"&amp;j=y&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXd.referrer)+"\" height=1 width=1>");//-->
+</script><noscript><img height="1" width="1" alt=""
+src="http://e0.extreme-dm.com/s9.g?login=kingetgr&amp;j=n&amp;jv=n"/>
+</noscript>

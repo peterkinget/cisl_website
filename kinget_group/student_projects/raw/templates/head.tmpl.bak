@@ -1,0 +1,37 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="kinget_group.css">
+</head>
+
+<body>
+<!-- Here is the logo -->
+<div id="logo">
+<a href="http://www.columbia.edu"><img align="top" border="0" align="middle" alt="cu_logo" src="images/cu_logo.gif"></a>
+<img width="150" height="1" src="">
+<a href="http://www.cisl.columbia.edu"><img width="250" border="0" align="middle" alt="cisl_logo" src="images/cisl_logo_transparant.gif"></a><br>
+<center><h1 style="font-family:verdana, times; margin-top:0; margin-bottom:0" >Analog and RF IC Design Research <br> 
+(Kinget Group)</h1></center>
+</div>
+
+<!-- Here is the navigation bar definition -->
+<!-- <div id="navigation" style="position: relative; top: 0px;
+left:0px;"> -->
+<div id="navigation">
+<center> |
+<a href="index.html">Home</a> |
+<a href="people.html">People</a> |
+<a href="research.html">Research</a> |
+<a href="publications.html">Publications</a> |
+<a href="gallery.html">Chip Gallery</a> |
+<!-- <a href="seminars.html">Seminars</a> | -->
+<a href="sponsors.html">Sponsors</a> | 
+<a href="prospective.html">Prospective Students</a> |
+</center>
+</div>
+
+<!-- Here will start the main page -->
+
+<!-- <div id="content" style="position: relative; top: 0px;
+left:200px;"> -->
+
+<div id="content">

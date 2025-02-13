@@ -1,0 +1,136 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>新增網頁 0</title>
+</head>
+
+<body>
+
+<p style="line-height: 150%"><b><font size="5">1. Polarization Issue: </font>
+</b></p>
+<p style="line-height: 150%"><font size="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+The problem might be&nbsp; polarization. Our Tx is circular polarization 
+and Rx is linear polarization, it is</p>
+<p style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; not an ideal match in nature. As a 
+result, we decide to&nbsp; move Tx back to Lab and <a href="rxtest.jpg">
+setup IC-1000 </a>to see what's wrong with our Tx antenna.&nbsp;&nbsp;
+</p>
+<p style="line-height: 150%" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Chart1 2.5M&nbsp; parallel loop antenna</b></p>
+<p style="line-height: 150%" align="center"><b>&nbsp;</b><img border="0" src="pin045.jpg" width="599" height="427"></p>
+<p align="center" style="line-height: 150%"><span style="background-color: #FF0000">Red</span><span style="background-color: #FFFFFF"> </span>curve is 
+Max. Envelop </p>
+<p align="left" style="line-height: 150%">　</p>
+  <p align="left" style="line-height: 150%"><b><font size="5">&nbsp;2. Cut the 
+  loop:</font></b><p align="left" style="line-height: 150%"><font size="4"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b>&nbsp;</font>
+<a href="cut.jpg">When we are about to cut the wire</a>, the received 
+power boosts significantly! That is a&nbsp; surprises to us. We analyze that 
+phenomenon and</p>
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; find out&nbsp; 
+the cause. A clipper conducting the antenna changes the polarization from 
+circular to somewhat linear polarization. It is a like </p>
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; linear 
+polarization&nbsp; because of the two handles of clipper, and if is in upright 
+position, it matched the&nbsp; receiver polarization ( vertical </p>
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; linear 
+polarization). To prove this, we record the chart.&nbsp; </p>
+<p align="center" style="line-height: 150%">&nbsp;<b>Chrat2&nbsp;&nbsp; 2.5M Clipper phenomenon</b></p>
+<p align="center" style="line-height: 150%">&nbsp;
+<img border="0" src="pin060camp.jpg" width="599" height="427"></p>
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The
+<span style="background-color: #FF0000">Red</span>&nbsp; curve depict the max 
+received power with a clipper and <span style="background-color: #00FF00">green</span><span style="background-color: #FFFFFF"> 
+curve is transient curve without clipper. Comparing with Chart1, </span></p>
+<p align="left" style="line-height: 150%"><span style="background-color: #FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+The max power is boosted by 20 dBm. </span></p>
+<p align="left" style="line-height: 150%">　</p>
+  <p align="left" style="line-height: 150%"><b><span style="background-color: #FFFFFF">
+  <font size="5">
+  &nbsp;3.
+  Change Loop antenna to Di</font></span><font size="5">pole antenna. </font>
+  </b>
+  <p align="left" style="line-height: 150%"><font size="4"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </b></font>The standard dipole should be like this :<p align="center" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="ant4.jpg" width="400" height="316"><p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Due to the original design of Tx IC , there is a internal capacitor that 
+shouldn't exist in Dipole antenna configuration. The way to cancel out the capacitance is like the way we used in loop antenna; we add a additional 
+inductance to resonate out the capacitor at Tx frequency. 
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="ant3.jpg" width="400" height="375"><p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+The inductor should be<a href="chapter5.htm"> 21.5nH to 35.5nH</a> and we could 
+use the small loop(27nH) we made for loop antenna. Now we have a dipole antenna. We make a little experiment on &quot; How does the antenna position affect the 
+received power ? &quot;&nbsp; by placing different&nbsp; antenna positions. 
+  <p align="left" style="line-height: 150%">　<p align="left" style="line-height: 150%"><b>
+<font size="5">4. Antenna Test </font></b>
+  <p align="center" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="ant5.jpg" align="right" width="600" height="243"><p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="1up1down.jpg">&nbsp;1. 1 rod points up, 1 points down</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="ver.jpg">&nbsp; 2. 2 rods in 90 degree. </a>
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="2up.jpg">&nbsp;3.&nbsp; All two rods points up. </a>
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+The test result conforms the theory,&nbsp; 1 &gt; 2 &gt; 3 in received power if 
+receiver is vertical polarization. </p>
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p align="center" style="line-height: 150%">
+<b>Chart3&nbsp;&nbsp; 2.5M Antenna test: Configuration
+<span style="background-color: #FF0000">1</span> and
+<span style="background-color: #00FF00">3</span></b></p>
+<p style="line-height: 150%" align="center">&nbsp;<img border="0" src="2upnewloop.jpg" width="599" height="416"></p>
+<p align="center" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="background-color: #FF0000">Red</span> curve depicts the max envelop 
+of <span style="background-color: #FFFFFF">configuration</span><span style="background-color: #FF0000">1</span> 
+, <span style="background-color: #00FF00">green</span><font color="#00FF00">
+</font>curve is transient of configuration <span style="background-color: #00FF00">3</span>.</p>
+<p style="line-height: 150%">　</p>
+<p style="line-height: 150%" align="center">
+<b>Chart4 2.5M</b> <b>Antenna test: Configuration
+<span style="background-color: #FF0000">1</span> and
+<span style="background-color: #00FF00">2</span></b></p>
+<p style="line-height: 150%" align="center">&nbsp;
+<img border="0" src="verloop.jpg" width="599" height="416"></p>
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+<span style="background-color: #FF0000">Red</span> curve depicts the max envelop 
+of <span style="background-color: #FFFFFF">configuration</span><span style="background-color: #FF0000">1</span> 
+, <span style="background-color: #00FF00">green</span><font color="#00FF00">
+</font>curve is transient of configuration <span style="background-color: #00FF00">2</span>.</p>
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Configuration 1 is about 42 dB, configuration 2 is about 50 dB, configuration is about -60dB. 
+The difference is about 10 dB to each other. In <a href="2up.jpg">
+Configuration 3</a> energy seems to cancel each other and is be avoided. <a href="ver.jpg">
+Configuration 2</a> could be used&nbsp; when the Rx polarization is unknown. To test the efficiency of the small loop ( additional 
+inductor), we take it off 
+and measure the received power. </p>
+<p align="left" style="line-height: 150%">　</p>
+<p align="center" style="line-height: 150%">
+<b>Chart5 2.5M&nbsp; Without small loop (additional inductor) , Configuration
+<span style="background-color: #FF0000">1</span> and
+<span style="background-color: #00FF00">3</span></b>
+<img border="0" src="2upnoloop.jpg" width="599" height="427"></p>
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="background-color: #FF0000">Red</span> curve depicts the max envelop 
+of <a href="1up1down.jpg"><span style="background-color: #FFFFFF">
+configuration</span><span style="background-color: #FF0000">1</span></a> ,
+<span style="background-color: #00FF00">green</span><font color="#00FF00">
+</font>curve is transient of <a href="2up.jpg">configuration
+<span style="background-color: #00FF00">3</span></a>.</p>
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Comparing with Chart3, the max envelop drops 10dB and the envelop is 
+not as smooth as chart 4 or 3. There exists spikes in Chart1 and Chart5, and we think&nbsp; it might be&nbsp; a 
+syndrome of unmatched antenna.&nbsp;&nbsp; 
+New antenna successfully boosts Received power by 20 to 25dB than old loop 
+antenna. To see the improvement in data transmission,&nbsp; <a href="chapter7.htm">we have to perform 2 PCs data link test. </a>
+</p>
+
+</body>
+
+</html>

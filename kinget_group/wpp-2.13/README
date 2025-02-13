@@ -1,0 +1,14 @@
+WPP - The Web Preprocessor
+Author : Marco Lamberto <lm@geocities.com>
+
+WPP is a perl5 script that allows preprocessing of html files.
+WPP is distributed under the terms of the GNU General Public
+License (GPL).  See the file COPYING.  As such, you can use this
+program free of charge but there is no warranty.
+
+Just copy the script named "wpp" into some convenient directory in your PATH
+(i.e. /usr/local/bin).
+You may need to change the first row of the "wpp" script in order to match the
+correct path for your perl interpreter.
+
+For more informations read the file docs/index.html.

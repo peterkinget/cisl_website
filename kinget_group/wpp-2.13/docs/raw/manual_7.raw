@@ -1,0 +1,12 @@
+@TITLE=@WPP_TITLE@ Configuration variables and directives@
+@TSSNAVBAR_IS_4=y@
+@TSSNAVBAR_URL_L=@TSS_DIR_PREFIX@manual_6@
+@TSSNAVBAR_URL_R=@TSS_DIR_PREFIX@manual_8@
+
+@INCLUDE utils/box_macros@
+@INCLUDE utils/h_macros@
+$Date: 1998/09/23 11:26:51 $
+
+<DL>
+@INCLUDE parags/configuration@
+</DL>

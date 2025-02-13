@@ -1,0 +1,7 @@
+@EMAIL=lm@AT@geocities.com@
+@IF GEOCITIES@
+	@MAIL_ACTION=http://www.geocities.com/cgi-bin/homestead/mail.pl?marcolamberto@
+@ELSE@
+	@MAIL_ACTION=mailto:@EMAIL@@
+@FI@
+

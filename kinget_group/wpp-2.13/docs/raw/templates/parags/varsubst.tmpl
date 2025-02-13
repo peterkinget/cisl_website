@@ -1,0 +1,35 @@
+@H_SECTION("Variables substitution", "VARSUBST")@
+
+<DL>
+<DT> @AT@NAME@AT@
+<DD>
+	Simply put the variable name between two '@AT@'.
+
+	<DL>
+	<DD>
+	<TABLE>
+	<TR VALIGN=MIDDLE ALIGN=CENTER><TD WIDTH="50%">
+	@BOX_TITLE=Source file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+  @AT@FOO1=<FONT @COL_PARAMS@>A</FONT>@AT@<BR>
+  @AT@FOO2=<FONT @COL_PARAMS@>B</FONT>@AT@<BR>
+  <FONT @COL_COMMENTS@>Choose </FONT>@AT@FOO1@AT@
+	<FONT @COL_COMMENTS@> or </FONT>@AT@FOO2@AT@
+	<FONT @COL_COMMENTS@> ?</FONT>
+	@BOX_CLOSE()@
+
+	</TD>
+	<TD>@H_FONTC("=", "#000000\" SIZE=\"+2")@</TD>
+	<TD WIDTH="50%">
+	@BOX_TITLE=Output file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+  Choose A or B ?
+	@BOX_CLOSE()@
+	</TD>
+	</TABLE>
+	</DL>
+</DL>
+
+

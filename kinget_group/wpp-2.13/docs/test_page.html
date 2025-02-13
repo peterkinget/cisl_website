@@ -1,0 +1,601 @@
+<HTML>
+<HEAD>
+<TITLE>[ WPP - The Web Preprocessor ]  Test Page</TITLE>
+<LINK REV=MADE HREF="mailto:lm@geocities.com">
+<META NAME="author" CONTENT="Marco (LM) Lamberto - lm@geocities.com">
+<META NAME="description" CONTENT="WPP is a small perl script that allows preprocessing of html files.  It's useful for giving an uniform layout to different html pages. It can be used into cgi scripts for dynamic generation of pages.">
+<META NAME="keywords" CONTENT="html, preprocessor, preprocessing, web, perl, script, cgi, the sunny spot">
+<META NAME="generator" CONTENT="By Hand v1.0 with VIM for Linux + WPP ;)">
+
+
+</HEAD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<BODY BGCOLOR="#ffffff">
+<FONT FACE="arial,helvetica">
+
+<CENTER>
+<TABLE WIDTH="100%" BORDER=0 CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR VALIGN=MIDDLE>
+<TD ALIGN=LEFT><A
+	HREF="http://www.geocities.com/Tokyo/1474/"><IMG SRC="images/tss_logo.gif" WIDTH=90 HEIGHT=32 ALT="[ The Sunny Spot ]" BORDER=0></A></TD>
+<TD ALIGN=CENTER WIDTH="70%">
+	<FONT FACE="arial,helvetica" COLOR="#ffffff">
+	<FONT SIZE="+1"><B>WPP v2.13 - The Web Preprocessor</B></FONT><BR>
+	<FONT SIZE="-1">Author : <A HREF="mailto:lm@geocities.com">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">Marco Lamberto</FONT></A></FONT>
+	</FONT>
+</TD>
+<TD ALIGN=RIGHT><A
+	HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32 ALT="Preprocessed by WPP" BORDER=0></A></TD>
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="images/null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+
+<A HREF="index.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Index</B></FONT></A>
+
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+
+<A HREF="manual_9.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>&lt; Previous</B></FONT></A>
+
+&nbsp;&nbsp;
+<A HREF="index.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Next &gt;</B></FONT></A>
+&nbsp;&nbsp;
+</TD>
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="images/null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+</TABLE>
+</CENTER>
+<P>
+
+
+
+<TABLE WIDTH="100%">
+<TR ALIGN=CENTER>
+<TD>
+
+
+
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Predefined Variables Test</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+<FONT FACE="arial,helvetica" SIZE=-1>
+<DL>
+<DT><P>Read-Only Variables:<BR>
+<DD>
+	WPP_VERSION=[2.13]<BR>
+	DATE=[2000/12/10 12:34:17]<BR>
+	RCS_DATE=[1998/09/23 12:26:51]<BR>
+	AT=[@]<BR> 
+	TEMPLATE=[]<BR>
+	FILENAME=[test_page]<BR>
+	TMPLDIR=[templates]<BR>
+	RAWDIR=[.]<BR>
+	OUTPUTDIR=[..]<BR>
+	OUTPUTSUBDIR=[]<BR>
+	EXTENSION=[html]<BR>
+<DT><P>Configuration Variables:<BR>
+<DD>
+	DEFAULT_HEAD=[head]<BR>
+	DEFAULT_TAIL=[tail]<BR>
+	DEFAULT_TMPLDIR=[templates]<BR>
+	DEFAULT_OUTPUTDIR=[..]<BR>
+	DEFAULT_EXTENSION=[html]
+</DL>
+</FONT>
+<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+
+
+<TD>
+
+
+
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Variables Test</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+<FONT FACE="arial,helvetica" SIZE=-1>
+	TITLE=[[ WPP - The Web Preprocessor ]  Test Page]<BR>
+	V_ASSIGN[]<BR>
+	VAR=[ciao]<BR>
+
+	VAR=[ ciao ]<BR>
+
+
+	<A HREF="#"> FILENAME=[test_page]</A>
+<P>
+
+	<UL>
+	<LI>Variable LI=UL
+	<LI> a
+	<LI> b
+	<LI> c
+	</UL>
+
+	<OL>
+	<LI>Variable LI=OL
+	<LI> a
+	<LI> b
+	<LI> c
+	</OL>
+
+	Read-only variables test skipped (edit the <A HREF="raw/config">raw/config</A> file).
+
+</FONT>
+<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+
+
+<TR ALIGN=CENTER>
+<TD>
+
+
+
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>IF Test</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+<FONT FACE="arial,helvetica" SIZE=-1>
+<DL>
+<DT>Simple:
+<DD>
+
+
+test passed
+
+<BR>
+
+! test passed
+
+
+<DT><P>Nested:
+<DT>Part 1:<DD>
+
+1i OK<BR>
+	
+	2i OK<BR>
+	
+
+
+<DT>Part 2:<DD>
+
+1e OK<BR>
+	
+	4e OK<BR>
+	
+	
+	5i OK<BR>
+	
+
+</DL>
+</FONT>
+<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+
+
+<TD>
+
+
+
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>INCLUDE Test</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+<FONT FACE="arial,helvetica" SIZE=-1>
+<DL>
+<DT>last included template: [templates/head.tmpl]
+
+
+<DL>
+<DT><A HREF="raw/templates/tests/include1.tmpl">TEMPLATE [templates/tests/include1.tmpl]</A>
+
+	<DL>
+<DT><A HREF="raw/templates/tests/include2.tmpl">TEMPLATE [templates/tests/include2.tmpl]</A>
+	<DL>
+<DT><A HREF="raw/templates/tests/include3.tmpl">TEMPLATE [templates/tests/include3.tmpl]</A>
+
+<DT><A HREF="raw/templates/tests/include3.tmpl">Last included template [templates/tests/include3.tmpl]</A>
+<DT><A HREF="raw/templates/tests/include3.tmpl">END [templates/tests/include3.tmpl]</A>
+</DL>
+
+<DT><A HREF="raw/templates/tests/include3.tmpl">Last included template [templates/tests/include3.tmpl]</A>
+<DT><A HREF="raw/templates/tests/include2.tmpl">END [templates/tests/include2.tmpl]</A>
+</DL>
+
+
+<DT><A HREF="raw/templates/tests/include2.tmpl">Last included template [templates/tests/include2.tmpl]</A>
+<DT><A HREF="raw/templates/tests/include1.tmpl">END [templates/tests/include1.tmpl]</A>
+</DL>
+
+
+	last included template: [templates/tests/include1.tmpl]<BR>
+	TEMPLATE=[]<BR>
+<DT><A HREF="raw/test_page.raw">html file from test_page.raw</A>
+</DL>
+
+	INCLUDE recursion test skipped (edit the <A HREF="raw/config">raw/config</A> file).
+
+</FONT>
+<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+
+
+
+<TR ALIGN=CENTER>
+<TD>
+
+
+
+
+
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Macro Expansion Test 1</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+<FONT FACE="arial,helvetica" SIZE=-1>
+BOX_OPEN() &amp; BOX_CLOSE() macros.
+<P>
+Include inside a macro.<BR>
+<DL><DT>Begin [<DL>
+<DT><A HREF="raw/templates/tests/include1.tmpl">TEMPLATE [templates/tests/include1.tmpl]</A>
+
+	<DL>
+<DT><A HREF="raw/templates/tests/include2.tmpl">TEMPLATE [templates/tests/include2.tmpl]</A>
+	<DL>
+<DT><A HREF="raw/templates/tests/include3.tmpl">TEMPLATE [templates/tests/include3.tmpl]</A>
+
+<DT><A HREF="raw/templates/tests/include3.tmpl">Last included template [templates/tests/include3.tmpl]</A>
+<DT><A HREF="raw/templates/tests/include3.tmpl">END [templates/tests/include3.tmpl]</A>
+</DL>
+
+<DT><A HREF="raw/templates/tests/include3.tmpl">Last included template [templates/tests/include3.tmpl]</A>
+<DT><A HREF="raw/templates/tests/include2.tmpl">END [templates/tests/include2.tmpl]</A>
+</DL>
+
+
+<DT><A HREF="raw/templates/tests/include2.tmpl">Last included template [templates/tests/include2.tmpl]</A>
+<DT><A HREF="raw/templates/tests/include1.tmpl">END [templates/tests/include1.tmpl]</A>
+</DL>
+] End</DL>
+</FONT>
+<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+
+<TD>
+
+
+
+
+
+
+
+
+
+
+<!-- BOX Open -->
+<TABLE CELLSPACING=0 CELLPADDING=2 BORDER=0
+	
+	
+>
+
+<TR><TD BGCOLOR="#cccccc"
+	><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR><TD
+		 ALIGN=CENTER 
+	BGCOLOR="#cccccc"><FONT 
+		 FACE="helvetica" 
+		
+		 COLOR="#000000" 
+	>Macro Expansion Test 2</FONT></TD>
+
+	<TR><TD
+		 BGCOLOR="#eeeeee" 
+		
+	><FONT FACE="arial,helvetica">
+<!-- -->
+<TABLE>
+<TR VALIGN=TOP>
+<TD COLSPAN=2><FONT FACE="arial,helvetica" SIZE=-1>String args</FONT>
+<TR VALIGN=TOP>
+<TD>
+<FONT FACE="arial,helvetica" SIZE=-1>
+<OL>
+<LI>test args:
+<LI>A String
+<LI>String with @ 
+</OL>
+</FONT>
+</TD>
+<TD>
+<FONT FACE="arial,helvetica" SIZE=-1>
+<OL>
+<LI>test args:
+<LI><B>"</B> escaping
+<LI><B>,</B> inside <B>"</B>
+</OL>
+</FONT>
+</TD>
+<TR VALIGN=TOP>
+<TD COLSPAN=2><FONT FACE="arial,helvetica" SIZE=-1><BR>Variables args</FONT>
+<TR VALIGN=TOP>
+<TD>
+<FONT FACE="arial,helvetica" SIZE=-1>
+<OL>
+<LI>test args:
+<LI>test_page
+<LI>html
+<LI>2.13
+</OL>
+</FONT>
+</TD>
+<TD>
+<FONT FACE="arial,helvetica" SIZE=-1>
+<OL>
+<LI>test args:
+<LI>2.13
+<LI>2000/12/10 12:34:17
+<LI>[ WPP - The Web Preprocessor ]  Test Page
+</OL>
+</FONT>
+</TD>
+</TABLE>
+
+	<DL>
+	<DT>Built-in Macro HTML_IMAGE_SIZE Test
+	<DD><IMG SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32 ALT="" BORDER=2>&nbsp;
+	<IMG SRC="null.gif" ALT="" WIDTH=1 HEIGHT=32 BORDER=2>
+	<DD><IMG SRC="null.gif" ALT="" WIDTH=90 HEIGHT=1 BORDER=2>
+	</DL>
+<!-- -->
+	</FONT>
+	</TD>
+	</TABLE></TD>
+</TABLE>
+<!-- BOX Close -->
+
+</TD>
+
+</TABLE>
+
+<!-- -->
+<BR CLEAR=ALL>
+<P>
+<TABLE BORDER=0 WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="images/null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+<A HREF="#">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>^ Top</B></FONT></A>
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+
+<A HREF="manual_9.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>&lt; Previous</B></FONT></A>
+
+&nbsp;&nbsp;
+<A HREF="index.html">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#000000"><B>Next &gt;</B></FONT></A>
+&nbsp;&nbsp;
+</TD>
+
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="images/null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+<TR VALIGN=MIDDLE>
+  <TD WIDTH="33%">
+		<FONT FACE="arial,helvetica" SIZE="-2" COLOR="#ffffff">
+		Marco (LM) Lamberto <A HREF="mailto:lm@geocities.com?subject=WPP - The Web Preprocessor">
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">lm@geocities.com</FONT></A><BR>
+		Revised: 2000/12/10 12:34:17
+
+	
+
+		<BR>
+		<A HREF="http://www.geocities.com/Tokyo/1474/wpp/test_page.html"
+			>
+	
+
+<FONT FACE="arial,helvetica" COLOR="#ffffff">http://www.geocities.com/Tokyo/1474/wpp/test_page.html</FONT></A>
+		</FONT>
+	</TD><TD ALIGN=CENTER WIDTH="34%">
+		<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+		<TR VALIGN=BOTTOM>
+
+		<TD><A HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG  SRC="images/pp_by_wpp.gif" WIDTH=90 HEIGHT=32  ALT="Preprocessed by WPP" BORDER=0></A></TD>
+
+		<TD><IMG SRC="images/null.gif" WIDTH=5 HEIGHT=32 ALT=""></TD>
+		<TD><A HREF="http://www.gimp.org/"><IMG  SRC="images/gfx_by_gimp.gif" WIDTH=90 HEIGHT=36  BORDER=0 ALT="Graphics by GIMP"></A></TD>
+		</TABLE>
+	</TD><TD ALIGN=RIGHT WIDTH="33%">
+
+		<IMG SRC="images/null.gif" WIDTH=90 HEIGHT=32 BORDER=0 ALT="">
+
+	</TD>
+</TABLE>
+</FONT>
+</BODY>
+</HTML>

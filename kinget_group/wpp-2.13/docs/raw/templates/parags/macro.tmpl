@@ -1,0 +1,49 @@
+@H_SECTION("Macro expansion", "MACRO")@
+
+<DL>
+<DT>@AT@MACRO MNAME(arg1, arg2, ...)@AT@<BR>
+&nbsp;&nbsp;&nbsp;...<BR>
+@AT@ENDMACRO@AT@
+<DD>
+	Declare <B>MNAME</B> as a new macro. Notice that the valid charset for the
+	name and the arguments is the same of the variables (A-Z,0-9,_).
+<DT><P>@<B>MNAME</B>("arg1", "arg2", ...)@
+<DD>
+	Calls <B>MNAME</B>. Notice that the <B>"</B> are required only if you are
+	using string constants as argument, you can omit them if you use a variable
+	(with the <B>@AT@</B> included). If you use <B>"</B> into a macro argument
+	you should excape it with a <B>\</B>.<P>
+
+	<DL>
+	<DD>
+	@BOX_TITLE=Source file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+
+	@HTML_COMMENT("macro declaration")@<BR>
+	@AT@MACRO MY_MACRO(NAME, HREF)@AT@<BR>
+	&lt;A HREF="@AT@HREF@AT@"&gt;@AT@NAME@AT@&lt;/A&gt;<BR>
+	@AT@ENDMACRO@AT@<P>
+
+	@HTML_COMMENT("macro called with args containing string constants")@<BR>
+	@AT@MY_MACRO("Test", "test.html")@AT@<P>
+	
+	@HTML_COMMENT("macro called with args containing variables")@<BR>
+	@AT@MY_MACRO(@AT@FILENAME@AT@, "@AT@FILENAME@AT@.html")@AT@<P>
+	
+	@HTML_COMMENT("example of splitted macro call")@<BR>
+	@AT@MY_MACRO("\"@AT@FILENAME@AT@\" is the source",\<BR>
+	&nbsp;&nbsp;&nbsp;&nbsp;"@AT@FILENAME@AT@.html")@AT@<P>
+
+	@BOX_CLOSE()@
+	</DL>
+
+<P><B>Notes</B>
+	<UL>
+	<LI>You cannot declare a macro from inside another macro.
+	<LI>Macros can be called within other macros (pay attention to recursive
+		calls!), variables assignments or macro aguments.
+	</UL>
+</DL>
+
+

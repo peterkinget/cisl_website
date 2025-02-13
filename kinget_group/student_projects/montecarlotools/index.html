@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>MonteCarloTools</title>
+  </head>
+  <body>
+    <h1>Monte Carlo Simulation of Device Variations and Mismatch in Analog Integrated Circuits</h1>
+    <hr/>
+
+    <h2>Abstract</h2>
+    <p>Device mismatches, the small random variations in the characteristics of identically designed devices, occur during the manufacturing of integrated circuits. These mismatches result in behavioral variations of analog and digital integrated circuits. Except for very small circuits, it is difficult to analytically predict the behavior of a circuit due to the combination of the mismatch errors of individual devices. The impact of these random parameter variations on circuit behavior can be studied with Monte Carlo simulation by analyzing a large set of circuit instantiations with randomly varied devices.</p>
+    <p>In this paper, a set of Perl programs that automate the Monte Carlo simulation of circuits is presented. The tool generates a user specified number of modified netlists with randomly varied device characteristics. Each circuit device is modified according to a mismatch model for the device type. A user supplied parameters file controls the magnitude of variation for each device type and the tool automatically adjusts the parameter distributions of different device types and sizes. All netlists are simulated and their results are aggregated. These results reflect the tolerance of a circuit to device mismatch errors. Currently, the programs are optimized for the Spectre simulator from Cadence Systems, but the proposed approach can be adapted for other types of circuit simulators.</p>
+    <p>The use of this tool is illustrated with the Monte Carlo analyses for the DC accuracy of a cascode current mirror, the random variation of the delays of a pair of inverter strings under transient operation, the matching of the oscillation frequencies of a set of ring oscillators, and the variation of the transfer characteristics of a fifth order elliptic low pass active filter including its common-mode rejection.</p>
+
+    <h2>Paper</h2>
+    <p>The research was presented on April 6, 2006 at <a href="http://www.ncur.org" title="http://www.ncur.org">NCUR</a>, and the paper will be published in the NCUR Proceedings. A PDF of the paper is also available for download.</p>
+    <p><a href="MonteCarloDeviceMismatch.pdf" title="MonteCarloDeviceMismatch.pdf">MonteCarloDeviceMismatch.pdf</a></p>
+    <p><span>Hector Hung, Vladislav Adzic, and Peter R. Kinget, “Monte Carlo Simulation of Device Variations and Mismatch in Analog Integrated Circuits,” <i>Proceedings of the National Conference on Undergraduate Research (NCUR) 20</i> (September 2006).</span></p>
+
+    <h2>Software Package</h2>
+    <h3>Installation</h3>
+    <p>The software is written in Perl and be installed using standard installation steps:</p>
+    <pre># perl Makefile.PL
+# make
+# make install</pre>
+    <p>To install the package within your own home directory, run these commands:</p>
+    <pre>$ perl Makefile.PL PREFIX=~/opt/
+$ make
+$ make install</pre>
+    <p>Changes may be needed to your .profile or .bash_rc to update some environmental variables:</p>
+    <pre>export PATH=~/opt/usr/bin/:$PATH
+export MANPATH=~/opt/man/:$MANPATH
+expirt PERL5LIB=~/opt/lib/perl5/site_perl/:$PERL5LIB</pre>
+    <p>However, the exact paths vary between different Perl installations.</p>
+    <h3>Download</h3>
+    <p><a href="MonteCarloTools-1.0.tar.gz" title="MonteCarloTools-1.0.tar.gz">MonteCarloTools-1.0.tar.gz</a></p>
+    <h3>License</h3>
+    <p>Written by Hector Hung, Vladislav Adzic, Shouri Chatterjee and <a href="http://www.ee.columbia.edu/~kinget/" title="http://www.ee.columbia.edu/~kinget/">Professor Peter Kinget</a>. Copyright (C) 2004-2006 by the authors and Columbia Integrated Systems Laboratory. There is no warranty or support and we cannot be held liable in any way. Everyone is permitted to copy verbatim copies of the code including this message.</p>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+
+<!-- -->
+<BR CLEAR=ALL>
+<P>
+<TABLE BORDER=0 WIDTH="100%" CELLSPACING=0 CELLPADDING=0 BGCOLOR="#000000">
+<TR><TD COLSPAN=3 BGCOLOR="#000000"><IMG SRC="@IMG_DIR@null.gif" BORDER=0
+	WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+@IF TSSNAVBAR_URL_R@
+<TR>
+<TD BGCOLOR="#eecc66">
+&nbsp;&nbsp;
+<A HREF="#">@H_FONTC("<B>^ Top</B>", "#000000")@</A>
+</TD>
+<TD COLSPAN=2 ALIGN=RIGHT BGCOLOR="#eecc66">
+@IF TSSNAVBAR_URL_L@
+<A HREF="@TSSNAVBAR_URL_L@.html">@H_FONTC("<B>&lt; Previous</B>",\
+	"#000000")@</A>
+@ENDIF@
+&nbsp;&nbsp;
+<A HREF="@TSSNAVBAR_URL_R@.html">@H_FONTC("<B>Next &gt;</B>", "#000000")@</A>
+&nbsp;&nbsp;
+</TD>
+@ENDIF@
+
+<TR><TD BGCOLOR="#ffffff" COLSPAN=3><IMG
+	SRC="@IMG_DIR@null.gif" WIDTH=1 HEIGHT=2 ALT=""></TD>
+
+<TR VALIGN=MIDDLE>
+  <TD WIDTH="33%">
+		<FONT @FONT@ SIZE="-2" COLOR="#ffffff">
+		Marco (LM) Lamberto <A HREF="mailto:@EMAIL@?subject=@EMTITLE@">@H_FONTC(\
+			"@EMAIL@", "#ffffff")@</A><BR>
+		Revised: @DATE@
+@IF !GEOCITIES@
+	@IF !LOCAL_DOCS@
+		Mirrors Version
+	@FI@
+@FI@
+		<BR>
+		<A HREF="http://www.geocities.com/Tokyo/1474/wpp/@FILENAME@.html"
+			>@H_FONTC(\
+			"http://www.geocities.com/Tokyo/1474/wpp/@FILENAME@.html",\
+			"#ffffff")@</A>
+		</FONT>
+	</TD><TD ALIGN=CENTER WIDTH="34%">
+		<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+		<TR VALIGN=BOTTOM>
+@IF GEOCITIES@
+		<TD><A HREF="http://www.geocities.com/Tokyo/"><IMG SRC="http://www.geocities.com/pictures/gc_icon.gif" ALT="Go to the Tokyo GeoPage" BORDER=0 WIDTH=88 HEIGHT=31></A></TD>
+@ELSE@
+		<TD><A HREF="http://www.geocities.com/Tokyo/1474/wpp/"><IMG @HTML_IMAGE_SIZE("@IMG_DIR@pp_by_wpp.gif")@ ALT="Preprocessed by WPP" BORDER=0></A></TD>
+@FI@
+		<TD><IMG SRC="@IMG_DIR@null.gif" WIDTH=5 HEIGHT=32 ALT=""></TD>
+		<TD><A HREF="http://www.gimp.org/"><IMG @HTML_IMAGE_SIZE("@IMG_DIR@gfx_by_gimp.gif")@ BORDER=0 ALT="Graphics by GIMP"></A></TD>
+		</TABLE>
+	</TD><TD ALIGN=RIGHT WIDTH="33%">
+@IF !LOCAL_DOCS@
+		<IMG SRC="http://www.geocities.com/cgi-bin/counter/@FILENAME@" ALT="">
+@ELSE@
+		<IMG SRC="@IMG_DIR@null.gif" WIDTH=90 HEIGHT=32 BORDER=0 ALT="">
+@FI@
+	</TD>
+</TABLE>
+</FONT>
+</BODY>
+</HTML>

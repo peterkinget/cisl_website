@@ -1,0 +1,445 @@
+$Date$
+
+<hr>
+<h2>Ph.D. Research Positions</h2>
+
+<blockquote> If you are completing an undergratuate or M.S. degree and
+are interested in a obtaining graduate degree with research in analog
+and high speed electronics, contact <a href="http://www.ee.columbia.edu/~kinget">Prof. Kinget</a>.  We regularly have openings
+for research and teaching assistantships which cover tuiton and fees
+as well as a stipend for living expenses. Please check out <a
+href="http://www.engineering.columbia.edu/graduate/index.php">our
+graduate admissions page</a> also.  The type of research projects we are
+currently engaged in are listed on our <a
+href="research.html">research</a> page.</blockquote>
+
+
+<hr>
+<h2 style="margin-bottom:-8px">Undergraduate & M.S. Student Research Projects</h2>
+
+<table nocols="2" cellspacing="15">
+<tr>
+  <td colspan="2">
+  <ul><li> Our group has an active program of undergraduate and
+M.S. student research involvement during the semester and summer and we
+also participate in the School's <a
+href="http://www.engineering.columbia.edu/students/academics/research/ee.php">Undergraduate
+Reseach Involvement Program (URIP)</a>. </li>
+<li>If you are an Columbia
+Undergraduate, Master's, or Ph.D. student interested in doing a project
+(for credit) that involves <b><i>designing, simulating, building and/or
+measuring Analog or RF hardware or Integrated Circuits</i></b>, contact
+<a href="http://www.ee.columbia.edu/~kinget">Prof. Kinget</a>.
+</li></ul>
+  </td></tr>
+
+<tr>
+  <td colspan="2"><h4>Open Undergraduate & M.S. Project Announcements</h4>
+  </td></tr>
+
+<font size="+2">
+
+<tr> <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/organics_project.html">Design of Organics
+  Interface Circuits </a></font> </li></ul></td></tr>
+
+<tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/low_voltage_project.html">Ultra-low
+  Voltage Analog Integrated Circuit Design</a></font>
+  </li></ul></td></tr>
+
+<tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/mismatch_project.html">Device Variations
+  Characterization in Advanced IC Processes</a></font>
+  </li></ul></td></tr>
+
+<tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/wireless_test_project.html">Wireless Testing of
+  Integrated Circuits</a></font>
+  </li></ul></td></tr>
+
+<!-- <tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/project_al_pk_final.html">Study of the
+  implementation of a Time-Encoding Machine</a></font>
+  </li></ul></td></tr> -->
+ 
+<!-- <tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/project_shouri_mos_characterization.html">CMOS
+  characterization for ultra-low voltage circuit design</a></font>
+  </li></ul></td></tr>
+-->
+<!-- <tr>
+  <td colspan="2"><ul><li> <a style="font-size:125%;"
+  href="student_projects/project_pk_design.html">Analog/RF Integrated
+  Circuit Design</a></font>
+  </li></ul></td></tr> -->
+
+</font>
+
+<!-- 
+<tr>
+  <td colspan="2"><h4>Undergraduate Reseach Involvement Program</h4>
+  </td></tr>
+
+<tr>
+  <td valign="top">
+  <ul><li> Our group also participates in the School's <a
+  href="http://www.engineering.columbia.edu/students/academics/research/ee.php">Undergraduate
+  Reseach Involvement Program (URIP)</a>.  </li></ul> </td> 
+
+  <td valign="top"> <img src="student_projects/images/urip_cover.jpg"
+  alt="urip_booklet_front" width="90"> </td></tr>
+--> 
+<tr>
+  <td colspan="2"><h4><a href="http://www.ee.columbia.edu/spl">EE
+  Student Projects Lab</a></h4> </td></tr>
+
+<tr>
+  <td colspan="1">
+  <ul><li> The EE deparment is happy to announce the <a
+  href="http://www.ee.columbia.edu/spl">Student Projects Lab</a>. This
+  lab is open to EE and CE students of all levels to pursue their own
+  projects. See the <a
+  href="student_projects/student_project_lab_announce.txt">announcement</a> of the chair
+  for details.  The opening of the lab was also featured in the Columbia
+  Campus Newspaper 'The Spectator'. Follow <a target="_blank"
+  href="http://www.columbiaspectator.com/?q=node/14048">this
+  link</a> or take a look at a <a
+  href="student_projects/student_project_lab_spectator_feb2004.pdf">the article in
+  pdf.</a> </li></ul> </td><td></td></tr>
+
+<!-- <tr>
+  <td colspan="2"><h4>Design Contest</h4>
+  </td></tr>
+
+<tr>
+  <td colspan="1">
+  <ul><li> The Columbia Integrated Systems Lab (CISL) is conducting a
+  <b>Design Contest</b> for a "Self-Powered Radio". The contest has
+  been posted on the bulletin board at the EE office in Mudd and
+  several other locations on campus; see the poster for the contest
+  details and prizes.  </li></ul> </td><td></td></tr> -->
+
+<tr>
+  <td colspan="2"><h4>IEEE-MTT Fellowships</h4>
+  </td></tr>
+
+<tr>
+  <td valign="top">
+  <ul><li> The IEEE Microwave Theory and Techniques Society offers
+  <b>undergraduate fellowships</b> for senior undergraduate students
+  who want to do a research project. Details can be found from the
+  society's homepage <a href="http://www.mtt.org">www.mtt.org</a> ->
+  Awards -> Undergraduate Scholarships. Contact <a href="http://www.ee.columbia.edu/~kinget">Prof. Kinget</a> if you are interested to apply. 
+  </li></ul> </td>
+
+  <td valign="top"> </td></tr>
+</table>
+
+<hr>
+<h2>Current and Past Undergraduate & M.S. Student Projects</h2>
+
+<table nocols="2" cellspacing="15">
+
+<tr>
+  <td colspan="2"><h4>Fall 2007 </h4></td></tr>
+
+<tr> <td><ul><li> Wireless Testing of Integrated Circuits<br><br> see
+J. Tompson, A. Dolin and P. Kinget, "2.6GHz RF Inductive Power Delivery
+for Contactless On- Wafer Characterization," IEEE International
+Conference on Microelectronic Test Structures (ICMTS), accepted, March
+2008</li></ul></td> <td valign="top">Jonathan Tompson <br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Reference circuits</li></ul></td> <td
+valign="top">Christos Vezyrtzis <br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> High gain, ultra-low voltage amplifiers</li></ul></td> <td
+valign="top">Navin Harwalkar <br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Summer 2007 </h4></td></tr>
+
+<tr> <td><ul><li> Device Variation Characterization</li></ul></td> <td
+valign="top">Jonathan Tompson  <br> (M.S.)</td></tr>
+
+<tr> <td colspan="2"><h4>Spring 2007 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Wireless Testing of Integrated Circuits</li></ul></td> <td
+valign="top">Jonathan Tompson  <br> Adam Dolin <br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Reference circuits</li></ul></td> <td
+valign="top">Christos Vezyrtzis <br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Fall 2006 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Device Variation Characterization </li></ul></td> <td
+valign="top">H.S. Lin <br>Chia-Yin Chen <br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Wireless Testing of Integrated Circuits</li></ul></td> <td
+valign="top">Jonathan Tompson  <br> Adam Dolin <br> 
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Reference circuits</li></ul></td> <td
+valign="top">Christos Vezyrtzis <br> 
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Summer 2006 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Automatic Measurement Setup for Device Variation Characterization </li></ul></td> <td
+valign="top">Chia-Yin Chen <br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Device Variation Characterization </li></ul></td> <td
+valign="top">H.S. Lin <br>
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2006 </h4></td></tr>
+
+<tr> <td><ul><li> Implementation of simulation scripts for Monte-Carlo
+  Simulation of device parameter variations and mismatch. <br><br>see
+  H. Hung, V. Adzic, and P.Kinget, "Monte Carlo Simulation of Device
+  Variations and Mismatch in Analog Integrated Circuits," in Proceedings
+  of the National Conference on Undergraduate Research (NCUR), April
+  2006.</li>
+</ul></td> <td valign="top">Hector Hung<br>Vladislav Adzic<br> (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang<br> Vivek Rajeswaran<br> (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Automatic Measurement Setup for Device Variation Characterization </li></ul></td> <td
+valign="top">Chia-Yin Chen <br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Single-ended to Differential Signal Converter </li></ul></td> <td
+valign="top">Tekalegn Habta Lemji <br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Wireless Testing of Integrated Circuits</li></ul></td> <td
+valign="top">Kuo-Chih Feng  <br> Jin Wook Son  <br> Inanc Meric <br>
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Fall 2005 </h4></td></tr>
+
+<tr> <td><ul><li> Single-ended to Differential Signal Converter </li></ul></td> <td
+valign="top">Tekalegn Habta Lemji  <br> Inanc Meric<br>
+(M.S.)</td></tr>
+
+<tr> <td><ul><li> Implementation of simulation scripts for Monte-Carlo
+  Simulation of device parameter variations and
+  mismatch. </li></ul></td> <td valign="top">Hector Hung<br>Vladislav Adzic<br> (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang and Vivek Rajeswaran (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Device Variation Characterization </li></ul></td> <td
+valign="top">Ajay Balankutty<br> Tai-Chiao Chih<br>
+(M.S.)</td></tr>
+
+  <td colspan="2"><h4>Summer 2005 </h4></td></tr>
+
+<tr> <td><ul><li> Implementation of simulation scripts for Monte-Carlo
+  Simulation of device parameter variations and
+  mismatch. </li></ul></td> <td valign="top">Hector Hung<br>Vladislav Adzic<br> (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Ed Chiang (undergraduate)</td></tr>
+
+<tr> <td><ul><li> Device Variation Characterization </li></ul></td> <td
+valign="top">Ajay Balankutty<br>Tai-Chiao Chih<br>
+(M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2005 </h4></td></tr>
+
+<tr>  
+  <td><ul><li>Voltage references operating from a low power supply </li></ul></td>
+  <td valign="top">Tawfiq Musah (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul><li>Testing of Low Voltage Opamps </li></ul></td>
+  <td valign="top">Ajay Balankutty (M.S.)</td></tr>
+
+<tr>  
+  <td><ul><li>Design of Low Voltage Programmable Gain Amplifiers </li></ul></td>
+  <td valign="top">Vasilios Giannopoulos (M.S.)</td></tr>
+
+<tr>  
+  <td><ul><li>Design of Low Voltage OTAs </li></ul></td>
+  <td valign="top">Mustapha Abdulai (M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Fall 2004 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> Modeling and Characterization of MOS capacitors for
+  ultra-low voltage circuit design. 
+  <br><br>see T. Musah, and P.Kinget, "MOS varactors in weak inversion for
+  0.5 V analog filters," in Proceedings of the National Conference on
+  Undergraduate Research (NCUR), Lexington (VA), April 2005.
+  </li>  </ul></td>
+  <td valign="top">Tawfiq Musah (undergraduate)</td></tr>
+
+<!-- <tr>
+  <td>see T. Musah, and P.Kinget, "MOS varactors in weak inversion for
+  0.5 V analog filters," in Proceedings of the National Conference on
+  Undergraduate Research (NCUR), Lexington (VA), April 2005.</td>
+  <td></td></tr> -->
+
+<tr>  
+  <td><ul>  <li> Design and simulation of compact, on-chip LC resonators 
+  <br><br>see S. Sorgenfrei, and P.Kinget, "The effect of fill cell size on
+  planar inductors" in Proceedings of the National Conference on
+  Undergraduate Research (NCUR), Lexington (VA), April 2005.</li>  </ul></td>
+  <td valign="top">Sebastian Sorgenfrei (undergraduate)</td></tr>
+
+<!-- <tr>
+  <td>see S. Sorgenfrei, and P.Kinget, "The effect of fill cell size on
+  planar inductors" in Proceedings of the National Conference on
+  Undergraduate Research (NCUR), Lexington (VA), April 2005.</td>
+  <td></td></tr>
+-->
+
+<tr>  
+  <td><ul>  <li> 
+<a href="student_projects/DividerChip/DividerChipChenBattle.html">Novel Frequency Divider Integrated Circuit</a>
+  </li>  </ul></td>
+  <td>Steven Battle, <br>Allen Chen <br>(M.S.)</td></tr>
+
+<tr>  
+  <td><ul>  <li> Design of a quadrature LC oscillator. 
+  </li>  </ul></td>
+  <td> Cheng-Feng Chu (M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Summer 2004 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> Modeling and Characterization of MOS capacitors for
+  ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Tawfiq Musah (undergraduate)</td></tr>
+
+<tr> <td><ul> <li> <a
+  href="http://www.columbia.edu/~hch2007/summer_research/main.html">Implementation
+  of simulation scripts for Monte-Carlo Simulation of device parameter
+  variations and mismatch.</a> </li> </ul></td> <td>Hector Hung
+  (undergraduate)</td></tr>
+
+<tr> <td><ul> <li> <a href="student_projects/Pcells/index.html">
+  Implementation of parametrized layout cells for analog IC design.</a>
+  </li> </ul></td> <td>Chia-Ching (Peter) Chen (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> Design of operational amplifiers for the time encoding machine
+  </li>  </ul></td>
+  <td>Zelalem Asmamaw (M.S.)</td></tr>
+
+<tr>  
+  <td><ul>  <li> RF powered circuits.
+  </li>  </ul></td>
+  <td>Andrew Han (M.S.)</td></tr>
+
+<tr>
+  <td colspan="2"><h4>Spring 2004 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> Design and simulation of compact, on-chip LC resonators 
+  </li>  </ul></td>
+  <td>Sebastian Sorgenfrei (undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Theodore Kengne (Undergraduate)</td></tr>
+
+<tr>  
+  <td><ul>  <li> Novel Frequency Divider Integrated Circuit
+  </li>  </ul></td>
+  <td>Han-Yun Chang, <br>Allen Chen <br>(M.S.)</td></tr>
+
+<tr>  
+  <td><ul>  <li> Broadband integrated amplifier 
+  <br><br> see F. Zhang and P. Kinget, <a
+  href="http://www.ee.columbia.edu/%7Ekinget/go_ieee.html">"Low Power
+  Programmable-Gain CMOS Distributed LNA for Ultra-Wideband
+  Applications,"</a> in Digest of Technical Papers IEEE Symposium on VLSI
+  circuits, (accepted for presentation), June 2005. 
+  </li>  </ul></td>
+  <td>Frank Zhang (Ph.D.)</td></tr>
+
+  <td colspan="2"><h4>Fall 2003 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> Novel Frequency Divider Integrated Circuit
+  </li>  </ul></td>
+  <td>Han-Yun Chang, <br>Allen Chen <br>(M.S.)</td></tr>
+
+<tr>  
+  <td><ul>  <li> Broadband integrated amplifier
+  </li>  </ul></td>
+  <td>Frank Zhang (Ph.D.)</td></tr>
+
+<tr>  
+  <td><ul>  <li> CMOS characterization for ultra-low voltage circuit design.
+  </li>  </ul></td>
+  <td>Theodore Kengne (Undergraduate)</td></tr>
+
+
+<tr>
+  <td colspan="2"><h4>Summer 2003 </h4></td></tr>
+
+<tr>  
+  <td><ul>  <li> Novel Biasing for LC oscillators
+  </li>  </ul></td>
+  <td>Eric Chang<br> Waclaw Aleksander Godycki <br>(Undergraduate)</td></tr>
+
+<tr>  
+  <td colspan="2"><h4>Fall 2002 </h4></td></tr>
+
+<tr>
+  <td><ul>  <li> <a href="student_projects/ECG Report/E6001 ECG final report.htm" target="_blank">Electrocardiogram Measurements</a>
+  </li></ul></td>
+  <td>Chia-Hung Chen<br> Shi-Gun Pan<br>(M.S.)</td></tr>
+  
+<tr>
+  <td><ul> <li> <a href="student_projects/Wireless_Link/index.html" target="_blank">Short Range Wireless Data Transmission</a>
+  </li></ul></td>
+  <td>Chao-Chieh Hsu<br> Shao-Hsune Lee<br>(M.S.)</td></tr>
+
+</table>

@@ -1,0 +1,179 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>新增網頁 0</title>
+</head>
+
+<body>
+
+<p align="left" style="line-height: 150%"><b><font size="5">&nbsp; 1. Interface </font></b></p>
+<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you connect 
+PC(Rs232)&nbsp; with Tx / Rx&nbsp; directly, you will find it doesn't work 
+because they say different language.</p>
+<ul>
+  <li>
+  <p align="left" style="line-height: 150%"><b><font size="4">&nbsp;Voltage definition in Rs232 and CMOS&nbsp;(Tx 
+  / Rx ) </font></b> </li>
+</ul>
+
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In our Tx / Rx , 
+  &quot;0&quot; is defined as &quot;0V&quot; and &quot;1&quot; is &quot;5V&quot;. In Rs232, logic signals are not 
+  defined the same way.&nbsp; 
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signal is 
+  considered logic &quot;1&quot; when voltage is -3V to -25V. Logic &quot;0&quot; is defined if 
+  voltage is is &quot;3v to +25V&quot; 
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="rs232st.jpg" width="407" height="186"><ul>
+  <li>
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp; <b><font size="4">Interface chip :<a href="ms232cpe.jpg"> Maxim 
+  max232cpe</a></font></b></li>
+</ul>
+  <p align="left" style="line-height: 150%"><font size="4"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </b></font>This chip is designed to convert signals between Rs232 and CMOS. 
+  Though it has two channels, we only need one of them to do 
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  the conversion.&nbsp; The power regulator 7805 is used to steal power from 
+  Rs232. (<a href="rs232int.jpg">See Schematic 3</a>)<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <p align="left" style="line-height: 150%">
+<font size="5">&nbsp;&nbsp;&nbsp; <b>2. Power Integration</b></font><p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Although our Tx / Rx pass the preliminary test, it is not practical because it 
+needs power supply.&nbsp; Next step is to use batter instead of power supply and make it really&nbsp; &quot;portable&quot;.<blockquote>
+  <ul>
+    <li>
+  <p align="left" style="line-height: 150%"><b>Receiver </b></li>
+  </ul>
+  <p align="left" style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </b>Micrf011&nbsp; need 5 V , so does max232. We can have 6 V by making&nbsp; 
+  4 X 1.5 V batteries. 6 V is still acceptable for 
+  chips. 
+  <ul>
+    <li>
+  <p align="left" style="line-height: 150%"><b>Transmitter </b></li>
+  </ul>
+  <p align="left" style="line-height: 150%"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </b>Micrf011 can work from 1.8V to 4 V, so we make 3 V with 2 batteries in 
+  series. It will transmit max. power (2.5dbm) when Pin11(Power 
+  Control) is above 0.45V.&nbsp; To make sure it will transmit max power, we 
+  make a resistance divider to bias&nbsp;Pin11. Resistor are 390k and 100k, and pin11 is bias at 0.6 V when battery is full. We 
+  try to keep resistor high to save power.<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Max232 needs 5 V and seems not possible by 3 V battery. To solve this problem, 
+  a power regulator is used to steal power from PC. It works, but 
+  the power is only enough for 1 Max232, which means max232 in Rx still have to 
+  rely on battery.&nbsp; 
+  <p align="left" style="line-height: 150%">　<p align="left" style="line-height: 150%">
+  <b>
+  <font size="5">3. 1 PC Test, Noise problem</font></b>&nbsp;&nbsp; 
+  <ul>
+    <li>
+  <p align="left" style="line-height: 150%">&nbsp;<b><font size="4">NOISE </font>
+  </b>&nbsp;<b>Observation</b></li>
+  </ul>
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  After solving interface problem and integrating power on board, we can perform 
+  real&nbsp; data transmission&nbsp; test. We start from one PC. 
+  </blockquote>
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The result is unacceptable. Rx does pick up data when Tx is sending them, 
+  however when Tx is <b>not</b> sending data, Rx picks&nbsp; up noise. The noises are converted by Max232 and finally is shown as random characters on 
+screen. 
+  <p align="left" style="line-height: 150%">　<p align="center" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="noise.jpg" width="500" height="190" align="center"><p align="center" style="line-height: 150%">　<p align="justify" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+We checked documents&nbsp; in Micrel website and found they have the same 
+problem reported. &quot; As is common with all super-heterodyne AM receivers, the output will contain noise when there is no RF carrier present. 
+  The operation of AGC and the demodulator in the Micrf001 converts very low level noise into a corresponding logic level&nbsp; noise &quot;&nbsp; 
+  There are two ways&nbsp; to solve the problem: analog squelch and digital squelch.&nbsp; We choose analog squelch because we didn't have time to wait 
+  for another micro controller to perform digital squelch. 
+  <p align="justify" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  As to the &quot;Application Note 28&quot;,&nbsp; the voltage on Pin7&nbsp; is the 
+  threshold voltage to determining&nbsp; noise or Signal. Adding a small offset on this pin could raise the threshold voltage so noise will be &quot;filtered&quot; out 
+  and no logic-level noise will be produced.&nbsp; We performed a series&nbsp; 
+  of testing and find the best voltage on Pin7 is from 1.594v to 1.645v. 
+  <p align="justify" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Good news is: Analog squelch works , but the bad news is: The tolerable 
+  voltage range is so small (0.05v), how can we produce this 
+voltage without using power supply ?&nbsp;&nbsp; It seems we hit a stump. &nbsp;&nbsp; 
+  <blockquote>
+  <p align="justify" style="line-height: 150%">　<ul>
+      <li> 
+  <p align="justify" style="line-height: 150%"><b><font size="4">&nbsp;Solution:</font></b></li>
+    </ul>
+  <p align="justify" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  We came up with a solution the next day. Making 2 diodes&nbsp; and 1 resistor 
+  in series,&nbsp;voltage across&nbsp; two diodes (net05)&nbsp; will&nbsp; will 
+  be around &nbsp;1.5 V.</blockquote>
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  If&nbsp; choose the resistance right, such that I x R = 6- 4.4 V, then (net05) will be 1.6V. It requires some 
+  try and error. 
+When both diode are conducting, a voltage variation will also incur current 
+variation&nbsp; 
+  with Gain (I/V) &gt; 1 which&nbsp; brings the additional bigger voltage drop 
+  across R.&nbsp;&nbsp; It seems&nbsp; 
+  like a a CE&nbsp; amplifier and the output is voltage across battery.<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Battery is like a capacitor providing constant voltage before it dies. It's 
+voltage&nbsp; 
+  decays when it runs out energy, which also brings down the voltage on net05 
+  but only by 1/G battery voltage drop.&nbsp; Voltage variation in net05 is attenuated. 
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If we choose a proper R, and Diode&nbsp; variation of net05 can be limited in 
+  the acceptable&nbsp; 
+  range (1.594V ~ 1.643V)&nbsp; when battery is among&nbsp; 6.3 V (full)&nbsp; 
+  and 5.5 V (dead). To make sure it works along the voltage life, a power supply is used to 
+&quot;simulate&quot; Battery voltage.&nbsp; 
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We choose R = 514 and 2 T1711 diodes.<p align="left" style="line-height: 150%">　<p align="center" style="line-height: 150%">
+<img border="0" src="diode.jpg" width="422" height="524"><p align="left" style="line-height: 150%">　<div align="left" style="width: 925; height: 228">
+  <p align="center">　</p>
+  <div align="center">
+    <center>
+  <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">
+    <tr>
+      <td width="50%" align="center">
+      <p align="center" style="line-height: 150%"><b>V across diodes</b></td>
+      <td width="50%" align="center">
+      <p style="line-height: 150%"><b>&nbsp;Vdc</b></td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+      <p style="line-height: 150%">1.6425</td>
+      <td width="50%" align="center">
+      <p style="line-height: 150%">6.37</td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+      <p style="line-height: 150%">1.6320</td>
+      <td width="50%" align="center">
+      <p style="line-height: 150%">6.20</td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+      <p style="line-height: 150%">1.6261</td>
+      <td width="50%" align="center">
+      <p style="line-height: 150%">6.07</td>
+    </tr>
+    <tr>
+      <td width="50%" align="center">
+      <p style="line-height: 150%">1.5946</td>
+      <td width="50%" align="center">
+      <p style="line-height: 150%">5.49</td>
+    </tr>
+  </table>
+    </center>
+  </div>
+</div>
+  <p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p align="left" style="line-height: 150%">
+  <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Disadvantages: </b>&nbsp;<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+1. It burns  additional Power that is about 42mW. ( 37 mW by R, 5 mW by 
+diodes,&nbsp; SPICE simulation)<p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+2. Voltage across diodes is &quot;sensitive&quot; to R. It will be a problem in mass 
+production. 
+  <p align="left" style="line-height: 150%">　<p align="left" style="line-height: 150%">
+<font size="5">&nbsp;&nbsp;&nbsp;&nbsp; <b>4. 2 PC Test </b> </font> 
+  <p align="left" style="line-height: 150%"><font size="5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </font>The Result is satisfactory.&nbsp; In short range test ( Tx/Rx&nbsp; 
+  apart by 1.5 m), error rate in &quot;0&quot; in both 2400 bps and 1200 bps transmission. 
+  <p align="center" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img border="0" src="100.JPG" width="500" height="200"><p align="left" style="line-height: 150%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+However, when range goes up to 3 meters , Error rate rises significantly to 50 % 
+. They might be attributed to antenna design, so the nxst step is to<a href="chapter5.htm"> design a better antenna.&nbsp;&nbsp;
+</a> 
+  <p align="center" style="line-height: 150%">&nbsp;&nbsp;&nbsp; </body></html>

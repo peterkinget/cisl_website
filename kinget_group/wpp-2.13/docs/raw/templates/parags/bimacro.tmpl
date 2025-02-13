@@ -1,0 +1,314 @@
+@H_SECTION("Built-in macros", "BIMACRO")@
+
+<DL>
+<DD>
+	Built-in macros are predefined macros allowing particular operations, you
+	can use them as normal macros.<BR>
+	Usually if a built-in macro reads data from a file, this file will be
+	included into the dependencies list
+	(see the <A HREF="manual_1.html#--depend"><B>--depend</B> switch</A>).
+</DL>
+<DL>
+<DT><P><B>Macros working on images</B><BR>
+<DD>
+	Allowed file formats are GIF, JPEG and PNG.
+<P>
+<TABLE CELLSPACING=2 CELLPADDING=0 BORDER=0 BGCOLOR="@BOX_COL@">
+<TR VALIGN=MIDDLE ALIGN=CENTER>
+<TD BGCOLOR="@BOX_FRAME_COL@">@H_FONT("Macro")@</TD>
+<TD BGCOLOR="@BOX_FRAME_COL@">@H_FONT("Expanded to")@</TD>
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@HTML_IMAGE(img)@AT@")@
+<TD>@H_FONT("&lt;IMG SRC=\"<B><I>img</I></B>\" WIDTH=\"<I>(image width)</I>\"\
+	HEIGHT=\"<I>(image height)</I>\"&gt;")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@HTML_IMAGE(img, alt)@AT@")@
+<TD>@H_FONT("&lt;IMG SRC=\"<B><I>img</I></B>\" WIDTH=\"<I>(image width)</I>\"\
+	HEIGHT=\"<I>(image height)</I>\" ALT=\"<B><I>alt</I></B>\" &gt;")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@HTML_IMAGE(img, alt, extra)@AT@")@
+<TD>@H_FONT("&lt;IMG SRC=\"<B><I>img</I></B>\" WIDTH=\"<I>(image width)</I>\"\
+	HEIGHT=\"<I>(image height)</I>\" ALT=\"<B><I>alt</I></B>\"\
+	<B><I>extra</I></B>&gt;")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@HTML_IMAGE_SIZE(img)@AT@")@
+<TD>@H_FONT("SRC=\"<B><I>img</I></B>\" WIDTH=\"<I>(image width)</I>\"\
+	HEIGHT=\"<I>(image height)</I>\"")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@HTML_IMAGE_SIZEO(img)@AT@")@
+<TD>@H_FONT("WIDTH=\"<I>(image width)</I>\" HEIGHT=\"<I>(image height)</I>\"")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@HTML_IMAGE_WIDTH(img)@AT@")@
+<TD>@H_FONT("WIDTH=\"<I>(image width)</I>\"")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@HTML_IMAGE_HEIGHT(img)@AT@")@
+<TD>@H_FONT("HEIGHT=\"<I>(image height)</I>\"")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@IMAGE_WIDTH(img)@AT@")@
+<TD>@H_FONT("<I>(image width)</I>")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@IMAGE_HEIGHT(img)@AT@")@
+<TD>@H_FONT("<I>(image height)</I>")@
+</TABLE>
+
+	<DL>
+	<DT><P>Example:
+	<DD>
+	<TABLE>
+	<TR><TD>
+	@BOX_TITLE=Source file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+	@AT@HTML_IMAGE("index.jpg", "my logo",\<BR>
+	&nbsp;&nbsp;&nbsp;&nbsp;"BORDER=0 HSPACE=10")@AT@
+	@BOX_CLOSE()@
+	</TD>
+	<TD>
+	@BOX_TITLE=HTML file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+	&lt;IMG SRC="index.jpg" WIDTH=100 HEIGHT=200 ALT="my logo" BORDER=0
+		HSPACE=10 &gt;
+	@BOX_CLOSE()@
+	</TD>
+	</TABLE>
+	</DL>
+</DL>
+
+<DL>
+<DT><P><B>Macros working on image maps</B><BR>
+<DD>
+	These macros read a server side imagemap and are expanded into a converted
+	HTML client side version.<BR>
+	In the map files the ALT field is taken from the comment line before the area
+	definition.
+<P>
+<TABLE CELLSPACING=2 CELLPADDING=0 BORDER=0 BGCOLOR="@BOX_COL@">
+<TR VALIGN=MIDDLE ALIGN=CENTER>
+<TD BGCOLOR="@BOX_FRAME_COL@">@H_FONT("Macro")@</TD>
+<TD BGCOLOR="@BOX_FRAME_COL@">@H_FONT("Expanded to")@</TD>
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@CERN2HTML(mapfile)@AT@")@
+<BR>@H_FONT("@AT@NCSA2HTML(mapfile)@AT@")@
+<TD>@H_FONT("\
+	&lt;MAP NAME=\"<B><I>mapfile</I></B>\"&gt;<BR>\
+	&lt;AREA SHAPE=\"...\" HREF=\"...\" COORDS=\"...\" ALT=\"...\"&gt;<BR>\
+	&lt;/MAP&gt;")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@CERN2HTML(mapfile, mapname)@AT@")@
+<BR>@H_FONT("@AT@NCSA2HTML(mapfile, mapname)@AT@")@
+<TD>@H_FONT("\
+	&lt;MAP NAME=\"<B><I>mapname</I></B>\"&gt;<BR>\
+	&lt;AREA SHAPE=\"...\" HREF=\"...\" COORDS=\"...\" ALT=\"...\"&gt;<BR>\
+	&lt;/MAP&gt;")@
+</TABLE>
+
+	<DL>
+	<DT><P>Example:
+	<DD>
+	@BOX_TITLE=Source file@
+	@BOX_OPEN(@BOX_TITLE@, "CENTER", "helvetica", "", @BOX_TITLE_COL@,\
+		"", "", @BOX_FRAME_SIZE@, @BOX_FRAME_COL@, @BOX_COL@)@
+	@AT@NCSA2HTML("index.map", "myindex")@AT@
+	<P>&lt;A HREF="index.map"&gt;&lt;IMG SRC="menu.gif" WIDTH=600 HEIGHT=50<BR>
+	&nbsp;&nbsp;&nbsp;&nbsp;ISMAP USEMAP="#myindex"&gt;&lt;/A&gt;
+	@BOX_CLOSE()@
+	</DL>
+</DL>
+
+<DL>
+<DT><P><B>Macros working on files</B><BR>
+<DD>
+<P>
+<TABLE CELLSPACING=2 CELLPADDING=0 BORDER=0 BGCOLOR="@BOX_COL@">
+<TR VALIGN=MIDDLE ALIGN=CENTER>
+<TD BGCOLOR="@BOX_FRAME_COL@">@H_FONT("Macro")@</TD>
+<TD BGCOLOR="@BOX_FRAME_COL@">@H_FONT("Expanded to")@</TD>
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@FILE_SIZE(file)@AT@")@
+<TD>@H_FONT("<I>(file size in bytes)</I>")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@FILE_DATE(file)@AT@")@
+<TD>@H_FONT("<I>(file modification date, according to <A \
+	HREF=\"manual_4.html#DATE_FORMAT\">DATE_FORMAT</A>)</I>")@
+</TABLE>
+</DL>
+
+<DL>
+<DT><P><B>Misc macros</B><BR>
+<DD>
+<P>
+<TABLE CELLSPACING=2 CELLPADDING=0 BORDER=0 BGCOLOR="@BOX_COL@">
+<TR VALIGN=MIDDLE ALIGN=CENTER>
+<TD BGCOLOR="@BOX_FRAME_COL@">@H_FONT("Macro")@</TD>
+<TD BGCOLOR="@BOX_FRAME_COL@">@H_FONT("Expanded to")@</TD>
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@SYSTEM(cmd)@AT@")@
+<TD>@H_FONT("<I>(cmd output)</I>")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@RANDOM()@AT@")@
+<TD>@H_FONT("<I>Random integer value taken from Perl's rand() value without the leading '0.'</I>")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@RANDOM(to)@AT@")@
+<TD>@H_FONT("<I>Random integer value starting from 0 up to <B>to</B></I>")@
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@RANDOM(from, to)@AT@")@
+<TD>@H_FONT("<I>Random integer value starting from <B>from</B> up to <B>to</B></I>")@
+</TABLE>
+</DL>
+
+
+@H_SECTION("The EVAL macro", "EVALMACRO")@
+
+<DL>
+<DD>The EVAL macro was added in order to allow more sophisticated expansions
+and it was a way for adding loops and complex controls without implementing
+them directly (yeah, I'm a lazy boy!).
+<BR>The argument string should be <B>a valid Perl expression</B>,
+otherwise wpp will warn you of syntax errors without stopping the parsing
+process.
+<P>
+<TABLE CELLSPACING=2 CELLPADDING=0 BORDER=0 BGCOLOR="@BOX_COL@">
+<TR VALIGN=MIDDLE ALIGN=CENTER>
+<TD BGCOLOR="@BOX_FRAME_COL@">@H_FONT("Macro")@</TD>
+<TD BGCOLOR="@BOX_FRAME_COL@">@H_FONT("Expanded to")@</TD>
+<TR VALIGN=TOP>
+<TD>@H_FONT("@AT@EVAL(expr)@AT@")@
+<TD>@H_FONT("<I>(the output of the Perl expression <B>expr</B>)</I>")@
+</TABLE>
+
+<P>The following example shows a simple for loop (in Perl), it outputs a
+sequence of numbers starting from 0 up to 10. Please notice how the '"' char
+should be still escaped throgh '\"'.
+
+<DL>
+<DD>
+<PRE>
+@AT@EVAL(" \\
+	for($i = 0, $str = ''; $i &lt; 11; $i++) { \\
+		$str .= $i . ' '; \\
+	} \\
+	return $str; \\
+")@AT@
+</PRE>
+</DL>
+
+
+<P>The string passed as argument to the EVAL macro can contain wpp variables
+and macros, they will be expanded <B>before</B> evaluation through Perl's eval.
+
+<DL>
+<DD>
+<PRE>
+@AT@LIMIT=11@AT@
+@AT@EVAL(" \\
+	for($i = 0, $str = ''; $i &lt; @AT@LIMIT@AT@; $i++) { \\
+		$str .= \"@AT@RANDOM()@AT@ \"; \\
+	} \\
+	return $str; \\
+")@AT@
+</PRE>
+</DL>
+
+<P>If you run the previous example you can notice that the RANDOM() output is
+always the same, that's because the evaluation of RANDOM() is done before the
+eval call.
+<BR>Within a evaluated string you could call wpp parser by using the function
+<B>wpp_eval</B>, which takes a string as input argument and returns the parsed
+string.
+<BR>In the following example I've modified the previous one in order to call
+<B>wpp_eval</B>. Please notice the "'@AT@'.'RANDOM()@AT@'", I've splitted the
+the RANDOM() call in order to avoid it's parsing before eval, so I've used the
+perl string concatenation operator '.' for rebuilding the right call at
+evaluation time.
+
+<DL>
+<DD>
+<PRE>
+@AT@EVAL(" \\
+	for($i = 0, $str = ''; $i &lt; @AT@LIMIT@AT@; $i++) { \\
+		$str .= wpp_eval('@AT@'.'RANDOM()@AT@') . ' '; \\
+	} \\
+	return $str; \\
+")@AT@
+</PRE>
+</DL>
+
+
+<P>This is a bit more complex example, here I open and read a file
+(/etc/group), for each line of it I call the macro TEST that simply print it
+within square brackets.
+
+<DL>
+<DD>
+<PRE>
+@AT@MACRO TEST(TEXT)@AT@
+	[@AT@TEXT@AT@]
+@AT@ENDMACRO@AT@
+
+@AT@F=/etc/group@AT@
+
+@AT@EVAL(" \\
+	$str = ''; \\
+	open(FH, '@AT@F@AT@'); \\
+	while (&lt;FH&gt;) { \\
+		chomp; \\
+		$str .= <B>wpp_eval</B>('@AT@TEST(\"'.$_.'\")@AT@') . \"\n\"; \\
+	}; \\
+	close(FH); \\
+	return $str; \\
+")@AT@
+</PRE>
+</DL>
+
+
+<P>Here you can see how to use EVAL for test conditions.
+
+<DL>
+<DD>
+<PRE>
+@AT@TVAL=@AT@EVAL("1 != 1")@AT@@AT@
+@AT@IF !TVAL@AT@
+	EVAL ok!
+@AT@ENDIF@AT@
+
+@AT@TVAL=@AT@EVAL("1 == 1")@AT@@AT@
+@AT@IF TVAL@AT@
+	EVAL ok!
+@AT@ENDIF@AT@
+</PRE>
+</DL>
+
+
+<P>EVAL returns the value returned by the Perl expression, however if you don't
+want return a value, just because you've already done it with a print or
+something similar inside the Perl expression, you have to return explicitly an
+empty string (tipically a "<B>return '';</B>"). Note that <B>the print
+statement could be effectively printed before the text preceding the EVAL
+call</B>, that's because WPP buffers its output, so <B>don't use print or
+printf</B>, instead output data within a string and return it at the end of the
+computation process.
+<BR>The second line of the example shows a safer way for outputing data.
+
+<DL>
+<DD>
+<PRE>
+@AT@EVAL("print 'TEST ' . (1 == 1); return '';")@AT@
+
+@AT@EVAL("return 'TEST ' . (1 == 1);")@AT@
+</PRE>
+</DL>
+
+
+<P>The following and last example shows an invalid expression that raise an
+EVAL error, the parsing doesn't stop but a warning is printed by WPP.
+
+<DL>
+<DD>
+<PRE>
+@AT@EVAL("1+1'A'")@AT@
+</PRE>
+</DL>
+
+
+</DL>

@@ -1,0 +1,1205 @@
+#!/usr/bin/perl -w
+# You may need to change the above path.
+#
+#- WPP - The Web Preprocessor ------------------------------------------------
+#
+#  Copyright (C) 1997-98 Marco Lamberto
+#
+#  This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2, or (at your option) any later
+# version.
+#
+#  This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTIBILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+# for more details.
+#
+#-----------------------------------------------------------------------------
+#
+# Author: Marco Lamberto - lm@geocities.com
+# Web page: http://www.geocities.com/marcolamberto/wpp/
+# $Id: wpp,v 2.13 2000/12/10 11:31:51 lm Exp lm $
+#
+#use strict 'refs';      # Be picky about references
+#use strict 'subs';      # Be picky about subroutines
+#use strict 'vars';      # Be picky about variable scope (explicit globals)
+#
+require 5.004;
+use File::Basename;
+use Getopt::Long;
+use POSIX;
+
+#
+# Constants declarations
+#
+
+# wpp version
+$VERSION				= do { my @r = (q$Revision: 2.13 $ =~ /\d+/go); sprintf "%d.%02d".".%d" x ($#r - 1), @r };
+
+# built-in macros
+$BUILTINMACROS	= 'HTML_IMAGE|HTML_IMAGE_SIZE|HTML_IMAGE_SIZEO|'.
+									'HTML_IMAGE_WIDTH|HTML_IMAGE_HEIGHT|IMAGE_WIDTH|'.
+									'IMAGE_HEIGHT|CERN2HTML|NCSA2HTML|FILE_SIZE|FILE_DATE|'.
+									'SYSTEM|RANDOM|EVAL';
+
+# directives
+$KEYWORDS				= 'INCLUDE|INCLUDECFG|IF|ELSE|FI|ENDIF|MACRO|ENDMACRO|HEAD|'.
+									'TAIL';
+
+# predefined constants
+$CONSTANTS			= 'HEAD|TAIL|TMPLDIR|OUTPUTDIR|OUTPUTSUBDIR|EXTENSION|'.
+									'RAW_EXTENSION|TMPL_EXTENSION|FILENAME|RAWDIR|TEMPLATE|'.
+									'WPP_VERSION|AT|DATE|RCS_DATE';
+
+# variables only modifiable in configuration files
+$CCONSTANTS			= 'DEFAULT_(HEAD|TAIL|TMPLDIR|OUTPUTDIR|EXTENSION|'.
+									'RAW_EXTENSION|TMPL_EXTENSION)';
+
+# internal prefix for macro arguments
+$MARGPREFIX			= '__WPP__INTERNAL_MACRO_SYMBOL__';
+
+
+# true and false
+$TRUE						= 1;
+$FALSE					= 0;
+
+
+# message levels
+my $W_VERBOSE		= 7;
+my $W_DEBUG			= 6;
+my $W_MESSAGE		= 5;
+my $W_NOTICE		= 4;
+my $W_WARNING		= 3;
+my $W_ERROR			= 2;
+my $W_FATAL			= 1;
+my $W_NONE			= 0;
+
+
+#
+# Global variables declarations
+#
+my $debug				= 0;					# flag for debug output
+my $quiet				= 0;					# flag printing messages
+my $warnlev 		= $W_WARNING;	# message level
+my $dep					= 0;					# depend flag
+my $dep_cfg			= 0;					# depend flag for config files
+my %depf				= ();					# depend files
+my %config			= ();					# config vars
+my $configf			= 'config';		# config file
+my $config_deps	= '';					# config files dependencies
+my %var					= ();					# variables pool
+my @do					= (1);				# 'if' stack
+my $isMacro			= 0;					# 1 if it's loading a macro body
+my $macro_name	= '';					# current macro name when defining it
+my %macro_argv	= ();					# hash for macros argv
+my %macro_body	= ();					# hash for macros code
+my %cfgmac_argv	= ();					# hash for macros argv defined in configs
+my %cfgmac_body	= ();					# hash for macros code defined in configs
+my $fh					= 0;					# file handler counter
+my $os					= 'sh00';			# handler for output stream
+my $source			= '';					# current source file
+my %images			= ();					# images size cache (for built-in macros)
+my %images_d		= ();					# images depend list (for built-in macros)
+my %imaps_d			= ();					# imagemaps depend list (for built-in macros)
+my $last_fstat	= '';					# last file passed to "stat"
+my $mtime				= 0;					# modification time of current source file
+
+
+select(STDERR); $| = 0;
+select(STDOUT);
+
+
+#
+# main
+#
+my $i						= 0;
+my $opt					= '';
+my $outfile			= '';
+my $sigINT			= $SIG{INT};
+
+my $ret;
+my ($opt_help, $opt_version, $opt_warn, $opt_stdin, %opt_defines);
+
+
+if ($#ARGV < 0) { usage(); }
+
+Getopt::Long::config("no_ignore_case");
+$ret = GetOptions(
+	"depend|d",			\$dep,
+	"quiet|q",			\$quiet,
+	"help|h",				\$opt_help,
+	"version|v",		\$opt_version,
+	"config|c=s",		\$configf,
+	"debug|g",			\$debug,
+	"define|D=s%",	\%opt_defines,
+	"warn|W=s",			\$opt_warn,
+	"",							\$opt_stdin);
+if ($opt_help || !$ret) { usage(); }
+if ($opt_version) { version(); }
+if ($opt_stdin) { push @ARGV, '-'; }
+if ($opt_warn) {
+	if ($opt_warn eq 'all') {
+		$warnlev = $W_VERBOSE;
+	} elsif ($opt_warn eq 'none') {
+		$warnlev = $W_NONE;
+	} elsif ($opt_warn >= $W_NONE && $opt_warn <= $W_VERBOSE) {
+		# warnlev ok, nothing to do.
+	} else {
+		error("Invalid warning level '$opt_warn'");
+	}
+}
+
+foreach (keys(%opt_defines)) {
+	$_ =~ /^($CONSTANTS|$KEYWORDS|$BUILTINMACROS)$/o &&
+		error("'$_' is a constant or a reserved keyword");
+	!defined $config{$_} && ($CCONSTANTS .= "|$_");
+	$config{$_} = $opt_defines{$_};
+}
+
+if ($#ARGV < 0) { push @ARGV, '-'; }
+if (-e $configf && -s $configf) { wpp_config($configf); }
+foreach (@ARGV) { wpp($_); }
+exit 0;
+
+
+
+#
+# wpp
+#
+sub wpp {
+	my ($file) = @_;
+	my $out;
+
+
+	$dep &&	$file eq '-' && error("Cannot create dependencies from STDIN");
+	init($file);
+	if ($file eq '-') {
+		$os = STDOUT;
+	} else {
+		$outfile = "$var{'OUTPUTDIR'}/".
+			($var{'OUTPUTSUBDIR'} ne '' ? "$var{'OUTPUTSUBDIR'}/" : '').
+			"$var{'FILENAME'}.$var{'EXTENSION'}";
+		!$quiet && print STDERR ($dep ? 'Depend' : 'Creating').": $outfile\n";
+		open($os, "> $outfile") ||
+			error("Cannot open '$outfile' ($!)");
+		$| = 0;
+	}
+	$var{'DATE'} = file_date($file);
+	($out = reader($file)) =~ s/\s+//m;		# remove empty lines at the beginning
+	print $os $out;
+	$file ne '-' && close($os);
+}
+
+
+#
+# wpp_eval (runtime support for EVAL)
+#
+sub wpp_eval {
+	return analyzer($_[0], $source);
+}
+
+
+#
+# wpp_config
+#
+sub wpp_config {
+	init($configf);
+	cfg_reader($configf);
+}
+
+
+
+#
+# init
+#
+sub init {
+	my ($file) = @_;
+
+	%var = (
+		'DEFAULT_HEAD',						'head',
+		'DEFAULT_TAIL',						'tail',
+		'DEFAULT_TMPLDIR',				'templates',
+		'DEFAULT_OUTPUTDIR',			'..',
+		'DEFAULT_EXTENSION',			'html',
+		'DEFAULT_RAW_EXTENSION',	'raw',
+		'DEFAULT_TMPL_EXTENSION',	'tmpl',
+		'TEMPLATE',								'',
+		'INCLUDE',								'',
+		'RCS_DATE',								'',
+		'DATE_FORMAT',						'%Y/%m/%d %H:%M:%S',	# RCS date tag format
+		'WPP_VERSION',						$VERSION,
+		'AT',											'@'
+	);
+	foreach (keys(%config)) {
+		$var{$_} = $config{$_};
+	}
+	%macro_argv							= %cfgmac_argv;
+	%macro_body							= %cfgmac_body;
+	$var{'HEAD'}						= $var{'DEFAULT_HEAD'};
+	$var{'TAIL'}						= $var{'DEFAULT_TAIL'};
+	($var{'TMPLDIR'}				= $var{'DEFAULT_TMPLDIR'}) =~ s|/$||o;
+	($var{'OUTPUTDIR'}			= $var{'DEFAULT_OUTPUTDIR'}) =~ s|/$||o;
+	$var{'EXTENSION'}				= $var{'DEFAULT_EXTENSION'};
+	$var{'RAW_EXTENSION'}		= $var{'DEFAULT_RAW_EXTENSION'};
+	$var{'TMPL_EXTENSION'}	= $var{'DEFAULT_TMPL_EXTENSION'};
+	$var{'FILENAME'}				= basename($file, ".$var{'RAW_EXTENSION'}"),
+	$var{'RAWDIR'}					= dirname($file);
+	%depf										= ();
+	@do											= (1);
+	$isMacro								= 0;
+	%images_d								= ();
+	%imaps_d								= ();
+	$source									= ($file ne '-') ?
+		"$var{'RAWDIR'}/$var{'FILENAME'}.$var{'RAW_EXTENSION'}" : $file;
+	
+	# setup PWD with environments without it.
+	$ENV{'PWD'} = getcwd() if (!exists $ENV{'PWD'});
+	
+	my $ofile;
+	($ofile = $file) =~ s/^$ENV{'PWD'}|\.$var{'RAW_EXTENSION'}$//;
+	if ($ofile ne $var{'FILENAME'}) {
+		($var{'OUTPUTSUBDIR'} = $ofile) =~ s/\/$var{'FILENAME'}$//;
+	} else {
+		$var{'OUTPUTSUBDIR'} = '';
+	}
+	#print "$ofile | $var{'FILENAME'} | $var{'OUTPUTSUBDIR'}\n";
+}
+
+
+
+#
+# file reader, checks for circular/recursive inclusions and handle lines
+# splitted by using '\'.
+#
+sub reader {
+	my ($file)			= @_;
+	my $is					= 'fh'.($fh++);
+	my $line				= '';
+	my $nif					= $#do;				# number of nested IF, checked at the end
+	my $outb				= '';
+	my $otemplate		= $var{'TEMPLATE'};
+
+
+	$file ne '-' && ($file = dirname($_[0]).'/'.basename($_[0]));
+	debug("START\tFH $is $fh $file");
+	if ($dep && !$depf{$file}) {
+		print(($file eq $source) ?
+			"$var{'OUTPUTDIR'}/".
+			($var{'OUTPUTSUBDIR'} ne '' ? "$var{'OUTPUTSUBDIR'}/" : '').
+			"$var{'FILENAME'}.$var{'EXTENSION'}: \\\n".$config_deps : "\t$file \\\n");
+		$depf{$file} = 1;
+	}
+	$var{'TEMPLATE'} = $var{'INCLUDE'} = $file ne $source ? $file : '';
+	if ($file eq '-') {
+		$is = STDIN;
+	} else {
+		open($is, "< $file") or error("Cannot open file '$file' ($!)");
+	}
+	while(<$is>) {
+		$line .= $_;
+		if (/[^\\]\\$/o) {			# ending '\' join lines
+			chomp $line;					# remove the ending '\n'
+			$line =~ s/\\$//o;
+		} else {
+			$line =~ s/\\$//o;		# expand the eventual ending '\\' into '\'
+			$outb .= analyzer($line, $file);
+			$line = '';
+		}
+	}
+	$file ne '-' && close($is);
+	$var{'INCLUDE'} = $var{'TEMPLATE'};
+	$var{'TEMPLATE'} = $otemplate;
+	$#do != $nif && error("Unterminated IF ($file:$.)");
+	$isMacro && error("Missing ENDMACRO for MACRO $macro_name ($file:$.)");
+	if ($file eq $source || $file eq '-') {
+		($var{'RCS_DATE'} eq '' && $var{'HEAD'} ne '') &&
+			warning($W_WARNING, "No \$Date\$ tag found, header inclusion skipped ($file:$.)");
+		($var{'TAIL'} ne '') &&
+			($outb .= reader("$var{'TMPLDIR'}/$var{'TAIL'}.$var{'TMPL_EXTENSION'}"));
+		$dep &&	print "\t$file\n";
+	}
+	debug("END\tFH $is $fh $file $var{'FILENAME'}");
+	return $outb;
+}
+
+
+
+#
+# syntax analyzer, variable expansion, conditonal generation, macro expansion.
+#
+sub analyzer {
+	my ($line, $file) = @_;			# text line to analyze, raw filename
+	my $outb = '';							# output buffer
+
+
+	debug("$file:$.\t$line");
+	if ($line =~ /\$(?:Date)((?::?\s+(.+)\s+)?)\$/o) {
+		$outb .= analyzer($`, $file);
+		if ($var{'RCS_DATE'} ne '') {
+			warning($W_WARNING, "\$Date\$ already used, header inclusion skipped ($file:$.)");
+		} else {
+			$mtime = $1 ne '' ? rcstime($2) : $source ne '-' ? (stat($source))[9] : time();
+			$var{'RCS_DATE'} = strftime($var{'DATE_FORMAT'}, localtime($mtime));
+			debug("  RCS_DATE_TAG:\t".$var{'RCS_DATE'});
+			$var{'HEAD'} ne '' && ($outb .=
+				reader("$var{'TMPLDIR'}/$var{'HEAD'}.$var{'TMPL_EXTENSION'}"));
+		}
+		return $outb.analyzer($', $file);
+	}
+	while ($line =~ /@([A-Z_\d]+)([\t\s]*)(.)/o) {
+		$do[$#do] && !$isMacro && ($outb .= $`);
+		if ($isMacro) {
+			$macro_body{$macro_name} .= $`;
+			if ($1 eq 'ENDMACRO') {
+				$isMacro = 0;
+				$macro_body{$macro_name} =~ s/^\n|\n$//go;
+				debug("MACRO $macro_name\n***\n$macro_body{$macro_name}\n***");
+			} else {
+				$macro_body{$macro_name} .= "\@$1$2$3";
+			}
+			$line = $';
+		} elsif ($3 eq '@' && $2 eq '') {								# directive/variable subst.
+			$line = $';
+			if ($do[$#do]) {
+				if ($1 =~ /^($KEYWORDS)$/) {
+					debug("  DIRECTIVE0:\t\@$1@");
+					if ($1 eq 'ENDMACRO') {
+						error("ENDMACRO without MACRO ($file:$.)");
+					} elsif ($1 =~ /^(HEAD|TAIL)$/o) {
+						$var{$1} = '';
+					} elsif ($1 eq 'INCLUDE') {
+						$outb .= exists $var{$1} ? $var{$1} : '';
+						debug("  VAR_SUBST:\t\@$1@");
+					}
+				} else {
+					if (!exists $var{$1}) {
+						warning($W_NOTICE, "Undefined variable '$1', using default value '' ".
+							"($file:$.)");
+						$outb .= '';
+					} else {
+						$outb .= $var{$1};
+					}
+					exists $macro_argv{$1} && warning($W_WARNING, "Possible typo when using the ".
+						"macro '$1' as a variable ($file:$.)");
+					debug("  VAR_SUBST:\t\@$1@");
+				}
+			}
+			if ($1 eq 'ELSE') {
+				$#do == 0 && error("ELSE without IF ($file:$.)");
+				$do[$#do - 1] && ($do[$#do] = $do[$#do] ? $FALSE : $TRUE);
+				#debug("** ELSE $#do $do[$#do]");
+			} elsif ($1 =~ /^(FI|ENDIF)$/o) {
+				$#do == 0 && error("$1 without IF ($file:$.)");
+				pop(@do);
+				#debug("** $1 $#do");
+			} elsif ($1 eq 'IF') {
+				error("Incorrect syntax when using IF ($file:$.)");
+			}
+		} elsif ($3 eq '=') {														# variable assigment
+			$line =~ /@([A-Z_\d]+)[\t\s]*=((?:@[A-Z_\d]+@|@[A-Z_\d]+[\t\s]*\(.*?[^\\][@"][\t\s]*\)@|[^@]+)*)@/o;
+			$line = $';
+			if ($do[$#do]) {
+				my $id = $1;
+				my $value = analyzer($2, $file);
+				debug("  VAR_ASSIGN:\t\@$id=$2 - $value@");
+				$id =~ /^($CONSTANTS|$CCONSTANTS|$KEYWORDS|$BUILTINMACROS)$/ &&
+					error("'$id' is a constant or a reserved keyword ($file:$.)");
+				exists $macro_argv{$id} && 
+					warning($W_WARNING, "'$id' is already defined as a macro ($file:$.)");
+				$var{$id} = $value;
+				if ($id eq 'DATE_FORMAT' && $var{'RCS_DATE'} ne '') {
+					$var{'DATE'} = file_date($outfile);
+					$var{'RCS_DATE'} = strftime($var{'DATE_FORMAT'}, localtime($mtime))
+				}
+			}
+		} elsif ($3 eq '(') {														# macro call
+			$line =~ /@([A-Z_\d]+)[\t\s]*\((.*?[^\\][@"][\t\s]*)\)@/o ||
+				$line =~ /@([A-Z_\d]+)\(()\)@/o;
+			$line = $';
+			if ($do[$#do]) {
+				debug("  MACRO_CALL:\t\@$1($2");
+				my @args = split(/[\t\s]*(@[A-Z_\d]+@|""|".*?[^\\]")[\t\s]*,?/o, $2);
+				$#args == 0 && $args[0] eq '(' &&
+					error("Incorrect argument syntax when calling the macro '$1' ".
+						"($file:$.)");
+				my $i;
+				for ($i = 1; $i <= $#args; $i += 2) {
+					$args[$i] =~ s/(^"|"$)|(\\)(")/defined $3 ? $3 : ''/geo;
+					debug("    \t\t  $args[$i]");
+				}
+				debug("  \t\t)@");
+				if (exists $macro_argv{$macro_name = $1}) {
+					my $margv = $macro_argv{$macro_name};
+					my $buf_marg = '';
+					my $buf_macro = $macro_body{$macro_name};
+					debug("  MACRO_ARGS $macro_argv{$macro_name} $#args $#$margv");
+					if ($#args < $#$margv * 2 + 1) {
+						error("Few arguments when calling '$macro_name' ($file:$.)");
+					} elsif ($#args > $#$margv * 2 + 1) {
+						warning($W_WARNING, "Too many arguments when calling '$macro_name' ".
+							"($file:$.)");
+					}
+					my $RAND_PFX = $MARGPREFIX . int(rand()*10000) . "__";
+					foreach ($i = 0; $i <= $#$margv; $i++) {
+						debug("  MARG $$margv[$i] - ".$args[$i * 2 + 1]); 
+						$buf_marg .= "\@$RAND_PFX$$margv[$i]=$args[$i * 2 + 1]\@";
+						$buf_macro =~ s/(@)($$margv[$i])([^A-Z_\d])/$1$RAND_PFX$2$3/g;
+						$buf_macro =~ s/([^A-Z_\d])($$margv[$i])((?:\s*(?:!|=)=.*?)?@)/$1$RAND_PFX$2$3/g;
+					};
+					debug("  MBODY\n***\n$buf_marg\n$buf_macro\n***");
+					$outb .= analyzer($buf_marg.$buf_macro, $file);
+				} else {
+					$outb .= builtin_macro($file, $1, @args);
+				}
+			}
+		} else {																				# directive with parameters
+			debug("  DIRECTIVE1:\t\@$1 ");
+			if ($1 eq 'MACRO' &&
+				"$3$'" =~ /([A-Z_\d]+)[\t\s]*\([\t\s]*([A-Z_\d,\s\t]*?)[\t\s]*\)@/o) {
+				if ($do[$#do]) {
+					exists $macro_argv{$1} &&
+						error("Macro '$1' already defined ($file:$.)");
+					$isMacro = 1;
+					$macro_name = $1;
+					my @arg = split(/[\t\s]*,[\t\s]*/, $2);
+					$macro_argv{$1} = \@arg;
+					$macro_body{$1} = '';
+					debug("    \t\t  N: '$1'\n    \t\t  A: '$2' (".($#arg + 1).")");
+				}
+				$line = $';
+			} elsif ($1 eq 'INCLUDE' && "$3$'" =~ /((?:@[A-Z_\d]+@|[^@]+)*)@/o) {
+				debug("    \t\t  $1");
+				$line = $';
+				$do[$#do] && ($outb .= reader("$var{'TMPLDIR'}/".analyzer($1, $file).
+					".$var{'TMPL_EXTENSION'}"));
+			} elsif ($1 eq 'HEAD' && "$3$'" =~ /((?:@[A-Z_\d]+@|[^@]+)*)@/o) {
+				$var{'HEAD'} = analyzer($1, $file);
+				$line = $';
+			} elsif ($1 eq 'TAIL' && "$3$'" =~ /((?:@[A-Z_\d]+@|[^@]+)*)@/o) {
+				$var{'TAIL'} = analyzer($1, $file);
+				$line = $';
+			} elsif ($1 eq 'IF') {
+				$line = $';
+				if ("$3$'" =~ /^[\t\s]*(!?)(?:[\t\s]*)([A-Z_\d]+)@/o) {
+					if ($do[$#do]) {
+						!exists $var{$2} && !exists $macro_argv{$2} &&
+							warning($W_NOTICE, "Undefined variable '$2', using default value '' ".
+								"($file:$.)");
+						push(@do, (exists $var{$2} && $var{$2} ne '') ||
+							exists $macro_argv{$2} ? $TRUE : $FALSE);
+						($1 eq '!') && ($do[$#do] = $do[$#do] ? $FALSE : $TRUE);
+					} else {
+						push(@do, $FALSE);
+					}
+					debug("    \t\t  F:$1 V:$2 - $do[$#do]");
+				} elsif ("$3$'" =~
+					/^[\t\s]*([A-Z_\d]+)[\t\s]*(!|=)=[\t\s]*"((?:@[A-Z_\d]+@|[^@]+)*)"@/o) {
+					if ($do[$#do]) {
+						!exists $var{$1} && !exists $macro_argv{$1} &&
+							warning($W_NOTICE, "Undefined variable '$1', using default value '' ".
+								"($file:$.)");
+						push(@do, (exists $var{$1} ? $var{$1} : '') eq analyzer($3, $file)
+							? $TRUE : $FALSE);
+						($2 eq '!') && ($do[$#do] = $do[$#do] ? $FALSE : $TRUE);
+					} else {
+						push(@do, $FALSE);
+					}
+					debug("    \t\t  F:$1 V:$3 - $do[$#do]");
+				} else {
+					error("Incorrect syntax for IF condition ($file:$.)");
+				}
+				$line = $';
+			} elsif ($1 !~ /^($KEYWORDS)$/o) {
+				error("Unknown directive '$1' ($file:$.)");
+			} else {
+				error("Incorrect syntax when using directive '$1' ($file:$.)");
+			}
+		}
+	}
+	$isMacro && ($macro_body{$macro_name} .= $line);
+	return $outb.($do[$#do] && !$isMacro ? $line : '');
+}
+
+
+
+#
+# builtin_macro
+#
+sub builtin_macro {
+	my ($file, $macro, @args) = @_;
+	my $i;
+
+
+	($macro !~ /^($BUILTINMACROS)$/o) && 
+		error("Undeclared macro '$macro_name' ($file:$.)");
+	if ($#args < 1 && $macro ne 'RANDOM') {
+		error("Few arguments when calling '$macro' ($file:$.)");
+	}
+	for ($i = 1; $i <= $#args; $i += 2) {
+		$args[$i] = analyzer($args[$i], $file);
+	}
+	#debug("BIM $macro($#args)");
+	if ($macro =~ /IMAGE/o) {
+		my $dim = image_size($args[1], $file);
+		if ($macro eq 'HTML_IMAGE') {
+			return "<IMG SRC=\"$args[1]\" WIDTH=$dim->[0] HEIGHT=$dim->[1] ALT=\"".
+				($#args >= 3 ? $args[3] : '').'" '.
+				($#args >= 5 ? $args[5] : '').'>';
+		} elsif ($macro eq 'HTML_IMAGE_SIZE') {
+			return " SRC=\"$args[1]\" WIDTH=$dim->[0] HEIGHT=$dim->[1] ";
+		} elsif ($macro eq 'HTML_IMAGE_SIZEO') {
+			return " WIDTH=$dim->[0] HEIGHT=$dim->[1] ";
+		} elsif ($macro eq 'HTML_IMAGE_WIDTH') {
+			return " WIDTH=$dim->[0] ";
+		} elsif ($macro eq 'HTML_IMAGE_HEIGHT') {
+			return " HEIGHT=$dim->[1] ";
+		} elsif ($macro eq 'IMAGE_WIDTH') {
+			return $dim->[0];
+		} elsif ($macro eq 'IMAGE_HEIGHT') {
+			return $dim->[1];
+		}
+	} elsif ($macro eq 'CERN2HTML') {
+		return cern2html($args[1], $#args >= 3 ? $args[3] : $args[1], $file);
+	} elsif ($macro eq 'NCSA2HTML') {
+		return ncsa2html($args[1], $#args >= 3 ? $args[3] : $args[1], $file);
+	} elsif ($macro eq 'FILE_DATE') {
+		return file_date($args[1]);
+	} elsif ($macro eq 'FILE_SIZE') {
+		return file_size($args[1]);
+	} elsif ($macro eq 'SYSTEM') {
+		my $sout = `$args[1]`;
+
+		chomp($sout);
+		return $sout;
+	} elsif ($macro eq 'RANDOM') {
+		if ($#args == -1) {
+			($_ = rand()) =~ s/^0\.//;
+			return $_;
+		} elsif ($#args == 1) {
+			return floor(rand($args[1] + 1));
+		} elsif ($#args == 3) {
+			return floor($args[1] + rand($args[3] - $args[1] + 1));
+		}
+	} elsif ($macro eq 'EVAL') {
+		my $retv;
+		local $SIG{'__WARN__'} = sub
+			{
+				my $msg = "@_";
+
+				chomp($msg);
+				warning($W_ERROR, "EVAL error '$msg' ($file:$.)");
+			};
+		
+		$retv = eval('$| = 1; ' . $args[1]);
+		if (!defined $retv) {
+			my $msg = "$@";
+
+			chomp($msg);
+			warning($W_ERROR, "EVAL error '$msg' ($file:$.)");
+			$retv = '';
+		}
+		return $retv;
+	}
+}
+
+
+
+#
+# image_size
+#
+sub image_size {
+	my $image = ($_[0] =~ /^\//o) ? "$var{'OUTPUTDIR'}$_[0]" :
+		"$var{'OUTPUTDIR'}/".
+		($var{'OUTPUTSUBDIR'} ne '' ? "$var{'OUTPUTSUBDIR'}/" : '')."$_[0]";
+	my $img = 'img_fh00';
+	my $magic = '';
+	my @dim = ();
+
+	debug("IMAGE $image");
+	if ($dep && !exists $images_d{"$image"}) {
+		$images_d{"$image"} = '1';
+		if ($dep_cfg) {
+			$config_deps .= "\t$image \\\n";
+		} else {
+			print "\t$image \\\n";
+		}
+	}
+	if (exists $images{"$image"}) {
+		debug("IMAGE CACHE HIT: $image\n");
+		return $images{"$image"};
+	}
+	open($img, "$image") ||
+		error("Can't open file '$_[0]' $! ($_[1]:$.)");
+	binmode($img);
+	read($img, $magic, 3);
+	if ($magic eq 'GIF') {																		# GIF
+		read($img, $magic, 3);
+		$dim[0] = ord(getc($img)) + ord(getc($img)) * 256;
+		$dim[1] = ord(getc($img)) + ord(getc($img)) * 256;
+	} elsif (substr($magic, 0, 2) eq chr(0xff).chr(0xd8)) {		# JPEG
+ISL0:
+		while(1) {
+			read($img, $magic, 1);
+			if (ord($magic) == 0xc0 || ord($magic) == 0xc2) {
+				read($img, $magic, 3);
+				$dim[1] = ord(getc($img)) * 256 + ord(getc($img));
+				$dim[0] = ord(getc($img)) * 256 + ord(getc($img));
+				last ISL0;
+			} else {
+				read($img, $magic, ord(getc($img)) * 256 + ord(getc($img)) - 1);
+			}
+		}
+	} elsif ($magic eq chr(0x89)."PN") {											# PNG
+		read($img, $magic, 13);
+		$dim[0] = ord(getc($img)) * 16777216 + ord(getc($img)) * 65536 +
+			ord(getc($img)) * 256 + ord(getc($img));
+		$dim[1] = ord(getc($img)) * 16777216 + ord(getc($img)) * 65536 +
+			ord(getc($img)) * 256 + ord(getc($img));
+	} else {
+		close($img);
+		error("Unknown image format for '$_[0]' ($_[1]:$.)");
+	}
+	close($img);
+	return $images{"$image"} = \@dim;
+}
+
+
+#
+# cern2html
+#
+sub cern2html {
+	my $mapfile = ($_[0] =~ /^\//o) ? "$var{'OUTPUTDIR'}$_[0]" :
+		"$var{'OUTPUTDIR'}/".
+		($var{'OUTPUTSUBDIR'} ne '' ? "$var{'OUTPUTSUBDIR'}/" : '')."$_[0]";
+	my $map = 'map_fh00';
+	my $mdata = '';
+	my $alt = '';
+	my $default = '';
+	my $foo;
+
+	debug("MAP $mapfile");
+	if ($dep && !exists $imaps_d{"$mapfile"}) {
+		if ($dep_cfg) {
+			$config_deps .= "\t$mapfile \\\n";
+		} else {
+			print "\t$mapfile \\\n";
+		}
+	}
+	open($map, "$mapfile") ||
+		error("Can't open file '$_[0]' $! ($_[2]:$.)");
+	while (<$map>) {
+		if (/^rect[\s\t]+\((.+)\)[\s\t]+\((.+)\)[\s\t]+(.+)$/io) {
+			$mdata .= "<AREA SHAPE=rect HREF=\"$3\" COORDS=\"$1,$2\" ALT=\"$alt\">\n";
+			$alt = '';
+		} elsif (/^circle[\s\t]+\((.+)\)[\s\t]+(.+?)[\s\t]+(.+)$/io) {
+			$mdata .=
+				"<AREA SHAPE=circle HREF=\"$3\" COORDS=\"$1,$2\" ALT=\"$alt\">\n";
+			$alt = '';
+		} elsif (/^poly[\s\t]+(.+)[\s\t]+(.+)$/io) {
+			$mdata .= "<AREA SHAPE=poly HREF=\"$2\" COORDS=\"";
+			($foo = $1) =~ s/^\(|\)$//go;
+			$foo =~ s/\)[\s\t]+\(/,/go;
+			$mdata .= "$foo\" ALT=\"$alt\">\n";
+			$alt = '';
+		} elsif (/^default[\s\t]+(.*)$/o) {
+			$default = "<AREA SHAPE=\"rect\" HREF=\"$1\" COORDS=\"0,0,2000,2000\"".
+				" ALT=\"$alt\">\n";
+			$alt = '';
+		} elsif (/^#(.*)/o) {
+			$alt = $1;
+		} else {
+			$alt = '';
+		}
+	}
+	close($map);
+	$dep && ($imaps_d{"$mapfile"} = '1');
+ 	return "<MAP NAME=\"$_[1]\">\n$mdata$default</MAP>\n"; 
+}
+
+
+#
+# ncsa2html
+#
+sub ncsa2html {
+	my $mapfile = ($_[0] =~ /^\//o) ? "$var{'OUTPUTDIR'}$_[0]" :
+		"$var{'OUTPUTDIR'}/".
+		($var{'OUTPUTSUBDIR'} ne '' ? "$var{'OUTPUTSUBDIR'}/" : '')."$_[0]";
+	my $map = 'map_fh00';
+	my $mdata = '';
+	my $alt = '';
+	my $default = '';
+	my $foo;
+
+	debug("MAP $mapfile");
+	if ($dep && !exists $imaps_d{"$mapfile"}) {
+		if ($dep_cfg) {
+			$config_deps .= "\t$mapfile \\\n";
+		} else {
+			print "\t$mapfile \\\n";
+		}
+	}
+	open($map, "$mapfile") ||
+		error("Can't open file '$_[0]' $! ($_[2]:$.)");
+	while (<$map>) {
+		if (/^#(.*)$/o) {
+			$alt = $1;
+		} elsif (/^(.+?)[\s\t]+(.+?)[\s\t]+(.+)$/o) {
+			$mdata .= "<AREA SHAPE=\"$1\" HREF=\"$2\" COORDS=\"";
+			$foo = $3;
+			if ($1 =~ /circle/i) {
+				# x,y radius
+				$foo =~ /(\d+),(\d+)[\s\t]+(\d+),(\d+)/o;
+				$foo = "$1,$2,".int(sqrt(($1 - $3)*($1 - $3) + ($2 - $4)*($2 - $4)));
+			} else {
+				$foo =~ s/\s/,/go;
+				$foo =~ s/,$//go;
+			}
+			$mdata .= "$foo\" ALT=\"$alt\">\n";
+			$alt = '';
+		} elsif (/^default[\s\t]+(.*)$/o) {
+			$default = "<AREA SHAPE=\"rect\" HREF=\"$1\" COORDS=\"0,0,2000,2000\"".
+				" ALT=\"$alt\">\n";
+			$alt = '';
+		} else {
+			$alt = '';
+		}
+	}
+	close($map);
+	$dep && ($imaps_d{"$mapfile"} = '1');
+ 	return "<MAP NAME=\"$_[1]\">\n$mdata$default</MAP>\n"; 
+}
+
+
+#
+# rcstime
+#
+sub rcstime {
+	my ($time) = @_;
+
+	$time =~ /^([0-9]{2})([0-9]+)\/([0-9]+)\/([0-9]+) ([0-9]+):([0-9]+):([0-9]+)$/;
+	return mktime($7, $6, $5, $4, $3 - 1, ($1 >= 20 ? 100 : 0) + $2);
+}
+
+
+#
+# file_date
+#
+sub file_date {
+	my $filename = ($_[0] =~ /^\//o) ? "$var{'OUTPUTDIR'}$_[0]" :
+		"$var{'OUTPUTDIR'}/".
+		($var{'OUTPUTSUBDIR'} ne '' ? "$var{'OUTPUTSUBDIR'}/" : '')."$_[0]";
+	my $mtime;
+	my $fdate;
+
+	if ($filename eq '-' || ! -e $filename) {
+		$mtime = time();
+	} else {
+		$mtime = (($last_fstat eq $filename) ? stat(_) : stat($filename))[9];
+		$last_fstat = $filename;
+	}
+	$fdate = strftime($var{'DATE_FORMAT'}, localtime($mtime));
+	debug("FILE_DATE ".$filename." = ".$fdate);
+	return $fdate;
+};
+
+
+#
+# file_size
+#
+sub file_size {
+	my $filename = ($_[0] =~ /^\//o) ? "$var{'OUTPUTDIR'}$_[0]" :
+		"$var{'OUTPUTDIR'}/".
+		($var{'OUTPUTSUBDIR'} ne '' ? "$var{'OUTPUTSUBDIR'}/" : '')."$_[0]";
+	my $size;
+
+	if ($filename eq '-' || ! -e $filename) {
+		$size = -1;
+	} else {
+		$size = (($last_fstat eq $filename) ? stat(_) : stat($filename))[7];
+		$last_fstat = $filename;
+	}
+	debug("FILE_SIZE ".$filename." = ".$size);
+	return $size;
+}
+
+
+#
+# cfg_reader
+#
+sub cfg_reader {
+	my ($file)			= @_;
+	my $is					= 'fh'.($fh++);
+	my $line				= '';
+	my $nif					= $#do;				# number of nested IF, checked at the end
+	my $outb				= '';
+
+
+	debug("CFG START\tFH $is $fh $file");
+	open($is, "< $file") || error("Cannot open file '$file' ($!)");
+	$dep_cfg = 1;
+	$config_deps .= "\t$file \\\n";
+	while(<$is>) {
+		$line .= $_;
+		if (/[^\\]\\$/o) {
+			chomp $line;
+			$line =~ s/\\$//o;
+		} else {
+			$line =~ s/\\$//o;
+			$outb .= cfg_analyzer($line, $file);
+			$line = '';
+		}
+	}
+	close($is);
+	$#do != $nif && error("Unterminated IF ($file)");
+	$isMacro && error("Missing ENDMACRO for MACRO $macro_name ($file:$.)");
+	debug("CFG END\tFH $is $fh $file $var{'FILENAME'}");
+	$dep_cfg = 0;
+	return $outb;
+}
+
+
+
+#
+# cfg_analyzer
+#
+sub cfg_analyzer {
+	my ($line, $file) = @_;			# line to analyze, raw filename
+	my $outb = '';							# output buffer
+
+
+	debug("CFG $.\t$line");
+	if ($line =~ /^\$(?:Date)(?::?\s+(.+)\s+)?\$$/o) {
+		debug("CFG  RCS_DATE_TAG:\t$1");
+		warning($W_WARNING, "Can't use \$\Date\$ tag into config file ($file:$.)");
+		return $outb;
+	}
+	while ($line =~ /@([A-Z_\d]+)([\t\s]*)(.)/o) {
+		$do[$#do] && !$isMacro && ($outb .= $`);
+		if ($isMacro) {
+			$cfgmac_body{$macro_name} .= $`;
+			if ($1 eq 'ENDMACRO') {
+				$isMacro = 0;
+				$cfgmac_body{$macro_name} =~ s/^\n|\n$//go;
+				debug("MACRO $macro_name\n***\n$cfgmac_body{$macro_name}\n***");
+			} else {
+				$cfgmac_body{$macro_name} .= "\@$1$2$3";
+			}
+			$line = $';
+		} elsif ($3 eq '@' && $2 eq '') {								# directive/variable subst.
+			$line = $';
+			if ($do[$#do]) {
+				if ($1 =~ /^($KEYWORDS)$/) {
+					debug("  DIRECTIVE0:\t\@$1@");
+					if ($1 eq 'ENDMACRO') {
+						error("ENDMACRO without MACRO ($file:$.)");
+					} elsif ($1 =~ /^(HEAD|TAIL)$/o) {
+						$var{$1} = '';
+					} elsif ($1 eq 'INCLUDE') {
+						$outb .= exists $var{$1} ? $var{$1} : '';
+						debug("  VAR_SUBST:\t\@$1@");
+					}
+				} else {
+					if (!exists $var{$1}) {
+						warning($W_NOTICE, "Undefined variable '$1', using default value '' ".
+							"($file:$.)");
+						$outb .= '';
+					} else {
+						$outb .= $var{$1};
+					}
+					exists $cfgmac_argv{$1} && warning($W_WARNING, "Possible typo when using the ".
+						"macro '$1' as a variable ($file:$.)");
+					debug("  VAR_SUBST:\t\@$1@");
+				}
+			}
+			if ($1 eq 'ELSE') {
+				$#do == 0 && error("ELSE without IF ($file:$.)");
+				$do[$#do - 1] && ($do[$#do] = $do[$#do] ? $FALSE : $TRUE);
+				#debug("** ELSE $#do $do[$#do]");
+			} elsif ($1 =~ /^(FI|ENDIF)$/o) {
+				$#do == 0 && error("$1 without IF ($file:$.)");
+				pop(@do);
+				#debug("** $1 $#do");
+			} elsif ($1 eq 'IF') {
+				error("Incorrect syntax when using IF ($file:$.)");
+			}
+		} elsif ($3 eq '=') {														# variable assigment
+			$line =~ /@([A-Z_\d]+)[\t\s]*=((?:@[A-Z_\d]+@|@[A-Z_\d]+[\t\s]*\(.*?[^\\][@"][\t\s]*\)@|[^@]+)*)@/o;
+			$line = $';
+			if ($do[$#do]) {
+				my $id = $1;
+				my $value = cfg_analyzer($2, $file);
+				debug("  VAR_ASSIGN:\t\@$id=$2 - $value@");
+				$id =~ /^($CONSTANTS|$KEYWORDS|$BUILTINMACROS)$/ &&
+					error("'$id' is a constant or a reserved keyword ($file:$.)");
+				exists $cfgmac_argv{$id} && 
+					warning($W_WARNING, "'$id' is already defined as a macro ($file:$.)");
+				$config{$id} = $var{$id} = $value;
+				$id =~ /^($CCONSTANTS)$/ && $id =~ /^DEFAULT_(.+)/ &&
+					($config{$1} = $var{$1} = $value);
+			}
+		} elsif ($3 eq '(') {														# macro call
+			$line =~ /@([A-Z_\d]+)[\t\s]*\((.*?[^\\][@"][\t\s]*)\)@/o ||
+				$line =~ /@([A-Z_\d]+)\(()\)@/o;
+			$line = $';
+			if ($do[$#do]) {
+				debug("  MACRO_CALL:\t\@$1($2");
+				my @args = split(/[\t\s]*(@[A-Z_\d]+@|""|".*?[^\\]")[\t\s]*,?/o, $2);
+				$#args == 0 && $args[0] eq '(' &&
+					error("Incorrect argument syntax when calling the macro '$1' ".
+						"($file:$.)");
+				my $i;
+				for ($i = 1; $i <= $#args; $i += 2) {
+					$args[$i] =~ s/(^"|"$)|(\\)(")/defined $3 ? $3 : ''/geo;
+					debug("    \t\t  $args[$i]");
+				}
+				debug("  \t\t)@");
+				if (exists $cfgmac_argv{$macro_name = $1}) {
+					my $margv = $cfgmac_argv{$macro_name};
+					my $buf_marg = '';
+					my $buf_macro = $cfgmac_body{$macro_name};
+					debug("  MACRO_ARGS $cfgmac_argv{$macro_name} $#args $#$margv");
+					if ($#args < $#$margv * 2 + 1) {
+						error("Few arguments when calling '$macro_name' ($file:$.)");
+					} elsif ($#args > $#$margv * 2 + 1) {
+						warning($W_WARNING, "Too many arguments when calling '$macro_name' ".
+							"($file:$.)");
+					}
+					my $RAND_PFX = $MARGPREFIX . int(rand()*10000) . "__";
+					foreach ($i = 0; $i <= $#$margv; $i++) {
+						debug("  MARG $$margv[$i] - ".$args[$i * 2 + 1]); 
+						$buf_marg .= "\@$RAND_PFX$$margv[$i]=$args[$i * 2 + 1]\@";
+						$buf_macro =~ s/(@)($$margv[$i])([^A-Z_\d])/$1$RAND_PFX$2$3/g;
+						$buf_macro =~ s/([^A-Z_\d])($$margv[$i])((?:\s*(?:!|=)=.*?)?@)/$1$RAND_PFX$2$3/g;
+					};
+					debug("  MBODY\n***\n$buf_marg\n$buf_macro\n***");
+					$outb .= cfg_analyzer($buf_marg.$buf_macro, $file);
+				} else {
+					$outb .= builtin_macro($file, $1, @args);
+				}
+			}
+		} else {																				# directive with parameters
+			debug("  DIRECTIVE1:\t\@$1 ");
+			if ($1 eq 'MACRO' &&
+				"$3$'" =~ /([A-Z_\d]+)[\t\s]*\([\t\s]*([A-Z_\d,\s\t]*?)[\t\s]*\)@/o) {
+				if ($do[$#do]) {
+					exists $cfgmac_argv{$1} &&
+						error("Macro '$1' already defined ($file:$.)");
+					$isMacro = 1;
+					$macro_name = $1;
+					my @arg = split(/[\t\s]*,[\t\s]*/, $2);
+					$cfgmac_argv{$1} = \@arg;
+					$cfgmac_body{$1} = '';
+					debug("    \t\t  N: '$1'\n    \t\t  A: '$2' (".($#arg + 1).")");
+				}
+				$line = $';
+			} elsif ($1 eq 'INCLUDE') {
+				error("Can't use '$1' into config file ($file:$.)");
+			} elsif ($1 eq 'INCLUDECFG' && "$3$'" =~ /((?:@[A-Z_\d]+@|[^@]+)*)@/o) {
+				debug("    \t\t  $1");
+				$line = $';
+				$do[$#do] && ($outb .= cfg_reader(cfg_analyzer($1, $file)));
+			} elsif ($1 =~ /^(HEAD|TAIL)$/o) {
+				error("Can't use '$1' into config file ($file:$.)");
+			} elsif ($1 eq 'IF') {
+				$line = $';
+				if ("$3$'" =~ /^[\t\s]*(!?)(?:[\t\s]*)([A-Z_\d]+)@/o) {
+					if ($do[$#do]) {
+						!exists $var{$2} && !exists $cfgmac_argv{$2} &&
+							warning($W_NOTICE, "Undefined variable '$2', using default value '' ".
+								"($file:$.)");
+						push(@do, (exists $var{$2} && $var{$2} ne '') ||
+							exists $cfgmac_argv{$2} ? $TRUE : $FALSE);
+						($1 eq '!') && ($do[$#do] = $do[$#do] ? $FALSE : $TRUE);
+					} else {
+						push(@do, $FALSE);
+					}
+					debug("    \t\t  F:$1 V:$2 - $do[$#do]");
+				} elsif ("$3$'" =~
+					/^[\t\s]*([A-Z_\d]+)[\t\s]*(!|=)=[\t\s]*"((?:@[A-Z_\d]+@|[^@]+)*)"@/o) {
+					if ($do[$#do]) {
+						!exists $var{$1} && !exists $cfgmac_argv{$1} &&
+							warning($W_NOTICE, "Undefined variable '$1', using default value '' ".
+								"($file:$.)");
+						push(@do, (exists $var{$1} ? $var{$1} : '') eq
+							cfg_analyzer($3, $file) ? $TRUE : $FALSE);
+						($2 eq '!') && ($do[$#do] = $do[$#do] ? $FALSE : $TRUE);
+					} else {
+						push(@do, $FALSE);
+					}
+					debug("    \t\t  F:$1 V:$3 - $do[$#do]");
+				} else {
+					error("Incorrect syntax for IF condition ($file:$.)");
+				}
+				$line = $';
+			} elsif ($1 !~ /^($KEYWORDS)$/o) {
+				error("Unknown directive '$1' ($file:$.)");
+			} else {
+				error("Incorrect syntax when using directive '$1' ($file:$.)");
+			}
+		}
+	}
+	$isMacro && ($cfgmac_body{$macro_name} .= $line);
+	return $outb.($do[$#do] && !$isMacro ? $line : '');
+}
+
+
+
+#
+# error
+#
+sub error {
+	print STDERR "E0: ", @_, "\n" if (!$quiet);
+	unlink($outfile) if (-z $outfile);
+	exit 1;
+}
+
+
+
+#
+# warning
+#
+sub warning {
+	my ($lev, @msg) = @_;
+	
+	print STDERR "W$lev: ", @msg, "\n" if (!$quiet && $lev <= $warnlev);
+}
+
+
+
+#
+# debug
+#
+sub debug {
+	print STDERR @_, "\n" if $debug;
+}
+
+
+
+#
+# usage
+#
+sub usage {
+	print <<'EofUsage';
+Usage: wpp [POSIX or GNU style options] file ...
+Options:
+  -c FILE, --config=FILE Use FILE as config file (default is 'config').
+  -D CONST=VAL, -D CONST Declare a constant CONST.
+  --define CONST=VAL     Declare a constant CONST.
+  --define CONST         Declare a constant CONST.
+  -d, --depend           Generate dependencies.
+  -g, --debug            Enable the debugging output of the internal parser.
+  -h, --help             Print this message and exit.
+  -q, --quiet            Run without printing any message and warning.
+  -v, --version          Print the version number of wpp and exit.
+  -W all,  --warn=all    Enable printing all warnings.
+  -W none, --warn=none   Disable warnings.
+  -W LEV,  --warn=LEV    Set warning level LEV from 0 (none) to 7 (all).
+EofUsage
+	exit 0;
+}
+
+
+
+#
+# version
+#
+sub version {
+	print <<"EofVersion";
+WPP $VERSION, by Marco Lamberto.
+Copyright (C) 1997,1998,1999\n\tMarco Lamberto.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+
+Report bugs to <lm\@geocities.com>.
+WPP Web-page <http://www.geocities.com/marcolamberto/wpp/>.
+EofVersion
+	exit 0;
+}
+
+1;
+
+__END__
+
+=head1 NAME
+
+WPP - The Web Preprocessor
+
+=head1 SYNOPSIS
+
+B<wpp> S<[POSIX or GNU style options]> file ...
+
+=head1 DESCRIPTION
+
+WPP is a small perl5 script that allows preprocessing of html files.
+It's useful for giving an uniform layout to different html pages.
+It allows you to define "variables", which are abbreviations
+for longer constructs, and include common html fragments.
+
+WPP provides four separate facilities that you can use as you
+fit: inclusion of templates, variables expansion, conditional generation and
+macro expansion.
+
+It can be used into cgi scripts for dynamic generation of pages.
+With less html code inside them you can make more flexible and
+readable cgi-scripts.
+
+WPP is distributed under the terms of the GNU General Public License (GPL).
+As such, you can use this program free of charge but there is no warranty.
+
+=head1 OPTIONS
+
+S<-c B<FILE>, --config=B<FILE>>
+    Use FILE as config file (default is 'config').
+
+S<-D B<CONST>=B<VAL>, -D B<CONST>, --define B<CONST>=B<VAL>, --define B<CONST>>
+    Declare a constant B<CONST> with the optional associated
+    value B<VAL>.
+
+S<-d, --depend>
+    Generate dependencies for make.
+
+S<-g, --debug>
+    Enable the debugging output of the internal parser.
+
+S<-h, --help>
+    Print the list of command line switches with a short
+    description.
+
+S<-q, --quiet>
+    Run without printing any message and warning.
+
+S<-v, --version>
+    Print the version number of wpp and exit.
+
+S<-W all, --warn=all>
+    Enable printing all warnings.
+
+S<-W none, --warn=none>
+    Disable warnings.
+
+S<-W B<LEV>, --warn=B<LEV>>
+    Set warning level B<LEV>:
+      0 = none          4 = notice
+      1 = fatal         5 = message
+      2 = error         6 = debug
+      3 = warning (*)   7 = all
+
+    (*) default warning level
+
+S<->
+    Read raw data from the standard input, html file is
+    written to the standard output.
+
+=head1 AUTHOR
+
+Marco Lamberto <lm@geocities.com>
+
+=head1 OFFICIAL WEB SITE
+
+http://www.geocities.com/marcolamberto/wpp/
+
+=cut
+
+# vim: set nowrap ts=2 ai:

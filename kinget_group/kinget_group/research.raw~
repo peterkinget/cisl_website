@@ -1,0 +1,79 @@
+$Date$
+
+<hr>
+<h2><a href="research/research_statement_peter_kinget_june_2007.pdf">Research Statement (P. Kinget) [pdf]</a></h2> 
+
+<hr>
+<h2>Current Research Projects </h2>
+
+<ul>
+
+<li> <a style="font-size: 14pt"
+href="ultra_low_voltage_analog.html">Ultra Low
+Voltage Analog and RF Design for nano-scale CMOS technologies</a> </li><br>  
+
+<li> <a style="font-size: 14pt"
+href="rf_integrated_oscillators.html">High 
+Performance Integrated Oscillators</a> </li><br> 
+
+<li> <a style="font-size: 14pt"
+href="device_mismatch.html">Device Mismatch</a> </li><br>
+
+<li> <a style="font-size: 14pt"
+href="ultra_wideband_pulse_radio.html">Ultra-wideband Circuits for Pulse Radio</a> </li><br>
+
+
+</ul>
+
+
+<hr>
+<h2>Undergraduate and M.S. students research involvement</h2>
+
+Please see our <a href="prospective.html">Prospective Students/Student
+Projects</a> Page.
+
+<hr>
+<h2>Research Seminars </h2>
+
+The Columbia Integrated Systems Lab has a regular research <a
+href="http://www.cisl.columbia.edu/seminars/seminars.html">seminar series</a>
+where external and internal speakers present their latest research
+results. These seminars are open to the public. Email announcements
+are sent out via <a
+href="http://www.cisl.columbia.edu/seminars/seminars.html">a mailing list</a>.
+
+<hr>
+<h2>Research Resources & Facilities </h2>
+
+<h3>Chip Fabrication</h3>
+
+<p> We have access to a number of different semiconductor processes for
+the fabrication of our circuits through a fabrication service provides
+(e.g., MOSIS, Europractice) as well as through direct relationships with companies and
+foundries. We currently mainly use 90nm CMOS, 0.13um CMOS, 0.18um CMOS and 0.25um/40GHz BiCMOS
+processes and are initiating our work in 65nm and 45nm CMOS
+processes. Take a look at our <a href="gallery.html">Chip Gallery</a>!
+
+<h3>Computing & CAD tools</h3>
+
+<p> We use a full set of industrial grade design tools for our IC
+designs. This includes tools suites from Cadence, Mentor and
+Agilent. We use PC desktops running Linux as well as servers running
+SunOS and Linux. 
+
+<h3>Analog & RF IC characterization laboratory</h3>
+
+<p> Our lab facilities went through a substantial upgrade during 2004
+and 2005 thanks to an NSF MRI Grant (with Prof. Tsividis) in conjunction
+with funding from Columbia University and the School of Engineering. We
+currently have a state-of-the-art measurement facility for IC
+characterization from DC to 40 GHz. We can measure on wafer circuits or
+packaged devices. Our instruments allow a full characterization in the
+frequency domain and time domain.
+
+<center>
+<a href="Lab.html"><img height=90 src="images/pictures/Lab1.jpg" border=0></a>
+<a href="Lab.html"><img height=90 src="images/pictures/Lab2.jpg" border=0></a>
+<a href="Lab.html"><img height=90 src="images/pictures/Lab3.jpg" border=0></a>
+<a href="Lab.html"><img height=90 src="images/pictures/Lab4.jpg" border=0></a>
+</center>

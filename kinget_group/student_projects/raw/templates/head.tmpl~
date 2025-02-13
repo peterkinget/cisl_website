@@ -1,0 +1,41 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../kinget_group.css">
+</head>
+
+<body>
+<!-- Here is the logo -->
+<div id="logo">
+<a href="http://www.columbia.edu"><img style="margin-top:-10px" border="0" align="middle" alt="cu_logo" src="../images/cu_logo.gif"></a>
+<img width="150" height="1" src="">
+<a href="http://www.cisl.columbia.edu"><img style="margin-top:-10px" width="250" border="0" align="middle" alt="cisl_logo" src="../images/cisl_logo_transparant.gif"></a><br>
+<center>
+<img border="0" width="719" style="margin-top:-20px" src="../images/Logo3.gif"><br>
+<h1 style="font-family:verdana, times; margin-top:-8px; margin-bottom:0; color:black;" >Kinget Group</h1>
+<h1 style="border:2px navy solid; font-family:verdana,times; margin-top:15px; margin-bottom:0;color:navy;" >Advanced Projects Opportunity</h1>
+
+</center> 
+</div>
+
+<!-- Here is the navigation bar definition -->
+<!-- <div id="navigation" style="position: relative; top: 0px;
+left:0px;"> -->
+<!-- REMOVED  
+<div id="navigation">
+<center> |
+<a href="index.html">Home</a> |
+<a href="people.html">People</a> |
+<a href="research.html">Research</a> |
+<a href="publications.html">Publications</a> |
+<a href="gallery.html">Chip Gallery</a> |
+<a href="sponsors.html">Sponsors</a> | 
+<a href="prospective.html">Prospective Students</a> |
+</center>
+</div>
+--> 
+<!-- Here will start the main page -->
+
+<!-- <div id="content" style="position: relative; top: 0px;
+left:200px;"> -->
+
+<div id="content">

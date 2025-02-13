@@ -1,0 +1,68 @@
+###
+# general
+#
+@INCLUDECFG config.email@
+@IF !LOCAL_DOCS@
+	@TSS_URL=@
+	@DEFAULT_TMPLDIR=templates.tss@
+
+	@TSS_DIR_PREFIX=wpp/@
+	@TSS_BASE_DIR=../@
+	@TSS_IMG_DIR=@TSS_BASE_DIR@images/@
+	@TSS_JS_DIR=@TSS_BASE_DIR@js/@
+
+	@BOX_FRAME_IMG=@TSS_IMG_DIR@null.gif@
+
+	@WPP_IMG_DIR=images/@
+	@WPP_TITLE=WPP - The Web Preprocessor - @
+	@IMG_DIR=images/@
+	@ARROW_UP=<A HREF="#" onMouseOver="status='Top of the page';\
+		return true"><IMG SRC="@TSS_IMG_DIR@arrow_up.gif" WIDTH=14 HEIGHT=14\
+		ALT="[ ^ ]" BORDER=0></A>@
+@ELSE@
+
+	@TSS_DIR_PREFIX=@
+	@IMG_DIR=images/@
+	@WPP_IMG_DIR=@IMG_DIR@@
+	@BOX_FRAME_IMG=images/null.gif@
+	@TSS_URL=http://www.geocities.com/Tokyo/1474/@
+	@JS_DIR=js/@
+	@WPP_TITLE=[ WPP - The Web Preprocessor ] @
+	@ARROW_UP=<A HREF="#" onMouseOver="status='Top of the page';\
+		return true"><IMG SRC="@IMG_DIR@arrow_up.gif" WIDTH=14 HEIGHT=14\
+		ALT="[ ^ ]" BORDER=0></A>@
+@FI@
+
+@EMTITLE=WPP - The Web Preprocessor@
+
+@BOX_FRAME_SIZE=2@
+@BOX_FRAME_COL=#cccccc@
+@BOX_TITLE_COL=#000000@
+@BOX_TITLE_FACE=helvetica@
+@BOX_TITLE_ALIGN=CENTER@
+@BOX_COL=#eeeeee@
+@COL_COMMENTS=COLOR="#777777"@
+@COL_PARAMS=COLOR="#550000"@
+@NO_BACKGROUND=y@
+@FONT=FACE="arial,helvetica"@
+
+
+@META_DESC=WPP is a small perl script that allows preprocessing of html files.  It's useful for giving an uniform layout to different html pages. It can be used into cgi scripts for dynamic generation of pages.@
+@META_KEYS=html, preprocessor, preprocessing, web, perl, script, cgi, the sunny spot@
+
+
+###
+# test.raw stuff
+#
+@INC1=1@
+@INC2=1@
+@IF1=@
+@IF2=@
+@IF3=@
+@IF4=@
+@IF5=@
+
+# put something as the value to check the recursion test
+@RECURSIVE=@
+# put something as the value to check the read-only variables test
+@READ_ONLY=@

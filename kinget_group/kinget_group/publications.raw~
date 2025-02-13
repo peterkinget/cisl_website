@@ -1,0 +1,267 @@
+$Date$
+
+<h2>Publications</h2>
+
+<h3>2008</h3>
+<ul>
+
+<li>A. Jha and P. Kinget, "Wideband Signal Synthesis using Interleaved 
+    Partial-order Hold Digital-to-Analog Converters," IEEE Transactions on 
+    Circuits and Systems II, Vol. 55, No. 11, pp. 1109 - 1113, Nov. 2008.
+</li><br>
+
+<li>S. A. Yu and P. Kinget, "A 0.042-mm2 Fully Integrated Analog PLL with 
+    Stacked Capacitor-Inductor in 45nm CMOS," European Solid-State Circuits 
+    Conference, pp. 94-97, Sept. 2008.
+</li><br>
+
+<li>P. Kinget, C. Vezyrtzis, E. Chiang, B. Hung and T.L. Li, "Voltage 
+    References for Ultra-low Supply Voltages," invited, IEEE Custom 
+    Integrated Circuits Conference, pp. 715-720, Sept. 2008.
+</li><br>
+
+<li>Y. Feng, G. Takemura, S. Kawaguchi and P. Kinget, "A High Performance 
+    2-GHz Direct-Conversion Front End with Single-Ended RF input in 0.13 um 
+    CMOS," IEEE Radio Frequency Integrated Circuits Conference (RFIC), 
+    pp. 339-342, June 2008.
+</li><br>
+
+<li>T.L Hsieh, P. Kinget and R. Gharpurey, "A Rapid Interference Detector for 
+    Ultra Wideband Radio Systems in 0.13um CMOS," IEEE Radio Frequency 
+    Integrated Circuits Conference (RFIC), pp. 347-350, June 2008.
+</li><br>
+
+<li>F. Zhang, R. Gharpurey and P. Kinget, "A 3.1-9.5 GHz Agile UWB
+  Pulse Radio Receiver with Discrete-Time Wideband-IF Correlation in
+  90nm CMOS," IEEE Radio Frequency Integrated Circuits Conference (RFIC), 
+  pp. 31-34 , June 2008. Recipient of "Best Student Paper Award - 1st Place".
+</li><br>
+
+<li>A. Jha, R. Gharpurey and P. Kinget, "A 3 to 5-GHz UWB Pulse Radio
+  Transmitter in 90nm CMOS," IEEE Radio Frequency Integrated Circuits
+  Conference (RFIC), accepted for presentation, June 2008.
+</li><br>
+
+<li>N. Stanic, A. Balankutty, P. Kinget and Y. Tsividis, "A 2.4-GHz
+  ISM-Band Sliding-IF Receiver with a 0.5 V Supply," invited, IEEE Journal of Solid-State Circuits, Special issue on the 2007 Radio Frequency Integrated Circuits Conference, vol. 43, no. 5, pp. 1138-1145, May 2008. 
+</li><br>
+
+<li> J. Shen and P. Kinget, "A 0.5 V 8-bit 10-Ms/s Pipelined ADC in 90 nm CMOS," 
+ invited, IEEE Journal of Solid-State Circuits, vol. 43, no. 4, pp. 787-795, Apr. 2008.
+</li><br>
+
+<li> J. Tompson, A. Dolin and P. Kinget, "2.6 GHz RF Inductive Power Delivery for Contactless 
+ On-Wafer Characterization," accepted for presentation, IEEE International Conference 
+ on Microelectronics Test Structures (ICMTS), pp. 175 - 179, March 2008.
+</li><br>
+
+<li> G. Gangasani and P. Kinget, "Time-Domain Model for Injection Locking in Non-Harmonic Oscillators,"
+ IEEE Transactions on Circuits and Systems I, vol. 55, no. 6, pp. 1648 - 1658, July 2008.
+</li><br>
+
+<li> A. Balankutty, S.-A. Yu, Y. Feng and P. Kinget, "A 0.6 V 32 mW Highly Integrated Receiver 
+ for 2.4 GHz ISM-Band Applications," IEEE International Solid-State Circuits Conference (ISSCC), 
+ (accepted) February 2008.
+</li><br>
+
+</ul>
+
+<h3>2007</h3>
+<ul>
+<li> P. Kinget, "Ultra-low Voltage Analog Integrated Circuits for nanoscale CMOS,"
+INVITED, IEEE Bipolar/BiCMOS Circuits and Technology Meeting, October 2007.
+</li><br>
+
+<li> X. Y. He, K. P. Pun and P. Kinget, "A dynamic common-mode level shifting technique 
+ for ultra-low-voltage CT delta-sigma modulators employing a return-to-open DAC," 
+ IEE Electronics Letters, Vol. 43, Issue 20,pp. 1071-1073, September 2007.
+</li><br>
+
+<li> P. Kinget, "Designing Analog and RF Circuits for Ultra-low Supply Voltages," 
+plenary talk, IEEE European Solid-State Circuits Conference, September 2007.
+</li><br>
+
+<li> A. Balankutty, T. C. Chih, C. Y. Chen and P. Kinget, "Mismatch Characterization 
+ of Ring Oscillators," IEEE Custom Integrated Circuits Conference, September 2007.
+</li><br>
+
+<li> P. Kinget, B. Soltanian, S. Xu, S. Yu and F. Zhang, "Advanced Design Techniques
+for Integrated Voltage Controlled Oscillators," INVITED, IEEE Custom Integrated Circuits Conference, September 2007.
+</li><br>
+
+<li> B. Soltanian, H. Ainspan, W. Rhee, D. Friedman and P. Kinget, "An
+  Ultra Compact Differentially Tuned 6 GHz CMOS LC VCO with Dynamic
+  Common Mode Feedback," INVITED, IEEE Journal of Solid-State 
+  Circuits, September 2007.
+</li><br>
+
+<li> N. Stanic, A. Balankutty, P. Kinget and Y. Tsividis, "A 0.5 V Receiver in 90 nm
+ CMOS for 2.4 GHz Applications," IEEE Radio Frequency Integrated Circuits Conference, 
+ June 2007.
+</li><br>
+
+<li> J. Shen and P. Kinget, "A 0.5 V 8 bit 10 Msps Pipelined ADC in 90 nm CMOS", 
+ IEEE Symposium on VLSI circuits, June 2007.
+</li><br>
+
+<li> P. Kinget, "Device mismatch: an Analog Design Perspective", INVITED, 
+Special session: Circuit design in the presence of device variability, 
+IEEE International Symposium on Circuits and Systems (ISCAS), May 2007.
+</li><br>
+
+<li> E. Chiang and P. Kinget, "Voltage Reference Generators for Low Voltage Operation 
+ Using Alternate Solid State Devices" Proceedings of the 21st National Conference on
+ Undergraduate Research (NCUR), Dominican University (CA), April 2007.
+</li><br>
+
+<li> S. Chatterjee, and P. Kinget, "A 0.5-V 1-Msps Track-and-Hold Circuit with 
+60-db SNDR," IEEE Journal of Solid-State Circuits, pp. 722-729, April 2007.
+</li><br>
+
+<li> K. P. Pun, S. Chatterjee, and P. Kinget, "A 0.5-V 74-dB SNDR 25-kHz 
+Continuous-Time Delta-Sigma Modulator with a Return-to-Open DAC," IEEE 
+Journal of Solid-State Circuits, pp. 496-507, March 2007.
+</li><br>
+
+<li> S.-A. Yu and P. Kinget, "A 0.65 V 2.5 GHz Fractional-N Frequency Synthesizer 
+in 90nm CMOS," Digest of Technical Papers IEEE International Solid-State 
+Circuits Conference (ISSCC), February 2007.
+</li><br>
+
+</ul>
+<h3>2006</h3>
+<ul>
+
+<li> Tien-Ling Hsieh, P. Kinget, R. Gharpurey, "An Approach to Interference 
+Detection for Ultra Wideband Radio Systems," Fifth IEEE Dallas Circuits and Systems 
+Workshop, October, 2006.
+</li><br>
+
+<li> F. Zhang and P. Kinget, "Design of Components and Circuits Underneath 
+Integrated Inductors," IEEE Journal of Solid-State Circuits, October 2006.
+</li> <br>
+
+<li> G. Gangasani and P. Kinget, "A time-domain model for predicting the 
+injection locking bandwidth of non-harmonic oscillators," Transactions on 
+Circuits and Systems-II, October 2006.
+</li><br>
+
+<li> B. Soltanian, and P. Kinget, "A Low Phase Noise Quadrature LC VCO
+  Using Capacitive Common-Source Coupling," European Solid-State
+  Circuits Conference, September 2006.
+</li><br>
+
+<li> B. Soltanian, H. Ainspan, W. Rhee, D. Friedman and P. Kinget, "An
+  Ultra Compact Differentially Tuned 6 GHz CMOS LC VCO with Dynamic
+  Common Mode Feedback," IEEE Custom Integrated Circuits Conference, September 2006.
+</li><br>
+
+<li> B. Soltanian and P. Kinget, "Tail
+  Current-Shaping to Improve Phase Noise in LC Voltage Controlled
+  Oscillators," IEEE Journal of Solid-State Circuits, August 2006.
+</li><br>
+
+<li> S. Chatterjee, Y. Tsividis and P. Kinget, "Ultra-Low
+    Voltage Analog Integrated Circuits," INVITED, IEICE Transactions on
+  Electronics, June 2006.
+</li><br>
+
+<li> F. Zhang and P. Kinget, "Low Power Programmable Gain CMOS Distributed LNA," IEEE
+  Journal of Solid-State Circuits, June 2006.
+</li><br>
+
+<li> S. Chatterjee, and P. Kinget, "A 0.5-V
+  1-Msample/s 60-dB SNDR Track-and-Hold Circuit," Digest of
+  Technical Papers IEEE Symposium on VLSI circuits, June 2006.
+</li><br>
+
+<li> N. Stanic, P. Kinget, and Y. Tsividis, "A 0.5 V 900
+  MHz CMOS Receiver Front End," Digest of Technical Papers IEEE
+  Symposium on VLSI circuits, June 2006. 
+</li><br>
+
+<li> B. Soltanian and P. Kinget, "AM-FM Conversion by the Active 
+Devices in MOS LC-VCOs and its Effect on the Optimal Amplitude," 
+IEEE Radio Frequency Integrated Circuits Conference (RFIC), June 2006.
+</li><br>
+
+<li> A. Jha, R. Gharpurey and P. Kinget, "Quadrature-DAC based pulse generation for UWB 
+pulse radio transceivers," Digest of Technical Papers IEEE International Symposium on 
+Circuits and Systems, May 2006. 
+</li><br>
+
+<li> G. Gangasani and P. Kinget, "Injection-Lock Dynamics in Non-Harmonic Oscillators,"
+Digest of Technical Papers IEEE International Symposium on Circuits and Systems, May 2006.
+</li><br>
+
+<li> M. Abdulai and P. Kinget, "A 0.5 V Fully Differential Gate-input Operational 
+Transconductance Amplifier with Intrinsic Common-Mode Rejection," Digest of Technical 
+Papers IEEE International Symposium on Circuits and Systems, May 2006.
+</li><br>
+
+<li> P. Kinget, "Amplitude detection inside CMOS LC oscillators,"
+  Digest of Technical Papers IEEE International Symposium on Circuits
+  and Systems, May 2006.
+</li><br>
+
+<li> K. P. Pun, S. Chatterjee, and P. Kinget, "A 0.5 V 74dB SNDR 25kHz CT Delta-Sigma 
+Modulator with Return-to-Open DAC," Digest of Technical Papers IEEE International 
+Solid-State Circuits Conference (ISSCC), February 2006, pp. 72-73.
+</li><br>
+
+</ul>
+<h3>2005</h3>
+<ul>
+
+<li> P. Kinget, S. Chatterjee, and Y. Tsividis, "Ultra low
+  voltage analog design techniques for nanoscale CMOS technologies,"
+  plenary talk at the <a
+  href="http://www.ee.ust.hk/ieee_eds/edssc/technical.html">2005 IEEE
+  International conference on Electronic Devices and Solid-State
+  Circuits</a> (EDSSC 2005), Hong Kong, December 2005, pp. 9-14.
+</li><br>
+
+<li> S. Chatterjee, Y. Tsividis and P. Kinget, "0.5 V Analog
+  Circuit Techniques and Their Application in OTA and Filter
+  Design," IEEE Journal of Solid-State Circuits, vol. 40, no 12,
+  pp. 2373 - 2387, December 2005.
+</li><br>
+
+<li> Babak Soltanian and P. Kinget, "A tail current-shaping technique to reduce 
+phase noise in LC VCOs," Custom Integrated Circuits Conference (CICC), September 2005.
+</li><br>
+
+<li> F. Zhang, Chen-Feng Chu and P. Kinget, "Voltage-controlled oscillator in the coil," 
+Custom Integrated Circuits Conference (CICC), September 2005.
+</li><br>
+
+<li> P. Kinget, "Device mismatch and trade-offs in the design of analog circuits," 
+IEEE Journal of Solid-State Circuits (JSSC), pp.1212-1224, June 2005.
+</li><br>
+
+<li> P. Kinget, S. Chatterjee, and Y. Tsividis, "0.5 V Analog Integrated Circuits," 
+Advances in Analog Circuit Design (AACD) workshop, (invited, 21 pages), April 2005.
+</li><br>
+
+<li> F. Zhang and P. Kinget, "Low power progammable-gain CMOS distributed LNA for 
+ultra-wideband applications," Symposium on VLSI Circuits, 2005.
+</li><br> 
+
+<li> S. Chatterjee, T. Musah, Y. Tsividis, and P. Kinget, "Weak inversion MOS varactors 
+for 0.5 V analog integrated filters," Symposium on VLSI Circuits, pp.272-275, June 2005.
+</li><br>
+
+<li> S. Chatterjee, Y. Tsividis, and P. Kinget, "A 0.5 V filter with PLL-based 
+tuning in 0.18um CMOS," Digest of Technical Papers, International Solid-State 
+Circuits Conference (ISSCC), 2005.
+</li><br>
+
+</ul>
+<h3>2004</h3>
+<ul>
+
+<li> S. Chatterjee, Y. Tsividis, and P. Kinget, "A 0.5 V bulk input fully differential operational transconductance amplifier," Proceedings of European Solid-State Circuits Conference (ESSCIRC), pp.147-150, September 2004.
+</li><br>
+</ul>
+
+<hr>

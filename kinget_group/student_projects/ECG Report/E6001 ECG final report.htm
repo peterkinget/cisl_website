@@ -1,0 +1,826 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>ECG Measurement System</title>
+</head>
+
+<body>
+
+<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="font-size:14.0pt"><a name="#0"><span style="mso-bidi-font-weight: normal; font-size: 14.0pt"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA">ECG Measurement System</span></b></span></a></span><span lang="EN-US" style="font-size:14.0pt"><b style="mso-bidi-font-weight:
+normal"></o:p>
+</b></span></p>
+<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US">Chia-Hung
+Chen, Shi-Gun Pan, Peter Kinget</span></p>
+
+<font color="red" size="+2"><b>CAUTION: Be very careful when you measure signals
+on humans. Carefully read and apply the necessary safety procedures!
+We cannot be held responsible for any harm caused by using any of the
+circuits or procedures described on this site. We also do not claim
+any of the circuits or procedures are safe. Use at your own risk.</b></font>
+
+<p class="MsoNormal" align="left"><b style="mso-bidi-font-weight:normal"><u><span lang="EN-US">Contents<o:p>
+</o:p>
+</span></u></b></p>
+
+<p class="MsoNormal" align="left" style="line-height: 50%"><a href="#1"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">1.
+Introduction to ECG measurement system</span></a></p>
+
+<p class="MsoNormal" align="left" style="line-height: 50%"><a href="#2"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">2.
+ECG Signal</span></a></p>
+
+<p class="MsoNormal" align="left" style="line-height: 50%"><a href="#3"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">
+3.ECG circuits</span></a></p>
+
+<p class="MsoNormal" align="left" style="line-height: 50%"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#3-1">3.1 Instrumentation Amplifier</a></span></p>
+<p class="MsoNormal" align="left" style="line-height: 50%"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#3-2"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">3.2
+Opto-Coupler</span></a> </span></p>
+<p class="MsoNormal" align="left" style="line-height: 50%"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="#3-3"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">3.3
+Bandpass Filter</span></a></span></p>
+
+<p class="MsoNormal" align="left" style="line-height: 50%"><a href="#4"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">
+4.Measured ECG signal</span></a></p>
+
+<p class="MsoNormal" align="left" style="line-height: 50%"><a href="#5"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">5.
+Reference</span></a></p>
+
+
+<p class="MsoNormal" align="left" style="line-height: 50%">&nbsp;</p>
+<p class="MsoNormal" align="left" style="line-height: 50%"><u><span lang="EN-US"><a name="#1"><b style="mso-bidi-font-weight: normal"><b style="mso-bidi-font-weight:normal">1.
+Introduction to ECG measurement system<o:p>
+</o:p>
+</b></b></a></span></u><b style="mso-bidi-font-weight:normal"><u><span lang="EN-US"><o:p>
+</o:p>
+</span></u></b></p>
+<p class="MsoNormal" align="left" style="line-height: 50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span lang="EN-US">The ECG system is shown on Figure 1.<span style="mso-spacerun: yes">&nbsp;
+</span>The ECG system comprises four stages, each stage is as following:</span></p>
+<p class="MsoNormal"><span lang="EN-US">(1) The first stage is a transducer—AgCl
+electrode, which convert ECG into electrical voltage.<span style="mso-spacerun:
+yes">&nbsp; </span>The voltage is in the range of 1 mV ~ 5 mV.</span></p>
+<p class="MsoNormal"><span lang="EN-US">(2) The second stage is an
+instrumentation amplifier (Analog Device, AD624), which has a very high CMRR
+(90dB) and high gain (1000), with power supply +9V and -9V.</span></p>
+<p class="MsoNormal"><span lang="EN-US">(3) We use an opto-coupler (NEC PS2506)
+to isolate the In-Amp and output.<span style="mso-spacerun: yes">&nbsp;</span></span></p>
+<p class="MsoNormal"><span lang="EN-US">(4) After the opto-coupler is a bandpass
+filter of 0.04 Hz to 150 Hz filter.<span style="mso-spacerun: yes">&nbsp; </span>It’s
+implemented by cascading a low-pass filter and a high pass filter.</span></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal" align="left" style="line-height: 50%"><img border="0" src="E6001%201.gif" width="529" height="105"></p>
+<p class="MsoNormal" align="left"><span lang="EN-US">
+<b style="mso-bidi-font-weight:
+normal">Figure 1</b><span style="mso-spacerun: yes">&nbsp; </span>Function
+blocks of the ECG system</span></p>
+<p class="MsoNormal" align="left"><a href="#0">Return to outline</a></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left"><a name="#2"><b style="mso-bidi-font-weight:normal"><u><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA">2. ECG Signal</span></u></b></a></p>
+<p class="MsoNormal" align="left"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The basic structure of the heart is shown on Figure 2.<span style="mso-spacerun:
+yes">&nbsp; </span>Measuring at different </span><span lang="EN-US">region of
+the heart will retrieve different biopotential.<span style="mso-spacerun: yes">&nbsp;
+</span>And, so that it will generate different ECG waveforms.<span style="mso-spacerun: yes">&nbsp;
+</span>The ECG generated by each cardiac cycle is summarized on Table 1.</span></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left"><img border="0" src="E6001%202.gif" width="351" height="247"></p>
+<p class="MsoNormal" align="left"><b><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">Figure
+2</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;
+mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;
+mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA"> <span style="mso-spacerun:
+yes">&nbsp;</span>Basic structure of the heart. RA is the right atrium, RV is
+the right ventricle; LA is the left atrium, and LV is the left ventricle.</span></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<table border="0" cellspacing="0" cellpadding="0" width="453" style="width:339.75pt;
+ mso-cellspacing:0cm;margin-left:46.5pt;mso-padding-alt:0cm 0cm 0cm 0cm">
+  <tr style="height:30.0pt">
+    <td width="136" style="width:102.25pt;border:double windowtext 1.5pt;
+  border-right:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">Event<o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+    <td width="178" style="width:133.75pt;border-top:double 1.5pt;border-left:solid .75pt;
+  border-bottom:double 1.5pt;border-right:solid .75pt;border-color:windowtext;
+  padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">Characteristics <o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+    <td width="138" style="width:103.75pt;border:double windowtext 1.5pt;
+  border-left:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">Duration at 75 bpm (0.8 second
+      cycle) <o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+  </tr>
+  <tr style="height:30.0pt">
+    <td width="136" style="width:102.25pt;border:double windowtext 1.5pt;
+  border-right:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">Atrial diastole<o:p>
+      </o:p>
+      </span></b></p>
+      <p class="MsoNormal"><b><span lang="EN-US">Ventricular diastole <o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+    <td width="178" style="width:133.75pt;border-top:double 1.5pt;border-left:solid .75pt;
+  border-bottom:double 1.5pt;border-right:solid .75pt;border-color:windowtext;
+  padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">AV valves opened.<o:p>
+      </o:p>
+      </span></b></p>
+      <p class="MsoNormal"><b><span lang="EN-US">Semilunar valves close.<o:p>
+      </o:p>
+      </span></b></p>
+      <p class="MsoNormal"><b><span lang="EN-US">Ventricular filling. <o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+    <td width="138" style="width:103.75pt;border:double windowtext 1.5pt;
+  border-left:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">0.4 seconds <o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+  </tr>
+  <tr style="height:30.0pt">
+    <td width="136" style="width:102.25pt;border:double windowtext 1.5pt;
+  border-right:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">Atrial systole<o:p>
+      </o:p>
+      </span></b></p>
+      <p class="MsoNormal"><b><span lang="EN-US">Ventricular diastole <o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+    <td width="178" style="width:133.75pt;border-top:double 1.5pt;border-left:solid .75pt;
+  border-bottom:double 1.5pt;border-right:solid .75pt;border-color:windowtext;
+  padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">AV valves open.<o:p>
+      </o:p>
+      </span></b></p>
+      <p class="MsoNormal"><b><span lang="EN-US">Semilunar valves closed.
+      Ventricular filling. <o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+    <td width="138" style="width:103.75pt;border:double windowtext 1.5pt;
+  border-left:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">0.1 seconds <o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+  </tr>
+  <tr style="height:30.0pt">
+    <td width="136" style="width:102.25pt;border:double windowtext 1.5pt;
+  border-right:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">Atrial diastole<o:p>
+      </o:p>
+      </span></b></p>
+      <p class="MsoNormal"><b><span lang="EN-US">Ventricular systole <o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+    <td width="178" style="width:133.75pt;border-top:double 1.5pt;border-left:solid .75pt;
+  border-bottom:double 1.5pt;border-right:solid .75pt;border-color:windowtext;
+  padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">AV valves closed.<o:p>
+      </o:p>
+      </span></b></p>
+      <p class="MsoNormal"><b><span lang="EN-US">Semilunar valves open.<o:p>
+      </o:p>
+      </span></b></p>
+      <p class="MsoNormal"><b><span lang="EN-US">Blood pumped into aorta and
+      pulmonary artery. <o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+    <td width="138" style="width:103.75pt;border:double windowtext 1.5pt;
+  border-left:solid windowtext .75pt;padding:0cm 0cm 0cm 0cm;height:30.0pt">
+      <p class="MsoNormal"><b><span lang="EN-US">0.3 seconds <o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal" align="left"><span lang="EN-US"><b style="mso-bidi-font-weight:
+normal">Table 1</b><span style="mso-spacerun: yes">&nbsp; </span>Duration and
+characteristics of each major event in the cardiac cycle.&nbsp;&nbsp;&nbsp;</span></p>
+<p class="MsoNormal" align="left"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="MsoNormal" align="left"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The ECG is converted into electrical voltage by electrodes.<span style="mso-spacerun: yes">&nbsp;
+</span>A typical surface electrode used for ECG recording is made of Ag/AgCl, as
+shown on Figure 3. <span style="mso-spacerun: yes">&nbsp;</span>The disposable
+electrodes are attached to the patients’ skin and can be easily removed.</span></p>
+<p class="MsoNormal" align="left"><img border="0" src="E6001%203.gif" width="356" height="134"></p>
+<p class="MsoNormal" align="left"><b><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">Figure</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA"> <b>3</b> <span style="mso-spacerun:
+yes">&nbsp;</span>A disposable surface electrode.</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The cardiac mechanism of ECG is shown on Figure 4.<span style="mso-spacerun: yes">&nbsp;
+</span>In the top figure, the electrocardiogram (ECG) initiates the cardiac
+cycle. <span style="mso-spacerun:
+yes">&nbsp;</span>The cardiac sounds are also shown. <span style="mso-spacerun:
+yes">&nbsp;</span>The bottom figure shows that ejection occurs when the pressure
+in the left ventricle exceeds that in the arteries.</span></p>
+<p class="MsoNormal" style="text-indent:24.0pt;mso-char-indent-count:2.0;
+mso-char-indent-size:12.0pt"><span lang="EN-US">Once the electrodes convert the
+ECG into electrical voltage, these voltage can be fed into an instrumentation
+amplifier, and then be processed.</span></p>
+<p class="MsoNormal" style="text-indent:24.0pt;mso-char-indent-count:2.0;
+mso-char-indent-size:12.0pt"><img border="0" src="E6001%204.gif" width="325" height="258"></p>
+<p class="MsoNormal" style="text-indent:24.0pt;mso-char-indent-count:2.0;
+mso-char-indent-size:12.0pt"><span lang="EN-US"><b style="mso-bidi-font-weight:
+normal">Figure 4</b><span style="mso-spacerun: yes">&nbsp;
+</span>The ECG cardiac cycle.</span></p>
+<p class="MsoNormal" style="text-indent:24.0pt;mso-char-indent-count:2.0;
+mso-char-indent-size:12.0pt"><span lang="EN-US">We measure the ECG by connecting
+two electrodes on the right and left chest respectively, as shown on Figure 5.<span style="mso-spacerun: yes">&nbsp;
+</span>The body should be connected to ground of the circuits, so that we
+connect the leg to the ground.<span style="mso-spacerun: yes">&nbsp; </span>If
+the body is not grounded, no signal would be obtained.</span></p>
+<p class="MsoNormal" style="text-indent:24.0pt;mso-char-indent-count:2.0;
+mso-char-indent-size:12.0pt"><img border="0" src="E6001%205.gif" width="519" height="432"></p>
+<p class="MsoNormal" style="text-indent:24.0pt;mso-char-indent-count:2.0;
+mso-char-indent-size:12.0pt"><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA"><b style="mso-bidi-font-weight:normal">Figure </b><b style="mso-bidi-font-weight: normal; font-size: 12.0pt; font-family: Times New Roman; mso-fareast-font-family: PMingLiU; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">5</b><span style="mso-spacerun: yes">&nbsp;
+</span>Simplified
+ECG recording system</span></p>
+<p class="MsoNormal" align="left"><a href="#0">Return to outline</a></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left"><a name="#3"><b style="mso-bidi-font-weight:normal"><u><span lang="EN-US">3.
+Circuits of the ECG system<o:p>
+</o:p>
+</span></u></b></a></p>
+<p class="MsoNormal" align="left"><span lang="EN-US">The ECG circuit diagram is
+shown on Figure 6.<span style="mso-spacerun: yes">&nbsp;</span></span></p>
+<p class="MsoNormal" align="left"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:558pt;
+ height:437.25pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/SHIGUN~1/LOCALS~1/Temp/msoclip1/02/clip_image001.jpg"
+  o:title="ECG%20ho15"/>
+</v:shape><![endif]-->
+<img src="E6001%206.jpg" v:shapes="_x0000_i1025" width="744" height="583"></span></p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><b style="mso-bidi-font-weight:
+normal">Figure 6</b><span style="mso-spacerun: yes">&nbsp; </span>The ECG circuit diagram</span></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left"><a name="#3-1"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA">3.1<span style="mso-spacerun: yes">&nbsp; </span>Instrumentation
+Amplifier</span></b></a></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp; We choose Analog Device
+AD624 instrumentation amplifier to amplify the ECG voltage from electrodes,
+which is in the range of several mV.</span></p>
+<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+</span>The AD624 is set up with gain of 1000, and is supplied by +9 V and -9V
+battery power.<span style="mso-spacerun: yes">&nbsp; </span>Some important
+features of the AD624 are listed on Table 2.<o:p>
+</o:p>
+</span></p>
+<table border="1" cellspacing="0" cellpadding="0" style="margin-left:59.4pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid black .75pt;
+ mso-padding-alt:0cm 5.4pt 0cm 5.4pt">
+  <tr>
+    <td width="192" valign="top" style="width:144.0pt;border-top:solid black .75pt;
+  border-left:solid black .75pt;border-bottom:solid black 1.5pt;border-right:
+  none;padding:0cm 5.4pt 0cm 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US">Supply Voltage</span></p>
+    </td>
+    <td width="204" valign="top" style="width:153.0pt;border-top:solid black .75pt;
+  border-left:none;border-bottom:solid black 1.5pt;border-right:solid black .75pt;
+  padding:0cm 5.4pt 0cm 5.4pt">
+      <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US">+-9V
+      Battery power<o:p>
+      </o:p>
+      </span></b></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="192" valign="top" style="width:144.0pt;border-top:none;border-left:
+  solid black .75pt;border-bottom:solid black .75pt;border-right:none;
+  mso-border-top-alt:solid black .75pt;padding:0cm 5.4pt 0cm 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US">Programmable Gain</span></p>
+    </td>
+    <td width="204" valign="top" style="width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid black .75pt;border-right:solid black .75pt;
+  mso-border-top-alt:solid black .75pt;padding:0cm 5.4pt 0cm 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US">1, 100, 200, 500, 1000, 2500</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="192" valign="top" style="width:144.0pt;border-top:none;border-left:
+  solid black .75pt;border-bottom:solid black .75pt;border-right:none;
+  mso-border-top-alt:solid black .75pt;padding:0cm 5.4pt 0cm 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US">CMRR</span></p>
+    </td>
+    <td width="204" valign="top" style="width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid black .75pt;border-right:solid black .75pt;
+  mso-border-top-alt:solid black .75pt;padding:0cm 5.4pt 0cm 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US">130dB (Gain=500 to 1000)</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="192" valign="top" style="width:144.0pt;border-top:none;border-left:
+  solid black .75pt;border-bottom:solid black .75pt;border-right:none;
+  mso-border-top-alt:solid black .75pt;padding:0cm 5.4pt 0cm 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US">Gain Bandwidth Product</span></p>
+    </td>
+    <td width="204" valign="top" style="width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid black .75pt;border-right:solid black .75pt;
+  mso-border-top-alt:solid black .75pt;padding:0cm 5.4pt 0cm 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US">25 MHz</span></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="192" valign="top" style="width:144.0pt;border-top:none;border-left:
+  solid black .75pt;border-bottom:solid black .75pt;border-right:none;
+  mso-border-top-alt:solid black .75pt;padding:0cm 5.4pt 0cm 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US">Input offset</span></p>
+    </td>
+    <td width="204" valign="top" style="width:153.0pt;border-top:none;border-left:
+  none;border-bottom:solid black .75pt;border-right:solid black .75pt;
+  mso-border-top-alt:solid black .75pt;padding:0cm 5.4pt 0cm 5.4pt">
+      <p class="MsoNormal"><span lang="EN-US">25 &#956;V, max</span></p>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA">Table 2</span></b><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA"><span style="mso-spacerun: yes">&nbsp; </span>Important
+features of AD624 Instrumentation Amplifier</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp; A very high
+CMRR is very essential for Instrumentation Amplifier.<span style="mso-spacerun: yes">&nbsp;
+</span>The small ac signal voltage (less than 5 mV) detected by the sensor on
+the electrodes will be accompanied by a large ac common-mode component (up to
+1.5 V) and a large variable dc component (300 mV).<span style="mso-spacerun: yes">&nbsp;
+</span>The common-mode rejection specified by the AAMI (Association for the
+Advancement of Medical Instrumentation) is 89 dB minimum for standard ECG and 60
+dB minimum for ambulatory recorders.<span style="mso-spacerun: yes">&nbsp; </span>The
+CMRR of AD624 with gain of 1000 is shown on Figure 7.<span style="mso-spacerun: yes">&nbsp;
+</span>The equation of the CMRR:</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">CMRR
+= differential gain / common mode gain = <span style="mso-text-raise:-15.0pt"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:21.75pt;
+ height:32.25pt' o:ole="">
+ <v:imagedata src="file:///C:/DOCUME~1/SHIGUN~1/LOCALS~1/Temp/msoclip1/02/clip_image001.wmz"
+  o:title=""/>
+</v:shape><![endif]-->
+<span lang="EN-US"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:21.75pt;
+ height:32.25pt' o:ole="">
+ <v:imagedata src="file:///C:/DOCUME~1/SHIGUN~1/LOCALS~1/Temp/msoclip1/02/clip_image001.wmz"
+  o:title=""/>
+</v:shape><![endif]-->
+Adm/Acm</span></span></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:414pt;
+ height:219.75pt' o:ole="">
+ <v:imagedata src="file:///C:/DOCUME~1/SHIGUN~1/LOCALS~1/Temp/msoclip1/02/clip_image001.emz"
+  o:title=""/>
+</v:shape><![endif]-->
+<img width="552" height="293" src="E6001%208.gif" v:shapes="_x0000_i1025"></span></p>
+<p class="MsoNormal"><span lang="EN-US"><b style="mso-bidi-font-weight:
+normal">Figure 7</b><span style="mso-spacerun: yes">&nbsp; </span>Measured CMRR data of AD624 In-Amp</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp; A 741-Opamp is
+connected to the reference node (node 6) of AD624 to offset the output DC
+voltage to 3V (on page 10, AD624 data sheet [2]).<span style="mso-spacerun: yes">&nbsp;
+</span>The 741 is connected as a source follower.<span style="mso-spacerun: yes">&nbsp;
+</span>The output DC voltage of the AD624 is adjusted to 3V, which is an optimal
+value after many try and errors.</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp; The data sheet
+of ST 741 Op Amp is on [3].</span></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA"><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Excel.Chart.8" ShapeID="_x0000_i1025"
+  DrawAspect="Content" ObjectID="_1104242211">
+ </o:OLEObject>
+</xml><![endif]-->
+</span><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA"><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1025"
+  DrawAspect="Content" ObjectID="_1104242067">
+ </o:OLEObject>
+</xml><![endif]-->
+</span><span lang="EN-US"><a name="#3-2"><span style="font-size: 12.0pt; font-family: Times New Roman; mso-fareast-font-family: PMingLiU; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA">3.2 Opto-Coupler</span></b></span></a></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp; After the
+In-Amp, a NEC PS2506 opto-coupler is cascaded to isolate the In-Amp from the
+rest of circuits, as shown on Figure 6.<span style="mso-spacerun: yes">&nbsp; </span>The
+datasheet of the NEC PS2506 is on [4].</span></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><a name="#3-3"><b style="mso-bidi-font-weight:normal"><span lang="EN-US">3.3
+Bandpass filter<o:p>
+</o:p>
+</span></b></a></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp; In general,
+components of the signal of interest will reside in the 0.67 to 40-Hz bandwidth
+for standard ECGs and up to 300 Hz to 1 kHz for pacemaker detection.<span style="mso-spacerun: yes">&nbsp;
+</span>We take the suggestion by the book of John Webster [1] to have the
+bandpass filter the frequency range of 0.04 Hz ~ 150 Hz.<span style="mso-spacerun: yes">&nbsp;
+</span>The filter is implemented by cascading a low-pass filter and a high-pass
+filter.<span style="mso-spacerun: yes">&nbsp; </span>The data of low-pass and
+high-pass filter are implemented by simple RC components, as shown on Table 3.<span style="mso-spacerun: yes">&nbsp;
+</span>The measured transfer function of the bandpass filter is on Figure 8.</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+</span></p>
+<table border="0" cellspacing="0" cellpadding="0" style="margin-left:8.4pt;
+ border-collapse:collapse;mso-table-layout-alt:fixed;mso-padding-alt:0cm 5.4pt 0cm 5.4pt">
+  <tr style="height:30.15pt">
+    <td width="136" valign="top" style="width:101.65pt;border-top:none;border-left:
+  none;border-bottom:solid black 1.5pt;border-right:solid black 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:30.15pt">
+      <p class="MsoTitle" align="left" style="text-align:left">&nbsp;<span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="76" valign="top" style="width:57.35pt;border:none;border-bottom:solid black 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:30.15pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt">R<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="70" valign="top" style="width:52.2pt;border:none;border-bottom:solid black 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:30.15pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt">C<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="135" valign="top" style="width:101.45pt;border:none;border-bottom:
+  solid black 1.5pt;padding:0cm 5.4pt 0cm 5.4pt;height:30.15pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Time
+      Constant </span><span style="mso-char-type: symbol; mso-symbol-font-family: Symbol; font-size: 12.0pt; mso-bidi-font-size: 10.0pt; font-family: Symbol; mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman" lang="EN-US">t</span><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt"><o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="119" valign="top" style="width:89.35pt;border:none;border-bottom:solid black 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:30.15pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt">3dB
+      Frequency<o:p>
+      </o:p>
+      </span></p>
+    </td>
+  </tr>
+  <tr style="height:33.8pt">
+    <td width="136" valign="top" style="width:101.65pt;border:none;border-right:solid black 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.8pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt">Low-Pass
+      Filter<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="76" valign="top" style="width:57.35pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:33.8pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:normal">4
+      M</span><span style="mso-char-type: symbol; mso-symbol-font-family: Symbol; font-size: 12.0pt; mso-bidi-font-size: 10.0pt; font-family: Symbol; mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman; font-weight: normal" lang="EN-US">W</span><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:
+  normal"><o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="70" valign="top" style="width:52.2pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:33.8pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:normal">1
+      </span><span style="mso-char-type: symbol; mso-symbol-font-family: Symbol; font-size: 12.0pt; mso-bidi-font-size: 10.0pt; font-family: Symbol; mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman; font-weight: normal" lang="EN-US">m</span><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:
+  normal">F<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="135" valign="top" style="width:101.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:33.8pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:normal">4.0
+      sec<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="119" valign="top" style="width:89.35pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:33.8pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:normal">0.04
+      Hz<o:p>
+      </o:p>
+      </span></p>
+    </td>
+  </tr>
+  <tr style="height:40.3pt">
+    <td width="136" valign="top" style="width:101.65pt;border:none;border-right:solid black 1.5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:40.3pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt">High-Pass
+      Filter<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="76" valign="top" style="width:57.35pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:40.3pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:normal">10
+      K</span><span style="mso-char-type: symbol; mso-symbol-font-family: Symbol; font-size: 12.0pt; mso-bidi-font-size: 10.0pt; font-family: Symbol; mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman; font-weight: normal" lang="EN-US">W</span><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:
+  normal"><o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="70" valign="top" style="width:52.2pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:40.3pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:normal">0.1
+      </span><span style="mso-char-type: symbol; mso-symbol-font-family: Symbol; font-size: 12.0pt; mso-bidi-font-size: 10.0pt; font-family: Symbol; mso-ascii-font-family: Times New Roman; mso-hansi-font-family: Times New Roman; font-weight: normal" lang="EN-US">m</span><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:
+  normal">F<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="135" valign="top" style="width:101.45pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:40.3pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:normal">0.001
+      sec<o:p>
+      </o:p>
+      </span></p>
+    </td>
+    <td width="119" valign="top" style="width:89.35pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:40.3pt">
+      <p class="MsoTitle" align="left" style="text-align:left"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:normal">159
+      Hz<o:p>
+      </o:p>
+      </span></p>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:
+normal"><span lang="EN-US">Table 3</span></b><span lang="EN-US"><span style="mso-spacerun: yes">&nbsp;
+</span>Filter data</span></p>
+<p class="MsoNormal"><span style="mso-spacerun: yes" lang="EN-US">&nbsp;&nbsp;&nbsp;</span></p>
+<p class="MsoNormal" style="margin-left:3.75gd"><span lang="EN-US"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:342pt;
+ height:211.5pt' o:ole="">
+ <v:imagedata src="file:///C:/DOCUME~1/SHIGUN~1/LOCALS~1/Temp/msoclip1/03/clip_image001.emz"
+  o:title=""/>
+</v:shape><![endif]-->
+<img width="456" height="282" src="E6001%209.gif" v:shapes="_x0000_i1025"><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Excel.Chart.8" ShapeID="_x0000_i1025"
+  DrawAspect="Content" ObjectID="_1104242468">
+ </o:OLEObject>
+</xml><![endif]-->
+</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA"><b style="mso-bidi-font-weight:normal">Figurer </b><b style="mso-bidi-font-weight: normal; font-size: 12.0pt; font-family: Times New Roman; mso-fareast-font-family: PMingLiU; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">8</b><span style="mso-spacerun: yes">&nbsp;
+</span>The
+measured transfer function of the bandpass filter</span></p>
+<p class="MsoNormal"><a href="#0">Return to outline</a></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><a name="#4"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA">4. Measured ECG signals</span></b></a></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp; The ECG circuit is
+shown on Figure 9.<span style="mso-spacerun: yes">&nbsp; </span>We use the
+Agilent 54624 Oscilloscope to probe the ECG signal.</span></p>
+<p class="MsoNormal"><span lang="EN-US"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+</span>The three measured ECG signals, on Figure 10, are respectively from the
+Instrumentation Amp, opto-coupler, and filter.<span style="mso-spacerun: yes">&nbsp;
+</span>The circuits function very well so that the three signals are almost
+identical to each other.</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp; Measuring different
+region of the heart will obtain different ECG signals.<span style="mso-spacerun: yes">&nbsp;
+</span>The ECG signal shown on Figure 9 is one of the standard ECG signals.</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:396pt;
+ height:297pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/SHIGUN~1/LOCALS~1/Temp/msoclip1/03/clip_image001.jpg"
+  o:title="waveform%20pictures%20028"/>
+</v:shape><![endif]-->
+<img width="528" height="396" src="E6001%2010.jpg" v:shapes="_x0000_i1025"></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA"><b style="mso-bidi-font-weight:normal">Figure </b><b style="mso-bidi-font-weight: normal; font-size: 12.0pt; font-family: Times New Roman; mso-fareast-font-family: PMingLiU; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">9</b><span style="mso-spacerun: yes">&nbsp; </span>The
+ECG circuits</span></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:396.75pt;
+ height:297.75pt'>
+ <v:imagedata src="file:///C:/DOCUME~1/SHIGUN~1/LOCALS~1/Temp/msoclip1/03/clip_image001.jpg"
+  o:title="waveform%20pictures%20023"/>
+</v:shape><![endif]-->
+<img width="529" height="397" src="E6001%2011.jpg" v:shapes="_x0000_i1025"></span></p>
+<p class="MsoNormal" align="left"><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA"><b style="mso-bidi-font-weight:normal">Figure </b><b style="mso-bidi-font-weight: normal; font-size: 12.0pt; font-family: Times New Roman; mso-fareast-font-family: PMingLiU; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">10</b><span style="mso-spacerun: yes">&nbsp; </span>The
+ECG signals.<span style="mso-spacerun: yes">&nbsp; </span>The three signals are
+respectively probed from (1)<span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">In-Amp
+(2) Opto-Coupler (3) Filter.<span style="mso-spacerun: yes">&nbsp;</span></span></span></p>
+<p class="MsoNormal" align="left"><a href="#0">Return to outline</a></p>
+<p class="MsoNormal" align="left"><a name="#5"><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:
+PMingLiU;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-TW;mso-bidi-language:AR-SA"><b style="mso-bidi-font-weight: normal; font-size: 12.0pt; font-family: Times New Roman; mso-fareast-font-family: PMingLiU; mso-font-kerning: 1.0pt; mso-ansi-language: EN-US; mso-fareast-language: ZH-TW; mso-bidi-language: AR-SA">5.
+R</b><b style="mso-bidi-font-weight:normal">eference</b></span></a><b style="mso-bidi-font-weight:normal"><span lang="EN-US"><o:p>
+</o:p>
+</span></b></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-weight:normal">[1]
+Webster, John G., <i style="mso-bidi-font-style:normal">Medical Instrumentation:
+Application and Design</i>.<span style="mso-spacerun: yes">&nbsp; </span>3<sup>rd</sup>
+Ed.<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>Philadelphia: W.B.
+Saunders Company, 1998.<o:p>
+</o:p>
+</span></p>
+<p class="MsoNormal"><a href="http://www.analog.com/UploadedFiles/Datasheets/788598335AD624_c.pdf">[2]
+AD624 dada sheet, Analog Device </a></p>
+<p class="MsoNormal"><a href="http://us.st.com/stonline/books/pdf/docs/5304.pdf"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">[3]
+ST 741 Op Amp Data Sheet, ST Microelectronics.</span></a></p>
+<p class="MsoNormal"><a href="http://www.csd-nec.com/opto/english/document.html"><span lang="EN-US" style="font-size:12.0pt;font-family:
+&quot;Times New Roman&quot;;mso-fareast-font-family:PMingLiU;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-TW;mso-bidi-language:AR-SA">[4]
+NEC PS2506 data sheet</span></a></p>
+<p><a href="http://www.sciam.com/article.cfm?articleID=000C74E4-5172-1C74-9B81809EC588EF21&amp;pageNumber=1&amp;catID=2">[5]Shawn
+Charson ,&quot;Home is where the ECG is&quot; ,Amatenur Scientist&nbsp;</a>
+</p>
+<p><a href="http://www.math.princeton.edu/~simas/ecg.html">[6]Sima's ECG project page</a>
+</p>
+<p><a href="http://www.sci.qut.edu.au/physci/units/physics/pcb504/labs/lab3.doc">[7]Let's
+build an ECG amplifier </a>&nbsp;
+</p>
+<p><a href="http://www.biomed.mtu.edu/osoykan/classes/be3600/3600_lab/exp04.pdf">[8]Source
+of Biopotentials and Biopotential Amplifier</a></p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

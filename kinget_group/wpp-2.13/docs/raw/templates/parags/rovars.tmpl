@@ -1,0 +1,65 @@
+@D=$@
+
+@H_SECTION("Read-only variables", "ROVARS")@
+
+<DL>
+<DT> @AT@WPP_VERSION@AT@
+<DD>
+  The program version.
+<DT> @AT@INCLUDE@AT@
+<DD>
+  Contains the name of the last included template.
+<DT> @AT@FILENAME@AT@
+<DD>
+  The bare name without extensions (.raw or .html) and path.
+<DT> @AT@TEMPLATE@AT@
+<DD>
+  If evaluated into a template is the template name, otherwise is an empty
+	string.
+<DT> @AT@DATE@AT@
+<DD>
+	Is the modify time for the output file.
+<DT> @AT@RCS_DATE@AT@
+<DD>
+  RCS <A HREF="manual_5.html#DATE">@D@Date@D@</A> tag value (if you use RCS,
+	otherwise is the last modify time or, if the source is STDIN, the current
+	date).
+<DT> @AT@AT@AT@
+<DD>
+  The '@AT@' char.
+<DT> @AT@EXTENSION@AT@
+<DD>
+  Contains the extension of the output file (default is 'html'). It can be
+	changed into a config file through the @AT@DEFAULT_EXTENSION@AT@
+	variable.
+<DT> @AT@RAW_EXTENSION@AT@
+<DD>
+	Contains the extension of the input file (default is 'raw'). It can be
+	changed into a config file through the @AT@DEFAULT_RAW_EXTENSION@AT@
+	variable.
+<DT> @AT@TMPL_EXTENSION@AT@
+<DD>
+	Contains the extension of the template files (default is 'tmpl'). It can be
+	changed into a config file through the @AT@DEFAULT_TMPL_EXTENSION@AT@
+	variable.
+<DT> @AT@OUTPUTDIR@AT@
+<DD>
+  Contains the output directory. It can be
+	changed into a config file through the @AT@DEFAULT_OUTPUTDIR@AT@
+	variable.
+<DT> @AT@OUTPUTSUBDIR@AT@
+<DD>
+  Contains the output subdirectory path.<BR>
+	By running wpp on <I>@AT@OUTPUTSUBDIR@AT@/ex.raw</I> the output file will be
+	placed into <I>@AT@OUTPUTDIR@AT@/@AT@OUTPUTSUBDIR@AT@/ex.html</I>.
+<DT> @AT@RAWDIR@AT@
+<DD>
+	Contains the directory of the raw sources.
+<DT> @AT@TMPLDIR@AT@
+<DD>
+  Contains the templates director It can be
+	changed into a config file through the @AT@DEFAULT_TMPLDIR@AT@
+	variable.
+</DL>
+
+
